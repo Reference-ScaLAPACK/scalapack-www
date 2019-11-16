@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pssvdchk.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pssvdchk.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpssvdchk\fP (M, N, A, IA, JA, DESCA, U, IU, JU, DESCU, VT, IVT, JVT, DESCVT, S, THRESH, WORK, LWORK, RESULT, CHK, MTM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pssvdchk (integer M, integer N, real, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) U, integer IU, integer JU, integer, dimension( * ) DESCU, real, dimension( * ) VT, integer IVT, integer JVT, integer, dimension( * ) DESCVT, real, dimension( * ) S, real THRESH, real, dimension( * ) WORK, integer LWORK, integer, dimension( * ) RESULT, real CHK, real MTM)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

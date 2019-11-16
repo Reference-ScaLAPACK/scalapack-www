@@ -1,0 +1,379 @@
+.TH "REDIST/SRC/pigemr2.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+REDIST/SRC/pigemr2.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'redist\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBMDESC\fP"
+.br
+.ti -1c
+.RI "struct \fBIDESC\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBstatic2\fP   static"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2d\fP   pigemr2do"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2dnew\fP   pigemr2d"
+.br
+.ti -1c
+.RI "#define \fBicopy_\fP   \fBicopy\fP"
+.br
+.ti -1c
+.RI "#define \fBilacpy_\fP   \fBilacpy\fP"
+.br
+.ti -1c
+.RI "#define \fBClacpy\fP   Cigelacpy"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_2D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSHIFT\fP(row,  sprow,  nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+.br
+.ti -1c
+.RI "#define \fBmax\fP(A,  B)   ((A)>(B)?(A):(B))"
+.br
+.ti -1c
+.RI "#define \fBmin\fP(A,  B)   ((A)>(B)?(B):(A))"
+.br
+.ti -1c
+.RI "#define \fBDIVUP\fP(a,  b)   ( ((a)\-1) /(b)+1)"
+.br
+.ti -1c
+.RI "#define \fBROUNDUP\fP(a,  b)   (\fBDIVUP\fP(a,b)*(b))"
+.br
+.ti -1c
+.RI "#define \fBscanD0\fP   igescanD0"
+.br
+.ti -1c
+.RI "#define \fBdispmat\fP   igedispmat"
+.br
+.ti -1c
+.RI "#define \fBsetmemory\fP   igesetmemory"
+.br
+.ti -1c
+.RI "#define \fBfreememory\fP   igefreememory"
+.br
+.ti -1c
+.RI "#define \fBscan_intervals\fP   igescan_intervals"
+.br
+.ti -1c
+.RI "#define \fBSENDBUFF\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRECVBUFF\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSIZEBUFF\fP   2"
+.br
+.ti -1c
+.RI "#define \fBNDEBUG\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClacpy\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pcoord\fP ()"
+.br
+.ti -1c
+.RI "int \fBCblacs_pnum\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsetpvmtids\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_get\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_exit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridexit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_setup\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBilacpy_\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalindice\fP ()"
+.br
+.ti -1c
+.RI "void * \fBmr2d_malloc\fP ()"
+.br
+.ti -1c
+.RI "int \fBppcm\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalsize\fP ()"
+.br
+.ti -1c
+.RI "int \fBmemoryblocksize\fP ()"
+.br
+.ti -1c
+.RI "int \fBchangeorigin\fP ()"
+.br
+.ti -1c
+.RI "void \fBparamcheck\fP ()"
+.br
+.ti -1c
+.RI "void \fBscanD0\fP ()"
+.br
+.ti -1c
+.RI "void \fBdispmat\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetmemory\fP ()"
+.br
+.ti -1c
+.RI "void \fBfreememory\fP ()"
+.br
+.ti -1c
+.RI "int \fBscan_intervals\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpigemr2do\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpigemr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetmemory\fP (int **adpointer, int blocksize)"
+.br
+.ti -1c
+.RI "void \fBfreememory\fP (int *ptrtobefreed)"
+.br
+.ti -1c
+.RI "int \fBscan_intervals\fP (char type, int ja, int jb, int n, \fBMDESC\fP *ma, \fBMDESC\fP *mb, int q0, int q1, int col0, int col1, \fBIDESC\fP *result)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BLOCK_CYCLIC_2D   1"
+
+.PP
+Definition at line 36 of file pigemr2\&.c\&.
+.SS "#define Clacpy   Cigelacpy"
+
+.PP
+Definition at line 23 of file pigemr2\&.c\&.
+.SS "#define dispmat   igedispmat"
+
+.PP
+Definition at line 83 of file pigemr2\&.c\&.
+.SS "#define DIVUP(a, b)   ( ((a)\-1) /(b)+1)"
+
+.PP
+Definition at line 44 of file pigemr2\&.c\&.
+.SS "#define fortran_mr2d   pigemr2do"
+
+.PP
+Definition at line 18 of file pigemr2\&.c\&.
+.SS "#define fortran_mr2dnew   pigemr2d"
+
+.PP
+Definition at line 19 of file pigemr2\&.c\&.
+.SS "#define freememory   igefreememory"
+
+.PP
+Definition at line 85 of file pigemr2\&.c\&.
+.SS "#define icopy_   \fBicopy\fP"
+
+.PP
+Definition at line 20 of file pigemr2\&.c\&.
+.SS "#define ilacpy_   \fBilacpy\fP"
+
+.PP
+Definition at line 21 of file pigemr2\&.c\&.
+.SS "#define max(A, B)   ((A)>(B)?(A):(B))"
+
+.PP
+Definition at line 42 of file pigemr2\&.c\&.
+.SS "#define min(A, B)   ((A)>(B)?(B):(A))"
+
+.PP
+Definition at line 43 of file pigemr2\&.c\&.
+.SS "#define NDEBUG"
+
+.PP
+Definition at line 102 of file pigemr2\&.c\&.
+.SS "#define RECVBUFF   1"
+
+.PP
+Definition at line 96 of file pigemr2\&.c\&.
+.SS "#define ROUNDUP(a, b)   (\fBDIVUP\fP(a,b)*(b))"
+
+.PP
+Definition at line 45 of file pigemr2\&.c\&.
+.SS "#define scan_intervals   igescan_intervals"
+
+.PP
+Definition at line 86 of file pigemr2\&.c\&.
+.SS "#define scanD0   igescanD0"
+
+.PP
+Definition at line 82 of file pigemr2\&.c\&.
+.SS "#define SENDBUFF   0"
+
+.PP
+Definition at line 95 of file pigemr2\&.c\&.
+.SS "#define setmemory   igesetmemory"
+
+.PP
+Definition at line 84 of file pigemr2\&.c\&.
+.SS "#define SHIFT(row, sprow, nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+
+.PP
+Definition at line 41 of file pigemr2\&.c\&.
+.SS "#define SIZEBUFF   2"
+
+.PP
+Definition at line 97 of file pigemr2\&.c\&.
+.SS "#define static2   static"
+
+.PP
+Definition at line 8 of file pigemr2\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "void Cblacs_exit ()"
+
+.SS "void Cblacs_get ()"
+
+.SS "void Cblacs_gridexit ()"
+
+.SS "void Cblacs_gridinfo ()"
+
+.SS "void Cblacs_gridinit ()"
+
+.SS "void Cblacs_pcoord ()"
+
+.SS "void Cblacs_pinfo ()"
+
+.SS "int Cblacs_pnum ()"
+
+.SS "void Cblacs_setup ()"
+
+.SS "int changeorigin ()"
+
+.SS "void Cigamn2d ()"
+
+.SS "void Cigamx2d ()"
+
+.SS "void Cigebr2d ()"
+
+.SS "void Cigebs2d ()"
+
+.SS "void Cigerv2d ()"
+
+.SS "void Cigesd2d ()"
+
+.SS "void Cigsum2d ()"
+
+.SS "void Clacpy ()"
+
+.SS "void Cpigemr2d ()"
+
+.SS "void Cpigemr2do ()"
+
+.SS "void Csetpvmtids ()"
+
+.SS "void dispmat ()"
+
+.SS "void freememory ()"
+
+.SS "void freememory (int  * ptrtobefreed)"
+
+.PP
+Definition at line 128 of file pigemr2\&.c\&.
+.SS "void ilacpy_ ()"
+
+.SS "int localindice ()"
+
+.SS "int localsize ()"
+
+.SS "int memoryblocksize ()"
+
+.SS "void* mr2d_malloc ()"
+
+.SS "void paramcheck ()"
+
+.SS "int ppcm ()"
+
+.SS "int scan_intervals ()"
+
+.SS "int scan_intervals (char type, int ja, int jb, int n, \fBMDESC\fP * ma, \fBMDESC\fP * mb, int q0, int q1, int col0, int col1, \fBIDESC\fP * result)"
+
+.PP
+Definition at line 141 of file pigemr2\&.c\&.
+.SS "void scanD0 ()"
+
+.SS "void setmemory ()"
+
+.SS "void setmemory (int ** adpointer, int blocksize)"
+
+.PP
+Definition at line 113 of file pigemr2\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "SRC/pzgerfs.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pzgerfs.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzgerfs\fP (TRANS, N, NRHS, A, IA, JA, DESCA, AF, IAF, JAF, DESCAF, IPIV, B, IB, JB, DESCB, X, IX, JX, DESCX, FERR, BERR, WORK, LWORK, RWORK, LRWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzgerfs (character TRANS, integer N, integer NRHS, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16, dimension( * ) AF, integer IAF, integer JAF, integer, dimension( * ) DESCAF, integer, dimension( * ) IPIV, \fBcomplex\fP*16, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, double precision, dimension( * ) FERR, double precision, dimension( * ) BERR, \fBcomplex\fP*16, dimension( * ) WORK, integer LWORK, double precision, dimension( * ) RWORK, integer LRWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,72 @@
+.TH "PBLAS/TESTING/pdblas1tst.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TESTING/pdblas1tst.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "program \fBpdbla1tst\fP"
+.br
+.ti -1c
+.RI "subroutine \fBpdbla1tstinfo\fP (SUMMRY, NOUT, NMAT, NVAL, MXVAL, NXVAL, IMBXVAL, MBXVAL, INBXVAL, NBXVAL, RSCXVAL, CSCXVAL, IXVAL, JXVAL, INCXVAL, MYVAL, NYVAL, IMBYVAL, MBYVAL, INBYVAL, NBYVAL, RSCYVAL, CSCYVAL, IYVAL, JYVAL, INCYVAL, LDVAL, NGRIDS, PVAL, LDPVAL, QVAL, LDQVAL, LTEST, SOF, TEE, IAM, IGAP, IVERB, NPROCS, ALPHA, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpdblas1tstchke\fP (LTEST, INOUT, NPROCS)"
+.br
+.ti -1c
+.RI "subroutine \fBpdchkarg1\fP (ICTXT, NOUT, SNAME, N, ALPHA, IX, JX, DESCX, INCX, IY, JY, DESCY, INCY, INFO)"
+.br
+.ti -1c
+.RI "logical function \fBpisinscope\fP (ICTXT, N, IX, JX, DESCX, INCX)"
+.br
+.ti -1c
+.RI "subroutine \fBpdblas1tstchk\fP (ICTXT, NOUT, NROUT, N, PSCLR, PUSCLR, PISCLR, X, PX, IX, JX, DESCX, INCX, Y, PY, IY, JY, DESCY, INCY, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpderrdot\fP (ERRBND, N, SCLR, X, INCX, Y, INCY, PREC)"
+.br
+.ti -1c
+.RI "subroutine \fBpderrnrm2\fP (ERRBND, N, USCLR, X, INCX, PREC)"
+.br
+.ti -1c
+.RI "subroutine \fBpderrasum\fP (ERRBND, N, USCLR, X, INCX, PREC)"
+.br
+.ti -1c
+.RI "subroutine \fBpderrscal\fP (ERRBND, PSCLR, X, PREC)"
+.br
+.ti -1c
+.RI "subroutine \fBpderraxpy\fP (ERRBND, PSCLR, X, Y, PREC)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "program pdbla1tst ()"
+
+.SS "subroutine pdbla1tstinfo (character*( * ) SUMMRY, integer NOUT, integer NMAT, integer, dimension( ldval ) NVAL, integer, dimension( ldval ) MXVAL, integer, dimension( ldval ) NXVAL, integer, dimension( ldval ) IMBXVAL, integer, dimension( ldval ) MBXVAL, integer, dimension( ldval ) INBXVAL, integer, dimension( ldval ) NBXVAL, integer, dimension( ldval ) RSCXVAL, integer, dimension( ldval ) CSCXVAL, integer, dimension( ldval ) IXVAL, integer, dimension( ldval ) JXVAL, integer, dimension( ldval ) INCXVAL, integer, dimension( ldval ) MYVAL, integer, dimension( ldval ) NYVAL, integer, dimension( ldval ) IMBYVAL, integer, dimension( ldval ) MBYVAL, integer, dimension( ldval ) INBYVAL, integer, dimension( ldval ) NBYVAL, integer, dimension( ldval ) RSCYVAL, integer, dimension( ldval ) CSCYVAL, integer, dimension( ldval ) IYVAL, integer, dimension( ldval ) JYVAL, integer, dimension( ldval ) INCYVAL, integer LDVAL, integer NGRIDS, integer, dimension( ldpval ) PVAL, integer LDPVAL, integer, dimension( ldqval ) QVAL, integer LDQVAL, logical, dimension( * ) LTEST, logical SOF, logical TEE, integer IAM, integer IGAP, integer IVERB, integer NPROCS, double precision ALPHA, integer, dimension( * ) WORK)"
+
+.SS "subroutine pdblas1tstchk (integer ICTXT, integer NOUT, integer NROUT, integer N, double precision PSCLR, double precision PUSCLR, integer PISCLR, double precision, dimension( * ) X, double precision, dimension( * ) PX, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, double precision, dimension( * ) Y, double precision, dimension( * ) PY, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, integer INFO)"
+
+.SS "subroutine pdblas1tstchke (logical, dimension( * ) LTEST, integer INOUT, integer NPROCS)"
+
+.SS "subroutine pdchkarg1 (integer ICTXT, integer NOUT, character*(*) SNAME, integer N, double precision ALPHA, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, integer INFO)"
+
+.SS "subroutine pderrasum (double precision ERRBND, integer N, double precision USCLR, double precision, dimension( * ) X, integer INCX, double precision PREC)"
+
+.SS "subroutine pderraxpy (double precision ERRBND, double precision PSCLR, double precision X, double precision Y, double precision PREC)"
+
+.SS "subroutine pderrdot (double precision ERRBND, integer N, double precision SCLR, double precision, dimension( * ) X, integer INCX, double precision, dimension( * ) Y, integer INCY, double precision PREC)"
+
+.SS "subroutine pderrnrm2 (double precision ERRBND, integer N, double precision USCLR, double precision, dimension( * ) X, integer INCX, double precision PREC)"
+
+.SS "subroutine pderrscal (double precision ERRBND, double precision PSCLR, double precision X, double precision PREC)"
+
+.SS "logical function pisinscope (integer ICTXT, integer N, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

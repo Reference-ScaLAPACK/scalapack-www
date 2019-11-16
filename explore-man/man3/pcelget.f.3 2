@@ -1,0 +1,22 @@
+.TH "TOOLS/pcelget.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/pcelget.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpcelget\fP (SCOPE, TOP, ALPHA, A, IA, JA, DESCA)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pcelget (character*1 SCOPE, character*1 TOP, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

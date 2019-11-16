@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PBBLAS/pbztrst1.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBBLAS/pbztrst1.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpbztrst1\fP (ICONTXT, XDIST, N, NB, NZ, X, INCX, BETA, Y, INCY, LCMP, LCMQ, NINT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pbztrst1 (integer ICONTXT, character*1 XDIST, integer N, integer NB, integer NZ, \fBcomplex\fP*16, dimension( * ) X, integer INCX, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) Y, integer INCY, integer LCMP, integer LCMQ, integer NINT)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

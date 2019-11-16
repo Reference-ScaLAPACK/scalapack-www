@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/BI_MringComb.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/BI_MringComb.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBBI_MringComb\fP (\fBBLACSCONTEXT\fP *ctxt, \fBBLACBUFF\fP *bp, \fBBLACBUFF\fP *bp2, int N, \fBVVFUNPTR\fP Xvvop, int dest, int nrings)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void BI_MringComb (\fBBLACSCONTEXT\fP * ctxt, \fBBLACBUFF\fP * bp, \fBBLACBUFF\fP * bp2, int N, \fBVVFUNPTR\fP Xvvop, int dest, int nrings)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

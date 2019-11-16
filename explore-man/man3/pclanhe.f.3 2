@@ -1,0 +1,22 @@
+.TH "SRC/pclanhe.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pclanhe.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "real function \fBpclanhe\fP (NORM, UPLO, N, A, IA, JA, DESCA, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "real function pclanhe (character NORM, character UPLO, integer N, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

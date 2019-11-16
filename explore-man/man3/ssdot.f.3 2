@@ -1,0 +1,22 @@
+.TH "TOOLS/ssdot.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/ssdot.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBssdot\fP (N, DOT, X, INCX, Y, INCY)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine ssdot (integer N, real DOT, real, dimension( * ) X, integer INCX, real, dimension( * ) Y, integer INCY)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

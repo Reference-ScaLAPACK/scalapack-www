@@ -1,0 +1,32 @@
+.TH "TOOLS/pchkxmat.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/pchkxmat.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpchk1mat\fP (MA, MAPOS0, NA, NAPOS0, IA, JA, DESCA, DESCAPOS0, NEXTRA, EX, EXPOS, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpchk2mat\fP (MA, MAPOS0, NA, NAPOS0, IA, JA, DESCA, DESCAPOS0, MB, MBPOS0, NB, NBPOS0, IB, JB, DESCB, DESCBPOS0, NEXTRA, EX, EXPOS, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBglobchk\fP (ICTXT, N, X, LDX, IWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine globchk (integer ICTXT, integer N, integer, dimension( ldx, 2 ) X, integer LDX, integer, dimension( n ) IWORK, integer INFO)"
+
+.SS "subroutine pchk1mat (integer MA, integer MAPOS0, integer NA, integer NAPOS0, integer IA, integer JA, integer, dimension( * ) DESCA, integer DESCAPOS0, integer NEXTRA, integer, dimension( nextra ) EX, integer, dimension( nextra ) EXPOS, integer INFO)"
+
+.SS "subroutine pchk2mat (integer MA, integer MAPOS0, integer NA, integer NAPOS0, integer IA, integer JA, integer, dimension( * ) DESCA, integer DESCAPOS0, integer MB, integer MBPOS0, integer NB, integer NBPOS0, integer IB, integer JB, integer, dimension( 8 ) DESCB, integer DESCBPOS0, integer NEXTRA, integer, dimension( nextra ) EX, integer, dimension( nextra ) EXPOS, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

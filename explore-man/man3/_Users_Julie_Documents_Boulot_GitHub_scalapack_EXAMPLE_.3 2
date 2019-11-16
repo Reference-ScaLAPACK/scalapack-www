@@ -1,0 +1,27 @@
+.TH "EXAMPLE Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EXAMPLE Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBpcscaex\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdscaex\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdscaexinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsscaex\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzscaex\&.f\fP"
+.br
+.in -1c

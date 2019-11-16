@@ -1,0 +1,22 @@
+.TH "SRC/psstein.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/psstein.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpsstein\fP (N, D, E, M, W, IBLOCK, ISPLIT, ORFAC, Z, IZ, JZ, DESCZ, WORK, LWORK, IWORK, LIWORK, IFAIL, ICLUSTR, GAP, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine psstein (integer N, real, dimension( * ) D, real, dimension( * ) E, integer M, real, dimension( * ) W, integer, dimension( * ) IBLOCK, integer, dimension( * ) ISPLIT, real ORFAC, real, dimension( * ) Z, integer IZ, integer JZ, integer, dimension( * ) DESCZ, real, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK, integer, dimension( * ) IFAIL, integer, dimension( * ) ICLUSTR, real, dimension( * ) GAP, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

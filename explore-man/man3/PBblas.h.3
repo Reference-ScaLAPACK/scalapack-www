@@ -1,0 +1,2071 @@
+.TH "PBLAS/SRC/PBblas.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBblas.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCNOTRAN\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBCNOCONJG\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBCTRAN\fP   'T'"
+.br
+.ti -1c
+.RI "#define \fBCCONJG\fP   'Z'"
+.br
+.ti -1c
+.RI "#define \fBCCOTRAN\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBCALL\fP   'A'"
+.br
+.ti -1c
+.RI "#define \fBCLOWER\fP   'L'"
+.br
+.ti -1c
+.RI "#define \fBCUPPER\fP   'U'"
+.br
+.ti -1c
+.RI "#define \fBCDIAGONAL\fP   'D'"
+.br
+.ti -1c
+.RI "#define \fBCLEFT\fP   'L'"
+.br
+.ti -1c
+.RI "#define \fBCRIGHT\fP   'R'"
+.br
+.ti -1c
+.RI "#define \fBCUNIT\fP   'U'"
+.br
+.ti -1c
+.RI "#define \fBCNOUNIT\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBCINIT\fP   'I'"
+.br
+.ti -1c
+.RI "#define \fBCNOINIT\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBCFORWARD\fP   'F'"
+.br
+.ti -1c
+.RI "#define \fBCBACKWARD\fP   'B'"
+.br
+.ti -1c
+.RI "#define \fBCREUSE\fP   'R'"
+.br
+.ti -1c
+.RI "#define \fBCALLOCATE\fP   'A'"
+.br
+.ti -1c
+.RI "#define \fBNOTRAN\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBNOCONJG\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBTRAN\fP   'T'"
+.br
+.ti -1c
+.RI "#define \fBCONJG\fP   'Z'"
+.br
+.ti -1c
+.RI "#define \fBCOTRAN\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBALL\fP   'A'"
+.br
+.ti -1c
+.RI "#define \fBLOWER\fP   'L'"
+.br
+.ti -1c
+.RI "#define \fBUPPER\fP   'U'"
+.br
+.ti -1c
+.RI "#define \fBDIAGONAL\fP   'D'"
+.br
+.ti -1c
+.RI "#define \fBLEFT\fP   'L'"
+.br
+.ti -1c
+.RI "#define \fBRIGHT\fP   'R'"
+.br
+.ti -1c
+.RI "#define \fBUNIT\fP   'U'"
+.br
+.ti -1c
+.RI "#define \fBNOUNIT\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBINIT\fP   'I'"
+.br
+.ti -1c
+.RI "#define \fBNOINIT\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBFORWARD\fP   'F'"
+.br
+.ti -1c
+.RI "#define \fBBACKWARD\fP   'B'"
+.br
+.ti -1c
+.RI "#define \fBREUSE\fP   'R'"
+.br
+.ti -1c
+.RI "#define \fBALLOCATE\fP   'A'"
+.br
+.ti -1c
+.RI "#define \fBsrot_\fP   SROT"
+.br
+.ti -1c
+.RI "#define \fBdrot_\fP   DROT"
+.br
+.ti -1c
+.RI "#define \fBsswap_\fP   SSWAP"
+.br
+.ti -1c
+.RI "#define \fBdswap_\fP   DSWAP"
+.br
+.ti -1c
+.RI "#define \fBcswap_\fP   CSWAP"
+.br
+.ti -1c
+.RI "#define \fBzswap_\fP   ZSWAP"
+.br
+.ti -1c
+.RI "#define \fBscopy_\fP   SCOPY"
+.br
+.ti -1c
+.RI "#define \fBdcopy_\fP   DCOPY"
+.br
+.ti -1c
+.RI "#define \fBccopy_\fP   CCOPY"
+.br
+.ti -1c
+.RI "#define \fBzcopy_\fP   ZCOPY"
+.br
+.ti -1c
+.RI "#define \fBsaxpy_\fP   SAXPY"
+.br
+.ti -1c
+.RI "#define \fBdaxpy_\fP   DAXPY"
+.br
+.ti -1c
+.RI "#define \fBcaxpy_\fP   CAXPY"
+.br
+.ti -1c
+.RI "#define \fBzaxpy_\fP   ZAXPY"
+.br
+.ti -1c
+.RI "#define \fBsscal_\fP   SSCAL"
+.br
+.ti -1c
+.RI "#define \fBdscal_\fP   DSCAL"
+.br
+.ti -1c
+.RI "#define \fBcscal_\fP   CSCAL"
+.br
+.ti -1c
+.RI "#define \fBzscal_\fP   ZSCAL"
+.br
+.ti -1c
+.RI "#define \fBcsscal_\fP   CSSCAL"
+.br
+.ti -1c
+.RI "#define \fBzdscal_\fP   ZDSCAL"
+.br
+.ti -1c
+.RI "#define \fBsasum_\fP   SASUM"
+.br
+.ti -1c
+.RI "#define \fBdasum_\fP   DASUM"
+.br
+.ti -1c
+.RI "#define \fBscasum_\fP   SCASUM"
+.br
+.ti -1c
+.RI "#define \fBdzasum_\fP   DZASUM"
+.br
+.ti -1c
+.RI "#define \fBsnrm2_\fP   SNRM2"
+.br
+.ti -1c
+.RI "#define \fBdnrm2_\fP   DNRM2"
+.br
+.ti -1c
+.RI "#define \fBscnrm2_\fP   SCNRM2"
+.br
+.ti -1c
+.RI "#define \fBdznrm2_\fP   DZNRM2"
+.br
+.ti -1c
+.RI "#define \fBsdot_\fP   SDOT"
+.br
+.ti -1c
+.RI "#define \fBddot_\fP   DDOT"
+.br
+.ti -1c
+.RI "#define \fBcdotu_\fP   CDOTU"
+.br
+.ti -1c
+.RI "#define \fBzdotu_\fP   ZDOTU"
+.br
+.ti -1c
+.RI "#define \fBcdotc_\fP   CDOTC"
+.br
+.ti -1c
+.RI "#define \fBzdotc_\fP   ZDOTC"
+.br
+.ti -1c
+.RI "#define \fBisamax_\fP   ISAMAX"
+.br
+.ti -1c
+.RI "#define \fBidamax_\fP   IDAMAX"
+.br
+.ti -1c
+.RI "#define \fBicamax_\fP   ICAMAX"
+.br
+.ti -1c
+.RI "#define \fBizamax_\fP   IZAMAX"
+.br
+.ti -1c
+.RI "#define \fBsgemv_\fP   SGEMV"
+.br
+.ti -1c
+.RI "#define \fBdgemv_\fP   DGEMV"
+.br
+.ti -1c
+.RI "#define \fBcgemv_\fP   CGEMV"
+.br
+.ti -1c
+.RI "#define \fBzgemv_\fP   ZGEMV"
+.br
+.ti -1c
+.RI "#define \fBssymv_\fP   SSYMV"
+.br
+.ti -1c
+.RI "#define \fBdsymv_\fP   DSYMV"
+.br
+.ti -1c
+.RI "#define \fBchemv_\fP   CHEMV"
+.br
+.ti -1c
+.RI "#define \fBzhemv_\fP   ZHEMV"
+.br
+.ti -1c
+.RI "#define \fBstrmv_\fP   STRMV"
+.br
+.ti -1c
+.RI "#define \fBdtrmv_\fP   DTRMV"
+.br
+.ti -1c
+.RI "#define \fBctrmv_\fP   CTRMV"
+.br
+.ti -1c
+.RI "#define \fBztrmv_\fP   ZTRMV"
+.br
+.ti -1c
+.RI "#define \fBstrsv_\fP   STRSV"
+.br
+.ti -1c
+.RI "#define \fBdtrsv_\fP   DTRSV"
+.br
+.ti -1c
+.RI "#define \fBctrsv_\fP   CTRSV"
+.br
+.ti -1c
+.RI "#define \fBztrsv_\fP   ZTRSV"
+.br
+.ti -1c
+.RI "#define \fBsger_\fP   SGER"
+.br
+.ti -1c
+.RI "#define \fBdger_\fP   DGER"
+.br
+.ti -1c
+.RI "#define \fBcgeru_\fP   CGERU"
+.br
+.ti -1c
+.RI "#define \fBzgeru_\fP   ZGERU"
+.br
+.ti -1c
+.RI "#define \fBcgerc_\fP   CGERC"
+.br
+.ti -1c
+.RI "#define \fBzgerc_\fP   ZGERC"
+.br
+.ti -1c
+.RI "#define \fBssyr_\fP   SSYR"
+.br
+.ti -1c
+.RI "#define \fBdsyr_\fP   DSYR"
+.br
+.ti -1c
+.RI "#define \fBcher_\fP   CHER"
+.br
+.ti -1c
+.RI "#define \fBzher_\fP   ZHER"
+.br
+.ti -1c
+.RI "#define \fBssyr2_\fP   SSYR2"
+.br
+.ti -1c
+.RI "#define \fBdsyr2_\fP   DSYR2"
+.br
+.ti -1c
+.RI "#define \fBcher2_\fP   CHER2"
+.br
+.ti -1c
+.RI "#define \fBzher2_\fP   ZHER2"
+.br
+.ti -1c
+.RI "#define \fBsgemm_\fP   SGEMM"
+.br
+.ti -1c
+.RI "#define \fBdgemm_\fP   DGEMM"
+.br
+.ti -1c
+.RI "#define \fBcgemm_\fP   CGEMM"
+.br
+.ti -1c
+.RI "#define \fBzgemm_\fP   ZGEMM"
+.br
+.ti -1c
+.RI "#define \fBssymm_\fP   SSYMM"
+.br
+.ti -1c
+.RI "#define \fBdsymm_\fP   DSYMM"
+.br
+.ti -1c
+.RI "#define \fBcsymm_\fP   CSYMM"
+.br
+.ti -1c
+.RI "#define \fBchemm_\fP   CHEMM"
+.br
+.ti -1c
+.RI "#define \fBzsymm_\fP   ZSYMM"
+.br
+.ti -1c
+.RI "#define \fBzhemm_\fP   ZHEMM"
+.br
+.ti -1c
+.RI "#define \fBstrmm_\fP   STRMM"
+.br
+.ti -1c
+.RI "#define \fBdtrmm_\fP   DTRMM"
+.br
+.ti -1c
+.RI "#define \fBctrmm_\fP   CTRMM"
+.br
+.ti -1c
+.RI "#define \fBztrmm_\fP   ZTRMM"
+.br
+.ti -1c
+.RI "#define \fBstrsm_\fP   STRSM"
+.br
+.ti -1c
+.RI "#define \fBdtrsm_\fP   DTRSM"
+.br
+.ti -1c
+.RI "#define \fBctrsm_\fP   CTRSM"
+.br
+.ti -1c
+.RI "#define \fBztrsm_\fP   ZTRSM"
+.br
+.ti -1c
+.RI "#define \fBssyrk_\fP   SSYRK"
+.br
+.ti -1c
+.RI "#define \fBdsyrk_\fP   DSYRK"
+.br
+.ti -1c
+.RI "#define \fBcsyrk_\fP   CSYRK"
+.br
+.ti -1c
+.RI "#define \fBcherk_\fP   CHERK"
+.br
+.ti -1c
+.RI "#define \fBzsyrk_\fP   ZSYRK"
+.br
+.ti -1c
+.RI "#define \fBzherk_\fP   ZHERK"
+.br
+.ti -1c
+.RI "#define \fBssyr2k_\fP   SSYR2K"
+.br
+.ti -1c
+.RI "#define \fBdsyr2k_\fP   DSYR2K"
+.br
+.ti -1c
+.RI "#define \fBcsyr2k_\fP   CSYR2K"
+.br
+.ti -1c
+.RI "#define \fBcher2k_\fP   CHER2K"
+.br
+.ti -1c
+.RI "#define \fBzsyr2k_\fP   ZSYR2K"
+.br
+.ti -1c
+.RI "#define \fBzher2k_\fP   ZHER2K"
+.br
+.ti -1c
+.RI "#define \fBsrot_\fP   srot"
+.br
+.ti -1c
+.RI "#define \fBdrot_\fP   drot"
+.br
+.ti -1c
+.RI "#define \fBsswap_\fP   sswap"
+.br
+.ti -1c
+.RI "#define \fBdswap_\fP   dswap"
+.br
+.ti -1c
+.RI "#define \fBcswap_\fP   cswap"
+.br
+.ti -1c
+.RI "#define \fBzswap_\fP   zswap"
+.br
+.ti -1c
+.RI "#define \fBscopy_\fP   scopy"
+.br
+.ti -1c
+.RI "#define \fBdcopy_\fP   dcopy"
+.br
+.ti -1c
+.RI "#define \fBccopy_\fP   ccopy"
+.br
+.ti -1c
+.RI "#define \fBzcopy_\fP   zcopy"
+.br
+.ti -1c
+.RI "#define \fBsaxpy_\fP   saxpy"
+.br
+.ti -1c
+.RI "#define \fBdaxpy_\fP   daxpy"
+.br
+.ti -1c
+.RI "#define \fBcaxpy_\fP   caxpy"
+.br
+.ti -1c
+.RI "#define \fBzaxpy_\fP   zaxpy"
+.br
+.ti -1c
+.RI "#define \fBsscal_\fP   sscal"
+.br
+.ti -1c
+.RI "#define \fBdscal_\fP   dscal"
+.br
+.ti -1c
+.RI "#define \fBcscal_\fP   cscal"
+.br
+.ti -1c
+.RI "#define \fBzscal_\fP   zscal"
+.br
+.ti -1c
+.RI "#define \fBcsscal_\fP   csscal"
+.br
+.ti -1c
+.RI "#define \fBzdscal_\fP   zdscal"
+.br
+.ti -1c
+.RI "#define \fBsasum_\fP   sasum"
+.br
+.ti -1c
+.RI "#define \fBdasum_\fP   dasum"
+.br
+.ti -1c
+.RI "#define \fBscasum_\fP   scasum"
+.br
+.ti -1c
+.RI "#define \fBdzasum_\fP   dzasum"
+.br
+.ti -1c
+.RI "#define \fBsnrm2_\fP   snrm2"
+.br
+.ti -1c
+.RI "#define \fBdnrm2_\fP   dnrm2"
+.br
+.ti -1c
+.RI "#define \fBscnrm2_\fP   scnrm2"
+.br
+.ti -1c
+.RI "#define \fBdznrm2_\fP   dznrm2"
+.br
+.ti -1c
+.RI "#define \fBsdot_\fP   sdot"
+.br
+.ti -1c
+.RI "#define \fBddot_\fP   ddot"
+.br
+.ti -1c
+.RI "#define \fBcdotu_\fP   cdotu"
+.br
+.ti -1c
+.RI "#define \fBzdotu_\fP   zdotu"
+.br
+.ti -1c
+.RI "#define \fBcdotc_\fP   cdotc"
+.br
+.ti -1c
+.RI "#define \fBzdotc_\fP   zdotc"
+.br
+.ti -1c
+.RI "#define \fBisamax_\fP   isamax"
+.br
+.ti -1c
+.RI "#define \fBidamax_\fP   idamax"
+.br
+.ti -1c
+.RI "#define \fBicamax_\fP   icamax"
+.br
+.ti -1c
+.RI "#define \fBizamax_\fP   izamax"
+.br
+.ti -1c
+.RI "#define \fBsgemv_\fP   sgemv"
+.br
+.ti -1c
+.RI "#define \fBdgemv_\fP   dgemv"
+.br
+.ti -1c
+.RI "#define \fBcgemv_\fP   cgemv"
+.br
+.ti -1c
+.RI "#define \fBzgemv_\fP   zgemv"
+.br
+.ti -1c
+.RI "#define \fBssymv_\fP   ssymv"
+.br
+.ti -1c
+.RI "#define \fBdsymv_\fP   dsymv"
+.br
+.ti -1c
+.RI "#define \fBchemv_\fP   chemv"
+.br
+.ti -1c
+.RI "#define \fBzhemv_\fP   zhemv"
+.br
+.ti -1c
+.RI "#define \fBstrmv_\fP   strmv"
+.br
+.ti -1c
+.RI "#define \fBdtrmv_\fP   dtrmv"
+.br
+.ti -1c
+.RI "#define \fBctrmv_\fP   ctrmv"
+.br
+.ti -1c
+.RI "#define \fBztrmv_\fP   ztrmv"
+.br
+.ti -1c
+.RI "#define \fBstrsv_\fP   strsv"
+.br
+.ti -1c
+.RI "#define \fBdtrsv_\fP   dtrsv"
+.br
+.ti -1c
+.RI "#define \fBctrsv_\fP   ctrsv"
+.br
+.ti -1c
+.RI "#define \fBztrsv_\fP   ztrsv"
+.br
+.ti -1c
+.RI "#define \fBsger_\fP   sger"
+.br
+.ti -1c
+.RI "#define \fBdger_\fP   dger"
+.br
+.ti -1c
+.RI "#define \fBcgeru_\fP   cgeru"
+.br
+.ti -1c
+.RI "#define \fBzgeru_\fP   zgeru"
+.br
+.ti -1c
+.RI "#define \fBcgerc_\fP   cgerc"
+.br
+.ti -1c
+.RI "#define \fBzgerc_\fP   zgerc"
+.br
+.ti -1c
+.RI "#define \fBssyr_\fP   ssyr"
+.br
+.ti -1c
+.RI "#define \fBdsyr_\fP   dsyr"
+.br
+.ti -1c
+.RI "#define \fBcher_\fP   cher"
+.br
+.ti -1c
+.RI "#define \fBzher_\fP   zher"
+.br
+.ti -1c
+.RI "#define \fBssyr2_\fP   ssyr2"
+.br
+.ti -1c
+.RI "#define \fBdsyr2_\fP   dsyr2"
+.br
+.ti -1c
+.RI "#define \fBcher2_\fP   cher2"
+.br
+.ti -1c
+.RI "#define \fBzher2_\fP   zher2"
+.br
+.ti -1c
+.RI "#define \fBsgemm_\fP   sgemm"
+.br
+.ti -1c
+.RI "#define \fBdgemm_\fP   dgemm"
+.br
+.ti -1c
+.RI "#define \fBcgemm_\fP   cgemm"
+.br
+.ti -1c
+.RI "#define \fBzgemm_\fP   zgemm"
+.br
+.ti -1c
+.RI "#define \fBssymm_\fP   ssymm"
+.br
+.ti -1c
+.RI "#define \fBdsymm_\fP   dsymm"
+.br
+.ti -1c
+.RI "#define \fBcsymm_\fP   csymm"
+.br
+.ti -1c
+.RI "#define \fBchemm_\fP   chemm"
+.br
+.ti -1c
+.RI "#define \fBzsymm_\fP   zsymm"
+.br
+.ti -1c
+.RI "#define \fBzhemm_\fP   zhemm"
+.br
+.ti -1c
+.RI "#define \fBstrmm_\fP   strmm"
+.br
+.ti -1c
+.RI "#define \fBdtrmm_\fP   dtrmm"
+.br
+.ti -1c
+.RI "#define \fBctrmm_\fP   ctrmm"
+.br
+.ti -1c
+.RI "#define \fBztrmm_\fP   ztrmm"
+.br
+.ti -1c
+.RI "#define \fBstrsm_\fP   strsm"
+.br
+.ti -1c
+.RI "#define \fBdtrsm_\fP   dtrsm"
+.br
+.ti -1c
+.RI "#define \fBctrsm_\fP   ctrsm"
+.br
+.ti -1c
+.RI "#define \fBztrsm_\fP   ztrsm"
+.br
+.ti -1c
+.RI "#define \fBssyrk_\fP   ssyrk"
+.br
+.ti -1c
+.RI "#define \fBdsyrk_\fP   dsyrk"
+.br
+.ti -1c
+.RI "#define \fBcsyrk_\fP   csyrk"
+.br
+.ti -1c
+.RI "#define \fBcherk_\fP   cherk"
+.br
+.ti -1c
+.RI "#define \fBzsyrk_\fP   zsyrk"
+.br
+.ti -1c
+.RI "#define \fBzherk_\fP   zherk"
+.br
+.ti -1c
+.RI "#define \fBssyr2k_\fP   ssyr2k"
+.br
+.ti -1c
+.RI "#define \fBdsyr2k_\fP   dsyr2k"
+.br
+.ti -1c
+.RI "#define \fBcsyr2k_\fP   csyr2k"
+.br
+.ti -1c
+.RI "#define \fBcher2k_\fP   cher2k"
+.br
+.ti -1c
+.RI "#define \fBzsyr2k_\fP   zsyr2k"
+.br
+.ti -1c
+.RI "#define \fBzher2k_\fP   zher2k"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBisamax_\fP ()"
+.br
+.ti -1c
+.RI "int \fBidamax_\fP ()"
+.br
+.ti -1c
+.RI "int \fBicamax_\fP ()"
+.br
+.ti -1c
+.RI "int \fBizamax_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsaxpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdaxpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcaxpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzaxpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBscopy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdcopy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBccopy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzcopy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcsscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzdscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsswap_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdswap_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcswap_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzswap_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsgemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdgemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcgemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzgemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBssymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdsymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBchemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzhemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBstrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdtrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBstrsv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdtrsv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctrsv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztrsv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsger_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdger_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcgerc_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcgeru_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzgerc_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzgeru_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBssyr_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdsyr_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcher_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzher_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBssyr2_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdsyr2_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcher2_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzher2_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsgemm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdgemm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcgemm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzgemm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBssymm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdsymm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcsymm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzsymm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBchemm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzhemm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBssyrk_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdsyrk_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcsyrk_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzsyrk_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcherk_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzherk_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBssyr2k_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdsyr2k_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcsyr2k_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzsyr2k_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcher2k_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzher2k_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBstrmm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdtrmm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctrmm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztrmm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBstrsm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdtrsm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctrsm_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztrsm_\fP ()"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ALL   'A'"
+
+.PP
+Definition at line 50 of file PBblas\&.h\&.
+.SS "#define ALLOCATE   'A'"
+
+.PP
+Definition at line 68 of file PBblas\&.h\&.
+.SS "#define BACKWARD   'B'"
+
+.PP
+Definition at line 65 of file PBblas\&.h\&.
+.SS "#define CALL   'A'"
+
+.PP
+Definition at line 24 of file PBblas\&.h\&.
+.SS "#define CALLOCATE   'A'"
+
+.PP
+Definition at line 42 of file PBblas\&.h\&.
+.SS "#define caxpy_   CAXPY"
+
+.PP
+Definition at line 238 of file PBblas\&.h\&.
+.SS "#define caxpy_   caxpy"
+
+.PP
+Definition at line 238 of file PBblas\&.h\&.
+.SS "#define CBACKWARD   'B'"
+
+.PP
+Definition at line 39 of file PBblas\&.h\&.
+.SS "#define CCONJG   'Z'"
+
+.PP
+Definition at line 21 of file PBblas\&.h\&.
+.SS "#define ccopy_   CCOPY"
+
+.PP
+Definition at line 233 of file PBblas\&.h\&.
+.SS "#define ccopy_   ccopy"
+
+.PP
+Definition at line 233 of file PBblas\&.h\&.
+.SS "#define CCOTRAN   'C'"
+
+.PP
+Definition at line 22 of file PBblas\&.h\&.
+.SS "#define CDIAGONAL   'D'"
+
+.PP
+Definition at line 27 of file PBblas\&.h\&.
+.SS "#define cdotc_   CDOTC"
+
+.PP
+Definition at line 262 of file PBblas\&.h\&.
+.SS "#define cdotc_   cdotc"
+
+.PP
+Definition at line 262 of file PBblas\&.h\&.
+.SS "#define cdotu_   CDOTU"
+
+.PP
+Definition at line 260 of file PBblas\&.h\&.
+.SS "#define cdotu_   cdotu"
+
+.PP
+Definition at line 260 of file PBblas\&.h\&.
+.SS "#define CFORWARD   'F'"
+
+.PP
+Definition at line 38 of file PBblas\&.h\&.
+.SS "#define cgemm_   CGEMM"
+
+.PP
+Definition at line 309 of file PBblas\&.h\&.
+.SS "#define cgemm_   cgemm"
+
+.PP
+Definition at line 309 of file PBblas\&.h\&.
+.SS "#define cgemv_   CGEMV"
+
+.PP
+Definition at line 272 of file PBblas\&.h\&.
+.SS "#define cgemv_   cgemv"
+
+.PP
+Definition at line 272 of file PBblas\&.h\&.
+.SS "#define cgerc_   CGERC"
+
+.PP
+Definition at line 294 of file PBblas\&.h\&.
+.SS "#define cgerc_   cgerc"
+
+.PP
+Definition at line 294 of file PBblas\&.h\&.
+.SS "#define cgeru_   CGERU"
+
+.PP
+Definition at line 292 of file PBblas\&.h\&.
+.SS "#define cgeru_   cgeru"
+
+.PP
+Definition at line 292 of file PBblas\&.h\&.
+.SS "#define chemm_   CHEMM"
+
+.PP
+Definition at line 315 of file PBblas\&.h\&.
+.SS "#define chemm_   chemm"
+
+.PP
+Definition at line 315 of file PBblas\&.h\&.
+.SS "#define chemv_   CHEMV"
+
+.PP
+Definition at line 277 of file PBblas\&.h\&.
+.SS "#define chemv_   chemv"
+
+.PP
+Definition at line 277 of file PBblas\&.h\&.
+.SS "#define cher2_   CHER2"
+
+.PP
+Definition at line 304 of file PBblas\&.h\&.
+.SS "#define cher2_   cher2"
+
+.PP
+Definition at line 304 of file PBblas\&.h\&.
+.SS "#define cher2k_   CHER2K"
+
+.PP
+Definition at line 339 of file PBblas\&.h\&.
+.SS "#define cher2k_   cher2k"
+
+.PP
+Definition at line 339 of file PBblas\&.h\&.
+.SS "#define cher_   CHER"
+
+.PP
+Definition at line 299 of file PBblas\&.h\&.
+.SS "#define cher_   cher"
+
+.PP
+Definition at line 299 of file PBblas\&.h\&.
+.SS "#define cherk_   CHERK"
+
+.PP
+Definition at line 332 of file PBblas\&.h\&.
+.SS "#define cherk_   cherk"
+
+.PP
+Definition at line 332 of file PBblas\&.h\&.
+.SS "#define CINIT   'I'"
+
+.PP
+Definition at line 35 of file PBblas\&.h\&.
+.SS "#define CLEFT   'L'"
+
+.PP
+Definition at line 29 of file PBblas\&.h\&.
+.SS "#define CLOWER   'L'"
+
+.PP
+Definition at line 25 of file PBblas\&.h\&.
+.SS "#define CNOCONJG   'N'"
+
+.PP
+Definition at line 19 of file PBblas\&.h\&.
+.SS "#define CNOINIT   'N'"
+
+.PP
+Definition at line 36 of file PBblas\&.h\&.
+.SS "#define CNOTRAN   'N'"
+
+.PP
+Definition at line 18 of file PBblas\&.h\&.
+.SS "#define CNOUNIT   'N'"
+
+.PP
+Definition at line 33 of file PBblas\&.h\&.
+.SS "#define CONJG   'Z'"
+
+.PP
+Definition at line 47 of file PBblas\&.h\&.
+.SS "#define COTRAN   'C'"
+
+.PP
+Definition at line 48 of file PBblas\&.h\&.
+.SS "#define CREUSE   'R'"
+
+.PP
+Definition at line 41 of file PBblas\&.h\&.
+.SS "#define CRIGHT   'R'"
+
+.PP
+Definition at line 30 of file PBblas\&.h\&.
+.SS "#define cscal_   CSCAL"
+
+.PP
+Definition at line 243 of file PBblas\&.h\&.
+.SS "#define cscal_   cscal"
+
+.PP
+Definition at line 243 of file PBblas\&.h\&.
+.SS "#define csscal_   CSSCAL"
+
+.PP
+Definition at line 245 of file PBblas\&.h\&.
+.SS "#define csscal_   csscal"
+
+.PP
+Definition at line 245 of file PBblas\&.h\&.
+.SS "#define cswap_   CSWAP"
+
+.PP
+Definition at line 228 of file PBblas\&.h\&.
+.SS "#define cswap_   cswap"
+
+.PP
+Definition at line 228 of file PBblas\&.h\&.
+.SS "#define csymm_   CSYMM"
+
+.PP
+Definition at line 314 of file PBblas\&.h\&.
+.SS "#define csymm_   csymm"
+
+.PP
+Definition at line 314 of file PBblas\&.h\&.
+.SS "#define csyr2k_   CSYR2K"
+
+.PP
+Definition at line 338 of file PBblas\&.h\&.
+.SS "#define csyr2k_   csyr2k"
+
+.PP
+Definition at line 338 of file PBblas\&.h\&.
+.SS "#define csyrk_   CSYRK"
+
+.PP
+Definition at line 331 of file PBblas\&.h\&.
+.SS "#define csyrk_   csyrk"
+
+.PP
+Definition at line 331 of file PBblas\&.h\&.
+.SS "#define CTRAN   'T'"
+
+.PP
+Definition at line 20 of file PBblas\&.h\&.
+.SS "#define ctrmm_   CTRMM"
+
+.PP
+Definition at line 321 of file PBblas\&.h\&.
+.SS "#define ctrmm_   ctrmm"
+
+.PP
+Definition at line 321 of file PBblas\&.h\&.
+.SS "#define ctrmv_   CTRMV"
+
+.PP
+Definition at line 282 of file PBblas\&.h\&.
+.SS "#define ctrmv_   ctrmv"
+
+.PP
+Definition at line 282 of file PBblas\&.h\&.
+.SS "#define ctrsm_   CTRSM"
+
+.PP
+Definition at line 326 of file PBblas\&.h\&.
+.SS "#define ctrsm_   ctrsm"
+
+.PP
+Definition at line 326 of file PBblas\&.h\&.
+.SS "#define ctrsv_   CTRSV"
+
+.PP
+Definition at line 287 of file PBblas\&.h\&.
+.SS "#define ctrsv_   ctrsv"
+
+.PP
+Definition at line 287 of file PBblas\&.h\&.
+.SS "#define CUNIT   'U'"
+
+.PP
+Definition at line 32 of file PBblas\&.h\&.
+.SS "#define CUPPER   'U'"
+
+.PP
+Definition at line 26 of file PBblas\&.h\&.
+.SS "#define dasum_   DASUM"
+
+.PP
+Definition at line 249 of file PBblas\&.h\&.
+.SS "#define dasum_   dasum"
+
+.PP
+Definition at line 249 of file PBblas\&.h\&.
+.SS "#define daxpy_   DAXPY"
+
+.PP
+Definition at line 237 of file PBblas\&.h\&.
+.SS "#define daxpy_   daxpy"
+
+.PP
+Definition at line 237 of file PBblas\&.h\&.
+.SS "#define dcopy_   DCOPY"
+
+.PP
+Definition at line 232 of file PBblas\&.h\&.
+.SS "#define dcopy_   dcopy"
+
+.PP
+Definition at line 232 of file PBblas\&.h\&.
+.SS "#define ddot_   DDOT"
+
+.PP
+Definition at line 259 of file PBblas\&.h\&.
+.SS "#define ddot_   ddot"
+
+.PP
+Definition at line 259 of file PBblas\&.h\&.
+.SS "#define dgemm_   DGEMM"
+
+.PP
+Definition at line 308 of file PBblas\&.h\&.
+.SS "#define dgemm_   dgemm"
+
+.PP
+Definition at line 308 of file PBblas\&.h\&.
+.SS "#define dgemv_   DGEMV"
+
+.PP
+Definition at line 271 of file PBblas\&.h\&.
+.SS "#define dgemv_   dgemv"
+
+.PP
+Definition at line 271 of file PBblas\&.h\&.
+.SS "#define dger_   DGER"
+
+.PP
+Definition at line 291 of file PBblas\&.h\&.
+.SS "#define dger_   dger"
+
+.PP
+Definition at line 291 of file PBblas\&.h\&.
+.SS "#define DIAGONAL   'D'"
+
+.PP
+Definition at line 53 of file PBblas\&.h\&.
+.SS "#define dnrm2_   DNRM2"
+
+.PP
+Definition at line 254 of file PBblas\&.h\&.
+.SS "#define dnrm2_   dnrm2"
+
+.PP
+Definition at line 254 of file PBblas\&.h\&.
+.SS "#define drot_   DROT"
+
+.PP
+Definition at line 224 of file PBblas\&.h\&.
+.SS "#define drot_   drot"
+
+.PP
+Definition at line 224 of file PBblas\&.h\&.
+.SS "#define dscal_   DSCAL"
+
+.PP
+Definition at line 242 of file PBblas\&.h\&.
+.SS "#define dscal_   dscal"
+
+.PP
+Definition at line 242 of file PBblas\&.h\&.
+.SS "#define dswap_   DSWAP"
+
+.PP
+Definition at line 227 of file PBblas\&.h\&.
+.SS "#define dswap_   dswap"
+
+.PP
+Definition at line 227 of file PBblas\&.h\&.
+.SS "#define dsymm_   DSYMM"
+
+.PP
+Definition at line 313 of file PBblas\&.h\&.
+.SS "#define dsymm_   dsymm"
+
+.PP
+Definition at line 313 of file PBblas\&.h\&.
+.SS "#define dsymv_   DSYMV"
+
+.PP
+Definition at line 276 of file PBblas\&.h\&.
+.SS "#define dsymv_   dsymv"
+
+.PP
+Definition at line 276 of file PBblas\&.h\&.
+.SS "#define dsyr2_   DSYR2"
+
+.PP
+Definition at line 303 of file PBblas\&.h\&.
+.SS "#define dsyr2_   dsyr2"
+
+.PP
+Definition at line 303 of file PBblas\&.h\&.
+.SS "#define dsyr2k_   DSYR2K"
+
+.PP
+Definition at line 337 of file PBblas\&.h\&.
+.SS "#define dsyr2k_   dsyr2k"
+
+.PP
+Definition at line 337 of file PBblas\&.h\&.
+.SS "#define dsyr_   DSYR"
+
+.PP
+Definition at line 298 of file PBblas\&.h\&.
+.SS "#define dsyr_   dsyr"
+
+.PP
+Definition at line 298 of file PBblas\&.h\&.
+.SS "#define dsyrk_   DSYRK"
+
+.PP
+Definition at line 330 of file PBblas\&.h\&.
+.SS "#define dsyrk_   dsyrk"
+
+.PP
+Definition at line 330 of file PBblas\&.h\&.
+.SS "#define dtrmm_   DTRMM"
+
+.PP
+Definition at line 320 of file PBblas\&.h\&.
+.SS "#define dtrmm_   dtrmm"
+
+.PP
+Definition at line 320 of file PBblas\&.h\&.
+.SS "#define dtrmv_   DTRMV"
+
+.PP
+Definition at line 281 of file PBblas\&.h\&.
+.SS "#define dtrmv_   dtrmv"
+
+.PP
+Definition at line 281 of file PBblas\&.h\&.
+.SS "#define dtrsm_   DTRSM"
+
+.PP
+Definition at line 325 of file PBblas\&.h\&.
+.SS "#define dtrsm_   dtrsm"
+
+.PP
+Definition at line 325 of file PBblas\&.h\&.
+.SS "#define dtrsv_   DTRSV"
+
+.PP
+Definition at line 286 of file PBblas\&.h\&.
+.SS "#define dtrsv_   dtrsv"
+
+.PP
+Definition at line 286 of file PBblas\&.h\&.
+.SS "#define dzasum_   DZASUM"
+
+.PP
+Definition at line 251 of file PBblas\&.h\&.
+.SS "#define dzasum_   dzasum"
+
+.PP
+Definition at line 251 of file PBblas\&.h\&.
+.SS "#define dznrm2_   DZNRM2"
+
+.PP
+Definition at line 256 of file PBblas\&.h\&.
+.SS "#define dznrm2_   dznrm2"
+
+.PP
+Definition at line 256 of file PBblas\&.h\&.
+.SS "#define FORWARD   'F'"
+
+.PP
+Definition at line 64 of file PBblas\&.h\&.
+.SS "#define icamax_   ICAMAX"
+
+.PP
+Definition at line 267 of file PBblas\&.h\&.
+.SS "#define icamax_   icamax"
+
+.PP
+Definition at line 267 of file PBblas\&.h\&.
+.SS "#define idamax_   IDAMAX"
+
+.PP
+Definition at line 266 of file PBblas\&.h\&.
+.SS "#define idamax_   idamax"
+
+.PP
+Definition at line 266 of file PBblas\&.h\&.
+.SS "#define INIT   'I'"
+
+.PP
+Definition at line 61 of file PBblas\&.h\&.
+.SS "#define isamax_   ISAMAX"
+
+.PP
+Definition at line 265 of file PBblas\&.h\&.
+.SS "#define isamax_   isamax"
+
+.PP
+Definition at line 265 of file PBblas\&.h\&.
+.SS "#define izamax_   IZAMAX"
+
+.PP
+Definition at line 268 of file PBblas\&.h\&.
+.SS "#define izamax_   izamax"
+
+.PP
+Definition at line 268 of file PBblas\&.h\&.
+.SS "#define LEFT   'L'"
+
+.PP
+Definition at line 55 of file PBblas\&.h\&.
+.SS "#define LOWER   'L'"
+
+.PP
+Definition at line 51 of file PBblas\&.h\&.
+.SS "#define NOCONJG   'N'"
+
+.PP
+Definition at line 45 of file PBblas\&.h\&.
+.SS "#define NOINIT   'N'"
+
+.PP
+Definition at line 62 of file PBblas\&.h\&.
+.SS "#define NOTRAN   'N'"
+
+.PP
+Definition at line 44 of file PBblas\&.h\&.
+.SS "#define NOUNIT   'N'"
+
+.PP
+Definition at line 59 of file PBblas\&.h\&.
+.SS "#define REUSE   'R'"
+
+.PP
+Definition at line 67 of file PBblas\&.h\&.
+.SS "#define RIGHT   'R'"
+
+.PP
+Definition at line 56 of file PBblas\&.h\&.
+.SS "#define sasum_   SASUM"
+
+.PP
+Definition at line 248 of file PBblas\&.h\&.
+.SS "#define sasum_   sasum"
+
+.PP
+Definition at line 248 of file PBblas\&.h\&.
+.SS "#define saxpy_   SAXPY"
+
+.PP
+Definition at line 236 of file PBblas\&.h\&.
+.SS "#define saxpy_   saxpy"
+
+.PP
+Definition at line 236 of file PBblas\&.h\&.
+.SS "#define scasum_   SCASUM"
+
+.PP
+Definition at line 250 of file PBblas\&.h\&.
+.SS "#define scasum_   scasum"
+
+.PP
+Definition at line 250 of file PBblas\&.h\&.
+.SS "#define scnrm2_   SCNRM2"
+
+.PP
+Definition at line 255 of file PBblas\&.h\&.
+.SS "#define scnrm2_   scnrm2"
+
+.PP
+Definition at line 255 of file PBblas\&.h\&.
+.SS "#define scopy_   SCOPY"
+
+.PP
+Definition at line 231 of file PBblas\&.h\&.
+.SS "#define scopy_   scopy"
+
+.PP
+Definition at line 231 of file PBblas\&.h\&.
+.SS "#define sdot_   SDOT"
+
+.PP
+Definition at line 258 of file PBblas\&.h\&.
+.SS "#define sdot_   sdot"
+
+.PP
+Definition at line 258 of file PBblas\&.h\&.
+.SS "#define sgemm_   SGEMM"
+
+.PP
+Definition at line 307 of file PBblas\&.h\&.
+.SS "#define sgemm_   sgemm"
+
+.PP
+Definition at line 307 of file PBblas\&.h\&.
+.SS "#define sgemv_   SGEMV"
+
+.PP
+Definition at line 270 of file PBblas\&.h\&.
+.SS "#define sgemv_   sgemv"
+
+.PP
+Definition at line 270 of file PBblas\&.h\&.
+.SS "#define sger_   SGER"
+
+.PP
+Definition at line 290 of file PBblas\&.h\&.
+.SS "#define sger_   sger"
+
+.PP
+Definition at line 290 of file PBblas\&.h\&.
+.SS "#define snrm2_   SNRM2"
+
+.PP
+Definition at line 253 of file PBblas\&.h\&.
+.SS "#define snrm2_   snrm2"
+
+.PP
+Definition at line 253 of file PBblas\&.h\&.
+.SS "#define srot_   SROT"
+
+.PP
+Definition at line 223 of file PBblas\&.h\&.
+.SS "#define srot_   srot"
+
+.PP
+Definition at line 223 of file PBblas\&.h\&.
+.SS "#define sscal_   SSCAL"
+
+.PP
+Definition at line 241 of file PBblas\&.h\&.
+.SS "#define sscal_   sscal"
+
+.PP
+Definition at line 241 of file PBblas\&.h\&.
+.SS "#define sswap_   SSWAP"
+
+.PP
+Definition at line 226 of file PBblas\&.h\&.
+.SS "#define sswap_   sswap"
+
+.PP
+Definition at line 226 of file PBblas\&.h\&.
+.SS "#define ssymm_   SSYMM"
+
+.PP
+Definition at line 312 of file PBblas\&.h\&.
+.SS "#define ssymm_   ssymm"
+
+.PP
+Definition at line 312 of file PBblas\&.h\&.
+.SS "#define ssymv_   SSYMV"
+
+.PP
+Definition at line 275 of file PBblas\&.h\&.
+.SS "#define ssymv_   ssymv"
+
+.PP
+Definition at line 275 of file PBblas\&.h\&.
+.SS "#define ssyr2_   SSYR2"
+
+.PP
+Definition at line 302 of file PBblas\&.h\&.
+.SS "#define ssyr2_   ssyr2"
+
+.PP
+Definition at line 302 of file PBblas\&.h\&.
+.SS "#define ssyr2k_   SSYR2K"
+
+.PP
+Definition at line 336 of file PBblas\&.h\&.
+.SS "#define ssyr2k_   ssyr2k"
+
+.PP
+Definition at line 336 of file PBblas\&.h\&.
+.SS "#define ssyr_   SSYR"
+
+.PP
+Definition at line 297 of file PBblas\&.h\&.
+.SS "#define ssyr_   ssyr"
+
+.PP
+Definition at line 297 of file PBblas\&.h\&.
+.SS "#define ssyrk_   SSYRK"
+
+.PP
+Definition at line 329 of file PBblas\&.h\&.
+.SS "#define ssyrk_   ssyrk"
+
+.PP
+Definition at line 329 of file PBblas\&.h\&.
+.SS "#define strmm_   STRMM"
+
+.PP
+Definition at line 319 of file PBblas\&.h\&.
+.SS "#define strmm_   strmm"
+
+.PP
+Definition at line 319 of file PBblas\&.h\&.
+.SS "#define strmv_   STRMV"
+
+.PP
+Definition at line 280 of file PBblas\&.h\&.
+.SS "#define strmv_   strmv"
+
+.PP
+Definition at line 280 of file PBblas\&.h\&.
+.SS "#define strsm_   STRSM"
+
+.PP
+Definition at line 324 of file PBblas\&.h\&.
+.SS "#define strsm_   strsm"
+
+.PP
+Definition at line 324 of file PBblas\&.h\&.
+.SS "#define strsv_   STRSV"
+
+.PP
+Definition at line 285 of file PBblas\&.h\&.
+.SS "#define strsv_   strsv"
+
+.PP
+Definition at line 285 of file PBblas\&.h\&.
+.SS "#define TRAN   'T'"
+
+.PP
+Definition at line 46 of file PBblas\&.h\&.
+.SS "#define UNIT   'U'"
+
+.PP
+Definition at line 58 of file PBblas\&.h\&.
+.SS "#define UPPER   'U'"
+
+.PP
+Definition at line 52 of file PBblas\&.h\&.
+.SS "#define zaxpy_   ZAXPY"
+
+.PP
+Definition at line 239 of file PBblas\&.h\&.
+.SS "#define zaxpy_   zaxpy"
+
+.PP
+Definition at line 239 of file PBblas\&.h\&.
+.SS "#define zcopy_   ZCOPY"
+
+.PP
+Definition at line 234 of file PBblas\&.h\&.
+.SS "#define zcopy_   zcopy"
+
+.PP
+Definition at line 234 of file PBblas\&.h\&.
+.SS "#define zdotc_   ZDOTC"
+
+.PP
+Definition at line 263 of file PBblas\&.h\&.
+.SS "#define zdotc_   zdotc"
+
+.PP
+Definition at line 263 of file PBblas\&.h\&.
+.SS "#define zdotu_   ZDOTU"
+
+.PP
+Definition at line 261 of file PBblas\&.h\&.
+.SS "#define zdotu_   zdotu"
+
+.PP
+Definition at line 261 of file PBblas\&.h\&.
+.SS "#define zdscal_   ZDSCAL"
+
+.PP
+Definition at line 246 of file PBblas\&.h\&.
+.SS "#define zdscal_   zdscal"
+
+.PP
+Definition at line 246 of file PBblas\&.h\&.
+.SS "#define zgemm_   ZGEMM"
+
+.PP
+Definition at line 310 of file PBblas\&.h\&.
+.SS "#define zgemm_   zgemm"
+
+.PP
+Definition at line 310 of file PBblas\&.h\&.
+.SS "#define zgemv_   ZGEMV"
+
+.PP
+Definition at line 273 of file PBblas\&.h\&.
+.SS "#define zgemv_   zgemv"
+
+.PP
+Definition at line 273 of file PBblas\&.h\&.
+.SS "#define zgerc_   ZGERC"
+
+.PP
+Definition at line 295 of file PBblas\&.h\&.
+.SS "#define zgerc_   zgerc"
+
+.PP
+Definition at line 295 of file PBblas\&.h\&.
+.SS "#define zgeru_   ZGERU"
+
+.PP
+Definition at line 293 of file PBblas\&.h\&.
+.SS "#define zgeru_   zgeru"
+
+.PP
+Definition at line 293 of file PBblas\&.h\&.
+.SS "#define zhemm_   ZHEMM"
+
+.PP
+Definition at line 317 of file PBblas\&.h\&.
+.SS "#define zhemm_   zhemm"
+
+.PP
+Definition at line 317 of file PBblas\&.h\&.
+.SS "#define zhemv_   ZHEMV"
+
+.PP
+Definition at line 278 of file PBblas\&.h\&.
+.SS "#define zhemv_   zhemv"
+
+.PP
+Definition at line 278 of file PBblas\&.h\&.
+.SS "#define zher2_   ZHER2"
+
+.PP
+Definition at line 305 of file PBblas\&.h\&.
+.SS "#define zher2_   zher2"
+
+.PP
+Definition at line 305 of file PBblas\&.h\&.
+.SS "#define zher2k_   ZHER2K"
+
+.PP
+Definition at line 341 of file PBblas\&.h\&.
+.SS "#define zher2k_   zher2k"
+
+.PP
+Definition at line 341 of file PBblas\&.h\&.
+.SS "#define zher_   ZHER"
+
+.PP
+Definition at line 300 of file PBblas\&.h\&.
+.SS "#define zher_   zher"
+
+.PP
+Definition at line 300 of file PBblas\&.h\&.
+.SS "#define zherk_   ZHERK"
+
+.PP
+Definition at line 334 of file PBblas\&.h\&.
+.SS "#define zherk_   zherk"
+
+.PP
+Definition at line 334 of file PBblas\&.h\&.
+.SS "#define zscal_   ZSCAL"
+
+.PP
+Definition at line 244 of file PBblas\&.h\&.
+.SS "#define zscal_   zscal"
+
+.PP
+Definition at line 244 of file PBblas\&.h\&.
+.SS "#define zswap_   ZSWAP"
+
+.PP
+Definition at line 229 of file PBblas\&.h\&.
+.SS "#define zswap_   zswap"
+
+.PP
+Definition at line 229 of file PBblas\&.h\&.
+.SS "#define zsymm_   ZSYMM"
+
+.PP
+Definition at line 316 of file PBblas\&.h\&.
+.SS "#define zsymm_   zsymm"
+
+.PP
+Definition at line 316 of file PBblas\&.h\&.
+.SS "#define zsyr2k_   ZSYR2K"
+
+.PP
+Definition at line 340 of file PBblas\&.h\&.
+.SS "#define zsyr2k_   zsyr2k"
+
+.PP
+Definition at line 340 of file PBblas\&.h\&.
+.SS "#define zsyrk_   ZSYRK"
+
+.PP
+Definition at line 333 of file PBblas\&.h\&.
+.SS "#define zsyrk_   zsyrk"
+
+.PP
+Definition at line 333 of file PBblas\&.h\&.
+.SS "#define ztrmm_   ZTRMM"
+
+.PP
+Definition at line 322 of file PBblas\&.h\&.
+.SS "#define ztrmm_   ztrmm"
+
+.PP
+Definition at line 322 of file PBblas\&.h\&.
+.SS "#define ztrmv_   ZTRMV"
+
+.PP
+Definition at line 283 of file PBblas\&.h\&.
+.SS "#define ztrmv_   ztrmv"
+
+.PP
+Definition at line 283 of file PBblas\&.h\&.
+.SS "#define ztrsm_   ZTRSM"
+
+.PP
+Definition at line 327 of file PBblas\&.h\&.
+.SS "#define ztrsm_   ztrsm"
+
+.PP
+Definition at line 327 of file PBblas\&.h\&.
+.SS "#define ztrsv_   ZTRSV"
+
+.PP
+Definition at line 288 of file PBblas\&.h\&.
+.SS "#define ztrsv_   ztrsv"
+
+.PP
+Definition at line 288 of file PBblas\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBF_VOID_FCT\fP caxpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP ccopy_ ()"
+
+.SS "\fBF_VOID_FCT\fP cgemm_ ()"
+
+.SS "\fBF_VOID_FCT\fP cgemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP cgerc_ ()"
+
+.SS "\fBF_VOID_FCT\fP cgeru_ ()"
+
+.SS "\fBF_VOID_FCT\fP chemm_ ()"
+
+.SS "\fBF_VOID_FCT\fP chemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP cher2_ ()"
+
+.SS "\fBF_VOID_FCT\fP cher2k_ ()"
+
+.SS "\fBF_VOID_FCT\fP cher_ ()"
+
+.SS "\fBF_VOID_FCT\fP cherk_ ()"
+
+.SS "\fBF_VOID_FCT\fP cscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP csscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP cswap_ ()"
+
+.SS "\fBF_VOID_FCT\fP csymm_ ()"
+
+.SS "\fBF_VOID_FCT\fP csyr2k_ ()"
+
+.SS "\fBF_VOID_FCT\fP csyrk_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctrmm_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctrmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctrsm_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctrsv_ ()"
+
+.SS "\fBF_VOID_FCT\fP daxpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP dcopy_ ()"
+
+.SS "\fBF_VOID_FCT\fP dgemm_ ()"
+
+.SS "\fBF_VOID_FCT\fP dgemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP dger_ ()"
+
+.SS "\fBF_VOID_FCT\fP dscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP dswap_ ()"
+
+.SS "\fBF_VOID_FCT\fP dsymm_ ()"
+
+.SS "\fBF_VOID_FCT\fP dsymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP dsyr2_ ()"
+
+.SS "\fBF_VOID_FCT\fP dsyr2k_ ()"
+
+.SS "\fBF_VOID_FCT\fP dsyr_ ()"
+
+.SS "\fBF_VOID_FCT\fP dsyrk_ ()"
+
+.SS "\fBF_VOID_FCT\fP dtrmm_ ()"
+
+.SS "\fBF_VOID_FCT\fP dtrmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP dtrsm_ ()"
+
+.SS "\fBF_VOID_FCT\fP dtrsv_ ()"
+
+.SS "int icamax_ ()"
+
+.SS "int idamax_ ()"
+
+.SS "int isamax_ ()"
+
+.SS "int izamax_ ()"
+
+.SS "\fBF_VOID_FCT\fP saxpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP scopy_ ()"
+
+.SS "\fBF_VOID_FCT\fP sgemm_ ()"
+
+.SS "\fBF_VOID_FCT\fP sgemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP sger_ ()"
+
+.SS "\fBF_VOID_FCT\fP sscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP sswap_ ()"
+
+.SS "\fBF_VOID_FCT\fP ssymm_ ()"
+
+.SS "\fBF_VOID_FCT\fP ssymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP ssyr2_ ()"
+
+.SS "\fBF_VOID_FCT\fP ssyr2k_ ()"
+
+.SS "\fBF_VOID_FCT\fP ssyr_ ()"
+
+.SS "\fBF_VOID_FCT\fP ssyrk_ ()"
+
+.SS "\fBF_VOID_FCT\fP strmm_ ()"
+
+.SS "\fBF_VOID_FCT\fP strmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP strsm_ ()"
+
+.SS "\fBF_VOID_FCT\fP strsv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zaxpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP zcopy_ ()"
+
+.SS "\fBF_VOID_FCT\fP zdscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP zgemm_ ()"
+
+.SS "\fBF_VOID_FCT\fP zgemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zgerc_ ()"
+
+.SS "\fBF_VOID_FCT\fP zgeru_ ()"
+
+.SS "\fBF_VOID_FCT\fP zhemm_ ()"
+
+.SS "\fBF_VOID_FCT\fP zhemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zher2_ ()"
+
+.SS "\fBF_VOID_FCT\fP zher2k_ ()"
+
+.SS "\fBF_VOID_FCT\fP zher_ ()"
+
+.SS "\fBF_VOID_FCT\fP zherk_ ()"
+
+.SS "\fBF_VOID_FCT\fP zscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP zswap_ ()"
+
+.SS "\fBF_VOID_FCT\fP zsymm_ ()"
+
+.SS "\fBF_VOID_FCT\fP zsyr2k_ ()"
+
+.SS "\fBF_VOID_FCT\fP zsyrk_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztrmm_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztrmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztrsm_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztrsv_ ()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

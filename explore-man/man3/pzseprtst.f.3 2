@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pzseprtst.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pzseprtst.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzseprtst\fP (DESCA, UPLO, N, MATTYPE, SUBTESTS, THRESH, ORDER, ABSTOL, ISEED, A, COPYA, Z, LDA, WIN, WNEW, IFAIL, ICLUSTR, GAP, IPREPAD, IPOSTPAD, WORK, LWORK, RWORK, LRWORK, IWORK, LIWORK, HETERO, NOUT, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzseprtst (integer, dimension( * ) DESCA, character UPLO, integer N, integer MATTYPE, character SUBTESTS, double precision THRESH, integer ORDER, double precision ABSTOL, integer, dimension( 4 ) ISEED, \fBcomplex\fP*16, dimension( lda, * ) A, \fBcomplex\fP*16, dimension( lda, * ) COPYA, \fBcomplex\fP*16, dimension( lda, * ) Z, integer LDA, double precision, dimension( * ) WIN, double precision, dimension( * ) WNEW, integer, dimension( * ) IFAIL, integer, dimension( * ) ICLUSTR, double precision, dimension( * ) GAP, integer IPREPAD, integer IPOSTPAD, \fBcomplex\fP*16, dimension( * ) WORK, integer LWORK, double precision, dimension( * ) RWORK, integer LRWORK, integer, dimension( * ) IWORK, integer LIWORK, character HETERO, integer NOUT, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

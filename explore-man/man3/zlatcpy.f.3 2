@@ -1,0 +1,22 @@
+.TH "TOOLS/zlatcpy.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/zlatcpy.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBzlatcpy\fP (UPLO, M, N, A, LDA, B, LDB)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine zlatcpy (character UPLO, integer M, integer N, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA, \fBcomplex\fP*16, dimension( ldb, * ) B, integer LDB)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

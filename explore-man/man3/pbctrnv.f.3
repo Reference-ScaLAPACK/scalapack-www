@@ -1,0 +1,38 @@
+.TH "PBLAS/SRC/PBBLAS/pbctrnv.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBBLAS/pbctrnv.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpbctrnv\fP (ICONTXT, XDIST, TRANS, N, NB, NZ, X, INCX, BETA, Y, INCY, IXROW, IXCOL, IYROW, IYCOL, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpbctr2a1\fP (ICONTXT, N, NB, NZ, X, INCX, BETA, Y, INCY, INTV)"
+.br
+.ti -1c
+.RI "subroutine \fBpbctr2b1\fP (ICONTXT, TRANS, N, NB, NZ, X, INCX, BETA, Y, INCY, JINX, JINY)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pbctr2a1 (integer ICONTXT, integer N, integer NB, integer NZ, \fBcomplex\fP, dimension( * ) X, integer INCX, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) Y, integer INCY, integer INTV)"
+
+.PP
+Definition at line 649 of file pbctrnv\&.f\&.
+.SS "subroutine pbctr2b1 (integer ICONTXT, character*1 TRANS, integer N, integer NB, integer NZ, \fBcomplex\fP, dimension( * ) X, integer INCX, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) Y, integer INCY, integer JINX, integer JINY)"
+
+.PP
+Definition at line 721 of file pbctrnv\&.f\&.
+.SS "subroutine pbctrnv (integer ICONTXT, character*1 XDIST, character*1 TRANS, integer N, integer NB, integer NZ, \fBcomplex\fP, dimension( * ) X, integer INCX, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) Y, integer INCY, integer IXROW, integer IXCOL, integer IYROW, integer IYCOL, \fBcomplex\fP, dimension( * ) WORK)"
+
+.PP
+Definition at line 4 of file pbctrnv\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

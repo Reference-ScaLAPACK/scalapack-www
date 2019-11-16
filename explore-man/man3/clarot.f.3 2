@@ -1,0 +1,22 @@
+.TH "TOOLS/LAPACK/clarot.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/LAPACK/clarot.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBclarot\fP (LROWS, LLEFT, LRIGHT, NL, C, S, A, LDA, XLEFT, XRIGHT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine clarot (logical LROWS, logical LLEFT, logical LRIGHT, integer NL, \fBcomplex\fP C, \fBcomplex\fP S, \fBcomplex\fP, dimension( * ) A, integer LDA, \fBcomplex\fP XLEFT, \fBcomplex\fP XRIGHT)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

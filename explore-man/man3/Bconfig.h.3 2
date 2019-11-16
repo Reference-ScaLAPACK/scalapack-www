@@ -1,0 +1,78 @@
+.TH "BLACS/SRC/Bconfig.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/Bconfig.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include <mpi\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADD_\fP   0"
+.br
+.ti -1c
+.RI "#define \fBNOCHANGE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBUPCASE\fP   2"
+.br
+.ti -1c
+.RI "#define \fBFCISF2C\fP   3"
+.br
+.ti -1c
+.RI "#define \fBC_CALL\fP   4"
+.br
+.ti -1c
+.RI "#define \fBFORTRAN_CALL_C\fP   \fBADD_\fP"
+.br
+.ti -1c
+.RI "#define \fBINTFACE\fP   \fBFORTRAN_CALL_C\fP"
+.br
+.ti -1c
+.RI "#define \fBMpiBuffGood\fP"
+.br
+.ti -1c
+.RI "#define \fBBlacsDebugLvl\fP   0"
+.br
+.ti -1c
+.RI "#define \fBBlacsTimingLvl\fP   0"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADD_   0"
+
+.SS "#define BlacsDebugLvl   0"
+
+.SS "#define BlacsTimingLvl   0"
+
+.SS "#define C_CALL   4"
+
+.SS "#define FCISF2C   3"
+
+.SS "#define FORTRAN_CALL_C   \fBADD_\fP"
+
+.SS "#define INTFACE   \fBFORTRAN_CALL_C\fP"
+
+.SS "#define MpiBuffGood"
+
+.SS "#define NOCHANGE   1"
+
+.SS "#define UPCASE   2"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

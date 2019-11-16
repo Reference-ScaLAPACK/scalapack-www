@@ -1,0 +1,22 @@
+.TH "SRC/pcgbsv.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pcgbsv.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpcgbsv\fP (N, BWL, BWU, NRHS, A, JA, DESCA, IPIV, B, IB, DESCB, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pcgbsv (integer N, integer BWL, integer BWU, integer NRHS, \fBcomplex\fP, dimension( * ) A, integer JA, integer, dimension( * ) DESCA, integer, dimension( * ) IPIV, \fBcomplex\fP, dimension( * ) B, integer IB, integer, dimension( * ) DESCB, \fBcomplex\fP, dimension( * ) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

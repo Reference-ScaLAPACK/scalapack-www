@@ -1,0 +1,22 @@
+.TH "TESTING/LIN/pdlaschk.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/LIN/pdlaschk.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdlaschk\fP (\fBSYMM\fP, DIAG, N, NRHS, X, IX, JX, DESCX, IASEED, IA, JA, DESCA, IBSEED, ANORM, RESID, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlaschk (character SYMM, character DIAG, integer N, integer NRHS, double precision, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer IASEED, integer IA, integer JA, integer, dimension( * ) DESCA, integer IBSEED, double precision ANORM, double precision RESID, double precision, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

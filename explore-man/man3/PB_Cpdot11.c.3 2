@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/PTOOLS/PB_Cpdot11.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTOOLS/PB_Cpdot11.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./pblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBpblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBtools\&.h'\fP
+.br
+\fC#include '\&.\&./PBblacs\&.h'\fP
+.br
+\fC#include '\&.\&./PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPB_Cpdot11\fP (\fBPBTYP_T\fP *\fBTYPE\fP, int N, char *DOT, char *X, int IX, int JX, int *DESCX, int INCX, char *Y, int IY, int JY, int *DESCY, int INCY, \fBVVDOT_T\fP FDOT)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void PB_Cpdot11 (\fBPBTYP_T\fP        * TYPE, int N, char           * DOT, char           * X, int IX, int JX, int            * DESCX, int INCX, char * Y, int IY, int JY, int * DESCY, int INCY, \fBVVDOT_T\fP FDOT)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

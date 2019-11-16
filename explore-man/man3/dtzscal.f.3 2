@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PTZBLAS/dtzscal.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTZBLAS/dtzscal.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdtzscal\fP (UPLO, M, N, IOFFD, ALPHA, A, LDA)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dtzscal (character*1 UPLO, integer M, integer N, integer IOFFD, double precision ALPHA, double precision, dimension( lda, * ) A, integer LDA)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

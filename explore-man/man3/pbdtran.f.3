@@ -1,0 +1,45 @@
+.TH "PBLAS/SRC/PBBLAS/pbdtran.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBBLAS/pbdtran.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpbdtran\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, C, LDC, IAROW, IACOL, ICROW, ICCOL, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpbdtr2at\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, B, LDB, LCMP, LCMQ)"
+.br
+.ti -1c
+.RI "subroutine \fBpbdtr2bt\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, B, LDB, INTV)"
+.br
+.ti -1c
+.RI "subroutine \fBpbdtr2af\fP (ICONTXT, ADIST, M, N, NB, A, LDA, BETA, B, LDB, LCMP, LCMQ, NINT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pbdtr2af (integer ICONTXT, character*1 ADIST, integer M, integer N, integer NB, double precision, dimension( lda, * ) A, integer LDA, double precision BETA, double precision, dimension( ldb, * ) B, integer LDB, integer LCMP, integer LCMQ, integer NINT)"
+
+.PP
+Definition at line 793 of file pbdtran\&.f\&.
+.SS "subroutine pbdtr2at (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, double precision, dimension( lda, * ) A, integer LDA, double precision BETA, double precision, dimension( ldb, * ) B, integer LDB, integer LCMP, integer LCMQ)"
+
+.PP
+Definition at line 615 of file pbdtran\&.f\&.
+.SS "subroutine pbdtr2bt (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, double precision, dimension( lda, * ) A, integer LDA, double precision BETA, double precision, dimension( ldb, * ) B, integer LDB, integer INTV)"
+
+.PP
+Definition at line 706 of file pbdtran\&.f\&.
+.SS "subroutine pbdtran (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, double precision, dimension( lda, * ) A, integer LDA, double precision BETA, double precision, dimension( ldc, * ) C, integer LDC, integer IAROW, integer IACOL, integer ICROW, integer ICCOL, double precision, dimension( * ) WORK)"
+
+.PP
+Definition at line 3 of file pbdtran\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pdsvdchk.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pdsvdchk.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdsvdchk\fP (M, N, A, IA, JA, DESCA, U, IU, JU, DESCU, VT, IVT, JVT, DESCVT, S, THRESH, WORK, LWORK, RESULT, CHK, MTM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdsvdchk (integer M, integer N, double precision, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) U, integer IU, integer JU, integer, dimension( * ) DESCU, double precision, dimension( * ) VT, integer IVT, integer JVT, integer, dimension( * ) DESCVT, double precision, dimension( * ) S, double precision THRESH, double precision, dimension( * ) WORK, integer LWORK, integer, dimension( * ) RESULT, double precision CHK, double precision MTM)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

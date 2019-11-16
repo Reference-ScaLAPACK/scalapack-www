@@ -1,0 +1,22 @@
+.TH "SRC/pchetrd.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pchetrd.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpchetrd\fP (UPLO, N, A, IA, JA, DESCA, D, E, TAU, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pchetrd (character UPLO, integer N, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) D, real, dimension( * ) E, \fBcomplex\fP, dimension( * ) TAU, \fBcomplex\fP, dimension( * ) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

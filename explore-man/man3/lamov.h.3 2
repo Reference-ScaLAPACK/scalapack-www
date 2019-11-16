@@ -1,0 +1,37 @@
+.TH "SRC/lamov.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/lamov.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'pblas\&.h'\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBxerbla_\fP (const char *, const \fBF_INTG_FCT\fP *, size_t)"
+.br
+.ti -1c
+.RI "void \fBLACPY\fP (const char *UPLO, const \fBF_INTG_FCT\fP *M, const \fBF_INTG_FCT\fP *N, const \fBTYPE\fP *A, const \fBF_INTG_FCT\fP *LDA, \fBTYPE\fP *B, const \fBF_INTG_FCT\fP *LDB)"
+.br
+.ti -1c
+.RI "void \fBLAMOV\fP (const char *UPLO, const \fBF_INTG_FCT\fP *M, const \fBF_INTG_FCT\fP *N, const \fBTYPE\fP *A, const \fBF_INTG_FCT\fP *LDA, \fBTYPE\fP *B, const \fBF_INTG_FCT\fP *LDB)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void LACPY (const char * UPLO, const \fBF_INTG_FCT\fP * M, const \fBF_INTG_FCT\fP * N, const \fBTYPE\fP * A, const \fBF_INTG_FCT\fP * LDA, \fBTYPE\fP * B, const \fBF_INTG_FCT\fP * LDB)"
+
+.SS "void LAMOV (const char * UPLO, const \fBF_INTG_FCT\fP * M, const \fBF_INTG_FCT\fP * N, const \fBTYPE\fP * A, const \fBF_INTG_FCT\fP * LDA, \fBTYPE\fP * B, const \fBF_INTG_FCT\fP * LDB)"
+
+.SS "void xerbla_ (const char *, const \fBF_INTG_FCT\fP *, size_t)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

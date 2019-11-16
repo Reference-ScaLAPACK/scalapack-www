@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pzgsepchk.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pzgsepchk.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzgsepchk\fP (IBTYPE, MS, NV, A, IA, JA, DESCA, B, IB, JB, DESCB, THRESH, Q, IQ, JQ, DESCQ, C, IC, JC, DESCC, W, WORK, LWORK, TSTNRM, RESULT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzgsepchk (integer IBTYPE, integer MS, integer NV, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, double precision THRESH, \fBcomplex\fP*16, dimension( * ) Q, integer IQ, integer JQ, integer, dimension( * ) DESCQ, \fBcomplex\fP*16, dimension( * ) C, integer IC, integer JC, integer, dimension( * ) DESCC, double precision, dimension( * ) W, double precision, dimension( * ) WORK, integer LWORK, double precision TSTNRM, integer RESULT)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

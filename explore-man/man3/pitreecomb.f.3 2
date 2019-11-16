@@ -1,0 +1,22 @@
+.TH "TOOLS/pitreecomb.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/pitreecomb.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpitreecomb\fP (ICTXT, SCOPE, N, MINE, RDEST0, CDEST0, SUBPTR)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pitreecomb (integer ICTXT, character SCOPE, integer N, integer, dimension( * ) MINE, integer RDEST0, integer CDEST0, external SUBPTR)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pzget22.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pzget22.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzget22\fP (TRANSA, TRANSE, TRANSW, N, A, DESCA, E, DESCE, W, WORK, DESCW, RWORK, RESULT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzget22 (character TRANSA, character TRANSE, character TRANSW, integer N, \fBcomplex\fP*16, dimension( * ) A, integer, dimension( * ) DESCA, \fBcomplex\fP*16, dimension( * ) E, integer, dimension( * ) DESCE, \fBcomplex\fP*16, dimension( * ) W, \fBcomplex\fP*16, dimension( * ) WORK, integer, dimension( * ) DESCW, double precision, dimension( * ) RWORK, double precision, dimension( 2 ) RESULT)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

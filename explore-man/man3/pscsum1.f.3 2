@@ -1,0 +1,22 @@
+.TH "SRC/pscsum1.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pscsum1.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpscsum1\fP (N, ASUM, X, IX, JX, DESCX, INCX)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pscsum1 (integer N, real ASUM, \fBcomplex\fP, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

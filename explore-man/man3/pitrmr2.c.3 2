@@ -1,0 +1,346 @@
+.TH "REDIST/SRC/pitrmr2.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+REDIST/SRC/pitrmr2.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'redist\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBMDESC\fP"
+.br
+.ti -1c
+.RI "struct \fBIDESC\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBstatic2\fP   static"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2d\fP   pitrmr2do"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2dnew\fP   pitrmr2d"
+.br
+.ti -1c
+.RI "#define \fBicopy_\fP   \fBicopy\fP"
+.br
+.ti -1c
+.RI "#define \fBilacpy_\fP   \fBilacpy\fP"
+.br
+.ti -1c
+.RI "#define \fBClacpy\fP   Citrlacpy"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_2D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSHIFT\fP(row,  sprow,  nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+.br
+.ti -1c
+.RI "#define \fBmax\fP(A,  B)   ((A)>(B)?(A):(B))"
+.br
+.ti -1c
+.RI "#define \fBmin\fP(A,  B)   ((A)>(B)?(B):(A))"
+.br
+.ti -1c
+.RI "#define \fBDIVUP\fP(a,  b)   ( ((a)\-1) /(b)+1)"
+.br
+.ti -1c
+.RI "#define \fBROUNDUP\fP(a,  b)   (\fBDIVUP\fP(a,b)*(b))"
+.br
+.ti -1c
+.RI "#define \fBscanD0\fP   itrscanD0"
+.br
+.ti -1c
+.RI "#define \fBdispmat\fP   itrdispmat"
+.br
+.ti -1c
+.RI "#define \fBsetmemory\fP   itrsetmemory"
+.br
+.ti -1c
+.RI "#define \fBfreememory\fP   itrfreememory"
+.br
+.ti -1c
+.RI "#define \fBscan_intervals\fP   itrscan_intervals"
+.br
+.ti -1c
+.RI "#define \fBSENDBUFF\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRECVBUFF\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSIZEBUFF\fP   2"
+.br
+.ti -1c
+.RI "#define \fBNDEBUG\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClacpy\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pcoord\fP ()"
+.br
+.ti -1c
+.RI "int \fBCblacs_pnum\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsetpvmtids\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_get\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_exit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridexit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_setup\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBilacpy_\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalindice\fP ()"
+.br
+.ti -1c
+.RI "void * \fBmr2d_malloc\fP ()"
+.br
+.ti -1c
+.RI "int \fBppcm\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalsize\fP ()"
+.br
+.ti -1c
+.RI "int \fBmemoryblocksize\fP ()"
+.br
+.ti -1c
+.RI "int \fBchangeorigin\fP ()"
+.br
+.ti -1c
+.RI "void \fBparamcheck\fP ()"
+.br
+.ti -1c
+.RI "void \fBscanD0\fP ()"
+.br
+.ti -1c
+.RI "void \fBdispmat\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetmemory\fP ()"
+.br
+.ti -1c
+.RI "void \fBfreememory\fP ()"
+.br
+.ti -1c
+.RI "int \fBscan_intervals\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpitrmr2do\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpitrmr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetmemory\fP (int **adpointer, int blocksize)"
+.br
+.ti -1c
+.RI "void \fBfreememory\fP (int *ptrtobefreed)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP int \fBinsidemat\fP (char *uplo, char *diag, int i, int j, int m, int n, int *offset)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP void \fBintersect\fP (char *uplo, char *diag, int j, int start, int end, int action, int *ptrsizebuff, int **pptrbuff, int *ptrblock, int m, int n, \fBMDESC\fP *ma, int ia, int ja, int templateheight0, int templatewidth0, \fBMDESC\fP *mb, int ib, int jb, int templateheight1, int templatewidth1)"
+.br
+.ti -1c
+.RI "int \fBscan_intervals\fP (char type, int ja, int jb, int n, \fBMDESC\fP *ma, \fBMDESC\fP *mb, int q0, int q1, int col0, int col1, \fBIDESC\fP *result)"
+.br
+.ti -1c
+.RI "void \fBscanD0\fP (char *uplo, char *diag, int action, ptrbuff, int *ptrsizebuff, int m, int n, \fBMDESC\fP *ma, int ia, int ja, int p0, int q0, \fBMDESC\fP *mb, int ib, int jb, int p1, int q1, \fBIDESC\fP *v_inter, int vinter_nb, \fBIDESC\fP *h_inter, int hinter_nb, int *ptrbuff *ptrblock)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BLOCK_CYCLIC_2D   1"
+
+.SS "#define Clacpy   Citrlacpy"
+
+.SS "#define dispmat   itrdispmat"
+
+.SS "#define DIVUP(a, b)   ( ((a)\-1) /(b)+1)"
+
+.SS "#define fortran_mr2d   pitrmr2do"
+
+.SS "#define fortran_mr2dnew   pitrmr2d"
+
+.SS "#define freememory   itrfreememory"
+
+.SS "#define icopy_   \fBicopy\fP"
+
+.SS "#define ilacpy_   \fBilacpy\fP"
+
+.SS "#define max(A, B)   ((A)>(B)?(A):(B))"
+
+.SS "#define min(A, B)   ((A)>(B)?(B):(A))"
+
+.SS "#define NDEBUG"
+
+.SS "#define RECVBUFF   1"
+
+.SS "#define ROUNDUP(a, b)   (\fBDIVUP\fP(a,b)*(b))"
+
+.SS "#define scan_intervals   itrscan_intervals"
+
+.SS "#define scanD0   itrscanD0"
+
+.SS "#define SENDBUFF   0"
+
+.SS "#define setmemory   itrsetmemory"
+
+.SS "#define SHIFT(row, sprow, nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+
+.SS "#define SIZEBUFF   2"
+
+.SS "#define static2   static"
+
+.SH "Function Documentation"
+.PP 
+.SS "void Cblacs_exit ()"
+
+.SS "void Cblacs_get ()"
+
+.SS "void Cblacs_gridexit ()"
+
+.SS "void Cblacs_gridinfo ()"
+
+.SS "void Cblacs_gridinit ()"
+
+.SS "void Cblacs_pcoord ()"
+
+.SS "void Cblacs_pinfo ()"
+
+.SS "int Cblacs_pnum ()"
+
+.SS "void Cblacs_setup ()"
+
+.SS "int changeorigin ()"
+
+.SS "void Cigamn2d ()"
+
+.SS "void Cigamx2d ()"
+
+.SS "void Cigebr2d ()"
+
+.SS "void Cigebs2d ()"
+
+.SS "void Cigerv2d ()"
+
+.SS "void Cigesd2d ()"
+
+.SS "void Cigsum2d ()"
+
+.SS "void Clacpy ()"
+
+.SS "void Cpitrmr2d ()"
+
+.SS "void Cpitrmr2do ()"
+
+.SS "void Csetpvmtids ()"
+
+.SS "void dispmat ()"
+
+.SS "void freememory ()"
+
+.SS "void freememory (int  * ptrtobefreed)"
+
+.SS "void ilacpy_ ()"
+
+.SS "\fBstatic2\fP int insidemat (char * uplo, char * diag, int i, int j, int m, int n, int  * offset)"
+
+.SS "\fBstatic2\fP void intersect (char * uplo, char * diag, int j, int start, int end, int action, int * ptrsizebuff, int ** pptrbuff, int * ptrblock, int m, int n, \fBMDESC\fP * ma, int ia, int ja, int templateheight0, int templatewidth0, \fBMDESC\fP * mb, int ib, int jb, int templateheight1, int templatewidth1)"
+
+.SS "int localindice ()"
+
+.SS "int localsize ()"
+
+.SS "int memoryblocksize ()"
+
+.SS "void* mr2d_malloc ()"
+
+.SS "void paramcheck ()"
+
+.SS "int ppcm ()"
+
+.SS "int scan_intervals ()"
+
+.SS "int scan_intervals (char type, int ja, int jb, int n, \fBMDESC\fP * ma, \fBMDESC\fP * mb, int q0, int q1, int col0, int col1, \fBIDESC\fP * result)"
+
+.SS "void scanD0 ()"
+
+.SS "void scanD0 (char * uplo, char * diag, int action, ptrbuff, int	       * ptrsizebuff, int m, int n, \fBMDESC\fP * ma, int ia, int ja, int p0, int q0, \fBMDESC\fP * mb, int ib, int jb, int p1, int q1, \fBIDESC\fP * v_inter, int vinter_nb, \fBIDESC\fP * h_inter, int hinter_nb, int  *ptrbuff * ptrblock)"
+
+.SS "void setmemory ()"
+
+.SS "void setmemory (int ** adpointer, int blocksize)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

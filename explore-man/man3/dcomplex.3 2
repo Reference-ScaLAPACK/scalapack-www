@@ -1,0 +1,30 @@
+.TH "DCOMPLEX" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DCOMPLEX
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Bdef\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "double \fBr\fP"
+.br
+.ti -1c
+.RI "double \fBi\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "double DCOMPLEX::i"
+
+.SS "double DCOMPLEX::r"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

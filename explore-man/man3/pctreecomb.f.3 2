@@ -1,0 +1,27 @@
+.TH "TOOLS/pctreecomb.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/pctreecomb.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpctreecomb\fP (ICTXT, SCOPE, N, MINE, RDEST0, CDEST0, SUBPTR)"
+.br
+.ti -1c
+.RI "subroutine \fBccombamax\fP (V1, V2)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine ccombamax (\fBcomplex\fP, dimension( 2 ) V1, \fBcomplex\fP, dimension( 2 ) V2)"
+
+.SS "subroutine pctreecomb (integer ICTXT, character SCOPE, integer N, \fBcomplex\fP, dimension( * ) MINE, integer RDEST0, integer CDEST0, external SUBPTR)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,45 @@
+.TH "PBLAS/SRC/PBBLAS/pbctran.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBBLAS/pbctran.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpbctran\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, C, LDC, IAROW, IACOL, ICROW, ICCOL, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpbctr2at\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, B, LDB, LCMP, LCMQ)"
+.br
+.ti -1c
+.RI "subroutine \fBpbctr2bt\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, B, LDB, INTV)"
+.br
+.ti -1c
+.RI "subroutine \fBpbctr2af\fP (ICONTXT, ADIST, M, N, NB, A, LDA, BETA, B, LDB, LCMP, LCMQ, NINT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pbctr2af (integer ICONTXT, character*1 ADIST, integer M, integer N, integer NB, \fBcomplex\fP, dimension( lda, * ) A, integer LDA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( ldb, * ) B, integer LDB, integer LCMP, integer LCMQ, integer NINT)"
+
+.PP
+Definition at line 793 of file pbctran\&.f\&.
+.SS "subroutine pbctr2at (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, \fBcomplex\fP, dimension( lda, * ) A, integer LDA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( ldb, * ) B, integer LDB, integer LCMP, integer LCMQ)"
+
+.PP
+Definition at line 615 of file pbctran\&.f\&.
+.SS "subroutine pbctr2bt (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, \fBcomplex\fP, dimension( lda, * ) A, integer LDA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( ldb, * ) B, integer LDB, integer INTV)"
+
+.PP
+Definition at line 706 of file pbctran\&.f\&.
+.SS "subroutine pbctran (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, \fBcomplex\fP, dimension( lda, * ) A, integer LDA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( ldc, * ) C, integer LDC, integer IAROW, integer IACOL, integer ICROW, integer ICCOL, \fBcomplex\fP, dimension( * ) WORK)"
+
+.PP
+Definition at line 3 of file pbctran\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

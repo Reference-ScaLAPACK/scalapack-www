@@ -1,0 +1,22 @@
+.TH "SRC/dlarrf2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/dlarrf2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdlarrf2\fP (N, D, L, LD, CLSTRT, CLEND, CLMID1, CLMID2, W, WGAP, WERR, TRYMID, SPDIAM, CLGAPL, CLGAPR, PIVMIN, SIGMA, DPLUS, LPLUS, WORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dlarrf2 (integer N, double precision, dimension( * ) D, double precision, dimension( * ) L, double precision, dimension( * ) LD, integer CLSTRT, integer CLEND, integer CLMID1, integer CLMID2, double precision, dimension( * ) W, double precision, dimension( * ) WGAP, double precision, dimension( * ) WERR, logical TRYMID, double precision SPDIAM, double precision CLGAPL, double precision CLGAPR, double precision PIVMIN, double precision SIGMA, double precision, dimension( * ) DPLUS, double precision, dimension( * ) LPLUS, double precision, dimension( * ) WORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

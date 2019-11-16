@@ -1,0 +1,262 @@
+.TH "PBLAS/TIMING/pblastim.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TIMING/pblastim.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpvdimchk\fP (ICTXT, NOUT, N, MATRIX, IX, JX, DESCX, INCX, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpmdimchk\fP (ICTXT, NOUT, M, N, MATRIX, IA, JA, DESCA, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpvdescchk\fP (ICTXT, NOUT, MATRIX, DESCX, DTX, MX, NX, IMBX, INBX, MBX, NBX, RSRCX, CSRCX, INCX, MPX, NQX, IPREX, IMIDX, IPOSTX, IGAP, GAPMUL, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpmdescchk\fP (ICTXT, NOUT, MATRIX, DESCA, DTA, MA, NA, IMBA, INBA, MBA, NBA, RSRCA, CSRCA, MPA, NQA, IPREA, IMIDA, IPOSTA, IGAP, GAPMUL, INFO)"
+.br
+.ti -1c
+.RI "double precision function \fBpdopbl2\fP (SUBNAM, M, N, KKL, KKU)"
+.br
+.ti -1c
+.RI "double precision function \fBpdopbl3\fP (SUBNAM, M, N, K)"
+.br
+.ti -1c
+.RI "subroutine \fBpxerbla\fP (ICTXT, SRNAME, INFO)"
+.br
+.ti -1c
+.RI "logical function \fBlsame\fP (CA, CB)"
+.br
+.ti -1c
+.RI "logical function \fBlsamen\fP (N, CA, CB)"
+.br
+.ti -1c
+.RI "subroutine \fBicopy\fP (N, SX, INCX, SY, INCY)"
+.br
+.ti -1c
+.RI "integer function \fBpb_noabort\fP (CINFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_infog2l\fP (I, J, DESC, NPROW, NPCOL, MYROW, MYCOL, II, JJ, PROW, PCOL)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_ainfog2l\fP (M, N, I, J, DESC, NPROW, NPCOL, MYROW, MYCOL, IMB1, INB1, MP, NQ, II, JJ, PROW, PCOL, RPROW, RPCOL)"
+.br
+.ti -1c
+.RI "integer function \fBpb_numroc\fP (N, I, INB, NB, PROC, SRCPROC, NPROCS)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_boot\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBpb_timer\fP (I)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_enable\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBpb_disable\fP ()"
+.br
+.ti -1c
+.RI "double precision function \fBpb_inquire\fP (TMTYPE, I)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_combine\fP (ICTXT, SCOPE, OP, TMTYPE, N, IBEG, TIMES)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_chkmat\fP (ICTXT, M, MPOS0, N, NPOS0, IA, JA, DESCA, DPOS0, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_desctrans\fP (DESCIN, DESCOUT)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_descset2\fP (DESC, M, N, IMB, INB, MB, NB, RSRC, CSRC, CTXT, LLD)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_descinit2\fP (DESC, M, N, IMB, INB, MB, NB, RSRC, CSRC, CTXT, LLD, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_binfo\fP (OFFD, M, N, IMB1, INB1, MB, NB, MRROW, MRCOL, LCMT00, MBLKS, NBLKS, IMBLOC, INBLOC, LMBLOC, LNBLOC, ILOW, LOW, IUPP, UPP)"
+.br
+.ti -1c
+.RI "integer function \fBpilaenv\fP (ICTXT, PREC)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_locinfo\fP (I, INB, NB, MYROC, SRCPROC, NPROCS, ILOCBLK, ILOCOFF, MYDIST)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_initjmp\fP (COLMAJ, NVIR, IMBVIR, INBVIR, IMBLOC, INBLOC, MB, NB, RSRC, CSRC, NPROW, NPCOL, STRIDE, JMP)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_initmuladd\fP (MULADD0, JMP, IMULADD)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_setlocran\fP (SEED, ILOCBLK, JLOCBLK, ILOCOFF, JLOCOFF, MYRDIST, MYCDIST, NPROW, NPCOL, JMP, IMULADD, IRAN)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_ladd\fP (J, K, I)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_lmul\fP (K, J, I)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_jump\fP (K, MULADD, IRANN, IRANM, IMA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_setran\fP (IRAN, IAC)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_jumpit\fP (MULADD, IRANN, IRANM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine icopy (integer N, integer, dimension( * ) SX, integer INCX, integer, dimension( * ) SY, integer INCY)"
+
+.PP
+Definition at line 1756 of file pblastim\&.f\&.
+.SS "logical function lsame (character CA, character CB)"
+
+.PP
+Definition at line 1601 of file pblastim\&.f\&.
+.SS "logical function lsamen (integer N, character*( * ) CA, character*( * ) CB)"
+
+.PP
+Definition at line 1688 of file pblastim\&.f\&.
+.SS "subroutine pb_ainfog2l (integer M, integer N, integer I, integer J, integer, dimension( * ) DESC, integer NPROW, integer NPCOL, integer MYROW, integer MYCOL, integer IMB1, integer INB1, integer MP, integer NQ, integer II, integer JJ, integer PROW, integer PCOL, integer RPROW, integer RPCOL)"
+
+.PP
+Definition at line 2254 of file pblastim\&.f\&.
+.SS "subroutine pb_binfo (integer OFFD, integer M, integer N, integer IMB1, integer INB1, integer MB, integer NB, integer MRROW, integer MRCOL, integer LCMT00, integer MBLKS, integer NBLKS, integer IMBLOC, integer INBLOC, integer LMBLOC, integer LNBLOC, integer ILOW, integer LOW, integer IUPP, integer UPP)"
+
+.PP
+Definition at line 4172 of file pblastim\&.f\&.
+.SS "subroutine pb_boot ()"
+
+.PP
+Definition at line 2927 of file pblastim\&.f\&.
+.SS "subroutine pb_chkmat (integer ICTXT, integer M, integer MPOS0, integer N, integer NPOS0, integer IA, integer JA, integer, dimension( * ) DESCA, integer DPOS0, integer INFO)"
+
+.PP
+Definition at line 3337 of file pblastim\&.f\&.
+.SS "subroutine pb_combine (integer ICTXT, character*1 SCOPE, character*1 OP, character*1 TMTYPE, integer N, integer IBEG, double precision, dimension( n ) TIMES)"
+
+.PP
+Definition at line 3211 of file pblastim\&.f\&.
+.SS "subroutine pb_descinit2 (integer, dimension( * ) DESC, integer M, integer N, integer IMB, integer INB, integer MB, integer NB, integer RSRC, integer CSRC, integer CTXT, integer LLD, integer INFO)"
+
+.PP
+Definition at line 3932 of file pblastim\&.f\&.
+.SS "subroutine pb_descset2 (integer, dimension( * ) DESC, integer M, integer N, integer IMB, integer INB, integer MB, integer NB, integer RSRC, integer CSRC, integer CTXT, integer LLD)"
+
+.PP
+Definition at line 3767 of file pblastim\&.f\&.
+.SS "subroutine pb_desctrans (integer, dimension( * ) DESCIN, integer, dimension( * ) DESCOUT)"
+
+.PP
+Definition at line 3559 of file pblastim\&.f\&.
+.SS "subroutine pb_disable ()"
+
+.PP
+Definition at line 3092 of file pblastim\&.f\&.
+.SS "subroutine pb_enable ()"
+
+.PP
+Definition at line 3054 of file pblastim\&.f\&.
+.SS "subroutine pb_infog2l (integer I, integer J, integer, dimension( * ) DESC, integer NPROW, integer NPCOL, integer MYROW, integer MYCOL, integer II, integer JJ, integer PROW, integer PCOL)"
+
+.PP
+Definition at line 1904 of file pblastim\&.f\&.
+.SS "subroutine pb_initjmp (logical COLMAJ, integer NVIR, integer IMBVIR, integer INBVIR, integer IMBLOC, integer INBLOC, integer MB, integer NB, integer RSRC, integer CSRC, integer NPROW, integer NPCOL, integer STRIDE, integer, dimension( * ) JMP)"
+
+.PP
+Definition at line 4640 of file pblastim\&.f\&.
+.SS "subroutine pb_initmuladd (integer, dimension( * ) MULADD0, integer, dimension( * ) JMP, integer, dimension( 4, * ) IMULADD)"
+
+.PP
+Definition at line 4791 of file pblastim\&.f\&.
+.SS "double precision function pb_inquire (character*1 TMTYPE, integer I)"
+
+.PP
+Definition at line 3129 of file pblastim\&.f\&.
+.SS "subroutine pb_jump (integer K, integer, dimension( 4 ) MULADD, integer, dimension( 2 ) IRANN, integer, dimension( 2 ) IRANM, integer, dimension( 4 ) IMA)"
+
+.PP
+Definition at line 5243 of file pblastim\&.f\&.
+.SS "subroutine pb_jumpit (integer, dimension( 4 ) MULADD, integer, dimension( 2 ) IRANN, integer, dimension( 2 ) IRANM)"
+
+.PP
+Definition at line 5417 of file pblastim\&.f\&.
+.SS "subroutine pb_ladd (integer, dimension( 2 ) J, integer, dimension( 2 ) K, integer, dimension( 2 ) I)"
+
+.PP
+Definition at line 5075 of file pblastim\&.f\&.
+.SS "subroutine pb_lmul (integer, dimension( 2 ) K, integer, dimension( 2 ) J, integer, dimension( 2 ) I)"
+
+.PP
+Definition at line 5154 of file pblastim\&.f\&.
+.SS "subroutine pb_locinfo (integer I, integer INB, integer NB, integer MYROC, integer SRCPROC, integer NPROCS, integer ILOCBLK, integer ILOCOFF, integer MYDIST)"
+
+.PP
+Definition at line 4505 of file pblastim\&.f\&.
+.SS "integer function pb_noabort (integer CINFO)"
+
+.PP
+Definition at line 1853 of file pblastim\&.f\&.
+.SS "integer function pb_numroc (integer N, integer I, integer INB, integer NB, integer PROC, integer SRCPROC, integer NPROCS)"
+
+.PP
+Definition at line 2779 of file pblastim\&.f\&.
+.SS "subroutine pb_setlocran (integer SEED, integer ILOCBLK, integer JLOCBLK, integer ILOCOFF, integer JLOCOFF, integer MYRDIST, integer MYCDIST, integer NPROW, integer NPCOL, integer, dimension( * ) JMP, integer, dimension( 4, * ) IMULADD, integer, dimension( * ) IRAN)"
+
+.PP
+Definition at line 4897 of file pblastim\&.f\&.
+.SS "subroutine pb_setran (integer, dimension( 2 ) IRAN, integer, dimension( 4 ) IAC)"
+
+.PP
+Definition at line 5354 of file pblastim\&.f\&.
+.SS "subroutine pb_timer (integer I)"
+
+.PP
+Definition at line 2976 of file pblastim\&.f\&.
+.SS "double precision function pdopbl2 (character*7 SUBNAM, integer M, integer N, integer KKL, integer KKU)"
+
+.PP
+Definition at line 1084 of file pblastim\&.f\&.
+.SS "double precision function pdopbl3 (character*7 SUBNAM, integer M, integer N, integer K)"
+
+.PP
+Definition at line 1313 of file pblastim\&.f\&.
+.SS "integer function pilaenv (integer ICTXT, character*1 PREC)"
+
+.PP
+Definition at line 4453 of file pblastim\&.f\&.
+.SS "subroutine pmdescchk (integer ICTXT, integer NOUT, character*1 MATRIX, integer, dimension( * ) DESCA, integer DTA, integer MA, integer NA, integer IMBA, integer INBA, integer MBA, integer NBA, integer RSRCA, integer CSRCA, integer MPA, integer NQA, integer IPREA, integer IMIDA, integer IPOSTA, integer IGAP, integer GAPMUL, integer INFO)"
+
+.PP
+Definition at line 746 of file pblastim\&.f\&.
+.SS "subroutine pmdimchk (integer ICTXT, integer NOUT, integer M, integer N, character*1 MATRIX, integer IA, integer JA, integer, dimension( * ) DESCA, integer INFO)"
+
+.PP
+Definition at line 202 of file pblastim\&.f\&.
+.SS "subroutine pvdescchk (integer ICTXT, integer NOUT, character*1 MATRIX, integer, dimension( * ) DESCX, integer DTX, integer MX, integer NX, integer IMBX, integer INBX, integer MBX, integer NBX, integer RSRCX, integer CSRCX, integer INCX, integer MPX, integer NQX, integer IPREX, integer IMIDX, integer IPOSTX, integer IGAP, integer GAPMUL, integer INFO)"
+
+.PP
+Definition at line 388 of file pblastim\&.f\&.
+.SS "subroutine pvdimchk (integer ICTXT, integer NOUT, integer N, character*1 MATRIX, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, integer INFO)"
+
+.PP
+Definition at line 3 of file pblastim\&.f\&.
+.SS "subroutine pxerbla (integer ICTXT, character*(*) SRNAME, integer INFO)"
+
+.PP
+Definition at line 1538 of file pblastim\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

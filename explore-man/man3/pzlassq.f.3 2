@@ -1,0 +1,22 @@
+.TH "SRC/pzlassq.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pzlassq.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzlassq\fP (N, X, IX, JX, DESCX, INCX, SCALE, SUMSQ)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzlassq (integer N, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, double precision SCALE, double precision SUMSQ)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

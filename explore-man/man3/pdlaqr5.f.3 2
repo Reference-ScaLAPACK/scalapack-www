@@ -1,0 +1,22 @@
+.TH "SRC/pdlaqr5.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdlaqr5.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdlaqr5\fP (WANTT, WANTZ, KACC22, N, KTOP, KBOT, NSHFTS, SR, SI, H, DESCH, ILOZ, IHIZ, Z, DESCZ, WORK, LWORK, IWORK, LIWORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlaqr5 (logical WANTT, logical WANTZ, integer KACC22, integer N, integer KTOP, integer KBOT, integer NSHFTS, double precision, dimension( * ) SR, double precision, dimension( * ) SI, double precision, dimension( * ) H, integer, dimension( * ) DESCH, integer ILOZ, integer IHIZ, double precision, dimension( * ) Z, integer, dimension( * ) DESCZ, double precision, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

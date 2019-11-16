@@ -1,0 +1,22 @@
+.TH "SRC/pstrtrs.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pstrtrs.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpstrtrs\fP (UPLO, TRANS, DIAG, N, NRHS, A, IA, JA, DESCA, B, IB, JB, DESCB, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pstrtrs (character UPLO, character TRANS, character DIAG, integer N, integer NRHS, real, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

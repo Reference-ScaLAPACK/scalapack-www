@@ -1,0 +1,22 @@
+.TH "TESTING/LIN/pzqrt16.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/LIN/pzqrt16.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzqrt16\fP (TRANS, M, N, NRHS, A, IA, JA, DESCA, X, IX, JX, DESCX, B, IB, JB, DESCB, RWORK, RESID)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzqrt16 (character TRANS, integer M, integer N, integer NRHS, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, \fBcomplex\fP*16, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, double precision, dimension( * ) RWORK, double precision RESID)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

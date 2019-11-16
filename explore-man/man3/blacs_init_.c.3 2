@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/blacs_init_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/blacs_init_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBF_VOID_FUNC\fP \fBblacs_gridinit_\fP (int *ConTxt, \fBF_CHAR\fP order, int *nprow, int *npcol)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBF_VOID_FUNC\fP blacs_gridinit_ (int * ConTxt, \fBF_CHAR\fP order, int * nprow, int * npcol)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

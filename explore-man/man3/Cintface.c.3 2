@@ -1,0 +1,40 @@
+.TH "BLACS/INSTALL/Cintface.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/INSTALL/Cintface.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBc_intface_\fP (int *i)"
+.br
+.ti -1c
+.RI "void \fBc_intface\fP (int *i)"
+.br
+.ti -1c
+.RI "void \fBc_intface__\fP (int *i)"
+.br
+.ti -1c
+.RI "void \fBC_INTFACE\fP (int *i)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void c_intface (int * i)"
+
+.SS "void C_INTFACE (int * i)"
+
+.SS "void c_intface_ (int * i)"
+
+.SS "void c_intface__ (int * i)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

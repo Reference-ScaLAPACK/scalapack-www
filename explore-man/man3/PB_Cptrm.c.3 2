@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/PTOOLS/PB_Cptrm.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTOOLS/PB_Cptrm.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./pblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBpblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBtools\&.h'\fP
+.br
+\fC#include '\&.\&./PBblacs\&.h'\fP
+.br
+\fC#include '\&.\&./PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPB_Cptrm\fP (\fBPBTYP_T\fP *\fBTYPE\fP, \fBPBTYP_T\fP *UTYP, char *SIDE, char *UPLO, char *TRANS, char *DIAG, int N, int K, char *ALPHA, char *A, int IA, int JA, int *DESCA, char *X, int LDX, char *Y, int LDY, \fBTZTRM_T\fP TRM)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void PB_Cptrm (\fBPBTYP_T\fP        * TYPE, \fBPBTYP_T\fP * UTYP, char * SIDE, char * UPLO, char * TRANS, char           * DIAG, int N, int K, char           * ALPHA, char           * A, int IA, int JA, int            * DESCA, char * X, int LDX, char * Y, int LDY, \fBTZTRM_T\fP TRM)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

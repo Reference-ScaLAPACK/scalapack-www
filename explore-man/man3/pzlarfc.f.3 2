@@ -1,0 +1,22 @@
+.TH "SRC/pzlarfc.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pzlarfc.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzlarfc\fP (SIDE, M, N, V, IV, JV, DESCV, INCV, TAU, C, IC, JC, DESCC, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzlarfc (character SIDE, integer M, integer N, \fBcomplex\fP*16, dimension( * ) V, integer IV, integer JV, integer, dimension( * ) DESCV, integer INCV, \fBcomplex\fP*16, dimension( * ) TAU, \fBcomplex\fP*16, dimension( * ) C, integer IC, integer JC, integer, dimension( * ) DESCC, \fBcomplex\fP*16, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

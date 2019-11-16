@@ -1,0 +1,588 @@
+.TH "TESTING/EIG Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBpcbrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcbrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcevcdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcevcinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgebdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgehdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcget22\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgsepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgsepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgsepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgsepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchetdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclafchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclagsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclasizegsep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclasizeheevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclasizeheevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclasizesep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclasizesepr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclatms\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclatran\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcmatgen\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcnepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcnepfchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcnepinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcrptseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcsdpsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcsepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcsepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcsepqtq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcseprdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcsepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcseprreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcseprsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcseprtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcsepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcttrdtester\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdbrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdbrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgebdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgehdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgrptseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgsepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgsepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgsepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgsepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdhrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdhrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdhseqrdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlafchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlagge\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlagsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasizegsep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasizesep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasizesepr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasizesqp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasizesyev\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasizesyevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasizesyevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlatms\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlatran\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdmatgen\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdmatgen2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdnepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdnepfchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdnepinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdrptseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsdpsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsepinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsepqtq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdseprdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdseprreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdseprsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdseprtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsqpsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsvdchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsvdcmp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsvddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsvdtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsytdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdttrdtester\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpmatgeninc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsbrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsbrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgebdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgehdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgrptseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgsepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgsepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgsepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgsepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpshrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpshrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpshseqrdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslafchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslagge\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslagsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasizegsep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasizesep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasizesepr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasizesqp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasizesyev\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasizesyevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasizesyevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslatms\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslatran\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsmatgen\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsmatgen2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsnepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsnepfchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsnepinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsrptseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssdpsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssepinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssepqtq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsseprdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsseprreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsseprsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsseprtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssqpsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssvdchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssvdcmp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssvddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssvdtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssytdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsttrdtester\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzbrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzbrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzevcdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzevcinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgebdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgehdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzget22\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgsepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgsepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgsepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgsepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhetdrv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlafchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlagsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlasizegsep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlasizeheevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlasizeheevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlasizesep\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlasizesepr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlatms\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlatran\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzmatgen\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpznepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpznepfchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpznepinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzrptseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzsdpsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzsepchk\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzsepdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzsepqtq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzseprdriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzsepreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzseprreq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzseprsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzseprtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzsepsubtst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzseptst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrddriver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrdinfo\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzttrdtester\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBxpjlaenv\&.f\fP"
+.br
+.in -1c

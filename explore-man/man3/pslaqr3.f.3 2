@@ -1,0 +1,22 @@
+.TH "SRC/pslaqr3.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pslaqr3.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "recursive subroutine \fBpslaqr3\fP (WANTT, WANTZ, N, KTOP, KBOT, NW, H, DESCH, ILOZ, IHIZ, Z, DESCZ, NS, ND, SR, SI, V, DESCV, NH, T, DESCT, NV, WV, DESCW, WORK, LWORK, IWORK, LIWORK, RECLEVEL)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "recursive subroutine pslaqr3 (logical WANTT, logical WANTZ, integer N, integer KTOP, integer KBOT, integer NW, real, dimension( * ) H, integer, dimension( * ) DESCH, integer ILOZ, integer IHIZ, real, dimension( * ) Z, integer, dimension( * ) DESCZ, integer NS, integer ND, real, dimension( kbot ) SR, real, dimension( kbot ) SI, real, dimension( * ) V, integer, dimension( * ) DESCV, integer NH, real, dimension( * ) T, integer, dimension( * ) DESCT, integer NV, real, dimension( * ) WV, integer, dimension( * ) DESCW, real, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK, integer RECLEVEL)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

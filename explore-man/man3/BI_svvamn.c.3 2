@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/BI_svvamn.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/BI_svvamn.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBBI_svvamn\fP (int N, char *vec1, char *vec2)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void BI_svvamn (int N, char * vec1, char * vec2)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

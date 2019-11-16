@@ -1,0 +1,66 @@
+.TH "PBLAS/TIMING/psblastim.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TIMING/psblastim.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslascal\fP (\fBTYPE\fP, M, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpslagen\fP (INPLACE, AFORM, DIAG, OFFA, M, N, IA, JA, DESCA, IASEED, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpsladom\fP (INPLACE, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_slascal\fP (UPLO, M, N, IOFFD, ALPHA, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_slagen\fP (UPLO, AFORM, A, LDA, LCMT00, IRAN, MBLKS, IMBLOC, MB, LMBLOC, NBLKS, INBLOC, NB, LNBLOC, JMP, IMULADD)"
+.br
+.ti -1c
+.RI "real function \fBpb_srand\fP (IDUMM)"
+.br
+.ti -1c
+.RI "real function \fBpb_sran\fP (IDUMM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pb_slagen (character*1 UPLO, character*1 AFORM, real, dimension( lda, * ) A, integer LDA, integer LCMT00, integer, dimension( * ) IRAN, integer MBLKS, integer IMBLOC, integer MB, integer LMBLOC, integer NBLKS, integer INBLOC, integer NB, integer LNBLOC, integer, dimension( * ) JMP, integer, dimension( 4, * ) IMULADD)"
+
+.PP
+Definition at line 1480 of file psblastim\&.f\&.
+.SS "subroutine pb_slascal (character*1 UPLO, integer M, integer N, integer IOFFD, real ALPHA, real, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 1299 of file psblastim\&.f\&.
+.SS "real function pb_sran (integer IDUMM)"
+
+.PP
+Definition at line 2183 of file psblastim\&.f\&.
+.SS "real function pb_srand (integer IDUMM)"
+
+.PP
+Definition at line 2121 of file psblastim\&.f\&.
+.SS "subroutine psladom (logical INPLACE, integer N, real ALPHA, real, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 908 of file psblastim\&.f\&.
+.SS "subroutine pslagen (logical INPLACE, character*1 AFORM, character*1 DIAG, integer OFFA, integer M, integer N, integer IA, integer JA, integer, dimension( * ) DESCA, integer IASEED, real, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 510 of file psblastim\&.f\&.
+.SS "subroutine pslascal (character*1 TYPE, integer M, integer N, real ALPHA, real, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 2 of file psblastim\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

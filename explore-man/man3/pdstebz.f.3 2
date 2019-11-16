@@ -1,0 +1,37 @@
+.TH "SRC/pdstebz.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdstebz.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdstebz\fP (ICTXT, RANGE, ORDER, N, VL, VU, IL, IU, ABSTOL, D, E, M, NSPLIT, W, IBLOCK, ISPLIT, WORK, LWORK, IWORK, LIWORK, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpdlaebz\fP (IJOB, N, MMAX, MINP, ABSTOL, RELTOL, PIVMIN, D, NVAL, INTVL, INTVLCT, MOUT, LSAVE, IEFLAG, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpdlaecv\fP (IJOB, KF, KL, INTVL, INTVLCT, NVAL, ABSTOL, RELTOL)"
+.br
+.ti -1c
+.RI "subroutine \fBpdlapdct\fP (SIGMA, N, D, PIVMIN, COUNT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlaebz (integer IJOB, integer N, integer MMAX, integer MINP, double precision ABSTOL, double precision RELTOL, double precision PIVMIN, double precision, dimension( * ) D, integer, dimension( * ) NVAL, double precision, dimension( * ) INTVL, integer, dimension( * ) INTVLCT, integer MOUT, double precision LSAVE, integer IEFLAG, integer INFO)"
+
+.SS "subroutine pdlaecv (integer IJOB, integer KF, integer KL, double precision, dimension( * ) INTVL, integer, dimension( * ) INTVLCT, integer, dimension( * ) NVAL, double precision ABSTOL, double precision RELTOL)"
+
+.SS "subroutine pdlapdct (double precision SIGMA, integer N, double precision, dimension( * ) D, double precision PIVMIN, integer COUNT)"
+
+.SS "subroutine pdstebz (integer ICTXT, character RANGE, character ORDER, integer N, double precision VL, double precision VU, integer IL, integer IU, double precision ABSTOL, double precision, dimension( * ) D, double precision, dimension( * ) E, integer M, integer NSPLIT, double precision, dimension( * ) W, integer, dimension( * ) IBLOCK, integer, dimension( * ) ISPLIT, double precision, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

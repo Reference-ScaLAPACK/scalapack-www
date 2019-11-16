@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/psgemv_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/psgemv_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'pblas\&.h'\fP
+.br
+\fC#include 'PBpblas\&.h'\fP
+.br
+\fC#include 'PBtools\&.h'\fP
+.br
+\fC#include 'PBblacs\&.h'\fP
+.br
+\fC#include 'PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpsgemv_\fP (\fBF_CHAR_T\fP TRANS, int *M, int *N, float *ALPHA, float *A, int *IA, int *JA, int *DESCA, float *X, int *IX, int *JX, int *DESCX, int *INCX, float *BETA, float *Y, int *IY, int *JY, int *DESCY, int *INCY)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void psgemv_ (\fBF_CHAR_T\fP TRANS, int                  * M, int * N, float          * ALPHA, float          * A, int            * IA, int * JA, int            * DESCA, float * X, int * IX, int * JX, int * DESCX, int * INCX, float * BETA, float * Y, int * IY, int * JY, int * DESCY, int * INCY)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

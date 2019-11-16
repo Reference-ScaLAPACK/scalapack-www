@@ -1,0 +1,22 @@
+.TH "SRC/pdormr3.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdormr3.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdormr3\fP (SIDE, TRANS, M, N, K, L, A, IA, JA, DESCA, TAU, C, IC, JC, DESCC, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdormr3 (character SIDE, character TRANS, integer M, integer N, integer K, integer L, double precision, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) TAU, double precision, dimension( * ) C, integer IC, integer JC, integer, dimension( * ) DESCC, double precision, dimension( * ) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

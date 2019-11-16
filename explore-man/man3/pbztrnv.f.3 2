@@ -1,0 +1,32 @@
+.TH "PBLAS/SRC/PBBLAS/pbztrnv.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBBLAS/pbztrnv.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpbztrnv\fP (ICONTXT, XDIST, TRANS, N, NB, NZ, X, INCX, BETA, Y, INCY, IXROW, IXCOL, IYROW, IYCOL, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpbztr2a1\fP (ICONTXT, N, NB, NZ, X, INCX, BETA, Y, INCY, INTV)"
+.br
+.ti -1c
+.RI "subroutine \fBpbztr2b1\fP (ICONTXT, TRANS, N, NB, NZ, X, INCX, BETA, Y, INCY, JINX, JINY)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pbztr2a1 (integer ICONTXT, integer N, integer NB, integer NZ, \fBcomplex\fP*16, dimension( * ) X, integer INCX, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) Y, integer INCY, integer INTV)"
+
+.SS "subroutine pbztr2b1 (integer ICONTXT, character*1 TRANS, integer N, integer NB, integer NZ, \fBcomplex\fP*16, dimension( * ) X, integer INCX, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) Y, integer INCY, integer JINX, integer JINY)"
+
+.SS "subroutine pbztrnv (integer ICONTXT, character*1 XDIST, character*1 TRANS, integer N, integer NB, integer NZ, \fBcomplex\fP*16, dimension( * ) X, integer INCX, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) Y, integer INCY, integer IXROW, integer IXCOL, integer IYROW, integer IYCOL, \fBcomplex\fP*16, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

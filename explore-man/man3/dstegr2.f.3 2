@@ -1,0 +1,22 @@
+.TH "SRC/dstegr2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/dstegr2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdstegr2\fP (JOBZ, RANGE, N, D, E, VL, VU, IL, IU, M, W, Z, LDZ, NZC, ISUPPZ, WORK, LWORK, IWORK, LIWORK, DOL, DOU, ZOFFSET, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dstegr2 (character JOBZ, character RANGE, integer N, double precision, dimension( * ) D, double precision, dimension( * ) E, double precision VL, double precision VU, integer IL, integer IU, integer M, double precision, dimension( * ) W, double precision, dimension( ldz, * ) Z, integer LDZ, integer NZC, integer, dimension( * ) ISUPPZ, double precision, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK, integer DOL, integer DOU, integer ZOFFSET, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

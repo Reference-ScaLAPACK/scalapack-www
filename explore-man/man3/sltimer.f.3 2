@@ -1,0 +1,47 @@
+.TH "TOOLS/sltimer.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/sltimer.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBslboot\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBsltimer\fP (I)"
+.br
+.ti -1c
+.RI "subroutine \fBslenable\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBsldisable\fP ()"
+.br
+.ti -1c
+.RI "double precision function \fBslinquire\fP (TIMETYPE, I)"
+.br
+.ti -1c
+.RI "subroutine \fBslcombine\fP (ICTXT, SCOPE, OP, TIMETYPE, N, IBEG, TIMES)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine slboot ()"
+
+.SS "subroutine slcombine (integer ICTXT, character SCOPE, character OP, character TIMETYPE, integer N, integer IBEG, double precision, dimension( n ) TIMES)"
+
+.SS "subroutine sldisable ()"
+
+.SS "subroutine slenable ()"
+
+.SS "double precision function slinquire (character*1 TIMETYPE, integer I)"
+
+.SS "subroutine sltimer (integer I)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

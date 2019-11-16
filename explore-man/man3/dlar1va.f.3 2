@@ -1,0 +1,22 @@
+.TH "SRC/dlar1va.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/dlar1va.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdlar1va\fP (N, B1, BN, LAMBDA, D, L, LD, LLD, PIVMIN, GAPTOL, Z, WANTNC, NEGCNT, ZTZ, MINGMA, R, ISUPPZ, NRMINV, RESID, RQCORR, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dlar1va (integer N, integer B1, integer BN, double precision LAMBDA, double precision, dimension( * ) D, double precision, dimension( * ) L, double precision, dimension( * ) LD, double precision, dimension( * ) LLD, double precision PIVMIN, double precision GAPTOL, double precision, dimension( * ) Z, logical WANTNC, integer NEGCNT, double precision ZTZ, double precision MINGMA, integer R, integer, dimension( * ) ISUPPZ, double precision NRMINV, double precision RESID, double precision RQCORR, double precision, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

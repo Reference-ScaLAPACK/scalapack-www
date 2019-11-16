@@ -1,0 +1,22 @@
+.TH "SRC/pslaed3.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pslaed3.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslaed3\fP (ICTXT, K, N, NB, D, DROW, DCOL, RHO, DLAMDA, W, Z, U, LDU, BUF, INDX, INDCOL, INDROW, INDXR, INDXC, CTOT, NPCOL, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslaed3 (integer ICTXT, integer K, integer N, integer NB, real, dimension( * ) D, integer DROW, integer DCOL, real RHO, real, dimension( * ) DLAMDA, real, dimension( * ) W, real, dimension( * ) Z, real, dimension( ldu, * ) U, integer LDU, real, dimension( * ) BUF, integer, dimension( * ) INDX, integer, dimension( * ) INDCOL, integer, dimension( * ) INDROW, integer, dimension( * ) INDXR, integer, dimension( * ) INDXC, integer, dimension( 0: npcol\-1, 4 ) CTOT, integer NPCOL, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

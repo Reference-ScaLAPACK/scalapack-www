@@ -1,0 +1,565 @@
+.TH "REDIST/SRC/pigemr.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+REDIST/SRC/pigemr.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'redist\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBMDESC\fP"
+.br
+.ti -1c
+.RI "struct \fBIDESC\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBstatic2\fP   static"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2d\fP   pigemr2do"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2dnew\fP   pigemr2d"
+.br
+.ti -1c
+.RI "#define \fBicopy_\fP   \fBicopy\fP"
+.br
+.ti -1c
+.RI "#define \fBilacpy_\fP   \fBilacpy\fP"
+.br
+.ti -1c
+.RI "#define \fBClacpy\fP   Cigelacpy"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_2D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSHIFT\fP(row,  sprow,  nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+.br
+.ti -1c
+.RI "#define \fBmax\fP(A,  B)   ((A)>(B)?(A):(B))"
+.br
+.ti -1c
+.RI "#define \fBmin\fP(A,  B)   ((A)>(B)?(B):(A))"
+.br
+.ti -1c
+.RI "#define \fBDIVUP\fP(a,  b)   ( ((a)\-1) /(b)+1)"
+.br
+.ti -1c
+.RI "#define \fBROUNDUP\fP(a,  b)   (\fBDIVUP\fP(a,b)*(b))"
+.br
+.ti -1c
+.RI "#define \fBscanD0\fP   igescanD0"
+.br
+.ti -1c
+.RI "#define \fBdispmat\fP   igedispmat"
+.br
+.ti -1c
+.RI "#define \fBsetmemory\fP   igesetmemory"
+.br
+.ti -1c
+.RI "#define \fBfreememory\fP   igefreememory"
+.br
+.ti -1c
+.RI "#define \fBscan_intervals\fP   igescan_intervals"
+.br
+.ti -1c
+.RI "#define \fBSENDBUFF\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRECVBUFF\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSIZEBUFF\fP   2"
+.br
+.ti -1c
+.RI "#define \fBNDEBUG\fP"
+.br
+.ti -1c
+.RI "#define \fBDESCLEN\fP   9"
+.br
+.ti -1c
+.RI "#define \fBNBPARAM\fP"
+.br
+.ti -1c
+.RI "#define \fBMAGIC_MAX\fP   100000000"
+.br
+.ti -1c
+.RI "#define \fBMlacpy\fP(mo,  no,  ao,  ldao,  bo,  ldbo)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClacpy\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pcoord\fP ()"
+.br
+.ti -1c
+.RI "int \fBCblacs_pnum\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsetpvmtids\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_get\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_exit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridexit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_setup\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBilacpy_\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalindice\fP ()"
+.br
+.ti -1c
+.RI "void * \fBmr2d_malloc\fP ()"
+.br
+.ti -1c
+.RI "int \fBppcm\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalsize\fP ()"
+.br
+.ti -1c
+.RI "int \fBmemoryblocksize\fP ()"
+.br
+.ti -1c
+.RI "int \fBchangeorigin\fP ()"
+.br
+.ti -1c
+.RI "void \fBparamcheck\fP ()"
+.br
+.ti -1c
+.RI "void \fBscanD0\fP ()"
+.br
+.ti -1c
+.RI "void \fBdispmat\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetmemory\fP ()"
+.br
+.ti -1c
+.RI "void \fBfreememory\fP ()"
+.br
+.ti -1c
+.RI "int \fBscan_intervals\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpigemr2do\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpigemr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBfortran_mr2d\fP (int *m, int *n, int *A, int *ia, int *ja, desc_A, int *B, int *ib, int *jb, desc_B)"
+.br
+.ti -1c
+.RI "void \fBfortran_mr2dnew\fP (int *m, int *n, int *A, int *ia, int *ja, desc_A, int *B, int *ib, int *jb, desc_B, int *gcontext)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP void \fBinit_chenille\fP ()"
+.br
+.ti -1c
+.RI "\fBstatic2\fP int \fBinter_len\fP ()"
+.br
+.ti -1c
+.RI "\fBstatic2\fP int \fBblock2buff\fP ()"
+.br
+.ti -1c
+.RI "\fBstatic2\fP void \fBbuff2block\fP ()"
+.br
+.ti -1c
+.RI "\fBstatic2\fP void \fBgridreshape\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpigemr2do\fP (int m, int n, int *ptrmyblock, int ia, int ja, \fBMDESC\fP *ma, int *ptrmynewblock, int ib, int jb, \fBMDESC\fP *mb)"
+.br
+.ti -1c
+.RI "void \fBCpigemr2d\fP (int m, int n, int *ptrmyblock, int ia, int ja, \fBMDESC\fP *ma, int *ptrmynewblock, int ib, int jb, \fBMDESC\fP *mb, int globcontext)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP void \fBinit_chenille\fP (int mypnum, int nprocs, int n0, int *proc0, int n1, int *proc1, int **psend, int **precv, int *myrang)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP int \fBblock2buff\fP (\fBIDESC\fP *vi, int vinb, \fBIDESC\fP *hi, int hinb, int *ptra, \fBMDESC\fP *ma, int *buff)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP void \fBbuff2block\fP (\fBIDESC\fP *vi, int vinb, \fBIDESC\fP *hi, int hinb, int *buff, int *ptrb, \fBMDESC\fP *mb)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP int \fBinter_len\fP (int hinb, \fBIDESC\fP *hi, int vinb, \fBIDESC\fP *vi)"
+.br
+.ti -1c
+.RI "void \fBClacpy\fP (int m, int n, int *a, int lda, int *b, int ldb)"
+.br
+.ti -1c
+.RI "\fBstatic2\fP void \fBgridreshape\fP (int *ctxtp)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BLOCK_CYCLIC_2D   1"
+
+.PP
+Definition at line 171 of file pigemr\&.c\&.
+.SS "#define Clacpy   Cigelacpy"
+
+.PP
+Definition at line 158 of file pigemr\&.c\&.
+.SS "#define DESCLEN   9"
+
+.PP
+Definition at line 242 of file pigemr\&.c\&.
+.SS "#define dispmat   igedispmat"
+
+.PP
+Definition at line 218 of file pigemr\&.c\&.
+.SS "#define DIVUP(a, b)   ( ((a)\-1) /(b)+1)"
+
+.PP
+Definition at line 179 of file pigemr\&.c\&.
+.SS "#define fortran_mr2d   pigemr2do"
+
+.PP
+Definition at line 153 of file pigemr\&.c\&.
+.SS "#define fortran_mr2dnew   pigemr2d"
+
+.PP
+Definition at line 154 of file pigemr\&.c\&.
+.SS "#define freememory   igefreememory"
+
+.PP
+Definition at line 220 of file pigemr\&.c\&.
+.SS "#define icopy_   \fBicopy\fP"
+
+.PP
+Definition at line 155 of file pigemr\&.c\&.
+.SS "#define ilacpy_   \fBilacpy\fP"
+
+.PP
+Definition at line 156 of file pigemr\&.c\&.
+.SS "#define MAGIC_MAX   100000000"
+
+.PP
+Definition at line 294 of file pigemr\&.c\&.
+.SS "#define max(A, B)   ((A)>(B)?(A):(B))"
+
+.PP
+Definition at line 177 of file pigemr\&.c\&.
+.SS "#define min(A, B)   ((A)>(B)?(B):(A))"
+
+.PP
+Definition at line 178 of file pigemr\&.c\&.
+.SS "#define Mlacpy(mo, no, ao, ldao, bo, ldbo)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+int *_a,*_b; \
+int _m,_n,_lda,_ldb; \
+    int _i,_j; \
+    _m = (mo);_n = (no); \
+    _a = (ao);_b = (bo); \
+    _lda = (ldao) - _m; \
+    _ldb = (ldbo) - _m; \
+    assert(_lda >= 0 && _ldb >= 0); \
+    for (_j=0;_j<_n;_j++) { \
+      for (_i=0;_i<_m;_i++) \
+        *_b++ = *_a++; \
+      _b += _ldb; \
+      _a += _lda; \
+    } \
+}
+.fi
+.PP
+Definition at line 627 of file pigemr\&.c\&.
+.SS "#define NBPARAM"
+\fBValue:\fP
+.PP
+.nf
+20 /* p0,q0,p1,q1, puis ma,na,mba,nba,rowa,cola puis
+             * idem B puis ia,ja puis ib,jb */
+.fi
+.PP
+Definition at line 292 of file pigemr\&.c\&.
+.SS "#define NDEBUG"
+
+.PP
+Definition at line 237 of file pigemr\&.c\&.
+.SS "#define RECVBUFF   1"
+
+.PP
+Definition at line 231 of file pigemr\&.c\&.
+.SS "#define ROUNDUP(a, b)   (\fBDIVUP\fP(a,b)*(b))"
+
+.PP
+Definition at line 180 of file pigemr\&.c\&.
+.SS "#define scan_intervals   igescan_intervals"
+
+.PP
+Definition at line 221 of file pigemr\&.c\&.
+.SS "#define scanD0   igescanD0"
+
+.PP
+Definition at line 217 of file pigemr\&.c\&.
+.SS "#define SENDBUFF   0"
+
+.PP
+Definition at line 230 of file pigemr\&.c\&.
+.SS "#define setmemory   igesetmemory"
+
+.PP
+Definition at line 219 of file pigemr\&.c\&.
+.SS "#define SHIFT(row, sprow, nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+
+.PP
+Definition at line 176 of file pigemr\&.c\&.
+.SS "#define SIZEBUFF   2"
+
+.PP
+Definition at line 232 of file pigemr\&.c\&.
+.SS "#define static2   static"
+
+.SS "$Id: pigemr\&.c,v 1\&.1\&.1\&.1 2000/02/15 18:04:08 susan Exp $"
+-- ScaLAPACK routine (version 1\&.7) -- Oak Ridge National Laboratory, Univ\&. of Tennessee, and Univ\&. of California, Berkeley\&. October 31, 1994\&.
+.PP
+SUBROUTINE PIGEMR2D( M, N, $ A, IA, JA, ADESC, $ B, IB, JB, BDESC, 
+.SS "$                     CTXT)"
+.SH "Purpose"
+.PP
+PIGEMR2D copies a submatrix of A on a submatrix of B\&. A and B can have different distributions: they can be on different processor grids, they can have different blocksizes, the beginning of the area to be copied can be at a different places on A and B\&.
+.PP
+The parameters can be confusing when the grids of A and B are partially or completly disjoint, in the case a processor calls this routines but is either not in the A context or B context, the ADESC[CTXT] or BDESC[CTXT] must be equal to -1, to ensure the routine recognise this situation\&. To summarize the rule:
+.IP "\(bu" 2
+If a processor is in A context, all parameters related to A must be valid\&.
+.IP "\(bu" 2
+If a processor is in B context, all parameters related to B must be valid\&.
+.IP "\(bu" 2
+ADESC[CTXT] and BDESC[CTXT] must be either valid contexts or equal to -1\&.
+.IP "\(bu" 2
+M and N must be valid for everyone\&.
+.IP "\(bu" 2
+other parameters are not examined\&.
+.PP
+.SH "Notes"
+.PP
+A description vector is associated with each 2D block-cyclicly dis- tributed matrix\&. This vector stores the information required to establish the mapping between a matrix entry and its corresponding process and memory location\&.
+.PP
+In the following comments, the character _ should be read as 'of the distributed matrix'\&. Let A be a generic term for any 2D block cyclicly distributed matrix\&. Its description vector is DESC_A:
+.PP
+NOTATION STORED IN EXPLANATION
+.PP
+.PP
+ DT_A (global) DESCA( DT_ ) The descriptor type\&. CTXT_A (global) DESCA( CTXT_ ) The BLACS context handle, indicating the BLACS process grid A is distribu- ted over\&. The context itself is glo- bal, but the handle (the integer value) may vary\&. M_A (global) DESCA( M_ ) The number of rows in the distributed matrix A\&. N_A (global) DESCA( N_ ) The number of columns in the distri- buted matrix A\&. MB_A (global) DESCA( MB_ ) The blocking factor used to distribute the rows of A\&. NB_A (global) DESCA( NB_ ) The blocking factor used to distribute the columns of A\&. RSRC_A (global) DESCA( RSRC_ ) The process row over which the first row of the matrix A is distributed\&. CSRC_A (global) DESCA( CSRC_ ) The process column over which the first column of A is distributed\&. LLD_A (local) DESCA( LLD_ ) The leading dimension of the local array storing the local blocks of the distributed matrix A\&. LLD_A >= \fBMAX(1,LOCp(M_A))\fP\&.
+.SH "Important notice"
+.PP
+The parameters of the routine have changed in April 1996 There is a new last argument\&. It must be a context englobing all processors involved in the initial and final distribution\&.
+.PP
+Be aware that all processors included in this context must call the redistribution routine\&.
+.SH "Parameters"
+.PP
+M (input) INTEGER\&. On entry, M specifies the number of rows of the submatrix to be copied\&. M must be at least zero\&. Unchanged on exit\&.
+.PP
+N (input) INTEGER\&. On entry, N specifies the number of cols of the submatrix to be redistributed\&.rows of B\&. M must be at least zero\&. Unchanged on exit\&.
+.PP
+A (input) INTEGER On entry, the source matrix\&. Unchanged on exit\&.
+.PP
+IA,JA (input) INTEGER On entry,the coordinates of the beginning of the submatrix of A to copy\&. 1 <= IA <= M_A - M + 1,1 <= JA <= N_A - N + 1, Unchanged on exit\&.
+.PP
+ADESC (input) A description vector (see Notes above) If the current processor is not part of the context of A the ADESC[CTXT] must be equal to -1\&.
+.PP
+B (output) INTEGER On entry, the destination matrix\&. The portion corresponding to the defined submatrix are updated\&.
+.PP
+IB,JB (input) INTEGER On entry,the coordinates of the beginning of the submatrix of B that will be updated\&. 1 <= IB <= M_B - M + 1,1 <= JB <= N_B - N + 1, Unchanged on exit\&.
+.PP
+BDESC (input) B description vector (see Notes above) For processors not part of the context of B BDESC[CTXT] must be equal to -1\&.
+.PP
+CTXT (input) a context englobing at least all processors included in either A context or B context
+.SH "Memory requirement :"
+.PP
+for the processors belonging to grid 0, one buffer of size block 0 and for the processors belonging to grid 1, also one buffer of size block 1\&.
+.PP
+.PP
+ Created March 1993 by B\&. Tourancheau (See sccs for modifications)\&. 
+.SH "Modifications by Loic PRYLLI 1995"
+.PP
+
+.PP
+Definition at line 143 of file pigemr\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic2\fP int block2buff ()"
+
+.SS "\fBstatic2\fP int block2buff (\fBIDESC\fP * vi, int vinb, \fBIDESC\fP * hi, int hinb, int * ptra, \fBMDESC\fP * ma, int  * buff)"
+
+.PP
+Definition at line 645 of file pigemr\&.c\&.
+.SS "\fBstatic2\fP void buff2block ()"
+
+.SS "\fBstatic2\fP void buff2block (\fBIDESC\fP * vi, int vinb, \fBIDESC\fP * hi, int hinb, int  * buff, int * ptrb, \fBMDESC\fP * mb)"
+
+.PP
+Definition at line 667 of file pigemr\&.c\&.
+.SS "void Cblacs_exit ()"
+
+.SS "void Cblacs_get ()"
+
+.SS "void Cblacs_gridexit ()"
+
+.SS "void Cblacs_gridinfo ()"
+
+.SS "void Cblacs_gridinit ()"
+
+.SS "void Cblacs_pcoord ()"
+
+.SS "void Cblacs_pinfo ()"
+
+.SS "int Cblacs_pnum ()"
+
+.SS "void Cblacs_setup ()"
+
+.SS "int changeorigin ()"
+
+.SS "void Cigamn2d ()"
+
+.SS "void Cigamx2d ()"
+
+.SS "void Cigebr2d ()"
+
+.SS "void Cigebs2d ()"
+
+.SS "void Cigerv2d ()"
+
+.SS "void Cigesd2d ()"
+
+.SS "void Cigsum2d ()"
+
+.SS "void Clacpy ()"
+
+.SS "void Clacpy (int m, int n, int  * a, int lda, int * b, int ldb)"
+
+.PP
+Definition at line 702 of file pigemr\&.c\&.
+.SS "void Cpigemr2d ()"
+
+.SS "void Cpigemr2d (int m, int n, int  * ptrmyblock, int ia, int ja, \fBMDESC\fP * ma, int * ptrmynewblock, int ib, int jb, \fBMDESC\fP * mb, int globcontext)"
+
+.PP
+Definition at line 296 of file pigemr\&.c\&.
+.SS "void Cpigemr2do ()"
+
+.SS "void Cpigemr2do (int m, int n, int  * ptrmyblock, int ia, int ja, \fBMDESC\fP * ma, int * ptrmynewblock, int ib, int jb, \fBMDESC\fP * mb)"
+
+.PP
+Definition at line 272 of file pigemr\&.c\&.
+.SS "void Csetpvmtids ()"
+
+.SS "void dispmat ()"
+
+.SS "void fortran_mr2d (int * m, int * n, int  * A, int  * ia, int * ja, desc_A, int * B, int * ib, int * jb, desc_B)"
+
+.PP
+Definition at line 244 of file pigemr\&.c\&.
+.SS "void fortran_mr2dnew (int * m, int * n, int  * A, int  * ia, int * ja, desc_A, int * B, int * ib, int * jb, desc_B, int  * gcontext)"
+
+.PP
+Definition at line 255 of file pigemr\&.c\&.
+.SS "void freememory ()"
+
+.SS "\fBstatic2\fP void gridreshape ()"
+
+.SS "\fBstatic2\fP void gridreshape (int  * ctxtp)"
+
+.PP
+Definition at line 718 of file pigemr\&.c\&.
+.SS "void ilacpy_ ()"
+
+.SS "\fBstatic2\fP void init_chenille ()"
+
+.SS "\fBstatic2\fP void init_chenille (int mypnum, int nprocs, int n0, int  * proc0, int n1, int * proc1, int ** psend, int ** precv, int * myrang)"
+
+.PP
+Definition at line 572 of file pigemr\&.c\&.
+.SS "\fBstatic2\fP int inter_len ()"
+
+.SS "\fBstatic2\fP int inter_len (int hinb, \fBIDESC\fP * hi, int vinb, \fBIDESC\fP * vi)"
+
+.PP
+Definition at line 688 of file pigemr\&.c\&.
+.SS "int localindice ()"
+
+.SS "int localsize ()"
+
+.SS "int memoryblocksize ()"
+
+.SS "void* mr2d_malloc ()"
+
+.SS "void paramcheck ()"
+
+.SS "int ppcm ()"
+
+.SS "int scan_intervals ()"
+
+.SS "void scanD0 ()"
+
+.SS "void setmemory ()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

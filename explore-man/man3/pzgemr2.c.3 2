@@ -1,0 +1,344 @@
+.TH "REDIST/SRC/pzgemr2.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+REDIST/SRC/pzgemr2.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'redist\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdcomplex\fP"
+.br
+.ti -1c
+.RI "struct \fBMDESC\fP"
+.br
+.ti -1c
+.RI "struct \fBIDESC\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBstatic2\fP   static"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2d\fP   pzgemr2do"
+.br
+.ti -1c
+.RI "#define \fBfortran_mr2dnew\fP   pzgemr2d"
+.br
+.ti -1c
+.RI "#define \fBzcopy_\fP   zcopy"
+.br
+.ti -1c
+.RI "#define \fBzlacpy_\fP   zlacpy"
+.br
+.ti -1c
+.RI "#define \fBClacpy\fP   Czgelacpy"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_2D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSHIFT\fP(row,  sprow,  nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+.br
+.ti -1c
+.RI "#define \fBmax\fP(A,  B)   ((A)>(B)?(A):(B))"
+.br
+.ti -1c
+.RI "#define \fBmin\fP(A,  B)   ((A)>(B)?(B):(A))"
+.br
+.ti -1c
+.RI "#define \fBDIVUP\fP(a,  b)   ( ((a)\-1) /(b)+1)"
+.br
+.ti -1c
+.RI "#define \fBROUNDUP\fP(a,  b)   (\fBDIVUP\fP(a,b)*(b))"
+.br
+.ti -1c
+.RI "#define \fBscanD0\fP   zgescanD0"
+.br
+.ti -1c
+.RI "#define \fBdispmat\fP   zgedispmat"
+.br
+.ti -1c
+.RI "#define \fBsetmemory\fP   zgesetmemory"
+.br
+.ti -1c
+.RI "#define \fBfreememory\fP   zgefreememory"
+.br
+.ti -1c
+.RI "#define \fBscan_intervals\fP   zgescan_intervals"
+.br
+.ti -1c
+.RI "#define \fBSENDBUFF\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRECVBUFF\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSIZEBUFF\fP   2"
+.br
+.ti -1c
+.RI "#define \fBNDEBUG\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClacpy\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pcoord\fP ()"
+.br
+.ti -1c
+.RI "int \fBCblacs_pnum\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsetpvmtids\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_get\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_exit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridexit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_setup\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBzlacpy_\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalindice\fP ()"
+.br
+.ti -1c
+.RI "void * \fBmr2d_malloc\fP ()"
+.br
+.ti -1c
+.RI "int \fBppcm\fP ()"
+.br
+.ti -1c
+.RI "int \fBlocalsize\fP ()"
+.br
+.ti -1c
+.RI "int \fBmemoryblocksize\fP ()"
+.br
+.ti -1c
+.RI "int \fBchangeorigin\fP ()"
+.br
+.ti -1c
+.RI "void \fBparamcheck\fP ()"
+.br
+.ti -1c
+.RI "void \fBscanD0\fP ()"
+.br
+.ti -1c
+.RI "void \fBdispmat\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetmemory\fP ()"
+.br
+.ti -1c
+.RI "void \fBfreememory\fP ()"
+.br
+.ti -1c
+.RI "int \fBscan_intervals\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpzgemr2do\fP ()"
+.br
+.ti -1c
+.RI "void \fBCpzgemr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetmemory\fP (\fBdcomplex\fP **adpointer, int blocksize)"
+.br
+.ti -1c
+.RI "void \fBfreememory\fP (\fBdcomplex\fP *ptrtobefreed)"
+.br
+.ti -1c
+.RI "int \fBscan_intervals\fP (char type, int ja, int jb, int n, \fBMDESC\fP *ma, \fBMDESC\fP *mb, int q0, int q1, int col0, int col1, \fBIDESC\fP *result)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BLOCK_CYCLIC_2D   1"
+
+.SS "#define Clacpy   Czgelacpy"
+
+.SS "#define dispmat   zgedispmat"
+
+.SS "#define DIVUP(a, b)   ( ((a)\-1) /(b)+1)"
+
+.SS "#define fortran_mr2d   pzgemr2do"
+
+.SS "#define fortran_mr2dnew   pzgemr2d"
+
+.SS "#define freememory   zgefreememory"
+
+.SS "#define max(A, B)   ((A)>(B)?(A):(B))"
+
+.SS "#define min(A, B)   ((A)>(B)?(B):(A))"
+
+.SS "#define NDEBUG"
+
+.SS "#define RECVBUFF   1"
+
+.SS "#define ROUNDUP(a, b)   (\fBDIVUP\fP(a,b)*(b))"
+
+.SS "#define scan_intervals   zgescan_intervals"
+
+.SS "#define scanD0   zgescanD0"
+
+.SS "#define SENDBUFF   0"
+
+.SS "#define setmemory   zgesetmemory"
+
+.SS "#define SHIFT(row, sprow, nbrow)   ((row)\-(sprow)+ ((row) >= (sprow) ? 0 : (nbrow)))"
+
+.SS "#define SIZEBUFF   2"
+
+.SS "#define static2   static"
+
+.SS "#define zcopy_   zcopy"
+
+.SS "#define zlacpy_   zlacpy"
+
+.SH "Function Documentation"
+.PP 
+.SS "void Cblacs_exit ()"
+
+.SS "void Cblacs_get ()"
+
+.SS "void Cblacs_gridexit ()"
+
+.SS "void Cblacs_gridinfo ()"
+
+.SS "void Cblacs_gridinit ()"
+
+.SS "void Cblacs_pcoord ()"
+
+.SS "void Cblacs_pinfo ()"
+
+.SS "int Cblacs_pnum ()"
+
+.SS "void Cblacs_setup ()"
+
+.SS "int changeorigin ()"
+
+.SS "void Cigamn2d ()"
+
+.SS "void Cigamx2d ()"
+
+.SS "void Cigebr2d ()"
+
+.SS "void Cigebs2d ()"
+
+.SS "void Cigerv2d ()"
+
+.SS "void Cigesd2d ()"
+
+.SS "void Cigsum2d ()"
+
+.SS "void Clacpy ()"
+
+.SS "void Cpzgemr2d ()"
+
+.SS "void Cpzgemr2do ()"
+
+.SS "void Csetpvmtids ()"
+
+.SS "void Czgerv2d ()"
+
+.SS "void Czgesd2d ()"
+
+.SS "void dispmat ()"
+
+.SS "void freememory ()"
+
+.SS "void freememory (\fBdcomplex\fP * ptrtobefreed)"
+
+.SS "int localindice ()"
+
+.SS "int localsize ()"
+
+.SS "int memoryblocksize ()"
+
+.SS "void* mr2d_malloc ()"
+
+.SS "void paramcheck ()"
+
+.SS "int ppcm ()"
+
+.SS "int scan_intervals ()"
+
+.SS "int scan_intervals (char type, int ja, int jb, int n, \fBMDESC\fP * ma, \fBMDESC\fP * mb, int q0, int q1, int col0, int col1, \fBIDESC\fP * result)"
+
+.SS "void scanD0 ()"
+
+.SS "void setmemory ()"
+
+.SS "void setmemory (\fBdcomplex\fP ** adpointer, int blocksize)"
+
+.SS "void zlacpy_ ()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

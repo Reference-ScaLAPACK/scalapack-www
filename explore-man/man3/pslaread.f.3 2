@@ -1,0 +1,22 @@
+.TH "TOOLS/pslaread.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/pslaread.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslaread\fP (FILNAM, A, DESCA, IRREAD, ICREAD, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslaread (character*(*) FILNAM, real, dimension( * ) A, integer, dimension( * ) DESCA, integer IRREAD, integer ICREAD, real, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

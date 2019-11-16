@@ -1,0 +1,109 @@
+.TH "SRC/tools.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/tools.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./pblas\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDCOMPLEX\fP"
+.br
+.ti -1c
+.RI "struct \fBSCOMPLEX\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSLVOID\fP   char"
+.br
+.ti -1c
+.RI "#define \fBErrPrnt\fP   fprintf(stderr, 'line %d of file %s\\n',__LINE__, __FILE__);"
+.br
+.ti -1c
+.RI "#define \fBMdescset\fP(desc,  m,  n,  mb,  nb,  rsrc,  csrc,  ictxt,  lld)"
+.br
+.ti -1c
+.RI "#define \fBMCindxg2p\fP(IG,  nb,  srcproc,  nprocs)   ( ((srcproc) + (IG)/(nb)) % nprocs )"
+.br
+.ti -1c
+.RI "#define \fBMmalloc\fP(M_ptr,  M_type,  M_elt,  M_i,  M_ctxt)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBCPYPTR\fP) ()"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ErrPrnt   fprintf(stderr, 'line %d of file %s\\n',__LINE__, __FILE__);"
+
+.PP
+Definition at line 11 of file tools\&.h\&.
+.SS "#define MCindxg2p(IG, nb, srcproc, nprocs)   ( ((srcproc) + (IG)/(nb)) % nprocs )"
+
+.PP
+Definition at line 26 of file tools\&.h\&.
+.SS "#define Mdescset(desc, m, n, mb, nb, rsrc, csrc, ictxt, lld)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+   (desc)[DT_] = BLOCK_CYCLIC_2D; \
+   (desc)[CTXT_] = (ictxt); \
+   (desc)[M_] = (m); \
+   (desc)[N_] = (n); \
+   (desc)[MB_] = (mb); \
+   (desc)[NB_] = (nb); \
+   (desc)[RSRC_] = (rsrc); \
+   (desc)[CSRC_] = (csrc); \
+   (desc)[LLD_] = (lld); \
+}
+.fi
+.PP
+Definition at line 13 of file tools\&.h\&.
+.SS "#define Mmalloc(M_ptr, M_type, M_elt, M_i, M_ctxt)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+   void pberror_(); \
+   (M_ptr) = ( M_type * ) malloc((M_elt)*(sizeof(M_type))); \
+   if (!(M_ptr)) \
+   { \
+      if ((M_elt) > 0) \
+      { \
+         (M_i) = 1; \
+         fprintf(stderr, "Not enough memory on line %d of file %s!!\n", \
+                 __LINE__, __FILE__); \
+         pberror_(&(M_ctxt), __FILE__, &(M_i)); \
+      } \
+   } \
+}
+.fi
+.PP
+Definition at line 32 of file tools\&.h\&.
+.SS "#define SLVOID   char"
+
+.PP
+Definition at line 8 of file tools\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef void(* CPYPTR) ()"
+
+.PP
+Definition at line 7 of file tools\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

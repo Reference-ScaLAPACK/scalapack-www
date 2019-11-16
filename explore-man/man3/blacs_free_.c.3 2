@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/blacs_free_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/blacs_free_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBF_VOID_FUNC\fP \fBblacs_freebuff_\fP (int *ConTxt, int *Wait)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBF_VOID_FUNC\fP blacs_freebuff_ (int * ConTxt, int * Wait)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

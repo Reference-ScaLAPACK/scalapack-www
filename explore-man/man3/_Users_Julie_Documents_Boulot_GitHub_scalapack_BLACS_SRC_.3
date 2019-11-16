@@ -1,0 +1,513 @@
+.TH "BLACS/SRC Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBBconfig\&.h\fP"
+.br
+.ti -1c
+.RI "file \fBBdef\&.h\fP"
+.br
+.ti -1c
+.RI "file \fBBI_Arecv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ArgCheck\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_Asend\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_BeComb\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_BlacsAbort\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_BlacsErr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_BlacsWarn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_BuffIsFree\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cMPI_amn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cMPI_amn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cMPI_amx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cMPI_amx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cMPI_sum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ContxtNum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cvvamn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cvvamn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cvvamx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cvvamx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_cvvsum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dMPI_amn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dMPI_amn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dMPI_amx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dMPI_amx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dmvcopy\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dvmcopy\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dvvamn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dvvamn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dvvamx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dvvamx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_dvvsum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_EmergencyBuff\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_GetBuff\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_GetMpiGeType\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_GetMpiTrType\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_GlobalVars\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_HypBR\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_HypBS\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_IdringBR\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_IdringBS\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_iMPI_amn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_iMPI_amn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_iMPI_amx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_iMPI_amx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_imvcopy\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ivmcopy\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ivvamn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ivvamn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ivvamx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ivvamx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_ivvsum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_MpathBR\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_MpathBS\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_MringComb\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_Pack\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_Rsend\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_sMPI_amn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_sMPI_amn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_sMPI_amx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_sMPI_amx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_smvcopy\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_Srecv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_SringBR\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_SringBS\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_Ssend\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_svmcopy\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_svvamn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_svvamn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_svvamx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_svvamx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_svvsum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_TransDist\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_TransUserComm\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_TreeBR\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_TreeBS\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_TreeComb\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_Unpack\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_UpdateBuffs\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zMPI_amn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zMPI_amn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zMPI_amx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zMPI_amx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zMPI_sum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zvvamn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zvvamn2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zvvamx\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zvvamx2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBBI_zvvsum\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs2sys_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_abort_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_barr_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_exit_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_free_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_get_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_grid_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_info_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_init_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_map_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_pcoord_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_pinfo_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_pnum_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_set_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBblacs_setup_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcgamn2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcgamx2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcgebr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcgebs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcgerv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcgesd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcgsum2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBctrbr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBctrbs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBctrrv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBctrsd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdcputime00_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdgamn2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdgamx2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdgebr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdgebs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdgerv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdgesd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdgsum2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdtrbr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdtrbs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdtrrv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdtrsd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdwalltime00_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBfree_handle_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBigamn2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBigamx2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBigebr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBigebs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBigerv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBigesd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBigsum2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBitrbr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBitrbs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBitrrv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBitrsd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBkbrid_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBkbsid_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBkrecvid_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBksendid_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsgamn2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsgamx2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsgebr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsgebs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsgerv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsgesd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsgsum2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBstrbr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBstrbs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBstrrv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBstrsd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsys2blacs_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzgamn2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzgamx2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzgebr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzgebs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzgerv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzgesd2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzgsum2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBztrbr2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBztrbs2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBztrrv2d_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBztrsd2d_\&.c\fP"
+.br
+.in -1c

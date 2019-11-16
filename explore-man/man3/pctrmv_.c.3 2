@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/pctrmv_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/pctrmv_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'pblas\&.h'\fP
+.br
+\fC#include 'PBpblas\&.h'\fP
+.br
+\fC#include 'PBtools\&.h'\fP
+.br
+\fC#include 'PBblacs\&.h'\fP
+.br
+\fC#include 'PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpctrmv_\fP (\fBF_CHAR_T\fP UPLO, \fBF_CHAR_T\fP TRANS, \fBF_CHAR_T\fP DIAG, int *N, float *A, int *IA, int *JA, int *DESCA, float *X, int *IX, int *JX, int *DESCX, int *INCX)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void pctrmv_ (\fBF_CHAR_T\fP UPLO, \fBF_CHAR_T\fP TRANS, \fBF_CHAR_T\fP DIAG, int * N, float          * A, int            * IA, int * JA, int            * DESCA, float * X, int * IX, int * JX, int * DESCX, int * INCX)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

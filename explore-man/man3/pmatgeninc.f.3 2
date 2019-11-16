@@ -1,0 +1,52 @@
+.TH "TESTING/LIN/pmatgeninc.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/LIN/pmatgeninc.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBladd\fP (J, K, I)"
+.br
+.ti -1c
+.RI "subroutine \fBlmul\fP (K, J, I)"
+.br
+.ti -1c
+.RI "subroutine \fBxjumpm\fP (JUMPM, MULT, IADD, IRANN, IRANM, IAM, ICM)"
+.br
+.ti -1c
+.RI "subroutine \fBsetran\fP (IRAN, IA, IC)"
+.br
+.ti -1c
+.RI "subroutine \fBjumpit\fP (MULT, IADD, IRANN, IRANM)"
+.br
+.ti -1c
+.RI "real function \fBpsrand\fP (IDUMM)"
+.br
+.ti -1c
+.RI "double precision function \fBpdrand\fP (IDUMM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine jumpit (integer, dimension(2) MULT, integer, dimension(2) IADD, integer, dimension(2) IRANN, integer, dimension(2) IRANM)"
+
+.SS "subroutine ladd (integer, dimension(2) J, integer, dimension(2) K, integer, dimension(2) I)"
+
+.SS "subroutine lmul (integer, dimension(2) K, integer, dimension(2) J, integer, dimension(2) I)"
+
+.SS "double precision function pdrand (integer IDUMM)"
+
+.SS "real function psrand (integer IDUMM)"
+
+.SS "subroutine setran (integer, dimension(2) IRAN, integer, dimension(2) IA, integer, dimension(2) IC)"
+
+.SS "subroutine xjumpm (integer JUMPM, integer, dimension(2) MULT, integer, dimension(2) IADD, integer, dimension(2) IRANN, integer, dimension(2) IRANM, integer, dimension(2) IAM, integer, dimension(2) ICM)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

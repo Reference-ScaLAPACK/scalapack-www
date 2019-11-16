@@ -1,0 +1,299 @@
+.TH "SRC/pblas.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pblas.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBcomplex\fP"
+.br
+.ti -1c
+.RI "struct \fBcomplex16\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_HAL_\fP   0"
+.br
+.ti -1c
+.RI "#define \fB_T3D_\fP   1"
+.br
+.ti -1c
+.RI "#define \fB_MACH_\fP   \fB_HAL_\fP"
+.br
+.ti -1c
+.RI "#define \fB_F2C_ADD_\fP   0"
+.br
+.ti -1c
+.RI "#define \fB_F2C_NOCHANGE\fP   1"
+.br
+.ti -1c
+.RI "#define \fB_F2C_UPCASE\fP   2"
+.br
+.ti -1c
+.RI "#define \fB_F2C_F77ISF2C\fP   3"
+.br
+.ti -1c
+.RI "#define \fB_F2C_CALL_\fP   \fB_F2C_ADD_\fP"
+.br
+.ti -1c
+.RI "#define \fBF2C_CHAR\fP(a)   (a)"
+.br
+.ti -1c
+.RI "#define \fBC2F_CHAR\fP(a)   (a)"
+.br
+.ti -1c
+.RI "#define \fBF_VOID_FCT\fP   void                             /* Subroutine */"
+.br
+.ti -1c
+.RI "#define \fBF_INTG_FCT\fP   int                        /* \fBINTEGER\fP function */"
+.br
+.ti -1c
+.RI "#define \fBF_DBLE_FCT\fP   double            /* \fBDOUBLE\fP PRECISION function */"
+.br
+.ti -1c
+.RI "#define \fBDLEN_\fP   9                     /* Length of a descriptor */"
+.br
+.ti -1c
+.RI "#define \fBDT_\fP   0                     /* Descriptor Type        */"
+.br
+.ti -1c
+.RI "#define \fBCTXT_\fP   1                              /* BLACS context */"
+.br
+.ti -1c
+.RI "#define \fBM_\fP   2                      /* Global Number of Rows */"
+.br
+.ti -1c
+.RI "#define \fBN_\fP   3                   /* Global Number of Columns */"
+.br
+.ti -1c
+.RI "#define \fBMB_\fP   4                          /* Row Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBNB_\fP   5                       /* Column Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBRSRC_\fP   6                     /* Starting Processor Row */"
+.br
+.ti -1c
+.RI "#define \fBCSRC_\fP   7                  /* Starting Processor Column */"
+.br
+.ti -1c
+.RI "#define \fBLLD_\fP   8                    /* Local Leading Dimension */"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_2D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_INB_2D\fP   2"
+.br
+.ti -1c
+.RI "#define \fBBROADCAST\fP   'B'              /* Blacs operation definitions */"
+.br
+.ti -1c
+.RI "#define \fBCOMBINE\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBALL\fP   'A'                        /* Scope definitions */"
+.br
+.ti -1c
+.RI "#define \fBCOLUMN\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBROW\fP   'R'"
+.br
+.ti -1c
+.RI "#define \fBTOPDEF\fP   ' ' /* Default BLACS topology, PB\-BLAS routines */"
+.br
+.ti -1c
+.RI "#define \fBCTOPDEF\fP   ' '"
+.br
+.ti -1c
+.RI "#define \fBTOPGET\fP   '!'"
+.br
+.ti -1c
+.RI "#define \fBYES\fP   'Y'"
+.br
+.ti -1c
+.RI "#define \fBNO\fP   'N'"
+.br
+.ti -1c
+.RI "#define \fBMULLENFAC\fP   2"
+.br
+.ti -1c
+.RI "#define \fBONE\fP   1\&.0"
+.br
+.ti -1c
+.RI "#define \fBZERO\fP   0\&.0"
+.br
+.ti -1c
+.RI "#define \fBABS\fP(a)   (((a) < 0) ? \-(a) : (a))"
+.br
+.ti -1c
+.RI "#define \fBMIN\fP(a,  b)   (((a) < (b)) ? (a) : (b))"
+.br
+.ti -1c
+.RI "#define \fBMAX\fP(a,  b)   (((a) > (b)) ? (a) : (b))"
+.br
+.ti -1c
+.RI "#define \fBCEIL\fP(a,  b)   ( ((a)+(b)\-1) / (b) )"
+.br
+.ti -1c
+.RI "#define \fBMlowcase\fP(C)   ( ((C) > 64 && (C) < 91) ? (C) | 32 : (C) )"
+.br
+.ti -1c
+.RI "#define \fBMupcase\fP(C)   ( ((C) > 96 && (C) < 123) ? (C) & 0xDF : (C) )"
+.br
+.ti -1c
+.RI "#define \fBINDXG2L\fP(iglob,  nb,  iproc,  isrcproc,  nprocs)"
+.br
+.ti -1c
+.RI "#define \fBINDXL2G\fP(iloc,  nb,  iproc,  isrcproc,  nprocs)"
+.br
+.ti -1c
+.RI "#define \fBINDXG2P\fP(iglob,  nb,  iproc,  isrcproc,  nprocs)   ( ( (isrcproc) + ( (iglob) \- 1 ) / (nb) ) % (nprocs) )"
+.br
+.ti -1c
+.RI "#define \fBMYROC0\fP(nblocks,  n,  nb,  nprocs)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef char * \fBF_CHAR\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _F2C_ADD_   0"
+
+.SS "#define _F2C_CALL_   \fB_F2C_ADD_\fP"
+
+.SS "#define _F2C_F77ISF2C   3"
+
+.SS "#define _F2C_NOCHANGE   1"
+
+.SS "#define _F2C_UPCASE   2"
+
+.SS "#define _HAL_   0"
+
+.SS "#define _MACH_   \fB_HAL_\fP"
+
+.SS "#define _T3D_   1"
+
+.SS "#define ABS(a)   (((a) < 0) ? \-(a) : (a))"
+
+.SS "#define ALL   'A'                        /* Scope definitions */"
+
+.SS "#define BLOCK_CYCLIC_2D   1"
+
+.SS "#define BLOCK_CYCLIC_INB_2D   2"
+
+.SS "#define BROADCAST   'B'              /* Blacs operation definitions */"
+
+.SS "#define C2F_CHAR(a)   (a)"
+
+.SS "#define CEIL(a, b)   ( ((a)+(b)\-1) / (b) )"
+
+.SS "#define COLUMN   'C'"
+
+.SS "#define COMBINE   'C'"
+
+.SS "#define CSRC_   7                  /* Starting Processor Column */"
+
+.SS "#define CTOPDEF   ' '"
+
+.SS "#define CTXT_   1                              /* BLACS context */"
+
+.SS "#define DLEN_   9                     /* Length of a descriptor */"
+
+.SS "#define DT_   0                     /* Descriptor Type        */"
+
+.SS "#define F2C_CHAR(a)   (a)"
+
+.SS "#define F_DBLE_FCT   double            /* \fBDOUBLE\fP PRECISION function */"
+
+.SS "#define F_INTG_FCT   int                        /* \fBINTEGER\fP function */"
+
+.SS "#define F_VOID_FCT   void                             /* Subroutine */"
+
+.SS "#define INDXG2L(iglob, nb, iproc, isrcproc, nprocs)"
+\fBValue:\fP
+.PP
+.nf
+( (nb) * ( ( (iglob)-1) / ( (nb) * (nprocs) ) ) +\
+      ( ( (iglob) - 1 ) % (nb) ) + 1 )
+.fi
+.SS "#define INDXG2P(iglob, nb, iproc, isrcproc, nprocs)   ( ( (isrcproc) + ( (iglob) \- 1 ) / (nb) ) % (nprocs) )"
+
+.SS "#define INDXL2G(iloc, nb, iproc, isrcproc, nprocs)"
+\fBValue:\fP
+.PP
+.nf
+( (nprocs) * (nb) * ( ( (iloc) - 1 ) / (nb) ) +\
+      ( ( (iloc) - 1 ) % (nb) ) +\
+      ( ( (nprocs) + (iproc) - (isrcproc) ) % (nprocs) ) * (nb) + 1 )
+.fi
+.SS "#define LLD_   8                    /* Local Leading Dimension */"
+
+.SS "#define M_   2                      /* Global Number of Rows */"
+
+.SS "#define MAX(a, b)   (((a) > (b)) ? (a) : (b))"
+
+.SS "#define MB_   4                          /* Row Blocking Size */"
+
+.SS "#define MIN(a, b)   (((a) < (b)) ? (a) : (b))"
+
+.SS "#define Mlowcase(C)   ( ((C) > 64 && (C) < 91) ? (C) | 32 : (C) )"
+
+.SS "#define MULLENFAC   2"
+
+.SS "#define Mupcase(C)   ( ((C) > 96 && (C) < 123) ? (C) & 0xDF : (C) )"
+
+.SS "#define MYROC0(nblocks, n, nb, nprocs)"
+\fBValue:\fP
+.PP
+.nf
+( ( (nblocks) % (nprocs) ) ? ( ( (nblocks) / (nprocs) ) * (nb) + (nb) )\
+                   : ( ( (nblocks) / (nprocs) )* (nb) + ( (n) % (nb) ) ) )
+.fi
+.SS "#define N_   3                   /* Global Number of Columns */"
+
+.SS "#define NB_   5                       /* Column Blocking Size */"
+
+.SS "#define NO   'N'"
+
+.SS "#define ONE   1\&.0"
+
+.SS "#define ROW   'R'"
+
+.SS "#define RSRC_   6                     /* Starting Processor Row */"
+
+.SS "#define TOPDEF   ' ' /* Default BLACS topology, PB\-BLAS routines */"
+
+.SS "#define TOPGET   '!'"
+
+.SS "#define YES   'Y'"
+
+.SS "#define ZERO   0\&.0"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef char* \fBF_CHAR\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "SRC/psrot.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/psrot.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpsrot\fP (N, X, IX, JX, DESCX, INCX, Y, IY, JY, DESCY, INCY, CS, SN, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine psrot (integer N, real, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, real, dimension( * ) Y, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, real CS, real SN, real, dimension( * ) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PTZBLAS/dasymv.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTZBLAS/dasymv.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdasymv\fP (UPLO, N, ALPHA, A, LDA, X, INCX, BETA, Y, INCY)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dasymv (character*1 UPLO, integer N, double precision ALPHA, double precision, dimension( lda, * ) A, integer LDA, double precision, dimension( * ) X, integer INCX, double precision BETA, double precision, dimension( * ) Y, integer INCY)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

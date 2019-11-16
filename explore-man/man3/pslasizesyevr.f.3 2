@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pslasizesyevr.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pslasizesyevr.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslasizesyevr\fP (WKNOWN, RANGE, N, DESCA, VL, VU, IL, IU, ISEED, WIN, MAXSIZE, VECSIZE, VALSIZE)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslasizesyevr (logical WKNOWN, character RANGE, integer N, integer, dimension( * ) DESCA, real VL, real VU, integer IL, integer IU, integer, dimension( 4 ) ISEED, real, dimension( * ) WIN, integer MAXSIZE, integer VECSIZE, integer VALSIZE)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

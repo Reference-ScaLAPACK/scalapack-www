@@ -1,0 +1,57 @@
+.TH "TOOLS/reshape.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/reshape.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCreshape\fP (int context_in, int major_in, int *context_out, int major_out, int first_proc, int nprow_new, int npcol_new)"
+.br
+.ti -1c
+.RI "void \fBreshape\fP (int *context_in, int *major_in, int *context_out, int *major_out, int *first_proc, int *nprow_new, int *npcol_new)"
+.br
+.ti -1c
+.RI "void \fBRESHAPE\fP (int *context_in, int *major_in, int *context_out, int *major_out, int *first_proc, int *nprow_new, int *npcol_new)"
+.br
+.ti -1c
+.RI "void \fBreshape_\fP (int *context_in, int *major_in, int *context_out, int *major_out, int *first_proc, int *nprow_new, int *npcol_new)"
+.br
+.ti -1c
+.RI "void \fBproc_inc\fP (int *myrow, int *mycol, int nprow, int npcol, int major)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void Creshape (int context_in, int major_in, int * context_out, int major_out, int first_proc, int nprow_new, int npcol_new)"
+called subprograms
+.PP
+variables
+.PP
+Definition at line 3 of file reshape\&.c\&.
+.SS "void proc_inc (int * myrow, int * mycol, int nprow, int npcol, int major)"
+
+.PP
+Definition at line 101 of file reshape\&.c\&.
+.SS "void reshape (int * context_in, int * major_in, int * context_out, int * major_out, int * first_proc, int * nprow_new, int * npcol_new)"
+
+.PP
+Definition at line 77 of file reshape\&.c\&.
+.SS "void RESHAPE (int * context_in, int * major_in, int * context_out, int * major_out, int * first_proc, int * nprow_new, int * npcol_new)"
+
+.PP
+Definition at line 85 of file reshape\&.c\&.
+.SS "void reshape_ (int * context_in, int * major_in, int * context_out, int * major_out, int * first_proc, int * nprow_new, int * npcol_new)"
+
+.PP
+Definition at line 93 of file reshape\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

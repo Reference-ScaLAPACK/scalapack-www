@@ -1,0 +1,37 @@
+.TH "SRC/psstebz.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/psstebz.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpsstebz\fP (ICTXT, RANGE, ORDER, N, VL, VU, IL, IU, ABSTOL, D, E, M, NSPLIT, W, IBLOCK, ISPLIT, WORK, LWORK, IWORK, LIWORK, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpslaebz\fP (IJOB, N, MMAX, MINP, ABSTOL, RELTOL, PIVMIN, D, NVAL, INTVL, INTVLCT, MOUT, LSAVE, IEFLAG, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpslaecv\fP (IJOB, KF, KL, INTVL, INTVLCT, NVAL, ABSTOL, RELTOL)"
+.br
+.ti -1c
+.RI "subroutine \fBpslapdct\fP (SIGMA, N, D, PIVMIN, COUNT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslaebz (integer IJOB, integer N, integer MMAX, integer MINP, real ABSTOL, real RELTOL, real PIVMIN, real, dimension( * ) D, integer, dimension( * ) NVAL, real, dimension( * ) INTVL, integer, dimension( * ) INTVLCT, integer MOUT, real LSAVE, integer IEFLAG, integer INFO)"
+
+.SS "subroutine pslaecv (integer IJOB, integer KF, integer KL, real, dimension( * ) INTVL, integer, dimension( * ) INTVLCT, integer, dimension( * ) NVAL, real ABSTOL, real RELTOL)"
+
+.SS "subroutine pslapdct (real SIGMA, integer N, real, dimension( * ) D, real PIVMIN, integer COUNT)"
+
+.SS "subroutine psstebz (integer ICTXT, character RANGE, character ORDER, integer N, real VL, real VU, integer IL, integer IU, real ABSTOL, real, dimension( * ) D, real, dimension( * ) E, integer M, integer NSPLIT, real, dimension( * ) W, integer, dimension( * ) IBLOCK, integer, dimension( * ) ISPLIT, real, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

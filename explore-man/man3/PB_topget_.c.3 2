@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/PTOOLS/PB_topget_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTOOLS/PB_topget_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./pblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBpblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBtools\&.h'\fP
+.br
+\fC#include '\&.\&./PBblacs\&.h'\fP
+.br
+\fC#include '\&.\&./PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPB_topget_\fP (int *ICTXT, \fBF_CHAR_T\fP OP, \fBF_CHAR_T\fP SCOPE, \fBF_CHAR_T\fP TOP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void PB_topget_ (int            * ICTXT, \fBF_CHAR_T\fP OP, \fBF_CHAR_T\fP SCOPE, \fBF_CHAR_T\fP TOP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

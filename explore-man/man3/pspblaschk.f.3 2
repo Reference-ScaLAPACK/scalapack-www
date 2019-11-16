@@ -1,0 +1,22 @@
+.TH "TESTING/LIN/pspblaschk.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/LIN/pspblaschk.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpspblaschk\fP (\fBSYMM\fP, UPLO, N, BWL, BWU, NRHS, X, IX, JX, DESCX, IASEED, A, IA, JA, DESCA, IBSEED, ANORM, RESID, WORK, WORKSIZ)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pspblaschk (character SYMM, character UPLO, integer N, integer BWL, integer BWU, integer NRHS, real, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer IASEED, real, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer IBSEED, real ANORM, real RESID, real, dimension( * ) WORK, integer WORKSIZ)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,27 @@
+.TH "BLACS/INSTALL/syserrors.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/INSTALL/syserrors.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <mpi\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmain\fP (int nargs, char **args)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "main (int nargs, char ** args)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PTZBLAS/datrmv.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTZBLAS/datrmv.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdatrmv\fP (UPLO, TRANS, DIAG, N, ALPHA, A, LDA, X, INCX, BETA, Y, INCY)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine datrmv (character*1 UPLO, character*1 TRANS, character*1 DIAG, integer N, double precision ALPHA, double precision, dimension( lda, * ) A, integer LDA, double precision, dimension( * ) X, integer INCX, double precision BETA, double precision, dimension( * ) Y, integer INCY)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

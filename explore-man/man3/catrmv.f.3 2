@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PTZBLAS/catrmv.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTZBLAS/catrmv.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBcatrmv\fP (UPLO, TRANS, DIAG, N, ALPHA, A, LDA, X, INCX, BETA, Y, INCY)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine catrmv (character*1 UPLO, character*1 TRANS, character*1 DIAG, integer N, real ALPHA, \fBcomplex\fP, dimension( lda, * ) A, integer LDA, \fBcomplex\fP, dimension( * ) X, integer INCX, real BETA, real, dimension( * ) Y, integer INCY)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

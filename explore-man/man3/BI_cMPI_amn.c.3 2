@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/BI_cMPI_amn.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/BI_cMPI_amn.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBBI_cMPI_amn\fP (void *in, void *inout, int *N, MPI_Datatype *dtype)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void BI_cMPI_amn (void * in, void * inout, int * N, MPI_Datatype * dtype)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

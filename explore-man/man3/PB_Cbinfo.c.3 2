@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/PTOOLS/PB_Cbinfo.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTOOLS/PB_Cbinfo.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./pblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBpblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBtools\&.h'\fP
+.br
+\fC#include '\&.\&./PBblacs\&.h'\fP
+.br
+\fC#include '\&.\&./PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPB_Cbinfo\fP (int OFFD, int M, int N, int IMB1, int INB1, int MB, int NB, int MRROW, int MRCOL, int *LCMT00, int *MBLKS, int *NBLKS, int *IMBLOC, int *INBLOC, int *LMBLOC, int *LNBLOC, int *ILOW, int *LOW, int *IUPP, int *UPP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void PB_Cbinfo (int OFFD, int M, int N, int IMB1, int INB1, int MB, int NB, int MRROW, int MRCOL, int                  * LCMT00, int * MBLKS, int * NBLKS, int * IMBLOC, int * INBLOC, int * LMBLOC, int * LNBLOC, int            * ILOW, int * LOW, int * IUPP, int * UPP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

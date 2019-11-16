@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/dtrsd2d_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/dtrsd2d_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBF_VOID_FUNC\fP \fBdtrsd2d_\fP (int *ConTxt, \fBF_CHAR\fP uplo, \fBF_CHAR\fP diag, int *m, int *n, double *A, int *lda, int *rdest, int *cdest)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBF_VOID_FUNC\fP dtrsd2d_ (int * ConTxt, \fBF_CHAR\fP uplo, \fBF_CHAR\fP diag, int * m, int * n, double * A, int * lda, int * rdest, int * cdest)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

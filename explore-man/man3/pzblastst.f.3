@@ -1,0 +1,290 @@
+.TH "PBLAS/TESTING/pzblastst.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TESTING/pzblastst.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzoptee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpzchkopt\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME, ARGNAM, ARGPOS)"
+.br
+.ti -1c
+.RI "subroutine \fBpzdimee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpzchkdim\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME, ARGNAM, ARGPOS)"
+.br
+.ti -1c
+.RI "subroutine \fBpzvecee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpzmatee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpzsetpblas\fP (ICTXT)"
+.br
+.ti -1c
+.RI "subroutine \fBpzchkmat\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME, ARGNAM, ARGPOS)"
+.br
+.ti -1c
+.RI "subroutine \fBpzcallsub\fP (SUBPTR, SCODE)"
+.br
+.ti -1c
+.RI "subroutine \fBpzerrset\fP (ERR, ERRMAX, XTRUE, X)"
+.br
+.ti -1c
+.RI "subroutine \fBpzchkvin\fP (ERRMAX, N, X, PX, IX, JX, DESCX, INCX, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzchkvout\fP (N, X, PX, IX, JX, DESCX, INCX, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzchkmin\fP (ERRMAX, M, N, A, PA, IA, JA, DESCA, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzchkmout\fP (M, N, A, PA, IA, JA, DESCA, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzmprnt\fP (ICTXT, NOUT, M, N, A, LDA, IRPRNT, ICPRNT, CMATNM)"
+.br
+.ti -1c
+.RI "subroutine \fBpzvprnt\fP (ICTXT, NOUT, N, X, INCX, IRPRNT, ICPRNT, CVECNM)"
+.br
+.ti -1c
+.RI "subroutine \fBpzmvch\fP (ICTXT, TRANS, M, N, ALPHA, A, IA, JA, DESCA, X, IX, JX, DESCX, INCX, BETA, Y, PY, IY, JY, DESCY, INCY, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzvmch\fP (ICTXT, TRANS, UPLO, M, N, ALPHA, X, IX, JX, DESCX, INCX, Y, IY, JY, DESCY, INCY, A, PA, IA, JA, DESCA, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzvmch2\fP (ICTXT, UPLO, M, N, ALPHA, X, IX, JX, DESCX, INCX, Y, IY, JY, DESCY, INCY, A, PA, IA, JA, DESCA, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzmmch\fP (ICTXT, TRANSA, TRANSB, M, N, K, ALPHA, A, IA, JA, DESCA, B, IB, JB, DESCB, BETA, C, PC, IC, JC, DESCC, CT, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzmmch1\fP (ICTXT, UPLO, TRANS, N, K, ALPHA, A, IA, JA, DESCA, BETA, C, PC, IC, JC, DESCC, CT, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzmmch2\fP (ICTXT, UPLO, TRANS, N, K, ALPHA, A, IA, JA, DESCA, B, IB, JB, DESCB, BETA, C, PC, IC, JC, DESCC, CT, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzmmch3\fP (UPLO, TRANS, M, N, ALPHA, A, IA, JA, DESCA, BETA, C, PC, IC, JC, DESCC, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpzerraxpby\fP (ERRBND, ALPHA, X, BETA, Y, PREC)"
+.br
+.ti -1c
+.RI "subroutine \fBpzipset\fP (TOGGLE, N, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "double precision function \fBpdlamch\fP (ICTXT, CMACH)"
+.br
+.ti -1c
+.RI "subroutine \fBpzlaset\fP (UPLO, M, N, ALPHA, BETA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpzlascal\fP (\fBTYPE\fP, M, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpzlagen\fP (INPLACE, AFORM, DIAG, OFFA, M, N, IA, JA, DESCA, IASEED, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpzladom\fP (INPLACE, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_pzlaprnt\fP (M, N, A, IA, JA, DESCA, IRPRNT, ICPRNT, CMATNM, NOUT, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_pzlaprn2\fP (M, N, A, IA, JA, DESCA, IRPRNT, ICPRNT, CMATNM, NOUT, PROW, PCOL, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_zfillpad\fP (ICTXT, M, N, A, LDA, IPRE, IPOST, CHKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_zchekpad\fP (ICTXT, MESS, M, N, A, LDA, IPRE, IPOST, CHKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_zlaset\fP (UPLO, M, N, IOFFD, ALPHA, BETA, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_zlascal\fP (UPLO, M, N, IOFFD, ALPHA, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_zlagen\fP (UPLO, AFORM, A, LDA, LCMT00, IRAN, MBLKS, IMBLOC, MB, LMBLOC, NBLKS, INBLOC, NB, LNBLOC, JMP, IMULADD)"
+.br
+.ti -1c
+.RI "double precision function \fBpb_drand\fP (IDUMM)"
+.br
+.ti -1c
+.RI "double precision function \fBpb_dran\fP (IDUMM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "double precision function pb_dran (integer IDUMM)"
+
+.PP
+Definition at line 11557 of file pzblastst\&.f\&.
+.SS "double precision function pb_drand (integer IDUMM)"
+
+.PP
+Definition at line 11495 of file pzblastst\&.f\&.
+.SS "subroutine pb_pzlaprn2 (integer M, integer N, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer IRPRNT, integer ICPRNT, character*(*) CMATNM, integer NOUT, integer PROW, integer PCOL, \fBcomplex\fP*16, dimension( * ) WORK)"
+
+.PP
+Definition at line 9518 of file pzblastst\&.f\&.
+.SS "subroutine pb_pzlaprnt (integer M, integer N, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer IRPRNT, integer ICPRNT, character*(*) CMATNM, integer NOUT, \fBcomplex\fP*16, dimension( * ) WORK)"
+
+.PP
+Definition at line 9304 of file pzblastst\&.f\&.
+.SS "subroutine pb_zchekpad (integer ICTXT, character*(*) MESS, integer M, integer N, \fBcomplex\fP*16, dimension( * ) A, integer LDA, integer IPRE, integer IPOST, \fBcomplex\fP*16 CHKVAL)"
+
+.PP
+Definition at line 9875 of file pzblastst\&.f\&.
+.SS "subroutine pb_zfillpad (integer ICTXT, integer M, integer N, \fBcomplex\fP*16, dimension( * ) A, integer LDA, integer IPRE, integer IPOST, \fBcomplex\fP*16 CHKVAL)"
+
+.PP
+Definition at line 9762 of file pzblastst\&.f\&.
+.SS "subroutine pb_zlagen (character*1 UPLO, character*1 AFORM, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA, integer LCMT00, integer, dimension( * ) IRAN, integer MBLKS, integer IMBLOC, integer MB, integer LMBLOC, integer NBLKS, integer INBLOC, integer NB, integer LNBLOC, integer, dimension( * ) JMP, integer, dimension( 4, * ) IMULADD)"
+
+.PP
+Definition at line 10427 of file pzblastst\&.f\&.
+.SS "subroutine pb_zlascal (character*1 UPLO, integer M, integer N, integer IOFFD, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 10246 of file pzblastst\&.f\&.
+.SS "subroutine pb_zlaset (character*1 UPLO, integer M, integer N, integer IOFFD, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 10049 of file pzblastst\&.f\&.
+.SS "double precision function pdlamch (integer ICTXT, character*1 CMACH)"
+
+.PP
+Definition at line 7456 of file pzblastst\&.f\&.
+.SS "subroutine pzcallsub (external SUBPTR, integer SCODE)"
+
+.PP
+Definition at line 2183 of file pzblastst\&.f\&.
+.SS "subroutine pzchkdim (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME, character*1 ARGNAM, integer ARGPOS)"
+
+.PP
+Definition at line 759 of file pzblastst\&.f\&.
+.SS "subroutine pzchkmat (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME, character*1 ARGNAM, integer ARGPOS)"
+
+.PP
+Definition at line 1677 of file pzblastst\&.f\&.
+.SS "subroutine pzchkmin (double precision ERRMAX, integer M, integer N, \fBcomplex\fP*16, dimension( * ) A, \fBcomplex\fP*16, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, integer INFO)"
+
+.PP
+Definition at line 3332 of file pzblastst\&.f\&.
+.SS "subroutine pzchkmout (integer M, integer N, \fBcomplex\fP*16, dimension( * ) A, \fBcomplex\fP*16, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, integer INFO)"
+
+.PP
+Definition at line 3633 of file pzblastst\&.f\&.
+.SS "subroutine pzchkopt (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME, character*1 ARGNAM, integer ARGPOS)"
+
+.PP
+Definition at line 266 of file pzblastst\&.f\&.
+.SS "subroutine pzchkvin (double precision ERRMAX, integer N, \fBcomplex\fP*16, dimension( * ) X, \fBcomplex\fP*16, dimension( * ) PX, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, integer INFO)"
+
+.PP
+Definition at line 2582 of file pzblastst\&.f\&.
+.SS "subroutine pzchkvout (integer N, \fBcomplex\fP*16, dimension( * ) X, \fBcomplex\fP*16, dimension( * ) PX, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, integer INFO)"
+
+.PP
+Definition at line 2876 of file pzblastst\&.f\&.
+.SS "subroutine pzdimee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME)"
+
+.PP
+Definition at line 455 of file pzblastst\&.f\&.
+.SS "subroutine pzerraxpby (double precision ERRBND, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16 X, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16 Y, double precision PREC)"
+
+.PP
+Definition at line 6944 of file pzblastst\&.f\&.
+.SS "subroutine pzerrset (double precision ERR, double precision ERRMAX, \fBcomplex\fP*16 XTRUE, \fBcomplex\fP*16 X)"
+
+.PP
+Definition at line 2460 of file pzblastst\&.f\&.
+.SS "subroutine pzipset (character*1 TOGGLE, integer N, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 7045 of file pzblastst\&.f\&.
+.SS "subroutine pzladom (logical INPLACE, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 8896 of file pzblastst\&.f\&.
+.SS "subroutine pzlagen (logical INPLACE, character*1 AFORM, character*1 DIAG, integer OFFA, integer M, integer N, integer IA, integer JA, integer, dimension( * ) DESCA, integer IASEED, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 8492 of file pzblastst\&.f\&.
+.SS "subroutine pzlascal (character*1 TYPE, integer M, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 7984 of file pzblastst\&.f\&.
+.SS "subroutine pzlaset (character*1 UPLO, integer M, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 7509 of file pzblastst\&.f\&.
+.SS "subroutine pzmatee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*7 SNAME)"
+
+.PP
+Definition at line 1190 of file pzblastst\&.f\&.
+.SS "subroutine pzmmch (integer ICTXT, character*1 TRANSA, character*1 TRANSB, integer M, integer N, integer K, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) C, \fBcomplex\fP*16, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, \fBcomplex\fP*16, dimension( * ) CT, double precision, dimension( * ) G, double precision ERR, integer INFO)"
+
+.PP
+Definition at line 5336 of file pzblastst\&.f\&.
+.SS "subroutine pzmmch1 (integer ICTXT, character*1 UPLO, character*1 TRANS, integer N, integer K, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) C, \fBcomplex\fP*16, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, \fBcomplex\fP*16, dimension( * ) CT, double precision, dimension( * ) G, double precision ERR, integer INFO)"
+
+.PP
+Definition at line 5789 of file pzblastst\&.f\&.
+.SS "subroutine pzmmch2 (integer ICTXT, character*1 UPLO, character*1 TRANS, integer N, integer K, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) C, \fBcomplex\fP*16, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, \fBcomplex\fP*16, dimension( * ) CT, double precision, dimension( * ) G, double precision ERR, integer INFO)"
+
+.PP
+Definition at line 6169 of file pzblastst\&.f\&.
+.SS "subroutine pzmmch3 (character*1 UPLO, character*1 TRANS, integer M, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) C, \fBcomplex\fP*16, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, double precision ERR, integer INFO)"
+
+.PP
+Definition at line 6585 of file pzblastst\&.f\&.
+.SS "subroutine pzmprnt (integer ICTXT, integer NOUT, integer M, integer N, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA, integer IRPRNT, integer ICPRNT, character*(*) CMATNM)"
+
+.PP
+Definition at line 3955 of file pzblastst\&.f\&.
+.SS "subroutine pzmvch (integer ICTXT, character*1 TRANS, integer M, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, \fBcomplex\fP*16 BETA, \fBcomplex\fP*16, dimension( * ) Y, \fBcomplex\fP*16, dimension( * ) PY, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, double precision, dimension( * ) G, double precision ERR, integer INFO)"
+
+.PP
+Definition at line 4172 of file pzblastst\&.f\&.
+.SS "subroutine pzoptee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME)"
+
+.PP
+Definition at line 2 of file pzblastst\&.f\&.
+.SS "subroutine pzsetpblas (integer ICTXT)"
+
+.PP
+Definition at line 1478 of file pzblastst\&.f\&.
+.SS "subroutine pzvecee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*7 SNAME)"
+
+.PP
+Definition at line 936 of file pzblastst\&.f\&.
+.SS "subroutine pzvmch (integer ICTXT, character*1 TRANS, character*1 UPLO, integer M, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, \fBcomplex\fP*16, dimension( * ) Y, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, \fBcomplex\fP*16, dimension( * ) A, \fBcomplex\fP*16, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) G, double precision ERR, integer INFO)"
+
+.PP
+Definition at line 4606 of file pzblastst\&.f\&.
+.SS "subroutine pzvmch2 (integer ICTXT, character*1 UPLO, integer M, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, \fBcomplex\fP*16, dimension( * ) Y, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, \fBcomplex\fP*16, dimension( * ) A, \fBcomplex\fP*16, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) G, double precision ERR, integer INFO)"
+
+.PP
+Definition at line 4975 of file pzblastst\&.f\&.
+.SS "subroutine pzvprnt (integer ICTXT, integer NOUT, integer N, \fBcomplex\fP*16, dimension( * ) X, integer INCX, integer IRPRNT, integer ICPRNT, character*(*) CVECNM)"
+
+.PP
+Definition at line 4067 of file pzblastst\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

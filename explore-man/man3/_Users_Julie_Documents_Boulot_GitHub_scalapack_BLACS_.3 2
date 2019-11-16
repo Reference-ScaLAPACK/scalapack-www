@@ -1,0 +1,21 @@
+.TH "BLACS Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Directories"
+
+.in +1c
+.ti -1c
+.RI "directory \fBINSTALL\fP"
+.br
+.ti -1c
+.RI "directory \fBSRC\fP"
+.br
+.ti -1c
+.RI "directory \fBTESTING\fP"
+.br
+.in -1c

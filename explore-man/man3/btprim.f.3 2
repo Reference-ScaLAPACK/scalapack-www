@@ -1,0 +1,52 @@
+.TH "BLACS/TESTING/btprim.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/TESTING/btprim.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBbtsetup\fP (MEM, MEMLEN, CMEM, CMEMLEN, OUTNUM, TESTSDRV, TESTBSBR, TESTCOMB, TESTAUX, IAM, NNODES)"
+.br
+.ti -1c
+.RI "integer function \fBibtmyproc\fP ()"
+.br
+.ti -1c
+.RI "integer function \fBibtnprocs\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBbtsend\fP (DTYPE, N, BUFF, DEST, MSGID)"
+.br
+.ti -1c
+.RI "subroutine \fBbtrecv\fP (DTYPE, N, BUFF, SRC, MSGID)"
+.br
+.ti -1c
+.RI "integer function \fBibtsizeof\fP (\fBTYPE\fP)"
+.br
+.ti -1c
+.RI "subroutine \fBbtmpierr\fP (ROUT, IERR0)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine btmpierr (character*(*) ROUT, integer IERR0)"
+
+.SS "subroutine btrecv (integer DTYPE, integer N, real, dimension(*) BUFF, integer SRC, integer MSGID)"
+
+.SS "subroutine btsend (integer DTYPE, integer N, real, dimension(*) BUFF, integer DEST, integer MSGID)"
+
+.SS "subroutine btsetup (integer, dimension(memlen) MEM, integer MEMLEN, character*1, dimension(cmemlen) CMEM, integer CMEMLEN, integer OUTNUM, logical TESTSDRV, logical TESTBSBR, logical TESTCOMB, logical TESTAUX, integer IAM, integer NNODES)"
+
+.SS "integer function ibtmyproc ()"
+
+.SS "integer function ibtnprocs ()"
+
+.SS "integer function ibtsizeof (character*1 TYPE)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

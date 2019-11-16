@@ -1,0 +1,787 @@
+.TH "BLACS/TESTING/blacstest.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/TESTING/blacstest.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "program \fBblacstest\fP"
+.br
+.ti -1c
+.RI "subroutine \fBruntests\fP (MEM, MEMLEN, CMEM, CMEMLEN, PREC, NPREC, OUTNUM, VERB, TESTSDRV, TESTBSBR, TESTCOMB, TESTAUX)"
+.br
+.ti -1c
+.RI "subroutine \fBmakegrids\fP (CONTEXTS, OUTNUM, NGRIDS, P, Q)"
+.br
+.ti -1c
+.RI "subroutine \fBfreegrids\fP (NGRIDS, CONTEXTS)"
+.br
+.ti -1c
+.RI "subroutine \fBauxtest\fP (OUTNUM, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBbttranschar\fP (TRANSTO, N, CMEM, IMEM)"
+.br
+.ti -1c
+.RI "subroutine \fBbtinfo\fP (TEST, MEMUSED, MEM, MEMLEN, CMEMUSED, CMEM, CMEMLEN, OUTNUM, NOP, NSCOPE, TREP, TCOH, NTOP, NSHAPE, NMAT, NSRC, NGRID, OPPTR, SCOPEPTR, TOPPTR, UPLOPTR, DIAGPTR, MPTR, NPTR, LDSPTR, LDDPTR, LDIPTR, RSRCPTR, CSRCPTR, RDESTPTR, CDESTPTR, PPTR, QPTR)"
+.br
+.ti -1c
+.RI "subroutine \fBrdbtin\fP (TESTSDRV, TESTBSBR, TESTCOMB, TESTAUX, NPREC, PREC, VERB, OUTNUM)"
+.br
+.ti -1c
+.RI "integer function \fBibtmsgid\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBbtunpack\fP (TEST, MEM, MEMLEN, NOP, NSCOPE, TREP, TCOH, NTOP, NSHAPE, NMAT, NSRC, NGRID, OPPTR, SCOPEPTR, TOPPTR, UPLOPTR, DIAGPTR, MPTR, NPTR, LDSPTR, LDDPTR, LDIPTR, RSRCPTR, CSRCPTR, RDESTPTR, CDESTPTR, PPTR, QPTR)"
+.br
+.ti -1c
+.RI "integer function \fBsafeindex\fP (INDX, SIZE1, SIZE2)"
+.br
+.ti -1c
+.RI "subroutine \fBrdsdrv\fP (MEMUSED, MEM, MEMLEN, CMEMUSED, CMEM, CMEMLEN, OUTNUM)"
+.br
+.ti -1c
+.RI "subroutine \fBchkmatdat\fP (NOUT, INFILE, TSTFLAG, NMAT, M0, N0, LDAS0, LDAD0, LDI0)"
+.br
+.ti -1c
+.RI "logical function \fBallpass\fP (THISTEST)"
+.br
+.ti -1c
+.RI "subroutine \fBrdbsbr\fP (MEMUSED, MEM, MEMLEN, CMEMUSED, CMEM, CMEMLEN, OUTNUM)"
+.br
+.ti -1c
+.RI "subroutine \fBisdrvtest\fP (OUTNUM, VERB, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBssdrvtest\fP (OUTNUM, VERB, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBdsdrvtest\fP (OUTNUM, VERB, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBcsdrvtest\fP (OUTNUM, VERB, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBzsdrvtest\fP (OUTNUM, VERB, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBibsbrtest\fP (OUTNUM, VERB, NSCOPE, SCOPE0, NTOP, TOP0, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBsbsbrtest\fP (OUTNUM, VERB, NSCOPE, SCOPE0, NTOP, TOP0, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBdbsbrtest\fP (OUTNUM, VERB, NSCOPE, SCOPE0, NTOP, TOP0, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBcbsbrtest\fP (OUTNUM, VERB, NSCOPE, SCOPE0, NTOP, TOP0, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBzbsbrtest\fP (OUTNUM, VERB, NSCOPE, SCOPE0, NTOP, TOP0, NSHAPE, UPLO0, DIAG0, NMAT, M0, N0, LDAS0, LDAD0, NSRC, RSRC0, CSRC0, NGRID, CONTEXT0, P0, Q0, TFAIL, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBrdcomb\fP (MEMUSED, MEM, MEMLEN, CMEMUSED, CMEM, CMEMLEN, OUTNUM)"
+.br
+.ti -1c
+.RI "subroutine \fBibtcheckin\fP (NFTESTS, OUTNUM, MAXERR, NERR, IERR, IVAL, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBiinitmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "subroutine \fBigenmat\fP (M, N, A, LDA, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "integer function \fBibtran\fP (ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBipadmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBichkpad\fP (UPLO, DIAG, M, N, MEM, LDA, RSRC, CSRC, MYROW, MYCOL, IPRE, IPOST, CHECKVAL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBichkmat\fP (UPLO, DIAG, M, N, A, LDA, RSRC, CSRC, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBiprinterrs\fP (OUTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, COUNTING, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBsbtcheckin\fP (NFTESTS, OUTNUM, MAXERR, NERR, IERR, SVAL, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBsinitmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "subroutine \fBsgenmat\fP (M, N, A, LDA, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "real function \fBsbtran\fP (ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBspadmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBschkpad\fP (UPLO, DIAG, M, N, MEM, LDA, RSRC, CSRC, MYROW, MYCOL, IPRE, IPOST, CHECKVAL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBschkmat\fP (UPLO, DIAG, M, N, A, LDA, RSRC, CSRC, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBsprinterrs\fP (OUTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, COUNTING, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBdbtcheckin\fP (NFTESTS, OUTNUM, MAXERR, NERR, IERR, DVAL, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBdinitmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "subroutine \fBdgenmat\fP (M, N, A, LDA, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "double precision function \fBdbtran\fP (ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBdpadmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBdchkpad\fP (UPLO, DIAG, M, N, MEM, LDA, RSRC, CSRC, MYROW, MYCOL, IPRE, IPOST, CHECKVAL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBdchkmat\fP (UPLO, DIAG, M, N, A, LDA, RSRC, CSRC, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBdprinterrs\fP (OUTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, COUNTING, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBcbtcheckin\fP (NFTESTS, OUTNUM, MAXERR, NERR, IERR, CVAL, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBcinitmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "subroutine \fBcgenmat\fP (M, N, A, LDA, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "\fBcomplex\fP function \fBcbtran\fP (ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBcpadmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBcchkpad\fP (UPLO, DIAG, M, N, MEM, LDA, RSRC, CSRC, MYROW, MYCOL, IPRE, IPOST, CHECKVAL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBcchkmat\fP (UPLO, DIAG, M, N, A, LDA, RSRC, CSRC, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBcprinterrs\fP (OUTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, COUNTING, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBzbtcheckin\fP (NFTESTS, OUTNUM, MAXERR, NERR, IERR, ZVAL, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBzinitmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "subroutine \fBzgenmat\fP (M, N, A, LDA, TESTNUM, MYROW, MYCOL)"
+.br
+.ti -1c
+.RI "double \fBcomplex\fP function \fBzbtran\fP (ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBzpadmat\fP (UPLO, DIAG, M, N, MEM, LDA, IPRE, IPOST, CHECKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBzchkpad\fP (UPLO, DIAG, M, N, MEM, LDA, RSRC, CSRC, MYROW, MYCOL, IPRE, IPOST, CHECKVAL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBzchkmat\fP (UPLO, DIAG, M, N, A, LDA, RSRC, CSRC, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBzprinterrs\fP (OUTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, COUNTING, TFAILED)"
+.br
+.ti -1c
+.RI "subroutine \fBisumtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "integer function \fBibtabs\fP (VAL)"
+.br
+.ti -1c
+.RI "subroutine \fBichksum\fP (SCOPE, ICTXT, M, N, A, LDA, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBssumtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "real function \fBsbtabs\fP (VAL)"
+.br
+.ti -1c
+.RI "real function \fBsbteps\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBschksum\fP (SCOPE, ICTXT, M, N, A, LDA, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBdsumtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "double precision function \fBdbtabs\fP (VAL)"
+.br
+.ti -1c
+.RI "double precision function \fBdbteps\fP ()"
+.br
+.ti -1c
+.RI "subroutine \fBdchksum\fP (SCOPE, ICTXT, M, N, A, LDA, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBcsumtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "real function \fBcbtabs\fP (VAL)"
+.br
+.ti -1c
+.RI "subroutine \fBcchksum\fP (SCOPE, ICTXT, M, N, A, LDA, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBzsumtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "double precision function \fBzbtabs\fP (VAL)"
+.br
+.ti -1c
+.RI "subroutine \fBzchksum\fP (SCOPE, ICTXT, M, N, A, LDA, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED)"
+.br
+.ti -1c
+.RI "subroutine \fBiamxtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBibtspcoord\fP (SCOPE, PNUM, MYROW, MYCOL, NPCOL, PROW, PCOL)"
+.br
+.ti -1c
+.RI "integer function \fBibtspnum\fP (SCOPE, PROW, PCOL, NPCOL)"
+.br
+.ti -1c
+.RI "subroutine \fBircchk\fP (IPRE, IPOST, PADVAL, M, N, RA, CA, LDI, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBichkamx\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBsamxtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBsrcchk\fP (IPRE, IPOST, PADVAL, M, N, RA, CA, LDI, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBschkamx\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBdamxtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBdrcchk\fP (IPRE, IPOST, PADVAL, M, N, RA, CA, LDI, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBdchkamx\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBcamxtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBcrcchk\fP (IPRE, IPOST, PADVAL, M, N, RA, CA, LDI, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBcchkamx\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBzamxtest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBzrcchk\fP (IPRE, IPOST, PADVAL, M, N, RA, CA, LDI, MYROW, MYCOL, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF)"
+.br
+.ti -1c
+.RI "subroutine \fBzchkamx\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBiamntest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBichkamn\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBsamntest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBschkamn\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBdamntest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBdchkamn\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBcamntest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBcchkamn\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.ti -1c
+.RI "subroutine \fBzamntest\fP (OUTNUM, VERB, TOPSREPEAT, TOPSCOHRNT, NSCOPE, SCOPE0, NTOP, TOP0, NMAT, M0, N0, LDAS0, LDAD0, LDI0, NDEST, RDEST0, CDEST0, NGRID, CONTEXT0, P0, Q0, ISEED, RMEM, CMEM, RCLEN, MEM, MEMLEN)"
+.br
+.ti -1c
+.RI "subroutine \fBzchkamn\fP (SCOPE, ICTXT, M, N, A, LDA, RA, CA, LDI, TESTNUM, MAXERR, NERR, ERRIBUF, ERRDBUF, ISEED, VALS)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "logical function allpass (logical THISTEST)"
+
+.PP
+Definition at line 1881 of file blacstest\&.f\&.
+.SS "subroutine auxtest (integer OUTNUM, integer, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 681 of file blacstest\&.f\&.
+.SS "program blacstest ()"
+
+.PP
+Definition at line 1 of file blacstest\&.f\&.
+.SS "subroutine btinfo (character*1 TEST, integer MEMUSED, integer, dimension(memlen) MEM, integer MEMLEN, integer CMEMUSED, character*1, dimension(cmemlen) CMEM, integer CMEMLEN, integer OUTNUM, integer NOP, integer NSCOPE, integer TREP, integer TCOH, integer NTOP, integer NSHAPE, integer NMAT, integer NSRC, integer NGRID, integer OPPTR, integer SCOPEPTR, integer TOPPTR, integer UPLOPTR, integer DIAGPTR, integer MPTR, integer NPTR, integer LDSPTR, integer LDDPTR, integer LDIPTR, integer RSRCPTR, integer CSRCPTR, integer RDESTPTR, integer CDESTPTR, integer PPTR, integer QPTR)"
+
+.PP
+Definition at line 1063 of file blacstest\&.f\&.
+.SS "subroutine bttranschar (character TRANSTO, integer N, character*1, dimension(n) CMEM, integer, dimension(n) IMEM)"
+
+.PP
+Definition at line 1039 of file blacstest\&.f\&.
+.SS "subroutine btunpack (character*1 TEST, integer, dimension(memlen) MEM, integer MEMLEN, integer NOP, integer NSCOPE, integer TREP, integer TCOH, integer NTOP, integer NSHAPE, integer NMAT, integer NSRC, integer NGRID, integer OPPTR, integer SCOPEPTR, integer TOPPTR, integer UPLOPTR, integer DIAGPTR, integer MPTR, integer NPTR, integer LDSPTR, integer LDDPTR, integer LDIPTR, integer RSRCPTR, integer CSRCPTR, integer RDESTPTR, integer CDESTPTR, integer PPTR, integer QPTR)"
+
+.PP
+Definition at line 1397 of file blacstest\&.f\&.
+.SS "subroutine camntest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 20433 of file blacstest\&.f\&.
+.SS "subroutine camxtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 16865 of file blacstest\&.f\&.
+.SS "subroutine cbsbrtest (integer OUTNUM, integer VERB, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 5170 of file blacstest\&.f\&.
+.SS "real function cbtabs (\fBcomplex\fP VAL)"
+
+.PP
+Definition at line 13708 of file blacstest\&.f\&.
+.SS "subroutine cbtcheckin (integer NFTESTS, integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(*) IERR, \fBcomplex\fP, dimension(*) CVAL, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 9469 of file blacstest\&.f\&.
+.SS "\fBcomplex\fP function cbtran (integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 9683 of file blacstest\&.f\&.
+.SS "subroutine cchkamn (character*1 SCOPE, integer ICTXT, integer M, integer N, \fBcomplex\fP, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, \fBcomplex\fP, dimension(*) VALS)"
+
+.PP
+Definition at line 20899 of file blacstest\&.f\&.
+.SS "subroutine cchkamx (character*1 SCOPE, integer ICTXT, integer M, integer N, \fBcomplex\fP, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, \fBcomplex\fP, dimension(*) VALS)"
+
+.PP
+Definition at line 17500 of file blacstest\&.f\&.
+.SS "subroutine cchkmat (character*1 UPLO, character*1 DIAG, integer M, integer N, \fBcomplex\fP, dimension(lda,n) A, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, \fBcomplex\fP, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 10133 of file blacstest\&.f\&.
+.SS "subroutine cchkpad (character*1 UPLO, character*1 DIAG, integer M, integer N, \fBcomplex\fP, dimension(*) MEM, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer IPRE, integer IPOST, \fBcomplex\fP CHECKVAL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, \fBcomplex\fP, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 9872 of file blacstest\&.f\&.
+.SS "subroutine cchksum (character*1 SCOPE, integer ICTXT, integer M, integer N, \fBcomplex\fP, dimension(lda,*) A, integer LDA, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 13715 of file blacstest\&.f\&.
+.SS "subroutine cgenmat (integer M, integer N, \fBcomplex\fP, dimension(lda,n) A, integer LDA, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 9608 of file blacstest\&.f\&.
+.SS "subroutine chkmatdat (integer NOUT, character*8 INFILE, logical TSTFLAG, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0)"
+
+.PP
+Definition at line 1791 of file blacstest\&.f\&.
+.SS "subroutine cinitmat (character*1 UPLO, character*1 DIAG, integer M, integer N, \fBcomplex\fP, dimension(*) MEM, integer LDA, integer IPRE, integer IPOST, \fBcomplex\fP CHECKVAL, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 9591 of file blacstest\&.f\&.
+.SS "subroutine cpadmat (character*1 UPLO, character*1 DIAG, integer M, integer N, \fBcomplex\fP, dimension( * ) MEM, integer LDA, integer IPRE, integer IPOST, \fBcomplex\fP CHECKVAL)"
+
+.PP
+Definition at line 9698 of file blacstest\&.f\&.
+.SS "subroutine cprinterrs (integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, logical COUNTING, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 10338 of file blacstest\&.f\&.
+.SS "subroutine crcchk (integer IPRE, integer IPOST, integer PADVAL, integer M, integer N, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, \fBcomplex\fP, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 17331 of file blacstest\&.f\&.
+.SS "subroutine csdrvtest (integer OUTNUM, integer VERB, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer, dimension(nsrc) RDEST0, integer, dimension(nsrc) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 3237 of file blacstest\&.f\&.
+.SS "subroutine csumtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 13287 of file blacstest\&.f\&.
+.SS "subroutine damntest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, double precision, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 19787 of file blacstest\&.f\&.
+.SS "subroutine damxtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, double precision, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 16050 of file blacstest\&.f\&.
+.SS "subroutine dbsbrtest (integer OUTNUM, integer VERB, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, double precision, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 4755 of file blacstest\&.f\&.
+.SS "double precision function dbtabs (double precision VAL)"
+
+.PP
+Definition at line 13130 of file blacstest\&.f\&.
+.SS "subroutine dbtcheckin (integer NFTESTS, integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(*) IERR, double precision, dimension(*) DVAL, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 8405 of file blacstest\&.f\&.
+.SS "double precision function dbteps ()"
+
+.PP
+Definition at line 13136 of file blacstest\&.f\&.
+.SS "double precision function dbtran (integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 8619 of file blacstest\&.f\&.
+.SS "subroutine dchkamn (character*1 SCOPE, integer ICTXT, integer M, integer N, double precision, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double precision, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, double precision, dimension(*) VALS)"
+
+.PP
+Definition at line 20253 of file blacstest\&.f\&.
+.SS "subroutine dchkamx (character*1 SCOPE, integer ICTXT, integer M, integer N, double precision, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double precision, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, double precision, dimension(*) VALS)"
+
+.PP
+Definition at line 16685 of file blacstest\&.f\&.
+.SS "subroutine dchkmat (character*1 UPLO, character*1 DIAG, integer M, integer N, double precision, dimension(lda,n) A, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double precision, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 9071 of file blacstest\&.f\&.
+.SS "subroutine dchkpad (character*1 UPLO, character*1 DIAG, integer M, integer N, double precision, dimension(*) MEM, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer IPRE, integer IPOST, double precision CHECKVAL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double precision, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 8810 of file blacstest\&.f\&.
+.SS "subroutine dchksum (character*1 SCOPE, integer ICTXT, integer M, integer N, double precision, dimension(lda,*) A, integer LDA, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double precision, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 13179 of file blacstest\&.f\&.
+.SS "subroutine dgenmat (integer M, integer N, double precision, dimension(lda,n) A, integer LDA, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 8544 of file blacstest\&.f\&.
+.SS "subroutine dinitmat (character*1 UPLO, character*1 DIAG, integer M, integer N, double precision, dimension(*) MEM, integer LDA, integer IPRE, integer IPOST, double precision CHECKVAL, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 8527 of file blacstest\&.f\&.
+.SS "subroutine dpadmat (character*1 UPLO, character*1 DIAG, integer M, integer N, double precision, dimension( * ) MEM, integer LDA, integer IPRE, integer IPOST, double precision CHECKVAL)"
+
+.PP
+Definition at line 8636 of file blacstest\&.f\&.
+.SS "subroutine dprinterrs (integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double precision, dimension(2, maxerr) ERRDBUF, logical COUNTING, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 9276 of file blacstest\&.f\&.
+.SS "subroutine drcchk (integer IPRE, integer IPOST, integer PADVAL, integer M, integer N, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double precision, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 16516 of file blacstest\&.f\&.
+.SS "subroutine dsdrvtest (integer OUTNUM, integer VERB, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer, dimension(nsrc) RDEST0, integer, dimension(nsrc) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, double precision, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 2893 of file blacstest\&.f\&.
+.SS "subroutine dsumtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, double precision, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 12709 of file blacstest\&.f\&.
+.SS "subroutine freegrids (integer NGRIDS, integer, dimension(ngrids) CONTEXTS)"
+
+.PP
+Definition at line 668 of file blacstest\&.f\&.
+.SS "subroutine iamntest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, integer, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 18499 of file blacstest\&.f\&.
+.SS "subroutine iamxtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, integer, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 14386 of file blacstest\&.f\&.
+.SS "subroutine ibsbrtest (integer OUTNUM, integer VERB, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, integer, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 3925 of file blacstest\&.f\&.
+.SS "integer function ibtabs (integer VAL)"
+
+.PP
+Definition at line 12027 of file blacstest\&.f\&.
+.SS "subroutine ibtcheckin (integer NFTESTS, integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(*) IERR, integer, dimension(*) IVAL, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 6272 of file blacstest\&.f\&.
+.SS "integer function ibtmsgid ()"
+
+.PP
+Definition at line 1361 of file blacstest\&.f\&.
+.SS "integer function ibtran (integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 6486 of file blacstest\&.f\&.
+.SS "subroutine ibtspcoord (character*1 SCOPE, integer PNUM, integer MYROW, integer MYCOL, integer NPCOL, integer PROW, integer PCOL)"
+
+.PP
+Definition at line 14850 of file blacstest\&.f\&.
+.SS "integer function ibtspnum (character*1 SCOPE, integer PROW, integer PCOL, integer NPCOL)"
+
+.PP
+Definition at line 14870 of file blacstest\&.f\&.
+.SS "subroutine ichkamn (character*1 SCOPE, integer ICTXT, integer M, integer N, integer, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, integer, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, integer, dimension(*) VALS)"
+
+.PP
+Definition at line 18964 of file blacstest\&.f\&.
+.SS "subroutine ichkamx (character*1 SCOPE, integer ICTXT, integer M, integer N, integer, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, integer, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, integer, dimension(*) VALS)"
+
+.PP
+Definition at line 15058 of file blacstest\&.f\&.
+.SS "subroutine ichkmat (character*1 UPLO, character*1 DIAG, integer M, integer N, integer, dimension(lda,n) A, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, integer, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 6943 of file blacstest\&.f\&.
+.SS "subroutine ichkpad (character*1 UPLO, character*1 DIAG, integer M, integer N, integer, dimension(*) MEM, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer IPRE, integer IPOST, integer CHECKVAL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, integer, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 6682 of file blacstest\&.f\&.
+.SS "subroutine ichksum (character*1 SCOPE, integer ICTXT, integer M, integer N, integer, dimension(lda,*) A, integer LDA, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, integer, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 12034 of file blacstest\&.f\&.
+.SS "subroutine igenmat (integer M, integer N, integer, dimension(lda,n) A, integer LDA, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 6411 of file blacstest\&.f\&.
+.SS "subroutine iinitmat (character*1 UPLO, character*1 DIAG, integer M, integer N, integer, dimension(*) MEM, integer LDA, integer IPRE, integer IPOST, integer CHECKVAL, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 6394 of file blacstest\&.f\&.
+.SS "subroutine ipadmat (character*1 UPLO, character*1 DIAG, integer M, integer N, integer, dimension( * ) MEM, integer LDA, integer IPRE, integer IPOST, integer CHECKVAL)"
+
+.PP
+Definition at line 6508 of file blacstest\&.f\&.
+.SS "subroutine iprinterrs (integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, integer, dimension(2, maxerr) ERRDBUF, logical COUNTING, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 7148 of file blacstest\&.f\&.
+.SS "subroutine ircchk (integer IPRE, integer IPOST, integer PADVAL, integer M, integer N, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, integer, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 14889 of file blacstest\&.f\&.
+.SS "subroutine isdrvtest (integer OUTNUM, integer VERB, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer, dimension(nsrc) RDEST0, integer, dimension(nsrc) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, integer, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 2205 of file blacstest\&.f\&.
+.SS "subroutine isumtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 11607 of file blacstest\&.f\&.
+.SS "subroutine makegrids (integer, dimension(ngrids) CONTEXTS, integer OUTNUM, integer NGRIDS, integer, dimension(ngrids) P, integer, dimension(ngrids) Q)"
+
+.PP
+Definition at line 640 of file blacstest\&.f\&.
+.SS "subroutine rdbsbr (integer MEMUSED, integer, dimension(memlen) MEM, integer MEMLEN, integer CMEMUSED, character*1, dimension(cmemlen) CMEM, integer CMEMLEN, integer OUTNUM)"
+
+.PP
+Definition at line 1914 of file blacstest\&.f\&.
+.SS "subroutine rdbtin (logical TESTSDRV, logical TESTBSBR, logical TESTCOMB, logical TESTAUX, integer NPREC, character*1, dimension(*) PREC, integer VERB, integer OUTNUM)"
+
+.PP
+Definition at line 1145 of file blacstest\&.f\&.
+.SS "subroutine rdcomb (integer MEMUSED, integer, dimension(memlen) MEM, integer MEMLEN, integer CMEMUSED, character*1, dimension(cmemlen) CMEM, integer CMEMLEN, integer OUTNUM)"
+
+.PP
+Definition at line 5998 of file blacstest\&.f\&.
+.SS "subroutine rdsdrv (integer MEMUSED, integer, dimension(memlen) MEM, integer MEMLEN, integer CMEMUSED, character*1, dimension(cmemlen) CMEM, integer CMEMLEN, integer OUTNUM)"
+
+.PP
+Definition at line 1548 of file blacstest\&.f\&.
+.SS "subroutine runtests (integer, dimension(memlen) MEM, integer MEMLEN, character*1, dimension(cmemlen) CMEM, integer CMEMLEN, character*1, dimension(nprec) PREC, integer NPREC, integer OUTNUM, integer VERB, logical TESTSDRV, logical TESTBSBR, logical TESTCOMB, logical TESTAUX)"
+
+.PP
+Definition at line 181 of file blacstest\&.f\&.
+.SS "integer function safeindex (integer INDX, integer SIZE1, integer SIZE2)"
+
+.PP
+Definition at line 1517 of file blacstest\&.f\&.
+.SS "subroutine samntest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, real, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 19141 of file blacstest\&.f\&.
+.SS "subroutine samxtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, real, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 15235 of file blacstest\&.f\&.
+.SS "subroutine sbsbrtest (integer OUTNUM, integer VERB, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, real, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 4340 of file blacstest\&.f\&.
+.SS "real function sbtabs (real VAL)"
+
+.PP
+Definition at line 12552 of file blacstest\&.f\&.
+.SS "subroutine sbtcheckin (integer NFTESTS, integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(*) IERR, real, dimension(*) SVAL, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 7341 of file blacstest\&.f\&.
+.SS "real function sbteps ()"
+
+.PP
+Definition at line 12558 of file blacstest\&.f\&.
+.SS "real function sbtran (integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 7555 of file blacstest\&.f\&.
+.SS "subroutine schkamn (character*1 SCOPE, integer ICTXT, integer M, integer N, real, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, real, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, real, dimension(*) VALS)"
+
+.PP
+Definition at line 19607 of file blacstest\&.f\&.
+.SS "subroutine schkamx (character*1 SCOPE, integer ICTXT, integer M, integer N, real, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, real, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, real, dimension(*) VALS)"
+
+.PP
+Definition at line 15870 of file blacstest\&.f\&.
+.SS "subroutine schkmat (character*1 UPLO, character*1 DIAG, integer M, integer N, real, dimension(lda,n) A, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, real, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 8007 of file blacstest\&.f\&.
+.SS "subroutine schkpad (character*1 UPLO, character*1 DIAG, integer M, integer N, real, dimension(*) MEM, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer IPRE, integer IPOST, real CHECKVAL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, real, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 7746 of file blacstest\&.f\&.
+.SS "subroutine schksum (character*1 SCOPE, integer ICTXT, integer M, integer N, real, dimension(lda,*) A, integer LDA, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, real, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 12601 of file blacstest\&.f\&.
+.SS "subroutine sgenmat (integer M, integer N, real, dimension(lda,n) A, integer LDA, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 7480 of file blacstest\&.f\&.
+.SS "subroutine sinitmat (character*1 UPLO, character*1 DIAG, integer M, integer N, real, dimension(*) MEM, integer LDA, integer IPRE, integer IPOST, real CHECKVAL, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 7463 of file blacstest\&.f\&.
+.SS "subroutine spadmat (character*1 UPLO, character*1 DIAG, integer M, integer N, real, dimension( * ) MEM, integer LDA, integer IPRE, integer IPOST, real CHECKVAL)"
+
+.PP
+Definition at line 7572 of file blacstest\&.f\&.
+.SS "subroutine sprinterrs (integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, real, dimension(2, maxerr) ERRDBUF, logical COUNTING, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 8212 of file blacstest\&.f\&.
+.SS "subroutine srcchk (integer IPRE, integer IPOST, integer PADVAL, integer M, integer N, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, real, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 15701 of file blacstest\&.f\&.
+.SS "subroutine ssdrvtest (integer OUTNUM, integer VERB, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer, dimension(nsrc) RDEST0, integer, dimension(nsrc) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, real, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 2549 of file blacstest\&.f\&.
+.SS "subroutine ssumtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, real, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 12131 of file blacstest\&.f\&.
+.SS "subroutine zamntest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, double \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 21081 of file blacstest\&.f\&.
+.SS "subroutine zamxtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer, dimension(nmat) LDI0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, integer, dimension(rclen) RMEM, integer, dimension(rclen) CMEM, integer RCLEN, double \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 17682 of file blacstest\&.f\&.
+.SS "subroutine zbsbrtest (integer OUTNUM, integer VERB, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, double \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 5585 of file blacstest\&.f\&.
+.SS "double precision function zbtabs (double \fBcomplex\fP VAL)"
+
+.PP
+Definition at line 14257 of file blacstest\&.f\&.
+.SS "subroutine zbtcheckin (integer NFTESTS, integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(*) IERR, double \fBcomplex\fP, dimension(*) ZVAL, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 10537 of file blacstest\&.f\&.
+.SS "double \fBcomplex\fP function zbtran (integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 10751 of file blacstest\&.f\&.
+.SS "subroutine zchkamn (character*1 SCOPE, integer ICTXT, integer M, integer N, double \fBcomplex\fP, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, double \fBcomplex\fP, dimension(*) VALS)"
+
+.PP
+Definition at line 21547 of file blacstest\&.f\&.
+.SS "subroutine zchkamx (character*1 SCOPE, integer ICTXT, integer M, integer N, double \fBcomplex\fP, dimension(lda,*) A, integer LDA, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED, double \fBcomplex\fP, dimension(*) VALS)"
+
+.PP
+Definition at line 18317 of file blacstest\&.f\&.
+.SS "subroutine zchkmat (character*1 UPLO, character*1 DIAG, integer M, integer N, double \fBcomplex\fP, dimension(lda,n) A, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double \fBcomplex\fP, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 11201 of file blacstest\&.f\&.
+.SS "subroutine zchkpad (character*1 UPLO, character*1 DIAG, integer M, integer N, double \fBcomplex\fP, dimension(*) MEM, integer LDA, integer RSRC, integer CSRC, integer MYROW, integer MYCOL, integer IPRE, integer IPOST, double \fBcomplex\fP CHECKVAL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double \fBcomplex\fP, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 10940 of file blacstest\&.f\&.
+.SS "subroutine zchksum (character*1 SCOPE, integer ICTXT, integer M, integer N, double \fBcomplex\fP, dimension(lda,*) A, integer LDA, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, integer, dimension(*) ISEED)"
+
+.PP
+Definition at line 14264 of file blacstest\&.f\&.
+.SS "subroutine zgenmat (integer M, integer N, double \fBcomplex\fP, dimension(lda,n) A, integer LDA, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 10676 of file blacstest\&.f\&.
+.SS "subroutine zinitmat (character*1 UPLO, character*1 DIAG, integer M, integer N, double \fBcomplex\fP, dimension(*) MEM, integer LDA, integer IPRE, integer IPOST, double \fBcomplex\fP CHECKVAL, integer TESTNUM, integer MYROW, integer MYCOL)"
+
+.PP
+Definition at line 10659 of file blacstest\&.f\&.
+.SS "subroutine zpadmat (character*1 UPLO, character*1 DIAG, integer M, integer N, double \fBcomplex\fP, dimension( * ) MEM, integer LDA, integer IPRE, integer IPOST, double \fBcomplex\fP CHECKVAL)"
+
+.PP
+Definition at line 10766 of file blacstest\&.f\&.
+.SS "subroutine zprinterrs (integer OUTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double \fBcomplex\fP, dimension(2, maxerr) ERRDBUF, logical COUNTING, integer, dimension(*) TFAILED)"
+
+.PP
+Definition at line 11406 of file blacstest\&.f\&.
+.SS "subroutine zrcchk (integer IPRE, integer IPOST, integer PADVAL, integer M, integer N, integer, dimension(*) RA, integer, dimension(*) CA, integer LDI, integer MYROW, integer MYCOL, integer TESTNUM, integer MAXERR, integer NERR, integer, dimension(6, maxerr) ERRIBUF, double \fBcomplex\fP, dimension(2, maxerr) ERRDBUF)"
+
+.PP
+Definition at line 18148 of file blacstest\&.f\&.
+.SS "subroutine zsdrvtest (integer OUTNUM, integer VERB, integer NSHAPE, character*1, dimension(nshape) UPLO0, character*1, dimension(nshape) DIAG0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NSRC, integer, dimension(nsrc) RSRC0, integer, dimension(nsrc) CSRC0, integer, dimension(nsrc) RDEST0, integer, dimension(nsrc) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) TFAIL, double \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 3581 of file blacstest\&.f\&.
+.SS "subroutine zsumtest (integer OUTNUM, integer VERB, integer TOPSREPEAT, integer TOPSCOHRNT, integer NSCOPE, character*1, dimension(nscope) SCOPE0, integer NTOP, character*1, dimension(ntop) TOP0, integer NMAT, integer, dimension(nmat) M0, integer, dimension(nmat) N0, integer, dimension(nmat) LDAS0, integer, dimension(nmat) LDAD0, integer NDEST, integer, dimension(ndest) RDEST0, integer, dimension(ndest) CDEST0, integer NGRID, integer, dimension(ngrid) CONTEXT0, integer, dimension(ngrid) P0, integer, dimension(ngrid) Q0, integer, dimension(*) ISEED, double \fBcomplex\fP, dimension(memlen) MEM, integer MEMLEN)"
+
+.PP
+Definition at line 13836 of file blacstest\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

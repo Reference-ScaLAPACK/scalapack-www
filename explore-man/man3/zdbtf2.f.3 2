@@ -1,0 +1,22 @@
+.TH "SRC/zdbtf2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/zdbtf2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBzdbtf2\fP (M, N, KL, KU, AB, LDAB, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine zdbtf2 (integer M, integer N, integer KL, integer KU, \fBcomplex\fP*16, dimension( ldab, * ) AB, integer LDAB, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "SRC/bdlaexc.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/bdlaexc.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBbdlaexc\fP (N, T, LDT, J1, N1, N2, ITRAF, DTRAF, WORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine bdlaexc (integer N, double precision, dimension( ldt, * ) T, integer LDT, integer J1, integer N1, integer N2, integer, dimension( * ) ITRAF, double precision, dimension( * ) DTRAF, double precision, dimension( * ) WORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

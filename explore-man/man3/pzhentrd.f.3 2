@@ -1,0 +1,22 @@
+.TH "SRC/pzhentrd.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pzhentrd.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzhentrd\fP (UPLO, N, A, IA, JA, DESCA, D, E, TAU, WORK, LWORK, RWORK, LRWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzhentrd (character UPLO, integer N, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) D, double precision, dimension( * ) E, \fBcomplex\fP*16, dimension( * ) TAU, \fBcomplex\fP*16, dimension( * ) WORK, integer LWORK, double precision, dimension( * ) RWORK, integer LRWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

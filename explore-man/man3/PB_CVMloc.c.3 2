@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/PTOOLS/PB_CVMloc.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTOOLS/PB_CVMloc.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./pblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBpblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBtools\&.h'\fP
+.br
+\fC#include '\&.\&./PBblacs\&.h'\fP
+.br
+\fC#include '\&.\&./PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBPB_CVMloc\fP (\fBPBTYP_T\fP *\fBTYPE\fP, \fBPB_VM_T\fP *VM, char *VROCS, char *ROCS, char *UNPA, char *TRANS, int MN, int K, char *ALPHA, char *A, int LDA, char *BETA, char *B, int LDB)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int PB_CVMloc (\fBPBTYP_T\fP        * TYPE, \fBPB_VM_T\fP        * VM, char           * VROCS, char * ROCS, char * UNPA, char * TRANS, int MN, int K, char           * ALPHA, char           * A, int LDA, char * BETA, char * B, int LDB)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

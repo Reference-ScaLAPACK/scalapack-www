@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pslagsy.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pslagsy.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslagsy\fP (N, K, D, A, IA, JA, DESCA, ISEED, ORDER, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslagsy (integer N, integer K, real, dimension( * ) D, real, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer, dimension( 4 ) ISEED, integer ORDER, real, dimension( * ) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

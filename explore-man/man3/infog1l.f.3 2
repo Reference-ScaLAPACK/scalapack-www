@@ -1,0 +1,22 @@
+.TH "TOOLS/infog1l.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/infog1l.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBinfog1l\fP (GINDX, NB, NPROCS, MYROC, ISRCPROC, LINDX, ROCSRC)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine infog1l (integer GINDX, integer NB, integer NPROCS, integer MYROC, integer ISRCPROC, integer LINDX, integer ROCSRC)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

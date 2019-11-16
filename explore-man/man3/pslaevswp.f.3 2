@@ -1,0 +1,22 @@
+.TH "SRC/pslaevswp.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pslaevswp.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslaevswp\fP (N, ZIN, LDZI, Z, IZ, JZ, DESCZ, NVS, KEY, WORK, LWORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslaevswp (integer N, real, dimension( ldzi, * ) ZIN, integer LDZI, real, dimension( * ) Z, integer IZ, integer JZ, integer, dimension( * ) DESCZ, integer, dimension( * ) NVS, integer, dimension( * ) KEY, real, dimension( * ) WORK, integer LWORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

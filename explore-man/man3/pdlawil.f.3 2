@@ -1,0 +1,22 @@
+.TH "SRC/pdlawil.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdlawil.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdlawil\fP (II, JJ, M, A, DESCA, H44, H33, H43H34, V)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlawil (integer II, integer JJ, integer M, double precision, dimension( * ) A, integer, dimension( * ) DESCA, double precision H44, double precision H33, double precision H43H34, double precision, dimension( * ) V)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

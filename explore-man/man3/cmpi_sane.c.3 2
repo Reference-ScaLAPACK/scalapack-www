@@ -1,0 +1,43 @@
+.TH "BLACS/INSTALL/cmpi_sane.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/INSTALL/cmpi_sane.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include 'mpi\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBWASTE_SIZE\fP   100"
+.br
+.ti -1c
+.RI "#define \fBNPROC\fP   4"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmain\fP (int narg, char **args)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define NPROC   4"
+
+.SS "#define WASTE_SIZE   100"
+
+.SH "Function Documentation"
+.PP 
+.SS "main (int narg, char ** args)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,27 @@
+.TH "SRC/pzmax1.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pzmax1.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzmax1\fP (N, AMAX, INDX, X, IX, JX, DESCX, INCX)"
+.br
+.ti -1c
+.RI "subroutine \fBzcombamax1\fP (V1, V2)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzmax1 (integer N, \fBcomplex\fP*16 AMAX, integer INDX, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX)"
+
+.SS "subroutine zcombamax1 (\fBcomplex\fP*16, dimension( 2 ) V1, \fBcomplex\fP*16, dimension( 2 ) V2)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

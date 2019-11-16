@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PTZBLAS/ctzpad.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTZBLAS/ctzpad.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBctzpad\fP (UPLO, \fBHERM\fP, M, N, IOFFD, ALPHA, BETA, A, LDA)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine ctzpad (character*1 UPLO, character*1 HERM, integer M, integer N, integer IOFFD, \fBcomplex\fP ALPHA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( lda, * ) A, integer LDA)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

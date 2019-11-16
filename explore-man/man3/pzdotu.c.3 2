@@ -1,0 +1,25 @@
+.TH "SRC/pzdotu.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pzdotu.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'pblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpzdotu_\fP (int *n, \fBcomplex16\fP *dotu, X, int *ix, int *jx, desc_X, int *incx, Y, int *iy, int *jy, desc_Y, int *incy)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void pzdotu_ (int * n, \fBcomplex16\fP   * dotu, X, int * ix, int * jx, desc_X, int         * incx, Y, int * iy, int * jy, desc_Y, int * incy)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,32 @@
+.TH "SRC/dlarrb2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/dlarrb2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdlarrb2\fP (N, D, LLD, IFIRST, ILAST, RTOL1, RTOL2, OFFSET, W, WGAP, WERR, WORK, IWORK, PIVMIN, LGPVMN, LGSPDM, TWIST, INFO)"
+.br
+.ti -1c
+.RI "integer function \fBdlaneg2\fP (N, D, LLD, SIGMA, PIVMIN, R)"
+.br
+.ti -1c
+.RI "integer function \fBdlaneg2a\fP (N, DLLD, SIGMA, PIVMIN, R)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "integer function dlaneg2 (integer N, double precision, dimension( * ) D, double precision, dimension( * ) LLD, double precision SIGMA, double precision PIVMIN, integer R)"
+
+.SS "integer function dlaneg2a (integer N, double precision, dimension( * ) DLLD, double precision SIGMA, double precision PIVMIN, integer R)"
+
+.SS "subroutine dlarrb2 (integer N, double precision, dimension( * ) D, double precision, dimension( * ) LLD, integer IFIRST, integer ILAST, double precision RTOL1, double precision RTOL2, integer OFFSET, double precision, dimension( * ) W, double precision, dimension( * ) WGAP, double precision, dimension( * ) WERR, double precision, dimension( * ) WORK, integer, dimension( * ) IWORK, double precision PIVMIN, double precision LGPVMN, double precision LGSPDM, integer TWIST, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

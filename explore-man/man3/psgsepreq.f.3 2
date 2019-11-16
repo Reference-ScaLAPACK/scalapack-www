@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/psgsepreq.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/psgsepreq.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpsgsepreq\fP (NIN, MEM, MEMSIZE, NOUT, ISEED, NTESTS, NSKIPPED, NNOCHECK, NPASSED, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine psgsepreq (integer NIN, real, dimension( memsize ) MEM, integer MEMSIZE, integer NOUT, integer, dimension( 4 ) ISEED, integer NTESTS, integer NSKIPPED, integer NNOCHECK, integer NPASSED, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

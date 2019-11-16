@@ -1,0 +1,22 @@
+.TH "SRC/pdgerqf.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdgerqf.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdgerqf\fP (M, N, A, IA, JA, DESCA, TAU, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdgerqf (integer M, integer N, double precision, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) TAU, double precision, dimension( * ) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

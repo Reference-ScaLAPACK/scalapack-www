@@ -1,0 +1,22 @@
+.TH "SRC/pmpcol.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pmpcol.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpmpcol\fP (MYPROC, NPROCS, IIL, NEEDIL, NEEDIU, PMYILS, PMYIUS, COLBRT, FRSTCL, LASTCL)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pmpcol (integer MYPROC, integer NPROCS, integer IIL, integer NEEDIL, integer NEEDIU, integer, dimension( * ) PMYILS, integer, dimension( * ) PMYIUS, logical COLBRT, integer FRSTCL, integer LASTCL)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

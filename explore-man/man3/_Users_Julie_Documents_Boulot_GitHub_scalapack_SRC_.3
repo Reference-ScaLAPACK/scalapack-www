@@ -1,0 +1,2097 @@
+.TH "SRC Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBbdlaapp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBbdlaexc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBbdtrexc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBbslaapp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBbslaexc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBbstrexc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcdbtf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcdbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcdttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcdttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBclahqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBclamov\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBclamsh\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBclanv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBclaref\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcpttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcsteqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBctrmvt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBddbtf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBddbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBddttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBddttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlamov\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBdlamsh\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlapst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlaqr6\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlar1va\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlaref\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlarrb2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlarrd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlarre2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlarre2a\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlarrf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlarrv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlasorte\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlasrt2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdpttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdstegr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdstegr2a\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdstegr2b\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdstein2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdsteqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdtrmvt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBgetpbbuf\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBlamov\&.h\fP"
+.br
+.ti -1c
+.RI "file \fBpbchkvect\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpblas\&.h\fP"
+.br
+.ti -1c
+.RI "file \fBpcdbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcdbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcdbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcdbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcdtsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcdttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcdttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcdttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgebd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgebrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgecon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgeequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgehd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgehrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgelq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgelqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgels\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgeql2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgeqlf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgeqpf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgeqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgeqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgerfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgerq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgerqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgesv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgesvd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgesvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgetf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgetrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgetri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcgetrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcggqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcggrqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcheev\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcheevd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcheevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcheevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchegs2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchegst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchegvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchengst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchentrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchetd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchetrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchettrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclabrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclacgv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclacon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaconsb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclacp2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclacp3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclacpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaevswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclahqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclahrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclamr1d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclange\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclanhe\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclanhs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclansy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclantr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclapiv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclapv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaqge\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaqsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarfb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarfc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarfg\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarzb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarzc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclarzt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclascl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclase2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclasmsub\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclassq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclatra\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclatrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclatrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclatrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclattrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclauu2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclauum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclawil\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcmax1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpocon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpoequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcporfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcposv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcposvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpotf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpotrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpotri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpotrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcptsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcpttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcrot\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpcsrscl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcstein\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrcon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrevc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrrfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrti2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrtri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctrtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctzrzf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcung2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcung2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcungl2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunglq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcungql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcungqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcungr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcungrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunm2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunm2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmbr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmhr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunml2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmlq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmr3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcunmtr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddtsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpddttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgebal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgebd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgebrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgecon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgeequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgehd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgehrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgelq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgelqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgels\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgeql2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgeqlf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgeqpf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgeqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgeqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgerfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgerq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgerqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgesv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgesvd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgesvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgetf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgetrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgetri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdgetrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdggqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdggrqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdhseqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlabad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlabrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlacon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaconsb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlacp2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlacp3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlacpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaed0\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaed1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaed2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaed3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaedz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaevswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlahqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlahrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaiect\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpdlamch\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlamr1d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlamve\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlange\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlanhs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlansy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlantr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlapiv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlapv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqge\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqr0\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqr1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqr3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqr4\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqr5\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaqsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlared1d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlared2d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlarf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlarfb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlarfg\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlarft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlarz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlarzb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlarzt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlascl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlase2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasmsub\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlasrt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlassq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlatra\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlatrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlatrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlatrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlauu2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlauum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlawil\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorg2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorg2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorgl2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorglq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorgql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorgqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorgr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorgrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorm2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorm2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormbr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormhr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdorml2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormlq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormr3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdormtr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpocon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpoequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdporfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdposv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdposvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpotf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpotrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpotri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpotrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdptsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdpttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdrot\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdrscl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdstebz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdstedc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdstein\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsyev\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsyevd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsyevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsyevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsygs2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsygst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsygvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsyngst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsyntrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsytd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsytrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdsyttrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrcon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrord\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrrfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrsen\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrti2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrtri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtzrzf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdzsum1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpilaenvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpilaver\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpiparmq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpjlaenv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpmpcol\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpmpim2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpscsum1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdtsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsdttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgebal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgebd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgebrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgecon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgeequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgehd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgehrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgelq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgelqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgels\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgeql2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgeqlf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgeqpf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgeqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgeqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgerfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgerq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgerqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgesv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgesvd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgesvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgetf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgetrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgetri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsgetrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsggqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsggrqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpshseqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslabad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslabrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslacon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaconsb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslacp2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslacp3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslacpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaed0\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaed1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaed2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaed3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaedz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaevswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslahqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslahrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaiect\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpslamch\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslamr1d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslamve\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslange\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslanhs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslansy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslantr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslapiv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslapv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqge\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqr0\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqr1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqr3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqr4\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqr5\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaqsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslared1d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslared2d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslarf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslarfb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslarfg\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslarft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslarz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslarzb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslarzt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslascl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslase2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasmsub\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslasrt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslassq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslatra\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslatrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslatrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslatrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslauu2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslauum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslawil\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorg2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorg2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorgl2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorglq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorgql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorgqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorgr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorgrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorm2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorm2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormbr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormhr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsorml2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormlq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormr3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsormtr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspocon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspoequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsporfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsposv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsposvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspotf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspotrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspotri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspotrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsptsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpspttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsrot\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsrscl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsstebz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsstedc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsstein\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssyev\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssyevd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssyevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssyevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssygs2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssygst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssygvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssyngst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssyntrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssytd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssytrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpssyttrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrcon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrord\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrrfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrsen\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrti2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrtri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstrtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstzrzf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpxsyevx\&.h\fP"
+.br
+.ti -1c
+.RI "file \fBpzaxpy\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpzdbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdotc\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpzdotu\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpzdrscl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdtsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzdttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgebd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgebrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgecon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgeequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgehd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgehrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgelq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgelqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgels\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgeql2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgeqlf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgeqpf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgeqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgeqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgerfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgerq2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgerqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgesv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgesvd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgesvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgetf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgetrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgetri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzgetrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzggqrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzggrqf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzheev\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzheevd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzheevr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzheevx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhegs2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhegst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhegvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhengst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhentrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhetd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhetrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzhettrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlabrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlacgv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlacon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaconsb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlacp2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlacp3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlacpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaevswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlahqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlahrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlamr1d\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlange\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlanhe\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlanhs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlansy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlantr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlapiv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlapv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaqge\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaqsy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarfb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarfc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarfg\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarzb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarzc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlarzt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlascl\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlase2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlasmsub\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlassq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaswp\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlatra\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlatrd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlatrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlatrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlattrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlauu2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlauum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlawil\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzmax1\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpbsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpbtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpbtrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpocon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpoequ\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzporfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzposv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzposvx\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpotf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpotrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpotri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpotrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzptsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpttrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzpttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzrot\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpzstein\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrcon\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrevc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrrfs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrti2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrtri\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztrtrs\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztzrzf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzung2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzung2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzungl2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunglq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzungql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzungqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzungr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzungrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunm2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunm2r\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmbr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmhr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunml2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmlq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmql\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmqr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmr3\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmrq\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmrz\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzunmtr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsdbtf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsdbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsdttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsdttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslamov\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBslamsh\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslapst\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslaqr6\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslar1va\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslaref\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslarrb2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslarrd2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslarre2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslarre2a\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslarrf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslarrv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslasorte\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslasrt2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBspttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsstegr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsstegr2a\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsstegr2b\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsstein2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBssteqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBstrmvt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBtools\&.h\fP"
+.br
+.ti -1c
+.RI "file \fBzdbtf2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzdbtrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzdttrf\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzdttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzlahqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzlamov\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBzlamsh\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzlanv2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzlaref\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzpttrsv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzsteqr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBztrmvt\&.f\fP"
+.br
+.in -1c

@@ -1,0 +1,42 @@
+.TH "BLACS/INSTALL Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/INSTALL Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBCintface\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBcmpi_sane\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBFintface\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBfmpi_sane\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBmpif\&.h\fP"
+.br
+.ti -1c
+.RI "file \fBsize\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBsyserrors\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBtc_cCsameF77\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBtc_fCsameF77\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBtc_UseMpich\&.c\fP"
+.br
+.in -1c

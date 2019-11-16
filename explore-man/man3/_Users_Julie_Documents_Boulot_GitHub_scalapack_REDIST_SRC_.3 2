@@ -1,0 +1,78 @@
+.TH "REDIST/SRC Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+REDIST/SRC Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBpcgemr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpcgemr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpctrmr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpctrmr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpdgemr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpdgemr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrmr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpdtrmr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpgemraux\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpigemr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpigemr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpitrmr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpitrmr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpsgemr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpsgemr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpstrmr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpstrmr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpzgemr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpzgemr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpztrmr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpztrmr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBredist\&.h\fP"
+.br
+.in -1c

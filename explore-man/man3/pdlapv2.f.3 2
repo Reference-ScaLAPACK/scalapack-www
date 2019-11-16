@@ -1,0 +1,22 @@
+.TH "SRC/pdlapv2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdlapv2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdlapv2\fP (DIREC, ROWCOL, M, N, A, IA, JA, DESCA, IPIV, IP, JP, DESCIP)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlapv2 (character DIREC, character ROWCOL, integer M, integer N, double precision, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer, dimension( * ) IPIV, integer IP, integer JP, integer, dimension( * ) DESCIP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

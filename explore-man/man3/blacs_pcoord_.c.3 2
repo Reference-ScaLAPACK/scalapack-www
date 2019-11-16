@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/blacs_pcoord_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/blacs_pcoord_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBF_VOID_FUNC\fP \fBblacs_pcoord_\fP (int *ConTxt, int *nodenum, int *prow, int *pcol)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBF_VOID_FUNC\fP blacs_pcoord_ (int * ConTxt, int * nodenum, int * prow, int * pcol)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

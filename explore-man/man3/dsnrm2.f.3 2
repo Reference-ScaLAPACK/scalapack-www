@@ -1,0 +1,22 @@
+.TH "TOOLS/dsnrm2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/dsnrm2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "double precision function \fBdsnrm2\fP (N, X, INCX)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "double precision function dsnrm2 (integer N, real, dimension( * ) X, integer INCX)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

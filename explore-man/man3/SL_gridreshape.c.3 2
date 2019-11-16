@@ -1,0 +1,47 @@
+.TH "TOOLS/SL_gridreshape.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/SL_gridreshape.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBSL_Cgridreshape\fP (int ctxt, int pstart, int row_major_in, int row_major_out, int P, int Q)"
+.br
+.ti -1c
+.RI "int \fBsl_gridreshape_\fP (int *ctxt, int *pstart, int *row_major_in, int *row_major_out, int *P, int *Q)"
+.br
+.ti -1c
+.RI "int \fBSL_GRIDRESHAPE\fP (int *ctxt, int *pstart, int *row_major_in, int *row_major_out, int *P, int *Q)"
+.br
+.ti -1c
+.RI "int \fBsl_gridreshape__\fP (int *ctxt, int *pstart, int *row_major_in, int *row_major_out, int *P, int *Q)"
+.br
+.ti -1c
+.RI "int \fBsl_gridreshape\fP (int *ctxt, int *pstart, int *row_major_in, int *row_major_out, int *P, int *Q)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int SL_Cgridreshape (int ctxt, int pstart, int row_major_in, int row_major_out, int P, int Q)"
+
+.SS "int SL_GRIDRESHAPE (int * ctxt, int * pstart, int * row_major_in, int * row_major_out, int * P, int * Q)"
+
+.SS "int sl_gridreshape (int * ctxt, int * pstart, int * row_major_in, int * row_major_out, int * P, int * Q)"
+
+.SS "int sl_gridreshape_ (int * ctxt, int * pstart, int * row_major_in, int * row_major_out, int * P, int * Q)"
+
+.SS "int sl_gridreshape__ (int * ctxt, int * pstart, int * row_major_in, int * row_major_out, int * P, int * Q)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PTZBLAS/dvvdot.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTZBLAS/dvvdot.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdvvdot\fP (N, DOT, X, INCX, Y, INCY)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dvvdot (integer N, double precision DOT, double precision, dimension( * ) X, integer INCX, double precision, dimension( * ) Y, integer INCY)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

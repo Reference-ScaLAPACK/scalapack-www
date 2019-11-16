@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/PTOOLS/PB_Ctztrmm.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTOOLS/PB_Ctztrmm.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./pblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBpblas\&.h'\fP
+.br
+\fC#include '\&.\&./PBtools\&.h'\fP
+.br
+\fC#include '\&.\&./PBblacs\&.h'\fP
+.br
+\fC#include '\&.\&./PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPB_Ctztrmm\fP (\fBPBTYP_T\fP *\fBTYPE\fP, char *SIDE, char *UPLO, char *TRANS, char *DIAG, int M, int N, int K, int IOFFD, char *ALPHA, char *A, int LDA, char *B, int LDB, char *C, int LDC)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void PB_Ctztrmm (\fBPBTYP_T\fP            * TYPE, char               * SIDE, char * UPLO, char * TRANS, char * DIAG, int M, int N, int K, int IOFFD, char               * ALPHA, char               * A, int LDA, char * B, int LDB, char * C, int LDC)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

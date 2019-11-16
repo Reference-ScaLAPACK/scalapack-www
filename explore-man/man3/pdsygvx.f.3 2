@@ -1,0 +1,22 @@
+.TH "SRC/pdsygvx.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdsygvx.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdsygvx\fP (IBTYPE, JOBZ, RANGE, UPLO, N, A, IA, JA, DESCA, B, IB, JB, DESCB, VL, VU, IL, IU, ABSTOL, M, NZ, W, ORFAC, Z, IZ, JZ, DESCZ, WORK, LWORK, IWORK, LIWORK, IFAIL, ICLUSTR, GAP, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdsygvx (integer IBTYPE, character JOBZ, character RANGE, character UPLO, integer N, double precision, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, double precision VL, double precision VU, integer IL, integer IU, double precision ABSTOL, integer M, integer NZ, double precision, dimension( * ) W, double precision ORFAC, double precision, dimension( * ) Z, integer IZ, integer JZ, integer, dimension( * ) DESCZ, double precision, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK, integer, dimension( * ) IFAIL, integer, dimension( * ) ICLUSTR, double precision, dimension( * ) GAP, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

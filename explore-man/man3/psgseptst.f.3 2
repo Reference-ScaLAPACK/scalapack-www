@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/psgseptst.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/psgseptst.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpsgseptst\fP (DESCA, UPLO, N, MATTYPE, IBTYPE, SUBTESTS, THRESH, ORDER, ABSTOL, ISEED, A, COPYA, B, COPYB, Z, LDA, WIN, WNEW, IFAIL, ICLUSTR, GAP, IPREPAD, IPOSTPAD, WORK, LWORK, IWORK, LIWORK, NOUT, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine psgseptst (integer, dimension( * ) DESCA, character UPLO, integer N, integer MATTYPE, integer IBTYPE, character SUBTESTS, real THRESH, integer ORDER, real ABSTOL, integer, dimension( 4 ) ISEED, real, dimension( lda, * ) A, real, dimension( lda, * ) COPYA, real, dimension( lda, * ) B, real, dimension( lda, * ) COPYB, real, dimension( lda, * ) Z, integer LDA, real, dimension( * ) WIN, real, dimension( * ) WNEW, integer, dimension( * ) IFAIL, integer, dimension( * ) ICLUSTR, real, dimension( * ) GAP, integer IPREPAD, integer IPOSTPAD, real, dimension( * ) WORK, integer LWORK, integer, dimension( * ) IWORK, integer LIWORK, integer NOUT, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "TOOLS/LAPACK/slatm1.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/LAPACK/slatm1.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBslatm1\fP (MODE, COND, IRSIGN, IDIST, ISEED, D, N, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine slatm1 (integer MODE, real COND, integer IRSIGN, integer IDIST, integer, dimension( 4 ) ISEED, real, dimension( * ) D, integer N, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

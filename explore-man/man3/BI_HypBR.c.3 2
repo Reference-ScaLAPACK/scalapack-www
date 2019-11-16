@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/BI_HypBR.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/BI_HypBR.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBBI_HypBR\fP (\fBBLACSCONTEXT\fP *ctxt, \fBBLACBUFF\fP *bp, \fBSDRVPTR\fP send, int src)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int BI_HypBR (\fBBLACSCONTEXT\fP * ctxt, \fBBLACBUFF\fP * bp, \fBSDRVPTR\fP send, int src)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,22 @@
+.TH "TOOLS/pdrow2col.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/pdrow2col.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdrow2col\fP (ICTXT, M, N, NB, VS, LDVS, VD, LDVD, RSRC, CSRC, RDEST, CDEST, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdrow2col (integer ICTXT, integer M, integer N, integer NB, double precision, dimension( ldvs, * ) VS, integer LDVS, double precision, dimension( ldvd, * ) VD, integer LDVD, integer RSRC, integer CSRC, integer RDEST, integer CDEST, double precision, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

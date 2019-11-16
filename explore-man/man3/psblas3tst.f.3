@@ -1,0 +1,52 @@
+.TH "PBLAS/TESTING/psblas3tst.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TESTING/psblas3tst.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "program \fBpsbla3tst\fP"
+.br
+.ti -1c
+.RI "subroutine \fBpsbla3tstinfo\fP (SUMMRY, NOUT, NMAT, DIAGVAL, SIDEVAL, TRNAVAL, TRNBVAL, UPLOVAL, MVAL, NVAL, KVAL, MAVAL, NAVAL, IMBAVAL, MBAVAL, INBAVAL, NBAVAL, RSCAVAL, CSCAVAL, IAVAL, JAVAL, MBVAL, NBVAL, IMBBVAL, MBBVAL, INBBVAL, NBBVAL, RSCBVAL, CSCBVAL, IBVAL, JBVAL, MCVAL, NCVAL, IMBCVAL, MBCVAL, INBCVAL, NBCVAL, RSCCVAL, CSCCVAL, ICVAL, JCVAL, LDVAL, NGRIDS, PVAL, LDPVAL, QVAL, LDQVAL, NBLOG, LTEST, SOF, TEE, IAM, IGAP, IVERB, NPROCS, THRESH, ALPHA, BETA, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpsblas3tstchke\fP (LTEST, INOUT, NPROCS)"
+.br
+.ti -1c
+.RI "subroutine \fBpschkarg3\fP (ICTXT, NOUT, SNAME, SIDE, UPLO, TRANSA, TRANSB, DIAG, M, N, K, ALPHA, IA, JA, DESCA, IB, JB, DESCB, BETA, IC, JC, DESCC, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpsblas3tstchk\fP (ICTXT, NOUT, NROUT, SIDE, UPLO, TRANSA, TRANSB, DIAG, M, N, K, ALPHA, A, PA, IA, JA, DESCA, B, PB, IB, JB, DESCB, BETA, C, PC, IC, JC, DESCC, THRESH, ROGUE, WORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "program psbla3tst ()"
+
+.PP
+Definition at line 11 of file psblas3tst\&.f\&.
+.SS "subroutine psbla3tstinfo (character*( * ) SUMMRY, integer NOUT, integer NMAT, character*1, dimension( ldval ) DIAGVAL, character*1, dimension( ldval ) SIDEVAL, character*1, dimension( ldval ) TRNAVAL, character*1, dimension( ldval ) TRNBVAL, character*1, dimension( ldval ) UPLOVAL, integer, dimension( ldval ) MVAL, integer, dimension( ldval ) NVAL, integer, dimension( ldval ) KVAL, integer, dimension( ldval ) MAVAL, integer, dimension( ldval ) NAVAL, integer, dimension( ldval ) IMBAVAL, integer, dimension( ldval ) MBAVAL, integer, dimension( ldval ) INBAVAL, integer, dimension( ldval ) NBAVAL, integer, dimension( ldval ) RSCAVAL, integer, dimension( ldval ) CSCAVAL, integer, dimension( ldval ) IAVAL, integer, dimension( ldval ) JAVAL, integer, dimension( ldval ) MBVAL, integer, dimension( ldval ) NBVAL, integer, dimension( ldval ) IMBBVAL, integer, dimension( ldval ) MBBVAL, integer, dimension( ldval ) INBBVAL, integer, dimension( ldval ) NBBVAL, integer, dimension( ldval ) RSCBVAL, integer, dimension( ldval ) CSCBVAL, integer, dimension( ldval ) IBVAL, integer, dimension( ldval ) JBVAL, integer, dimension( ldval ) MCVAL, integer, dimension( ldval ) NCVAL, integer, dimension( ldval ) IMBCVAL, integer, dimension( ldval ) MBCVAL, integer, dimension( ldval ) INBCVAL, integer, dimension( ldval ) NBCVAL, integer, dimension( ldval ) RSCCVAL, integer, dimension( ldval ) CSCCVAL, integer, dimension( ldval ) ICVAL, integer, dimension( ldval ) JCVAL, integer LDVAL, integer NGRIDS, integer, dimension( ldpval ) PVAL, integer LDPVAL, integer, dimension( ldqval ) QVAL, integer LDQVAL, integer NBLOG, logical, dimension( * ) LTEST, logical SOF, logical TEE, integer IAM, integer IGAP, integer IVERB, integer NPROCS, real THRESH, real ALPHA, real BETA, integer, dimension( * ) WORK)"
+
+.PP
+Definition at line 1317 of file psblas3tst\&.f\&.
+.SS "subroutine psblas3tstchk (integer ICTXT, integer NOUT, integer NROUT, character*1 SIDE, character*1 UPLO, character*1 TRANSA, character*1 TRANSB, character*1 DIAG, integer M, integer N, integer K, real ALPHA, real, dimension( * ) A, real, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) B, real, dimension( * ) PB, integer IB, integer JB, integer, dimension( * ) DESCB, real BETA, real, dimension( * ) C, real, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, real THRESH, real ROGUE, real, dimension( * ) WORK, integer INFO)"
+
+.PP
+Definition at line 2735 of file psblas3tst\&.f\&.
+.SS "subroutine psblas3tstchke (logical, dimension( * ) LTEST, integer INOUT, integer NPROCS)"
+
+.PP
+Definition at line 2192 of file psblas3tst\&.f\&.
+.SS "subroutine pschkarg3 (integer ICTXT, integer NOUT, character*7 SNAME, character*1 SIDE, character*1 UPLO, character*1 TRANSA, character*1 TRANSB, character*1 DIAG, integer M, integer N, integer K, real ALPHA, integer IA, integer JA, integer, dimension( * ) DESCA, integer IB, integer JB, integer, dimension( * ) DESCB, real BETA, integer IC, integer JC, integer, dimension( * ) DESCC, integer INFO)"
+
+.PP
+Definition at line 2404 of file psblas3tst\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

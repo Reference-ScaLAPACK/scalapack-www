@@ -1,0 +1,22 @@
+.TH "PBLAS/SRC/PBBLAS/pbztrget.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBBLAS/pbztrget.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpbztrget\fP (ICONTXT, ADIST, M, N, MNB, A, LDA, MCROW, MCCOL, IGD, MYROW, MYCOL, NPROW, NPCOL)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pbztrget (integer ICONTXT, character*1 ADIST, integer M, integer N, integer MNB, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA, integer MCROW, integer MCCOL, integer IGD, integer MYROW, integer MYCOL, integer NPROW, integer NPCOL)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

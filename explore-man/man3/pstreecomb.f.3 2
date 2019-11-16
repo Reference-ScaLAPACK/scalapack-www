@@ -1,0 +1,37 @@
+.TH "TOOLS/pstreecomb.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS/pstreecomb.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpstreecomb\fP (ICTXT, SCOPE, N, MINE, RDEST0, CDEST0, SUBPTR)"
+.br
+.ti -1c
+.RI "subroutine \fBscombamax\fP (V1, V2)"
+.br
+.ti -1c
+.RI "subroutine \fBscombssq\fP (V1, V2)"
+.br
+.ti -1c
+.RI "subroutine \fBscombnrm2\fP (X, Y)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pstreecomb (integer ICTXT, character SCOPE, integer N, real, dimension( * ) MINE, integer RDEST0, integer CDEST0, external SUBPTR)"
+
+.SS "subroutine scombamax (real, dimension( 2 ) V1, real, dimension( 2 ) V2)"
+
+.SS "subroutine scombnrm2 (real X, real Y)"
+
+.SS "subroutine scombssq (real, dimension( 2 ) V1, real, dimension( 2 ) V2)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

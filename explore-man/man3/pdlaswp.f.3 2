@@ -1,0 +1,22 @@
+.TH "SRC/pdlaswp.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdlaswp.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdlaswp\fP (DIREC, ROWCOL, N, A, IA, JA, DESCA, K1, K2, IPIV)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlaswp (character DIREC, character ROWCOL, integer N, double precision, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer K1, integer K2, integer, dimension( * ) IPIV)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

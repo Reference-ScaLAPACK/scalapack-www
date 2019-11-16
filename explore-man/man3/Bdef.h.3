@@ -1,0 +1,597 @@
+.TH "BLACS/SRC/Bdef.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/Bdef.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bconfig\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBbLaCsScOpE\fP"
+.br
+.ti -1c
+.RI "struct \fBbLaCsCoNtExT\fP"
+.br
+.ti -1c
+.RI "struct \fBDCOMPLEX\fP"
+.br
+.ti -1c
+.RI "struct \fBSCOMPLEX\fP"
+.br
+.ti -1c
+.RI "struct \fBbLaCbUfF\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBI_DistType\fP   unsigned short"
+.br
+.ti -1c
+.RI "#define \fBBI_MpiDistType\fP   MPI_UNSIGNED_SHORT"
+.br
+.ti -1c
+.RI "#define \fBBUFFALIGN\fP   8      /* force all buffers to 8 byte alignment */"
+.br
+.ti -1c
+.RI "#define \fBBANYNODE\fP   MPI_ANY_SOURCE"
+.br
+.ti -1c
+.RI "#define \fBPT2PTID\fP   9976   /* TAG used for point to point */"
+.br
+.ti -1c
+.RI "#define \fBNOTINCONTEXT\fP   \-1  /* Indicates node called gridmap, but not in grid */"
+.br
+.ti -1c
+.RI "#define \fBMAXNCTXT\fP   10      /* initial guess at \fBmax\fP # of contexts */"
+.br
+.ti -1c
+.RI "#define \fBMAXNSYSCTXT\fP   10   /* initial guess at \fBmax\fP # of system context */"
+.br
+.ti -1c
+.RI "#define \fBAOPDONE\fP   MPI_REQUEST_NULL"
+.br
+.ti -1c
+.RI "#define \fBBUFWAIT\fP   120      /* Length of time to wait for emergency buff */"
+.br
+.ti -1c
+.RI "#define \fBNORV\fP   1          /* No receiver (only 1 proc in scoped op) */"
+.br
+.ti -1c
+.RI "#define \fBNPOW2\fP   2         /* Number of procs is not a power of 2 */"
+.br
+.ti -1c
+.RI "#define \fBBADSCP\fP   3        /* Scope not row, column or all */"
+.br
+.ti -1c
+.RI "#define \fBINTEGER\fP   3"
+.br
+.ti -1c
+.RI "#define \fBSINGLE\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDOUBLE\fP   6"
+.br
+.ti -1c
+.RI "#define \fBCOMPLEX8\fP   5"
+.br
+.ti -1c
+.RI "#define \fBCOMPLEX16\fP   7"
+.br
+.ti -1c
+.RI "#define \fBFULLCON\fP   0      /* top is fully connected */"
+.br
+.ti -1c
+.RI "#define \fBRT_SD\fP   1"
+.br
+.ti -1c
+.RI "#define \fBRT_RV\fP   2"
+.br
+.ti -1c
+.RI "#define \fBRT_BS\fP   3"
+.br
+.ti -1c
+.RI "#define \fBRT_BR\fP   4"
+.br
+.ti -1c
+.RI "#define \fBRT_COMB\fP   5"
+.br
+.ti -1c
+.RI "#define \fBSGET_SYSCONTXT\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSGET_MSGIDS\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSGET_DEBUGLVL\fP   2"
+.br
+.ti -1c
+.RI "#define \fBSGET_BLACSCONTXT\fP   10"
+.br
+.ti -1c
+.RI "#define \fBSGET_NR_BS\fP   11"
+.br
+.ti -1c
+.RI "#define \fBSGET_NB_BS\fP   12"
+.br
+.ti -1c
+.RI "#define \fBSGET_NR_CO\fP   13"
+.br
+.ti -1c
+.RI "#define \fBSGET_NB_CO\fP   14"
+.br
+.ti -1c
+.RI "#define \fBSGET_TOPSREPEAT\fP   15"
+.br
+.ti -1c
+.RI "#define \fBSGET_TOPSCOHRNT\fP   16"
+.br
+.ti -1c
+.RI "#define \fBBVOID\fP   void"
+.br
+.ti -1c
+.RI "#define \fBMlowcase\fP(C)   ( ((C) > 64 && (C) < 91) ? (C) | 32 : (C) )"
+.br
+.ti -1c
+.RI "#define \fBMgridinfo\fP(ctxt,  Ng0,  nprow0,  npcol0,  myrow0,  mycol0)"
+.br
+.ti -1c
+.RI "#define \fBMpcoord\fP(ctxt,  node,  prow,  pcol)"
+.br
+.ti -1c
+.RI "#define \fBMvpcoord\fP(ctxt,  node,  prow,  pcol)   \fBMpcoord\fP((ctxt), (node), (prow), (pcol));"
+.br
+.ti -1c
+.RI "#define \fBMkpnum\fP(ctxt,  prow,  pcol)   ( (prow)*(ctxt)\->rscp\&.Np+(pcol) )"
+.br
+.ti -1c
+.RI "#define \fBMvkpnum\fP(ctxt,  prow,  pcol)   ( (prow)*(ctxt)\->rscp\&.Np+(pcol) )"
+.br
+.ti -1c
+.RI "#define \fBMscopeid\fP(ctxt)"
+.br
+.ti -1c
+.RI "#define \fBMGetConTxt\fP(Context,  ctxtptr)"
+.br
+.ti -1c
+.RI "#define \fBMmpierror\fP(ierr,  rout,  ctxt,  line,  file)"
+.br
+.ti -1c
+.RI "#define \fBErrPrint\fP"
+.br
+.ti -1c
+.RI "#define \fBF_VOID_FUNC\fP   void"
+.br
+.ti -1c
+.RI "#define \fBF_INT_FUNC\fP   int"
+.br
+.ti -1c
+.RI "#define \fBF_DOUBLE_FUNC\fP   double"
+.br
+.ti -1c
+.RI "#define \fBF2C_CharTrans\fP(c)   *(c)"
+.br
+.ti -1c
+.RI "#define \fBF_CHAR\fP   char *"
+.br
+.ti -1c
+.RI "#define \fBMpval\fP(para)   (*(para))"
+.br
+.ti -1c
+.RI "#define \fBMpaddress\fP(para)   (para)"
+.br
+.ti -1c
+.RI "#define \fBMwalltime\fP   \fBdwalltime00_\fP"
+.br
+.ti -1c
+.RI "#define \fBRabs\fP(x)   ( (x) < 0 ? (x) * \-1 : (x) )"
+.br
+.ti -1c
+.RI "#define \fBCabs\fP(z)   ( (((z)\&.i) < 0 ? ((z)\&.i) * \-1 : ((z)\&.i)) + (((z)\&.r) < 0 ? ((z)\&.r) * \-1 : ((z)\&.r)) )"
+.br
+.ti -1c
+.RI "#define \fBtrsize\fP(diag,  m,  n,  bytes,  length)"
+.br
+.ti -1c
+.RI "#define \fBBI_cmvcopy\fP(m,  n,  A,  lda,  buff)   \fBBI_smvcopy\fP(2*(m), (n), (float *) (A), 2*(lda), (float *) (buff))"
+.br
+.ti -1c
+.RI "#define \fBBI_cvmcopy\fP(m,  n,  A,  lda,  buff)   \fBBI_svmcopy\fP(2*(m), (n), (float *) (A), 2*(lda), (float *) (buff))"
+.br
+.ti -1c
+.RI "#define \fBBI_zmvcopy\fP(m,  n,  A,  lda,  buff)   \fBBI_dmvcopy\fP(2*(m), (n), (double *) (A), 2*(lda), (double *) (buff))"
+.br
+.ti -1c
+.RI "#define \fBBI_zvmcopy\fP(m,  n,  A,  lda,  buff)   \fBBI_dvmcopy\fP(2*(m), (n), (double *) (A), 2*(lda), (double *) (buff))"
+.br
+.ti -1c
+.RI "#define \fBBI_MPI_TYPE_FREE\fP(t)   MPI_Type_free(t)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBbLaCsScOpE\fP \fBBLACSSCOPE\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBbLaCsCoNtExT\fP \fBBLACSCONTEXT\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBbLaCbUfF\fP \fBBLACBUFF\fP"
+.br
+.ti -1c
+.RI "typedef void(* \fBVVFUNPTR\fP) (int, char *, char *)"
+.br
+.ti -1c
+.RI "typedef void(* \fBSDRVPTR\fP) (\fBBLACSCONTEXT\fP *, int, int, \fBBLACBUFF\fP *)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBBI_BlacsWarn\fP (int ConTxt, int line, char *file, char *form,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBBI_BlacsErr\fP (int ConTxt, int line, char *file, char *form,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "int \fBBI_ContxtNum\fP (\fBBLACSCONTEXT\fP *ctxt)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int * \fBBI_COMM_WORLD\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define AOPDONE   MPI_REQUEST_NULL"
+
+.PP
+Definition at line 81 of file Bdef\&.h\&.
+.SS "#define BADSCP   3        /* Scope not row, column or all */"
+
+.PP
+Definition at line 89 of file Bdef\&.h\&.
+.SS "#define BANYNODE   MPI_ANY_SOURCE"
+
+.PP
+Definition at line 76 of file Bdef\&.h\&.
+.SS "#define BI_cmvcopy(m, n, A, lda, buff)   \fBBI_smvcopy\fP(2*(m), (n), (float *) (A), 2*(lda), (float *) (buff))"
+
+.PP
+Definition at line 290 of file Bdef\&.h\&.
+.SS "#define BI_cvmcopy(m, n, A, lda, buff)   \fBBI_svmcopy\fP(2*(m), (n), (float *) (A), 2*(lda), (float *) (buff))"
+
+.PP
+Definition at line 292 of file Bdef\&.h\&.
+.SS "#define BI_DistType   unsigned short"
+
+.PP
+Definition at line 72 of file Bdef\&.h\&.
+.SS "#define BI_MPI_TYPE_FREE(t)   MPI_Type_free(t)"
+
+.PP
+Definition at line 305 of file Bdef\&.h\&.
+.SS "#define BI_MpiDistType   MPI_UNSIGNED_SHORT"
+
+.PP
+Definition at line 73 of file Bdef\&.h\&.
+.SS "#define BI_zmvcopy(m, n, A, lda, buff)   \fBBI_dmvcopy\fP(2*(m), (n), (double *) (A), 2*(lda), (double *) (buff))"
+
+.PP
+Definition at line 294 of file Bdef\&.h\&.
+.SS "#define BI_zvmcopy(m, n, A, lda, buff)   \fBBI_dvmcopy\fP(2*(m), (n), (double *) (A), 2*(lda), (double *) (buff))"
+
+.PP
+Definition at line 296 of file Bdef\&.h\&.
+.SS "#define BUFFALIGN   8      /* force all buffers to 8 byte alignment */"
+
+.PP
+Definition at line 75 of file Bdef\&.h\&.
+.SS "#define BUFWAIT   120      /* Length of time to wait for emergency buff */"
+
+.PP
+Definition at line 82 of file Bdef\&.h\&.
+.SS "#define BVOID   void"
+
+.PP
+Definition at line 136 of file Bdef\&.h\&.
+.SS "#define Cabs(z)   ( (((z)\&.i) < 0 ? ((z)\&.i) * \-1 : ((z)\&.i)) + (((z)\&.r) < 0 ? ((z)\&.r) * \-1 : ((z)\&.r)) )"
+
+.PP
+Definition at line 270 of file Bdef\&.h\&.
+.SS "#define COMPLEX16   7"
+
+.PP
+Definition at line 98 of file Bdef\&.h\&.
+.SS "#define COMPLEX8   5"
+
+.PP
+Definition at line 97 of file Bdef\&.h\&.
+.SS "#define DOUBLE   6"
+
+.PP
+Definition at line 96 of file Bdef\&.h\&.
+.SS "#define ErrPrint"
+\fBValue:\fP
+.PP
+.nf
+{ \
+   extern int BI_Iam; \
+   fprintf(stderr, "%d: line %d of file %s\n", BI_Iam, __LINE__, __FILE__); \
+}
+.fi
+.PP
+Definition at line 222 of file Bdef\&.h\&.
+.SS "#define F2C_CharTrans(c)   *(c)"
+
+.PP
+Definition at line 246 of file Bdef\&.h\&.
+.SS "#define \fBF_CHAR\fP   char *"
+
+.PP
+Definition at line 247 of file Bdef\&.h\&.
+.SS "#define F_DOUBLE_FUNC   double"
+
+.PP
+Definition at line 234 of file Bdef\&.h\&.
+.SS "#define F_INT_FUNC   int"
+
+.PP
+Definition at line 233 of file Bdef\&.h\&.
+.SS "#define F_VOID_FUNC   void"
+
+.PP
+Definition at line 232 of file Bdef\&.h\&.
+.SS "#define FULLCON   0      /* top is fully connected */"
+
+.PP
+Definition at line 100 of file Bdef\&.h\&.
+.SS "#define INTEGER   3"
+
+.PP
+Definition at line 94 of file Bdef\&.h\&.
+.SS "#define MAXNCTXT   10      /* initial guess at \fBmax\fP # of contexts */"
+
+.PP
+Definition at line 79 of file Bdef\&.h\&.
+.SS "#define MAXNSYSCTXT   10   /* initial guess at \fBmax\fP # of system context */"
+
+.PP
+Definition at line 80 of file Bdef\&.h\&.
+.SS "#define MGetConTxt(Context, ctxtptr)"
+\fBValue:\fP
+.PP
+.nf
+{\
+   extern BLACSCONTEXT **BI_MyContxts;\
+   (ctxtptr) = BI_MyContxts[(Context)];\
+}
+.fi
+.PP
+Definition at line 200 of file Bdef\&.h\&.
+.SS "#define Mgridinfo(ctxt, Ng0, nprow0, npcol0, myrow0, mycol0)"
+\fBValue:\fP
+.PP
+.nf
+{\
+   (Ng0) = (ctxt)->ascp\&.Np;\
+   (nprow0) = (ctxt)->cscp\&.Np;\
+   (npcol0) = (ctxt)->rscp\&.Np;\
+   (myrow0) = (ctxt)->cscp\&.Iam;\
+   (mycol0) = (ctxt)->rscp\&.Iam;\
+}
+.fi
+.PP
+Definition at line 150 of file Bdef\&.h\&.
+.SS "#define Mkpnum(ctxt, prow, pcol)   ( (prow)*(ctxt)\->rscp\&.Np+(pcol) )"
+
+.PP
+Definition at line 173 of file Bdef\&.h\&.
+.SS "#define Mlowcase(C)   ( ((C) > 64 && (C) < 91) ? (C) | 32 : (C) )"
+
+.PP
+Definition at line 145 of file Bdef\&.h\&.
+.SS "#define Mmpierror(ierr, rout, ctxt, line, file)"
+
+.PP
+Definition at line 217 of file Bdef\&.h\&.
+.SS "#define Mpaddress(para)   (para)"
+
+.PP
+Definition at line 262 of file Bdef\&.h\&.
+.SS "#define Mpcoord(ctxt, node, prow, pcol)"
+\fBValue:\fP
+.PP
+.nf
+{\
+   (prow) = (node) / (ctxt)->rscp\&.Np;\
+   (pcol) = (node) % (ctxt)->rscp\&.Np;\
+}
+.fi
+.PP
+Definition at line 165 of file Bdef\&.h\&.
+.SS "#define Mpval(para)   (*(para))"
+
+.PP
+Definition at line 261 of file Bdef\&.h\&.
+.SS "#define Mscopeid(ctxt)"
+\fBValue:\fP
+.PP
+.nf
+(ctxt)->scp->ScpId; \
+   if (++(ctxt)->scp->ScpId == (ctxt)->scp->MaxId) \
+      (ctxt)->scp->ScpId = (ctxt)->scp->MinId;
+.fi
+.PP
+Definition at line 179 of file Bdef\&.h\&.
+.SS "#define Mvkpnum(ctxt, prow, pcol)   ( (prow)*(ctxt)\->rscp\&.Np+(pcol) )"
+
+.PP
+Definition at line 174 of file Bdef\&.h\&.
+.SS "#define Mvpcoord(ctxt, node, prow, pcol)   \fBMpcoord\fP((ctxt), (node), (prow), (pcol));"
+
+.PP
+Definition at line 170 of file Bdef\&.h\&.
+.SS "#define Mwalltime   \fBdwalltime00_\fP"
+
+.PP
+Definition at line 263 of file Bdef\&.h\&.
+.SS "#define NORV   1          /* No receiver (only 1 proc in scoped op) */"
+
+.PP
+Definition at line 87 of file Bdef\&.h\&.
+.SS "#define NOTINCONTEXT   \-1  /* Indicates node called gridmap, but not in grid */"
+
+.PP
+Definition at line 78 of file Bdef\&.h\&.
+.SS "#define NPOW2   2         /* Number of procs is not a power of 2 */"
+
+.PP
+Definition at line 88 of file Bdef\&.h\&.
+.SS "#define PT2PTID   9976   /* TAG used for point to point */"
+
+.PP
+Definition at line 77 of file Bdef\&.h\&.
+.SS "#define Rabs(x)   ( (x) < 0 ? (x) * \-1 : (x) )"
+
+.PP
+Definition at line 269 of file Bdef\&.h\&.
+.SS "#define RT_BR   4"
+
+.PP
+Definition at line 108 of file Bdef\&.h\&.
+.SS "#define RT_BS   3"
+
+.PP
+Definition at line 107 of file Bdef\&.h\&.
+.SS "#define RT_COMB   5"
+
+.PP
+Definition at line 109 of file Bdef\&.h\&.
+.SS "#define RT_RV   2"
+
+.PP
+Definition at line 106 of file Bdef\&.h\&.
+.SS "#define RT_SD   1"
+
+.PP
+Definition at line 105 of file Bdef\&.h\&.
+.SS "#define SGET_BLACSCONTXT   10"
+
+.PP
+Definition at line 117 of file Bdef\&.h\&.
+.SS "#define SGET_DEBUGLVL   2"
+
+.PP
+Definition at line 116 of file Bdef\&.h\&.
+.SS "#define SGET_MSGIDS   1"
+
+.PP
+Definition at line 115 of file Bdef\&.h\&.
+.SS "#define SGET_NB_BS   12"
+
+.PP
+Definition at line 119 of file Bdef\&.h\&.
+.SS "#define SGET_NB_CO   14"
+
+.PP
+Definition at line 121 of file Bdef\&.h\&.
+.SS "#define SGET_NR_BS   11"
+
+.PP
+Definition at line 118 of file Bdef\&.h\&.
+.SS "#define SGET_NR_CO   13"
+
+.PP
+Definition at line 120 of file Bdef\&.h\&.
+.SS "#define SGET_SYSCONTXT   0"
+
+.PP
+Definition at line 114 of file Bdef\&.h\&.
+.SS "#define SGET_TOPSCOHRNT   16"
+
+.PP
+Definition at line 123 of file Bdef\&.h\&.
+.SS "#define SGET_TOPSREPEAT   15"
+
+.PP
+Definition at line 122 of file Bdef\&.h\&.
+.SS "#define SINGLE   4"
+
+.PP
+Definition at line 95 of file Bdef\&.h\&.
+.SS "#define trsize(diag, m, n, bytes, length)"
+\fBValue:\fP
+.PP
+.nf
+{\
+   if ( (diag) == 'u' ) (length) = 1;\
+   else (length) = 0;\
+   if ( (m) > (n) )\
+      (length) = ( (n) * ( (m) - (n) ) + ( (n)*(n) ) - ( (n)*(n) )/2 +\
+                   (n)/2 - (n) * (length) ) * (bytes);\
+   else\
+      (length) = ( (m) * ( (n) - (m) ) + ( (m)*(m) ) - ( (m)*(m) )/2 +\
+                   (m)/2 - (m) * (length) ) * (bytes);\
+}
+.fi
+.PP
+Definition at line 275 of file Bdef\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBbLaCbUfF\fP \fBBLACBUFF\fP"
+
+.PP
+Definition at line 53 of file Bdef\&.h\&.
+.SS "typedef struct \fBbLaCsCoNtExT\fP \fBBLACSCONTEXT\fP"
+
+.PP
+Definition at line 22 of file Bdef\&.h\&.
+.SS "typedef struct \fBbLaCsScOpE\fP \fBBLACSSCOPE\fP"
+
+.PP
+Definition at line 12 of file Bdef\&.h\&.
+.SS "typedef void(* SDRVPTR) (\fBBLACSCONTEXT\fP *, int, int, \fBBLACBUFF\fP *)"
+
+.PP
+Definition at line 69 of file Bdef\&.h\&.
+.SS "typedef void(* VVFUNPTR) (int, char *, char *)"
+
+.PP
+Definition at line 68 of file Bdef\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void BI_BlacsErr (int ConTxt, int line, char * file, char * form,  \&.\&.\&.)"
+
+.PP
+Definition at line 3 of file BI_BlacsErr\&.c\&.
+.SS "void BI_BlacsWarn (int ConTxt, int line, char * file, char * form,  \&.\&.\&.)"
+
+.PP
+Definition at line 3 of file BI_BlacsWarn\&.c\&.
+.SS "int BI_ContxtNum (\fBBLACSCONTEXT\fP * ctxt)"
+
+.PP
+Definition at line 3 of file BI_ContxtNum\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int* BI_COMM_WORLD"
+
+.PP
+Definition at line 13 of file BI_GlobalVars\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

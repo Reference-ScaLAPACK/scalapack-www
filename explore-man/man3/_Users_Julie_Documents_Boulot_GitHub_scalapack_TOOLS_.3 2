@@ -1,0 +1,301 @@
+.TH "TOOLS Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TOOLS Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Directories"
+
+.in +1c
+.ti -1c
+.RI "directory \fBLAPACK\fP"
+.br
+.in -1c
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBccdotc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBccdotu\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBchk1mat\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBclatcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdddot\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdesc_convert\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdescinit\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdescset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdlatcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdsasum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdscasum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdscnrm2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdsnrm2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBiceil\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBilacpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBilcm\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBindxg2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBindxg2p\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBindxl2g\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBinfog1l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBinfog2l\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBnpreroc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBnumroc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcchekpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpccol2row\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcelget\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcelset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcelset2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcfillpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpchkxmat\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaprnt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclaread\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpclawrite\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcrow2col\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpctreecomb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdchekpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdcol2row\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdelget\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdelset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdelset2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdfillpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaprnt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlaread\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdlawrite\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdrow2col\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdtreecomb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpichekpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpicol2row\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpielget\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpielset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpielset2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpifillpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpilaprnt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpirow2col\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpitreecomb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpschekpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpscol2row\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpselget\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpselset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpselset2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsfillpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaprnt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslaread\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpslawrite\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsrow2col\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpstreecomb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzchekpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzcol2row\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzelget\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzelset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzelset2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzfillpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaprnt\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlaread\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzlawrite\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzrow2col\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpztreecomb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBreshape\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBSL_gridreshape\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBSL_init\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBslatcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsltimer\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBssdot\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzlatcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmatadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzzdotc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzzdotu\&.f\fP"
+.br
+.in -1c

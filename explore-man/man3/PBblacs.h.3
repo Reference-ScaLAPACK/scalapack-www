@@ -1,0 +1,676 @@
+.TH "PBLAS/SRC/PBblacs.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBblacs.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCCOLUMN\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBCROW\fP   'R'"
+.br
+.ti -1c
+.RI "#define \fBCBCAST\fP   'B'"
+.br
+.ti -1c
+.RI "#define \fBCCOMBINE\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_GET\fP   '!'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_DEFAULT\fP   ' '"
+.br
+.ti -1c
+.RI "#define \fBCTOP_IRING\fP   'I'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_DRING\fP   'D'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_SRING\fP   'S'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_HYPER\fP   'H'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_FULL\fP   'F'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_MRING\fP   'M'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TTREE\fP   'T'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE1\fP   '1'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE2\fP   '2'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE3\fP   '3'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE4\fP   '4'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE5\fP   '5'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE6\fP   '6'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE7\fP   '7'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE8\fP   '8'"
+.br
+.ti -1c
+.RI "#define \fBCTOP_TREE9\fP   '9'"
+.br
+.ti -1c
+.RI "#define \fBCOLUMN\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBROW\fP   'R'"
+.br
+.ti -1c
+.RI "#define \fBBCAST\fP   'B'"
+.br
+.ti -1c
+.RI "#define \fBCOMBINE\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBTOP_GET\fP   '!'"
+.br
+.ti -1c
+.RI "#define \fBTOP_DEFAULT\fP   ' '"
+.br
+.ti -1c
+.RI "#define \fBTOP_IRING\fP   'I'"
+.br
+.ti -1c
+.RI "#define \fBTOP_DRING\fP   'D'"
+.br
+.ti -1c
+.RI "#define \fBTOP_SRING\fP   'S'"
+.br
+.ti -1c
+.RI "#define \fBTOP_HYPER\fP   'H'"
+.br
+.ti -1c
+.RI "#define \fBTOP_FULL\fP   'F'"
+.br
+.ti -1c
+.RI "#define \fBTOP_MRING\fP   'M'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TTREE\fP   'T'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE1\fP   '1'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE2\fP   '2'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE3\fP   '3'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE4\fP   '4'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE5\fP   '5'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE6\fP   '6'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE7\fP   '7'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE8\fP   '8'"
+.br
+.ti -1c
+.RI "#define \fBTOP_TREE9\fP   '9'"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCblacs_pinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_setup\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_get\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_set\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridmap\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_freebuff\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridexit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_abort\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_exit\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_gridinfo\fP ()"
+.br
+.ti -1c
+.RI "int \fBCblacs_pnum\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_pcoord\fP ()"
+.br
+.ti -1c
+.RI "void \fBCblacs_barrier\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsgesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdgesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCcgesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgesd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCitrsd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCstrsd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdtrsd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCctrsd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCztrsd2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsgebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdgebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCcgebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgebs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCitrbs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCstrbs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdtrbs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCctrbs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCztrbs2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsgerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdgerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCcgerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgerv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCitrrv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCstrrv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdtrrv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCctrrv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCztrrv2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsgebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdgebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCcgebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgebr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCitrbr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCstrbr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdtrbr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCctrbr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCztrbr2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsgamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdgamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCcgamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgamx2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsgamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdgamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCcgamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgamn2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCigsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCsgsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCdgsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCcgsum2d\fP ()"
+.br
+.ti -1c
+.RI "void \fBCzgsum2d\fP ()"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BCAST   'B'"
+
+.PP
+Definition at line 48 of file PBblacs\&.h\&.
+.SS "#define CBCAST   'B'"
+
+.PP
+Definition at line 23 of file PBblacs\&.h\&.
+.SS "#define CCOLUMN   'C'"
+
+.PP
+Definition at line 20 of file PBblacs\&.h\&.
+.SS "#define CCOMBINE   'C'"
+
+.PP
+Definition at line 24 of file PBblacs\&.h\&.
+.SS "#define COLUMN   'C'"
+
+.PP
+Definition at line 45 of file PBblacs\&.h\&.
+.SS "#define COMBINE   'C'"
+
+.PP
+Definition at line 49 of file PBblacs\&.h\&.
+.SS "#define CROW   'R'"
+
+.PP
+Definition at line 21 of file PBblacs\&.h\&.
+.SS "#define CTOP_DEFAULT   ' '"
+
+.PP
+Definition at line 26 of file PBblacs\&.h\&.
+.SS "#define CTOP_DRING   'D'"
+
+.PP
+Definition at line 28 of file PBblacs\&.h\&.
+.SS "#define CTOP_FULL   'F'"
+
+.PP
+Definition at line 31 of file PBblacs\&.h\&.
+.SS "#define CTOP_GET   '!'"
+
+.PP
+Definition at line 25 of file PBblacs\&.h\&.
+.SS "#define CTOP_HYPER   'H'"
+
+.PP
+Definition at line 30 of file PBblacs\&.h\&.
+.SS "#define CTOP_IRING   'I'"
+
+.PP
+Definition at line 27 of file PBblacs\&.h\&.
+.SS "#define CTOP_MRING   'M'"
+
+.PP
+Definition at line 32 of file PBblacs\&.h\&.
+.SS "#define CTOP_SRING   'S'"
+
+.PP
+Definition at line 29 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE1   '1'"
+
+.PP
+Definition at line 34 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE2   '2'"
+
+.PP
+Definition at line 35 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE3   '3'"
+
+.PP
+Definition at line 36 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE4   '4'"
+
+.PP
+Definition at line 37 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE5   '5'"
+
+.PP
+Definition at line 38 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE6   '6'"
+
+.PP
+Definition at line 39 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE7   '7'"
+
+.PP
+Definition at line 40 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE8   '8'"
+
+.PP
+Definition at line 41 of file PBblacs\&.h\&.
+.SS "#define CTOP_TREE9   '9'"
+
+.PP
+Definition at line 42 of file PBblacs\&.h\&.
+.SS "#define CTOP_TTREE   'T'"
+
+.PP
+Definition at line 33 of file PBblacs\&.h\&.
+.SS "#define ROW   'R'"
+
+.PP
+Definition at line 46 of file PBblacs\&.h\&.
+.SS "#define TOP_DEFAULT   ' '"
+
+.PP
+Definition at line 51 of file PBblacs\&.h\&.
+.SS "#define TOP_DRING   'D'"
+
+.PP
+Definition at line 53 of file PBblacs\&.h\&.
+.SS "#define TOP_FULL   'F'"
+
+.PP
+Definition at line 56 of file PBblacs\&.h\&.
+.SS "#define TOP_GET   '!'"
+
+.PP
+Definition at line 50 of file PBblacs\&.h\&.
+.SS "#define TOP_HYPER   'H'"
+
+.PP
+Definition at line 55 of file PBblacs\&.h\&.
+.SS "#define TOP_IRING   'I'"
+
+.PP
+Definition at line 52 of file PBblacs\&.h\&.
+.SS "#define TOP_MRING   'M'"
+
+.PP
+Definition at line 57 of file PBblacs\&.h\&.
+.SS "#define TOP_SRING   'S'"
+
+.PP
+Definition at line 54 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE1   '1'"
+
+.PP
+Definition at line 59 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE2   '2'"
+
+.PP
+Definition at line 60 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE3   '3'"
+
+.PP
+Definition at line 61 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE4   '4'"
+
+.PP
+Definition at line 62 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE5   '5'"
+
+.PP
+Definition at line 63 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE6   '6'"
+
+.PP
+Definition at line 64 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE7   '7'"
+
+.PP
+Definition at line 65 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE8   '8'"
+
+.PP
+Definition at line 66 of file PBblacs\&.h\&.
+.SS "#define TOP_TREE9   '9'"
+
+.PP
+Definition at line 67 of file PBblacs\&.h\&.
+.SS "#define TOP_TTREE   'T'"
+
+.PP
+Definition at line 58 of file PBblacs\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void Cblacs_abort ()"
+
+.SS "void Cblacs_barrier ()"
+
+.SS "void Cblacs_exit ()"
+
+.SS "void Cblacs_freebuff ()"
+
+.SS "void Cblacs_get ()"
+
+.SS "void Cblacs_gridexit ()"
+
+.SS "void Cblacs_gridinfo ()"
+
+.SS "void Cblacs_gridinit ()"
+
+.SS "void Cblacs_gridmap ()"
+
+.SS "void Cblacs_pcoord ()"
+
+.SS "void Cblacs_pinfo ()"
+
+.SS "int Cblacs_pnum ()"
+
+.SS "void Cblacs_set ()"
+
+.SS "void Cblacs_setup ()"
+
+.SS "void Ccgamn2d ()"
+
+.SS "void Ccgamx2d ()"
+
+.SS "void Ccgebr2d ()"
+
+.SS "void Ccgebs2d ()"
+
+.SS "void Ccgerv2d ()"
+
+.SS "void Ccgesd2d ()"
+
+.SS "void Ccgsum2d ()"
+
+.SS "void Cctrbr2d ()"
+
+.SS "void Cctrbs2d ()"
+
+.SS "void Cctrrv2d ()"
+
+.SS "void Cctrsd2d ()"
+
+.SS "void Cdgamn2d ()"
+
+.SS "void Cdgamx2d ()"
+
+.SS "void Cdgebr2d ()"
+
+.SS "void Cdgebs2d ()"
+
+.SS "void Cdgerv2d ()"
+
+.SS "void Cdgesd2d ()"
+
+.SS "void Cdgsum2d ()"
+
+.SS "void Cdtrbr2d ()"
+
+.SS "void Cdtrbs2d ()"
+
+.SS "void Cdtrrv2d ()"
+
+.SS "void Cdtrsd2d ()"
+
+.SS "void Cigamn2d ()"
+
+.SS "void Cigamx2d ()"
+
+.SS "void Cigebr2d ()"
+
+.SS "void Cigebs2d ()"
+
+.SS "void Cigerv2d ()"
+
+.SS "void Cigesd2d ()"
+
+.SS "void Cigsum2d ()"
+
+.SS "void Citrbr2d ()"
+
+.SS "void Citrbs2d ()"
+
+.SS "void Citrrv2d ()"
+
+.SS "void Citrsd2d ()"
+
+.SS "void Csgamn2d ()"
+
+.SS "void Csgamx2d ()"
+
+.SS "void Csgebr2d ()"
+
+.SS "void Csgebs2d ()"
+
+.SS "void Csgerv2d ()"
+
+.SS "void Csgesd2d ()"
+
+.SS "void Csgsum2d ()"
+
+.SS "void Cstrbr2d ()"
+
+.SS "void Cstrbs2d ()"
+
+.SS "void Cstrrv2d ()"
+
+.SS "void Cstrsd2d ()"
+
+.SS "void Czgamn2d ()"
+
+.SS "void Czgamx2d ()"
+
+.SS "void Czgebr2d ()"
+
+.SS "void Czgebs2d ()"
+
+.SS "void Czgerv2d ()"
+
+.SS "void Czgesd2d ()"
+
+.SS "void Czgsum2d ()"
+
+.SS "void Cztrbr2d ()"
+
+.SS "void Cztrbs2d ()"
+
+.SS "void Cztrrv2d ()"
+
+.SS "void Cztrsd2d ()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

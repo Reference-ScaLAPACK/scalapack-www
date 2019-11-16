@@ -1,0 +1,300 @@
+.TH "PBTYP_T" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBTYP_T
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pblas\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "char \fBtype\fP"
+.br
+.ti -1c
+.RI "int \fBusiz\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "char * \fBzero\fP"
+.br
+.ti -1c
+.RI "char * \fBone\fP"
+.br
+.ti -1c
+.RI "char * \fBnegone\fP"
+.br
+.ti -1c
+.RI "\fBGESD2D_T\fP \fBCgesd2d\fP"
+.br
+.ti -1c
+.RI "\fBGERV2D_T\fP \fBCgerv2d\fP"
+.br
+.ti -1c
+.RI "\fBGEBS2D_T\fP \fBCgebs2d\fP"
+.br
+.ti -1c
+.RI "\fBGEBR2D_T\fP \fBCgebr2d\fP"
+.br
+.ti -1c
+.RI "\fBGSUM2D_T\fP \fBCgsum2d\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmadd\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmcadd\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmtadd\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmtcadd\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmdda\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmddac\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmddat\fP"
+.br
+.ti -1c
+.RI "\fBMMADD_T\fP \fBFmmddact\fP"
+.br
+.ti -1c
+.RI "\fBMMSHFT_T\fP \fBFcshft\fP"
+.br
+.ti -1c
+.RI "\fBMMSHFT_T\fP \fBFrshft\fP"
+.br
+.ti -1c
+.RI "\fBVVDOT_T\fP \fBFvvdotu\fP"
+.br
+.ti -1c
+.RI "\fBVVDOT_T\fP \fBFvvdotc\fP"
+.br
+.ti -1c
+.RI "\fBTZPAD_T\fP \fBFtzpad\fP"
+.br
+.ti -1c
+.RI "\fBTZPADCPY_T\fP \fBFtzpadcpy\fP"
+.br
+.ti -1c
+.RI "\fBVVSET_T\fP \fBFset\fP"
+.br
+.ti -1c
+.RI "\fBTZSCAL_T\fP \fBFtzscal\fP"
+.br
+.ti -1c
+.RI "\fBTZSCAL_T\fP \fBFhescal\fP"
+.br
+.ti -1c
+.RI "\fBTZSCAL_T\fP \fBFtzcnjg\fP"
+.br
+.ti -1c
+.RI "\fBAXPY_T\fP \fBFaxpy\fP"
+.br
+.ti -1c
+.RI "\fBCOPY_T\fP \fBFcopy\fP"
+.br
+.ti -1c
+.RI "\fBSWAP_T\fP \fBFswap\fP"
+.br
+.ti -1c
+.RI "\fBGEMV_T\fP \fBFgemv\fP"
+.br
+.ti -1c
+.RI "\fBSYMV_T\fP \fBFsymv\fP"
+.br
+.ti -1c
+.RI "\fBHEMV_T\fP \fBFhemv\fP"
+.br
+.ti -1c
+.RI "\fBTRMV_T\fP \fBFtrmv\fP"
+.br
+.ti -1c
+.RI "\fBTRSV_T\fP \fBFtrsv\fP"
+.br
+.ti -1c
+.RI "\fBAGEMV_T\fP \fBFagemv\fP"
+.br
+.ti -1c
+.RI "\fBASYMV_T\fP \fBFasymv\fP"
+.br
+.ti -1c
+.RI "\fBAHEMV_T\fP \fBFahemv\fP"
+.br
+.ti -1c
+.RI "\fBATRMV_T\fP \fBFatrmv\fP"
+.br
+.ti -1c
+.RI "\fBGERC_T\fP \fBFgerc\fP"
+.br
+.ti -1c
+.RI "\fBGERU_T\fP \fBFgeru\fP"
+.br
+.ti -1c
+.RI "\fBSYR_T\fP \fBFsyr\fP"
+.br
+.ti -1c
+.RI "\fBHER_T\fP \fBFher\fP"
+.br
+.ti -1c
+.RI "\fBSYR2_T\fP \fBFsyr2\fP"
+.br
+.ti -1c
+.RI "\fBHER2_T\fP \fBFher2\fP"
+.br
+.ti -1c
+.RI "\fBGEMM_T\fP \fBFgemm\fP"
+.br
+.ti -1c
+.RI "\fBSYMM_T\fP \fBFsymm\fP"
+.br
+.ti -1c
+.RI "\fBHEMM_T\fP \fBFhemm\fP"
+.br
+.ti -1c
+.RI "\fBSYRK_T\fP \fBFsyrk\fP"
+.br
+.ti -1c
+.RI "\fBHERK_T\fP \fBFherk\fP"
+.br
+.ti -1c
+.RI "\fBSYR2K_T\fP \fBFsyr2k\fP"
+.br
+.ti -1c
+.RI "\fBHER2K_T\fP \fBFher2k\fP"
+.br
+.ti -1c
+.RI "\fBTRMM_T\fP \fBFtrmm\fP"
+.br
+.ti -1c
+.RI "\fBTRSM_T\fP \fBFtrsm\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "\fBGEBR2D_T\fP PBTYP_T::Cgebr2d"
+
+.SS "\fBGEBS2D_T\fP PBTYP_T::Cgebs2d"
+
+.SS "\fBGERV2D_T\fP PBTYP_T::Cgerv2d"
+
+.SS "\fBGESD2D_T\fP PBTYP_T::Cgesd2d"
+
+.SS "\fBGSUM2D_T\fP PBTYP_T::Cgsum2d"
+
+.SS "\fBAGEMV_T\fP PBTYP_T::Fagemv"
+
+.SS "\fBAHEMV_T\fP PBTYP_T::Fahemv"
+
+.SS "\fBASYMV_T\fP PBTYP_T::Fasymv"
+
+.SS "\fBATRMV_T\fP PBTYP_T::Fatrmv"
+
+.SS "\fBAXPY_T\fP PBTYP_T::Faxpy"
+
+.SS "\fBCOPY_T\fP PBTYP_T::Fcopy"
+
+.SS "\fBMMSHFT_T\fP PBTYP_T::Fcshft"
+
+.SS "\fBGEMM_T\fP PBTYP_T::Fgemm"
+
+.SS "\fBGEMV_T\fP PBTYP_T::Fgemv"
+
+.SS "\fBGERC_T\fP PBTYP_T::Fgerc"
+
+.SS "\fBGERU_T\fP PBTYP_T::Fgeru"
+
+.SS "\fBHEMM_T\fP PBTYP_T::Fhemm"
+
+.SS "\fBHEMV_T\fP PBTYP_T::Fhemv"
+
+.SS "\fBHER_T\fP PBTYP_T::Fher"
+
+.SS "\fBHER2_T\fP PBTYP_T::Fher2"
+
+.SS "\fBHER2K_T\fP PBTYP_T::Fher2k"
+
+.SS "\fBHERK_T\fP PBTYP_T::Fherk"
+
+.SS "\fBTZSCAL_T\fP PBTYP_T::Fhescal"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmadd"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmcadd"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmdda"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmddac"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmddact"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmddat"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmtadd"
+
+.SS "\fBMMADD_T\fP PBTYP_T::Fmmtcadd"
+
+.SS "\fBMMSHFT_T\fP PBTYP_T::Frshft"
+
+.SS "\fBVVSET_T\fP PBTYP_T::Fset"
+
+.SS "\fBSWAP_T\fP PBTYP_T::Fswap"
+
+.SS "\fBSYMM_T\fP PBTYP_T::Fsymm"
+
+.SS "\fBSYMV_T\fP PBTYP_T::Fsymv"
+
+.SS "\fBSYR_T\fP PBTYP_T::Fsyr"
+
+.SS "\fBSYR2_T\fP PBTYP_T::Fsyr2"
+
+.SS "\fBSYR2K_T\fP PBTYP_T::Fsyr2k"
+
+.SS "\fBSYRK_T\fP PBTYP_T::Fsyrk"
+
+.SS "\fBTRMM_T\fP PBTYP_T::Ftrmm"
+
+.SS "\fBTRMV_T\fP PBTYP_T::Ftrmv"
+
+.SS "\fBTRSM_T\fP PBTYP_T::Ftrsm"
+
+.SS "\fBTRSV_T\fP PBTYP_T::Ftrsv"
+
+.SS "\fBTZSCAL_T\fP PBTYP_T::Ftzcnjg"
+
+.SS "\fBTZPAD_T\fP PBTYP_T::Ftzpad"
+
+.SS "\fBTZPADCPY_T\fP PBTYP_T::Ftzpadcpy"
+
+.SS "\fBTZSCAL_T\fP PBTYP_T::Ftzscal"
+
+.SS "\fBVVDOT_T\fP PBTYP_T::Fvvdotc"
+
+.SS "\fBVVDOT_T\fP PBTYP_T::Fvvdotu"
+
+.SS "char * PBTYP_T::negone"
+
+.SS "char * PBTYP_T::one"
+
+.SS "int PBTYP_T::size"
+
+.SS "char PBTYP_T::type"
+
+.SS "int PBTYP_T::usiz"
+
+.SS "char* PBTYP_T::zero"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

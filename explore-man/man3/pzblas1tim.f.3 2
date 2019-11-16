@@ -1,0 +1,27 @@
+.TH "PBLAS/TIMING/pzblas1tim.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TIMING/pzblas1tim.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "program \fBpzbla1tim\fP"
+.br
+.ti -1c
+.RI "subroutine \fBpzbla1timinfo\fP (SUMMRY, NOUT, NMAT, NVAL, MXVAL, NXVAL, IMBXVAL, MBXVAL, INBXVAL, NBXVAL, RSCXVAL, CSCXVAL, IXVAL, JXVAL, INCXVAL, MYVAL, NYVAL, IMBYVAL, MBYVAL, INBYVAL, NBYVAL, RSCYVAL, CSCYVAL, IYVAL, JYVAL, INCYVAL, LDVAL, NGRIDS, PVAL, LDPVAL, QVAL, LDQVAL, LTEST, IAM, NPROCS, ALPHA, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "program pzbla1tim ()"
+
+.SS "subroutine pzbla1timinfo (character*( * ) SUMMRY, integer NOUT, integer NMAT, integer, dimension( ldval ) NVAL, integer, dimension( ldval ) MXVAL, integer, dimension( ldval ) NXVAL, integer, dimension( ldval ) IMBXVAL, integer, dimension( ldval ) MBXVAL, integer, dimension( ldval ) INBXVAL, integer, dimension( ldval ) NBXVAL, integer, dimension( ldval ) RSCXVAL, integer, dimension( ldval ) CSCXVAL, integer, dimension( ldval ) IXVAL, integer, dimension( ldval ) JXVAL, integer, dimension( ldval ) INCXVAL, integer, dimension( ldval ) MYVAL, integer, dimension( ldval ) NYVAL, integer, dimension( ldval ) IMBYVAL, integer, dimension( ldval ) MBYVAL, integer, dimension( ldval ) INBYVAL, integer, dimension( ldval ) NBYVAL, integer, dimension( ldval ) RSCYVAL, integer, dimension( ldval ) CSCYVAL, integer, dimension( ldval ) IYVAL, integer, dimension( ldval ) JYVAL, integer, dimension( ldval ) INCYVAL, integer LDVAL, integer NGRIDS, integer, dimension( ldpval ) PVAL, integer LDPVAL, integer, dimension( ldqval ) QVAL, integer LDQVAL, logical, dimension( * ) LTEST, integer IAM, integer NPROCS, \fBcomplex\fP*16 ALPHA, integer, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

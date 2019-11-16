@@ -1,0 +1,25 @@
+.TH "BLACS/SRC/BI_ArgCheck.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/BI_ArgCheck.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBBI_ArgCheck\fP (int ConTxt, int RoutType, char *routine, char scope, char uplo, char diag, int m, int n, int lda, int nprocs, int *prows, int *pcols)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void BI_ArgCheck (int ConTxt, int RoutType, char * routine, char scope, char uplo, char diag, int m, int n, int lda, int nprocs, int * prows, int * pcols)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

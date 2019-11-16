@@ -1,0 +1,97 @@
+.TH "BLACS/SRC/BI_GlobalVars.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BLACS/SRC/BI_GlobalVars.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Bdef\&.h'\fP
+.br
+
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBBI_MaxNCtxt\fP =0"
+.br
+.ti -1c
+.RI "int \fBBI_MaxNSysCtxt\fP =0"
+.br
+.ti -1c
+.RI "int \fBBI_Iam\fP"
+.br
+.ti -1c
+.RI "int \fBBI_Np\fP =(\-1)"
+.br
+.ti -1c
+.RI "\fBBLACBUFF\fP * \fBBI_ReadyB\fP =NULL"
+.br
+.ti -1c
+.RI "\fBBLACBUFF\fP * \fBBI_ActiveQ\fP =NULL"
+.br
+.ti -1c
+.RI "\fBBLACBUFF\fP \fBBI_AuxBuff\fP"
+.br
+.ti -1c
+.RI "\fBBLACSCONTEXT\fP ** \fBBI_MyContxts\fP =NULL"
+.br
+.ti -1c
+.RI "MPI_Comm * \fBBI_SysContxts\fP =NULL"
+.br
+.ti -1c
+.RI "int * \fBBI_COMM_WORLD\fP =NULL"
+.br
+.ti -1c
+.RI "MPI_Status * \fBBI_Stats\fP =NULL"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "\fBBLACBUFF\fP* BI_ActiveQ =NULL"
+
+.PP
+Definition at line 9 of file BI_GlobalVars\&.c\&.
+.SS "\fBBLACBUFF\fP BI_AuxBuff"
+
+.PP
+Definition at line 10 of file BI_GlobalVars\&.c\&.
+.SS "int* BI_COMM_WORLD =NULL"
+
+.PP
+Definition at line 13 of file BI_GlobalVars\&.c\&.
+.SS "int BI_Iam"
+
+.PP
+Definition at line 7 of file BI_GlobalVars\&.c\&.
+.SS "int BI_MaxNCtxt =0"
+
+.PP
+Definition at line 5 of file BI_GlobalVars\&.c\&.
+.SS "int BI_MaxNSysCtxt =0"
+
+.PP
+Definition at line 6 of file BI_GlobalVars\&.c\&.
+.SS "\fBBLACSCONTEXT\fP** BI_MyContxts =NULL"
+
+.PP
+Definition at line 11 of file BI_GlobalVars\&.c\&.
+.SS "int BI_Np =(\-1)"
+
+.PP
+Definition at line 7 of file BI_GlobalVars\&.c\&.
+.SS "\fBBLACBUFF\fP* BI_ReadyB =NULL"
+
+.PP
+Definition at line 8 of file BI_GlobalVars\&.c\&.
+.SS "MPI_Status* BI_Stats =NULL"
+
+.PP
+Definition at line 14 of file BI_GlobalVars\&.c\&.
+.SS "MPI_Comm* BI_SysContxts =NULL"
+
+.PP
+Definition at line 12 of file BI_GlobalVars\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

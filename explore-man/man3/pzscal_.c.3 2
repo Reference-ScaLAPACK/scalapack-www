@@ -1,0 +1,33 @@
+.TH "PBLAS/SRC/pzscal_.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/pzscal_.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'pblas\&.h'\fP
+.br
+\fC#include 'PBpblas\&.h'\fP
+.br
+\fC#include 'PBtools\&.h'\fP
+.br
+\fC#include 'PBblacs\&.h'\fP
+.br
+\fC#include 'PBblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpzscal_\fP (int *N, double *ALPHA, double *X, int *IX, int *JX, int *DESCX, int *INCX)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void pzscal_ (int * N, double         * ALPHA, double         * X, int * IX, int * JX, int            * DESCX, int            * INCX)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

@@ -1,0 +1,66 @@
+.TH "PBLAS/TIMING/pzblastim.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TIMING/pzblastim.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzlascal\fP (\fBTYPE\fP, M, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpzlagen\fP (INPLACE, AFORM, DIAG, OFFA, M, N, IA, JA, DESCA, IASEED, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpzladom\fP (INPLACE, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_zlascal\fP (UPLO, M, N, IOFFD, ALPHA, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_zlagen\fP (UPLO, AFORM, A, LDA, LCMT00, IRAN, MBLKS, IMBLOC, MB, LMBLOC, NBLKS, INBLOC, NB, LNBLOC, JMP, IMULADD)"
+.br
+.ti -1c
+.RI "double precision function \fBpb_drand\fP (IDUMM)"
+.br
+.ti -1c
+.RI "double precision function \fBpb_dran\fP (IDUMM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "double precision function pb_dran (integer IDUMM)"
+
+.PP
+Definition at line 2632 of file pzblastim\&.f\&.
+.SS "double precision function pb_drand (integer IDUMM)"
+
+.PP
+Definition at line 2570 of file pzblastim\&.f\&.
+.SS "subroutine pb_zlagen (character*1 UPLO, character*1 AFORM, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA, integer LCMT00, integer, dimension( * ) IRAN, integer MBLKS, integer IMBLOC, integer MB, integer LMBLOC, integer NBLKS, integer INBLOC, integer NB, integer LNBLOC, integer, dimension( * ) JMP, integer, dimension( 4, * ) IMULADD)"
+
+.PP
+Definition at line 1502 of file pzblastim\&.f\&.
+.SS "subroutine pb_zlascal (character*1 UPLO, integer M, integer N, integer IOFFD, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 1321 of file pzblastim\&.f\&.
+.SS "subroutine pzladom (logical INPLACE, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 914 of file pzblastim\&.f\&.
+.SS "subroutine pzlagen (logical INPLACE, character*1 AFORM, character*1 DIAG, integer OFFA, integer M, integer N, integer IA, integer JA, integer, dimension( * ) DESCA, integer IASEED, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 510 of file pzblastim\&.f\&.
+.SS "subroutine pzlascal (character*1 TYPE, integer M, integer N, \fBcomplex\fP*16 ALPHA, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 2 of file pzblastim\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

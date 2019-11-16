@@ -1,0 +1,22 @@
+.TH "SRC/pdlaed2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdlaed2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdlaed2\fP (ICTXT, K, N, N1, NB, D, DROW, DCOL, Q, LDQ, RHO, Z, W, DLAMDA, Q2, LDQ2, QBUF, CTOT, PSM, NPCOL, INDX, INDXC, INDXP, INDCOL, COLTYP, NN, NN1, NN2, IB1, IB2)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlaed2 (integer ICTXT, integer K, integer N, integer N1, integer NB, double precision, dimension( * ) D, integer DROW, integer DCOL, double precision, dimension( ldq, * ) Q, integer LDQ, double precision RHO, double precision, dimension( * ) Z, double precision, dimension( * ) W, double precision, dimension( * ) DLAMDA, double precision, dimension( ldq2, * ) Q2, integer LDQ2, double precision, dimension( * ) QBUF, integer, dimension( 0: npcol\-1, 4 ) CTOT, integer, dimension( 0: npcol\-1, 4 ) PSM, integer NPCOL, integer, dimension( * ) INDX, integer, dimension( * ) INDXC, integer, dimension( * ) INDXP, integer, dimension( n ) INDCOL, integer, dimension( * ) COLTYP, integer NN, integer NN1, integer NN2, integer IB1, integer IB2)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

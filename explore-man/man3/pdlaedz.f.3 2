@@ -1,0 +1,22 @@
+.TH "SRC/pdlaedz.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pdlaedz.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdlaedz\fP (N, N1, ID, Q, IQ, JQ, LDQ, DESCQ, Z, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdlaedz (integer N, integer N1, integer ID, double precision, dimension( ldq, * ) Q, integer IQ, integer JQ, integer LDQ, integer, dimension( * ) DESCQ, double precision, dimension( * ) Z, double precision, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

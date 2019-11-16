@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pcgebdrv.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pcgebdrv.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpcgebdrv\fP (M, N, A, IA, JA, DESCA, D, E, TAUQ, TAUP, WORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pcgebdrv (integer M, integer N, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) D, real, dimension( * ) E, \fBcomplex\fP, dimension( * ) TAUQ, \fBcomplex\fP, dimension( * ) TAUP, \fBcomplex\fP, dimension( * ) WORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

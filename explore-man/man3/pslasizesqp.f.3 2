@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pslasizesqp.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pslasizesqp.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslasizesqp\fP (DESCA, IPREPAD, IPOSTPAD, SIZEMQRLEFT, SIZEMQRRIGHT, SIZEQRF, SIZETMS, SIZEQTQ, SIZECHK, SIZESYEVX, ISIZESYEVX, SIZESYEV, SIZESYEVD, ISIZESYEVD, SIZESUBTST, ISIZESUBTST, SIZETST, ISIZETST)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslasizesqp (integer, dimension( * ) DESCA, integer IPREPAD, integer IPOSTPAD, integer SIZEMQRLEFT, integer SIZEMQRRIGHT, integer SIZEQRF, integer SIZETMS, integer SIZEQTQ, integer SIZECHK, integer SIZESYEVX, integer ISIZESYEVX, integer SIZESYEV, integer SIZESYEVD, integer ISIZESYEVD, integer SIZESUBTST, integer ISIZESUBTST, integer SIZETST, integer ISIZETST)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

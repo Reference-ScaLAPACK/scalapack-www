@@ -1,0 +1,69 @@
+.TH "PBLAS/TIMING Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TIMING Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBPB_Cabort\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cwarn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBpblastim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcblas1tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcblas2tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcblas3tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpcblastim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdblas1tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdblas2tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdblas3tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpdblastim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsblas1tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsblas2tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsblas3tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpsblastim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzblas1tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzblas2tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzblas3tim\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpzblastim\&.f\fP"
+.br
+.in -1c

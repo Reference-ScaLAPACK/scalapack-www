@@ -1,0 +1,22 @@
+.TH "SRC/dstein2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/dstein2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdstein2\fP (N, D, E, M, W, IBLOCK, ISPLIT, ORFAC, Z, LDZ, WORK, IWORK, IFAIL, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dstein2 (integer N, double precision, dimension( * ) D, double precision, dimension( * ) E, integer M, double precision, dimension( * ) W, integer, dimension( * ) IBLOCK, integer, dimension( * ) ISPLIT, double precision ORFAC, double precision, dimension( ldz, * ) Z, integer LDZ, double precision, dimension( * ) WORK, integer, dimension( * ) IWORK, integer, dimension( * ) IFAIL, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

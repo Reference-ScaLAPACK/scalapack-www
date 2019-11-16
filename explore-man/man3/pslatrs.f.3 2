@@ -1,0 +1,22 @@
+.TH "SRC/pslatrs.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pslatrs.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpslatrs\fP (UPLO, TRANS, DIAG, NORMIN, N, A, IA, JA, DESCA, X, IX, JX, DESCX, SCALE, CNORM, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pslatrs (character UPLO, character TRANS, character DIAG, character NORMIN, integer N, real, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, real SCALE, real, dimension( * ) CNORM, real, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

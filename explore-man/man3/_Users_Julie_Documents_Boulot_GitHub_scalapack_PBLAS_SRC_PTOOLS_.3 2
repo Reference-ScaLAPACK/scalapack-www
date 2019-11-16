@@ -1,0 +1,318 @@
+.TH "PBLAS/SRC/PTOOLS Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTOOLS Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBPB_Cabort\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cainfog2l\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CargFtoC\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cbinfo\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cchkmat\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cchkvec\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cconjg\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cctypeset\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cdescribe\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cdescset\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cdtypeset\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cfirstnb\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cg2lrem\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CGatherV\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cgcd\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cgetbuf\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cindxg2p\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cinfog2l\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CInOutV\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CInOutV2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CInV\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CInV2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Citypeset\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Clastnb\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Clcm\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cmalloc\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cnnxtroc\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cnpreroc\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cnumroc\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_COutV\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpaxpby\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpaxpbyDN\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpaxpbyND\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpaxpbyNN\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpdot11\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpdotND\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpdotNN\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpgeadd\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpgemmAB\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpgemmAC\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpgemmBC\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cplacnjg\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cplapad\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cplapd2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cplaprnt\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cplasca2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cplascal\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpswapND\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpswapNN\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpsym\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpsymmAB\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpsymmBC\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpsyr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpsyr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpsyr2kA\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cpsyr2kAC\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpsyrkA\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CpsyrkAC\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cptradd\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cptran\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cptrm\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CptrmmAB\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CptrmmB\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cptrsm\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CptrsmAB\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CptrsmAB0\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CptrsmAB1\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CptrsmB\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cptrsv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CScatterV\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cspan\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cstypeset\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctop\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzahemv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzasymv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzatrmv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzhemm\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzhemv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzher\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzher2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzher2k\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzherk\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzsymm\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzsymv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzsyr\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzsyr2\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzsyr2k\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctzsyrk\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctztrmm\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Ctztrmv\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CVMcontig\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CVMinit\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CVMloc\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CVMnpq\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CVMpack\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CVMswp\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_CVMupdate\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cwarn\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_Cztypeset\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_freebuf_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_topget_\&.c\fP"
+.br
+.ti -1c
+.RI "file \fBPB_topset_\&.c\fP"
+.br
+.in -1c

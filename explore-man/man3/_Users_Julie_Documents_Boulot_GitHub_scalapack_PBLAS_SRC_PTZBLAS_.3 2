@@ -1,0 +1,309 @@
+.TH "PBLAS/SRC/PTZBLAS Directory Reference" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PTZBLAS Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBcagemv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcahemv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcasymv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcatrmv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBccshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBchescal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmdda\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmddac\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmddact\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmddat\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmtadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcmmtcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcrshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcsymv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcsyr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcsyr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBctzcnjg\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBctzpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBctzpadcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBctzscal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcvvdotc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBcvvdotu\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdagemv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdascal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdasqrtb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdasymv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdatrmv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdcshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmdda\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmddac\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmddact\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmddat\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmtadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdmmtcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdrshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdtzpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdtzpadcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdtzscal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdvasum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdvvdot\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBdzvasum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBimmadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBimmdda\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBimmddat\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBimmtadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBpxerbla\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsagemv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsascal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsasqrtb\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsasymv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsatrmv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBscshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBscvasum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmdda\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmddac\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmddact\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmddat\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmtadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsmmtcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsrshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBstzpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBstzpadcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBstzscal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsvasum\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBsvvdot\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzagemv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzahemv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzasymv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzatrmv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzcshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzhescal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmdda\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmddac\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmddact\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmddat\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmtadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzmmtcadd\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzrshft\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzset\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzsymv\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzsyr\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzsyr2\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBztzcnjg\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBztzpad\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBztzpadcpy\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBztzscal\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzvvdotc\&.f\fP"
+.br
+.ti -1c
+.RI "file \fBzvvdotu\&.f\fP"
+.br
+.in -1c

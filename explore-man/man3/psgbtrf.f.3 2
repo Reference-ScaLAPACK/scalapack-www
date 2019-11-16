@@ -1,0 +1,22 @@
+.TH "SRC/psgbtrf.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/psgbtrf.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpsgbtrf\fP (N, BWL, BWU, A, JA, DESCA, IPIV, AF, LAF, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine psgbtrf (integer N, integer BWL, integer BWU, real, dimension( * ) A, integer JA, integer, dimension( * ) DESCA, integer, dimension( * ) IPIV, real, dimension( * ) AF, integer LAF, real, dimension( * ) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

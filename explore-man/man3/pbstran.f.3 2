@@ -1,0 +1,37 @@
+.TH "PBLAS/SRC/PBBLAS/pbstran.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBBLAS/pbstran.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpbstran\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, C, LDC, IAROW, IACOL, ICROW, ICCOL, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpbstr2at\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, B, LDB, LCMP, LCMQ)"
+.br
+.ti -1c
+.RI "subroutine \fBpbstr2bt\fP (ICONTXT, ADIST, TRANS, M, N, NB, A, LDA, BETA, B, LDB, INTV)"
+.br
+.ti -1c
+.RI "subroutine \fBpbstr2af\fP (ICONTXT, ADIST, M, N, NB, A, LDA, BETA, B, LDB, LCMP, LCMQ, NINT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pbstr2af (integer ICONTXT, character*1 ADIST, integer M, integer N, integer NB, real, dimension( lda, * ) A, integer LDA, real BETA, real, dimension( ldb, * ) B, integer LDB, integer LCMP, integer LCMQ, integer NINT)"
+
+.SS "subroutine pbstr2at (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, real, dimension( lda, * ) A, integer LDA, real BETA, real, dimension( ldb, * ) B, integer LDB, integer LCMP, integer LCMQ)"
+
+.SS "subroutine pbstr2bt (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, real, dimension( lda, * ) A, integer LDA, real BETA, real, dimension( ldb, * ) B, integer LDB, integer INTV)"
+
+.SS "subroutine pbstran (integer ICONTXT, character*1 ADIST, character*1 TRANS, integer M, integer N, integer NB, real, dimension( lda, * ) A, integer LDA, real BETA, real, dimension( ldc, * ) C, integer LDC, integer IAROW, integer IACOL, integer ICROW, integer ICCOL, real, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

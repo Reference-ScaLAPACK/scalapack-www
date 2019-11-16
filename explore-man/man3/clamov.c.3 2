@@ -1,0 +1,40 @@
+.TH "SRC/clamov.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/clamov.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'lamov\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTYPE\fP   \fBcomplex\fP"
+.br
+.ti -1c
+.RI "#define \fBFUNC\fP   'CLAMOV'"
+.br
+.ti -1c
+.RI "#define \fBLAMOV\fP   clamov_"
+.br
+.ti -1c
+.RI "#define \fBLACPY\fP   \fBclacpy_\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define FUNC   'CLAMOV'"
+
+.SS "#define LACPY   \fBclacpy_\fP"
+
+.SS "#define LAMOV   clamov_"
+
+.SS "#define TYPE   \fBcomplex\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

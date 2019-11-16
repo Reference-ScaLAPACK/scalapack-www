@@ -1,0 +1,22 @@
+.TH "SRC/dlaqr6.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/dlaqr6.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBdlaqr6\fP (JOB, WANTT, WANTZ, KACC22, N, KTOP, KBOT, NSHFTS, SR, SI, H, LDH, ILOZ, IHIZ, Z, LDZ, V, LDV, U, LDU, NV, WV, LDWV, NH, WH, LDWH)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine dlaqr6 (character JOB, logical WANTT, logical WANTZ, integer KACC22, integer N, integer KTOP, integer KBOT, integer NSHFTS, double precision, dimension( * ) SR, double precision, dimension( * ) SI, double precision, dimension( ldh, * ) H, integer LDH, integer ILOZ, integer IHIZ, double precision, dimension( ldz, * ) Z, integer LDZ, double precision, dimension( ldv, * ) V, integer LDV, double precision, dimension( ldu, * ) U, integer LDU, integer NV, double precision, dimension( ldwv, * ) WV, integer LDWV, integer NH, double precision, dimension( ldwh, * ) WH, integer LDWH)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

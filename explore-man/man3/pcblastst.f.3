@@ -1,0 +1,290 @@
+.TH "PBLAS/TESTING/pcblastst.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/TESTING/pcblastst.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpcoptee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpcchkopt\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME, ARGNAM, ARGPOS)"
+.br
+.ti -1c
+.RI "subroutine \fBpcdimee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpcchkdim\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME, ARGNAM, ARGPOS)"
+.br
+.ti -1c
+.RI "subroutine \fBpcvecee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpcmatee\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME)"
+.br
+.ti -1c
+.RI "subroutine \fBpcsetpblas\fP (ICTXT)"
+.br
+.ti -1c
+.RI "subroutine \fBpcchkmat\fP (ICTXT, NOUT, SUBPTR, SCODE, SNAME, ARGNAM, ARGPOS)"
+.br
+.ti -1c
+.RI "subroutine \fBpccallsub\fP (SUBPTR, SCODE)"
+.br
+.ti -1c
+.RI "subroutine \fBpcerrset\fP (ERR, ERRMAX, XTRUE, X)"
+.br
+.ti -1c
+.RI "subroutine \fBpcchkvin\fP (ERRMAX, N, X, PX, IX, JX, DESCX, INCX, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcchkvout\fP (N, X, PX, IX, JX, DESCX, INCX, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcchkmin\fP (ERRMAX, M, N, A, PA, IA, JA, DESCA, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcchkmout\fP (M, N, A, PA, IA, JA, DESCA, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcmprnt\fP (ICTXT, NOUT, M, N, A, LDA, IRPRNT, ICPRNT, CMATNM)"
+.br
+.ti -1c
+.RI "subroutine \fBpcvprnt\fP (ICTXT, NOUT, N, X, INCX, IRPRNT, ICPRNT, CVECNM)"
+.br
+.ti -1c
+.RI "subroutine \fBpcmvch\fP (ICTXT, TRANS, M, N, ALPHA, A, IA, JA, DESCA, X, IX, JX, DESCX, INCX, BETA, Y, PY, IY, JY, DESCY, INCY, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcvmch\fP (ICTXT, TRANS, UPLO, M, N, ALPHA, X, IX, JX, DESCX, INCX, Y, IY, JY, DESCY, INCY, A, PA, IA, JA, DESCA, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcvmch2\fP (ICTXT, UPLO, M, N, ALPHA, X, IX, JX, DESCX, INCX, Y, IY, JY, DESCY, INCY, A, PA, IA, JA, DESCA, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcmmch\fP (ICTXT, TRANSA, TRANSB, M, N, K, ALPHA, A, IA, JA, DESCA, B, IB, JB, DESCB, BETA, C, PC, IC, JC, DESCC, CT, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcmmch1\fP (ICTXT, UPLO, TRANS, N, K, ALPHA, A, IA, JA, DESCA, BETA, C, PC, IC, JC, DESCC, CT, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcmmch2\fP (ICTXT, UPLO, TRANS, N, K, ALPHA, A, IA, JA, DESCA, B, IB, JB, DESCB, BETA, C, PC, IC, JC, DESCC, CT, G, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcmmch3\fP (UPLO, TRANS, M, N, ALPHA, A, IA, JA, DESCA, BETA, C, PC, IC, JC, DESCC, ERR, INFO)"
+.br
+.ti -1c
+.RI "subroutine \fBpcerraxpby\fP (ERRBND, ALPHA, X, BETA, Y, PREC)"
+.br
+.ti -1c
+.RI "subroutine \fBpcipset\fP (TOGGLE, N, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "real function \fBpslamch\fP (ICTXT, CMACH)"
+.br
+.ti -1c
+.RI "subroutine \fBpclaset\fP (UPLO, M, N, ALPHA, BETA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpclascal\fP (\fBTYPE\fP, M, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpclagen\fP (INPLACE, AFORM, DIAG, OFFA, M, N, IA, JA, DESCA, IASEED, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpcladom\fP (INPLACE, N, ALPHA, A, IA, JA, DESCA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_pclaprnt\fP (M, N, A, IA, JA, DESCA, IRPRNT, ICPRNT, CMATNM, NOUT, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_pclaprn2\fP (M, N, A, IA, JA, DESCA, IRPRNT, ICPRNT, CMATNM, NOUT, PROW, PCOL, WORK)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_cfillpad\fP (ICTXT, M, N, A, LDA, IPRE, IPOST, CHKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_cchekpad\fP (ICTXT, MESS, M, N, A, LDA, IPRE, IPOST, CHKVAL)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_claset\fP (UPLO, M, N, IOFFD, ALPHA, BETA, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_clascal\fP (UPLO, M, N, IOFFD, ALPHA, A, LDA)"
+.br
+.ti -1c
+.RI "subroutine \fBpb_clagen\fP (UPLO, AFORM, A, LDA, LCMT00, IRAN, MBLKS, IMBLOC, MB, LMBLOC, NBLKS, INBLOC, NB, LNBLOC, JMP, IMULADD)"
+.br
+.ti -1c
+.RI "real function \fBpb_srand\fP (IDUMM)"
+.br
+.ti -1c
+.RI "real function \fBpb_sran\fP (IDUMM)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pb_cchekpad (integer ICTXT, character*(*) MESS, integer M, integer N, \fBcomplex\fP, dimension( * ) A, integer LDA, integer IPRE, integer IPOST, \fBcomplex\fP CHKVAL)"
+
+.PP
+Definition at line 9873 of file pcblastst\&.f\&.
+.SS "subroutine pb_cfillpad (integer ICTXT, integer M, integer N, \fBcomplex\fP, dimension( * ) A, integer LDA, integer IPRE, integer IPOST, \fBcomplex\fP CHKVAL)"
+
+.PP
+Definition at line 9760 of file pcblastst\&.f\&.
+.SS "subroutine pb_clagen (character*1 UPLO, character*1 AFORM, \fBcomplex\fP, dimension( lda, * ) A, integer LDA, integer LCMT00, integer, dimension( * ) IRAN, integer MBLKS, integer IMBLOC, integer MB, integer LMBLOC, integer NBLKS, integer INBLOC, integer NB, integer LNBLOC, integer, dimension( * ) JMP, integer, dimension( 4, * ) IMULADD)"
+
+.PP
+Definition at line 10425 of file pcblastst\&.f\&.
+.SS "subroutine pb_clascal (character*1 UPLO, integer M, integer N, integer IOFFD, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 10244 of file pcblastst\&.f\&.
+.SS "subroutine pb_claset (character*1 UPLO, integer M, integer N, integer IOFFD, \fBcomplex\fP ALPHA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 10047 of file pcblastst\&.f\&.
+.SS "subroutine pb_pclaprn2 (integer M, integer N, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer IRPRNT, integer ICPRNT, character*(*) CMATNM, integer NOUT, integer PROW, integer PCOL, \fBcomplex\fP, dimension( * ) WORK)"
+
+.PP
+Definition at line 9516 of file pcblastst\&.f\&.
+.SS "subroutine pb_pclaprnt (integer M, integer N, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, integer IRPRNT, integer ICPRNT, character*(*) CMATNM, integer NOUT, \fBcomplex\fP, dimension( * ) WORK)"
+
+.PP
+Definition at line 9302 of file pcblastst\&.f\&.
+.SS "real function pb_sran (integer IDUMM)"
+
+.PP
+Definition at line 11552 of file pcblastst\&.f\&.
+.SS "real function pb_srand (integer IDUMM)"
+
+.PP
+Definition at line 11490 of file pcblastst\&.f\&.
+.SS "subroutine pccallsub (external SUBPTR, integer SCODE)"
+
+.PP
+Definition at line 2183 of file pcblastst\&.f\&.
+.SS "subroutine pcchkdim (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME, character*1 ARGNAM, integer ARGPOS)"
+
+.PP
+Definition at line 759 of file pcblastst\&.f\&.
+.SS "subroutine pcchkmat (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME, character*1 ARGNAM, integer ARGPOS)"
+
+.PP
+Definition at line 1677 of file pcblastst\&.f\&.
+.SS "subroutine pcchkmin (real ERRMAX, integer M, integer N, \fBcomplex\fP, dimension( * ) A, \fBcomplex\fP, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, integer INFO)"
+
+.PP
+Definition at line 3332 of file pcblastst\&.f\&.
+.SS "subroutine pcchkmout (integer M, integer N, \fBcomplex\fP, dimension( * ) A, \fBcomplex\fP, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, integer INFO)"
+
+.PP
+Definition at line 3633 of file pcblastst\&.f\&.
+.SS "subroutine pcchkopt (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME, character*1 ARGNAM, integer ARGPOS)"
+
+.PP
+Definition at line 266 of file pcblastst\&.f\&.
+.SS "subroutine pcchkvin (real ERRMAX, integer N, \fBcomplex\fP, dimension( * ) X, \fBcomplex\fP, dimension( * ) PX, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, integer INFO)"
+
+.PP
+Definition at line 2582 of file pcblastst\&.f\&.
+.SS "subroutine pcchkvout (integer N, \fBcomplex\fP, dimension( * ) X, \fBcomplex\fP, dimension( * ) PX, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, integer INFO)"
+
+.PP
+Definition at line 2876 of file pcblastst\&.f\&.
+.SS "subroutine pcdimee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME)"
+
+.PP
+Definition at line 455 of file pcblastst\&.f\&.
+.SS "subroutine pcerraxpby (real ERRBND, \fBcomplex\fP ALPHA, \fBcomplex\fP X, \fBcomplex\fP BETA, \fBcomplex\fP Y, real PREC)"
+
+.PP
+Definition at line 6943 of file pcblastst\&.f\&.
+.SS "subroutine pcerrset (real ERR, real ERRMAX, \fBcomplex\fP XTRUE, \fBcomplex\fP X)"
+
+.PP
+Definition at line 2460 of file pcblastst\&.f\&.
+.SS "subroutine pcipset (character*1 TOGGLE, integer N, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 7044 of file pcblastst\&.f\&.
+.SS "subroutine pcladom (logical INPLACE, integer N, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 8894 of file pcblastst\&.f\&.
+.SS "subroutine pclagen (logical INPLACE, character*1 AFORM, character*1 DIAG, integer OFFA, integer M, integer N, integer IA, integer JA, integer, dimension( * ) DESCA, integer IASEED, \fBcomplex\fP, dimension( lda, * ) A, integer LDA)"
+
+.PP
+Definition at line 8491 of file pcblastst\&.f\&.
+.SS "subroutine pclascal (character*1 TYPE, integer M, integer N, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 7983 of file pcblastst\&.f\&.
+.SS "subroutine pclaset (character*1 UPLO, integer M, integer N, \fBcomplex\fP ALPHA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA)"
+
+.PP
+Definition at line 7508 of file pcblastst\&.f\&.
+.SS "subroutine pcmatee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*7 SNAME)"
+
+.PP
+Definition at line 1190 of file pcblastst\&.f\&.
+.SS "subroutine pcmmch (integer ICTXT, character*1 TRANSA, character*1 TRANSB, integer M, integer N, integer K, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) C, \fBcomplex\fP, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, \fBcomplex\fP, dimension( * ) CT, real, dimension( * ) G, real ERR, integer INFO)"
+
+.PP
+Definition at line 5336 of file pcblastst\&.f\&.
+.SS "subroutine pcmmch1 (integer ICTXT, character*1 UPLO, character*1 TRANS, integer N, integer K, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) C, \fBcomplex\fP, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, \fBcomplex\fP, dimension( * ) CT, real, dimension( * ) G, real ERR, integer INFO)"
+
+.PP
+Definition at line 5789 of file pcblastst\&.f\&.
+.SS "subroutine pcmmch2 (integer ICTXT, character*1 UPLO, character*1 TRANS, integer N, integer K, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP, dimension( * ) B, integer IB, integer JB, integer, dimension( * ) DESCB, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) C, \fBcomplex\fP, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, \fBcomplex\fP, dimension( * ) CT, real, dimension( * ) G, real ERR, integer INFO)"
+
+.PP
+Definition at line 6168 of file pcblastst\&.f\&.
+.SS "subroutine pcmmch3 (character*1 UPLO, character*1 TRANS, integer M, integer N, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) C, \fBcomplex\fP, dimension( * ) PC, integer IC, integer JC, integer, dimension( * ) DESCC, real ERR, integer INFO)"
+
+.PP
+Definition at line 6584 of file pcblastst\&.f\&.
+.SS "subroutine pcmprnt (integer ICTXT, integer NOUT, integer M, integer N, \fBcomplex\fP, dimension( lda, * ) A, integer LDA, integer IRPRNT, integer ICPRNT, character*(*) CMATNM)"
+
+.PP
+Definition at line 3955 of file pcblastst\&.f\&.
+.SS "subroutine pcmvch (integer ICTXT, character*1 TRANS, integer M, integer N, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, \fBcomplex\fP, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, \fBcomplex\fP BETA, \fBcomplex\fP, dimension( * ) Y, \fBcomplex\fP, dimension( * ) PY, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, real, dimension( * ) G, real ERR, integer INFO)"
+
+.PP
+Definition at line 4172 of file pcblastst\&.f\&.
+.SS "subroutine pcoptee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*(*) SNAME)"
+
+.PP
+Definition at line 2 of file pcblastst\&.f\&.
+.SS "subroutine pcsetpblas (integer ICTXT)"
+
+.PP
+Definition at line 1478 of file pcblastst\&.f\&.
+.SS "subroutine pcvecee (integer ICTXT, integer NOUT, external SUBPTR, integer SCODE, character*7 SNAME)"
+
+.PP
+Definition at line 936 of file pcblastst\&.f\&.
+.SS "subroutine pcvmch (integer ICTXT, character*1 TRANS, character*1 UPLO, integer M, integer N, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, \fBcomplex\fP, dimension( * ) Y, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, \fBcomplex\fP, dimension( * ) A, \fBcomplex\fP, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) G, real ERR, integer INFO)"
+
+.PP
+Definition at line 4606 of file pcblastst\&.f\&.
+.SS "subroutine pcvmch2 (integer ICTXT, character*1 UPLO, integer M, integer N, \fBcomplex\fP ALPHA, \fBcomplex\fP, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, integer INCX, \fBcomplex\fP, dimension( * ) Y, integer IY, integer JY, integer, dimension( * ) DESCY, integer INCY, \fBcomplex\fP, dimension( * ) A, \fBcomplex\fP, dimension( * ) PA, integer IA, integer JA, integer, dimension( * ) DESCA, real, dimension( * ) G, real ERR, integer INFO)"
+
+.PP
+Definition at line 4975 of file pcblastst\&.f\&.
+.SS "subroutine pcvprnt (integer ICTXT, integer NOUT, integer N, \fBcomplex\fP, dimension( * ) X, integer INCX, integer IRPRNT, integer ICPRNT, character*(*) CVECNM)"
+
+.PP
+Definition at line 4067 of file pcblastst\&.f\&.
+.SS "real function pslamch (integer ICTXT, character*1 CMACH)"
+
+.PP
+Definition at line 7455 of file pcblastst\&.f\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

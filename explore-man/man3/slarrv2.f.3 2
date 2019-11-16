@@ -1,0 +1,22 @@
+.TH "SRC/slarrv2.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/slarrv2.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBslarrv2\fP (N, VL, VU, D, L, PIVMIN, ISPLIT, M, DOL, DOU, NEEDIL, NEEDIU, MINRGP, RTOL1, RTOL2, W, WERR, WGAP, IBLOCK, INDEXW, GERS, SDIAM, Z, LDZ, ISUPPZ, WORK, IWORK, VSTART, FINISH, MAXCLS, NDEPTH, PARITY, ZOFFSET, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine slarrv2 (integer N, real VL, real VU, real, dimension( * ) D, real, dimension( * ) L, real PIVMIN, integer, dimension( * ) ISPLIT, integer M, integer DOL, integer DOU, integer NEEDIL, integer NEEDIU, real MINRGP, real RTOL1, real RTOL2, real, dimension( * ) W, real, dimension( * ) WERR, real, dimension( * ) WGAP, integer, dimension( * ) IBLOCK, integer, dimension( * ) INDEXW, real, dimension( * ) GERS, real, dimension( * ) SDIAM, real, dimension( ldz, * ) Z, integer LDZ, integer, dimension( * ) ISUPPZ, real, dimension( * ) WORK, integer, dimension( * ) IWORK, logical VSTART, logical FINISH, integer MAXCLS, integer NDEPTH, integer PARITY, integer ZOFFSET, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

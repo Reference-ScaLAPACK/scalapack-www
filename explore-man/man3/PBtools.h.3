@@ -1,0 +1,2995 @@
+.TH "PBLAS/SRC/PBtools.h" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PBLAS/SRC/PBtools.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_2D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDTYPE1_\fP   0                   /* Descriptor Type */"
+.br
+.ti -1c
+.RI "#define \fBCTXT1_\fP   1                     /* BLACS context */"
+.br
+.ti -1c
+.RI "#define \fBM1_\fP   2             /* Global Number of Rows */"
+.br
+.ti -1c
+.RI "#define \fBN1_\fP   3          /* Global Number of Columns */"
+.br
+.ti -1c
+.RI "#define \fBMB1_\fP   4                 /* Row Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBNB1_\fP   5              /* Column Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBRSRC1_\fP   6            /* Starting Processor Row */"
+.br
+.ti -1c
+.RI "#define \fBCSRC1_\fP   7         /* Starting Processor Column */"
+.br
+.ti -1c
+.RI "#define \fBLLD1_\fP   8           /* Local Leading Dimension */"
+.br
+.ti -1c
+.RI "#define \fBDLEN1_\fP   9                 /* Descriptor Length */"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_CYCLIC_2D_INB\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDTYPE_\fP   0                   /* Descriptor Type */"
+.br
+.ti -1c
+.RI "#define \fBCTXT_\fP   1                     /* BLACS context */"
+.br
+.ti -1c
+.RI "#define \fBM_\fP   2             /* Global Number of Rows */"
+.br
+.ti -1c
+.RI "#define \fBN_\fP   3          /* Global Number of Columns */"
+.br
+.ti -1c
+.RI "#define \fBIMB_\fP   4         /* Initial Row Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBINB_\fP   5      /* Initial Column Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBMB_\fP   6                 /* Row Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBNB_\fP   7              /* Column Blocking Size */"
+.br
+.ti -1c
+.RI "#define \fBRSRC_\fP   8              /* Starting Process Row */"
+.br
+.ti -1c
+.RI "#define \fBCSRC_\fP   9           /* Starting Process Column */"
+.br
+.ti -1c
+.RI "#define \fBLLD_\fP   10          /* Local Leading Dimension */"
+.br
+.ti -1c
+.RI "#define \fBDLEN_\fP   11                /* Descriptor Length */"
+.br
+.ti -1c
+.RI "#define \fBCPACKING\fP   'P'"
+.br
+.ti -1c
+.RI "#define \fBCUNPACKING\fP   'U'"
+.br
+.ti -1c
+.RI "#define \fBPACKING\fP   'P'"
+.br
+.ti -1c
+.RI "#define \fBUNPACKING\fP   'U'"
+.br
+.ti -1c
+.RI "#define \fBCGENERAL\fP   'G'"
+.br
+.ti -1c
+.RI "#define \fBCHERM\fP   'H'"
+.br
+.ti -1c
+.RI "#define \fBGENERAL\fP   'G'"
+.br
+.ti -1c
+.RI "#define \fBSYMM\fP   'S'"
+.br
+.ti -1c
+.RI "#define \fBHERM\fP   'H'"
+.br
+.ti -1c
+.RI "#define \fBONE\fP   1\&.0"
+.br
+.ti -1c
+.RI "#define \fBTWO\fP   2\&.0"
+.br
+.ti -1c
+.RI "#define \fBZERO\fP   0\&.0"
+.br
+.ti -1c
+.RI "#define \fBDESCMULT\fP   100"
+.br
+.ti -1c
+.RI "#define \fBBIGNUM\fP   10000"
+.br
+.ti -1c
+.RI "#define \fBABS\fP(a_)   ( ( (a_) <   0  ) ? \-(a_) : (a_) )"
+.br
+.ti -1c
+.RI "#define \fBMIN\fP(a_,  b_)   ( ( (a_) < (b_) ) ?  (a_) : (b_) )"
+.br
+.ti -1c
+.RI "#define \fBMAX\fP(a_,  b_)   ( ( (a_) > (b_) ) ?  (a_) : (b_) )"
+.br
+.ti -1c
+.RI "#define \fBFLOOR\fP(a,  b)   (((a)>0) ? (((a)/(b))) : (\-(((\-(a))+(b)\-1)/(b))))"
+.br
+.ti -1c
+.RI "#define \fBCEIL\fP(a,  b)   ( ( (a)+(b)\-1 ) / (b) )"
+.br
+.ti -1c
+.RI "#define \fBICEIL\fP(a,  b)   (((a)>0) ? ((((a)+(b)\-1)/(b))) : (\-((\-(a))/(b))))"
+.br
+.ti -1c
+.RI "#define \fBMupcase\fP(C)   (((C)>96 && (C)<123) ? (C) & 0xDF : (C))"
+.br
+.ti -1c
+.RI "#define \fBMlowcase\fP(C)   (((C)>64 && (C)< 91) ? (C) | 32   : (C))"
+.br
+.ti -1c
+.RI "#define \fBMModInc\fP(I,  d)   if(++(I) == (d)) (I) = 0"
+.br
+.ti -1c
+.RI "#define \fBMModDec\fP(I,  d)   if(\-\-(I) == \-1) (I) = (d)\-1"
+.br
+.ti -1c
+.RI "#define \fBMPosMod\fP(I,  d)   ( (I) \- ((I)/(d))*(d) )"
+.br
+.ti -1c
+.RI "#define \fBMModAdd\fP(I1,  I2,  d)   ( ( (I1) + (I2) < (d) ) ? (I1) + (I2) : (I1) + (I2) \- (d) )"
+.br
+.ti -1c
+.RI "#define \fBMModAdd1\fP(I,  d)   ( ((I) != (d)\-1) ? (I) + 1 : 0 )"
+.br
+.ti -1c
+.RI "#define \fBMModSub\fP(I1,  I2,  d)   ( ( (I1) < (I2) ) ? (d) + (I1) \- (I2) : (I1) \- (I2) )"
+.br
+.ti -1c
+.RI "#define \fBMModSub1\fP(I,  d)   ( ((I)!=0) ? (I)\-1 : (d)\-1 )"
+.br
+.ti -1c
+.RI "#define \fBDNROC\fP(n_,  nb_,  p_)   ((double)(((((n_)+(nb_)\-1)/(nb_))+(p_)\-1)/(p_))*(double)((nb_)))"
+.br
+.ti -1c
+.RI "#define \fBMptr\fP(a_,  i_,  j_,  lda_,  siz_)"
+.br
+.ti -1c
+.RI "#define \fBMfirstnb\fP(inbt_,  n_,  i_,  inb_,  nb_)"
+.br
+.ti -1c
+.RI "#define \fBMlastnb\fP(inbt_,  n_,  i_,  inb_,  nb_)"
+.br
+.ti -1c
+.RI "#define \fBMspan\fP(n_,  i_,  inb_,  nb_,  srcproc_,  nprocs_)"
+.br
+.ti -1c
+.RI "#define \fBMindxl2g\fP(ig_,  il_,  inb_,  nb_,  proc_,  srcproc_,  nprocs_)"
+.br
+.ti -1c
+.RI "#define \fBMindxg2p\fP(ig_,  inb_,  nb_,  proc_,  srcproc_,  nprocs_)"
+.br
+.ti -1c
+.RI "#define \fBMnumroc\fP(np_,  n_,  i_,  inb_,  nb_,  proc_,  srcproc_,  nprocs_)"
+.br
+.ti -1c
+.RI "#define \fBMnpreroc\fP(np_,  n_,  i_,  inb_,  nb_,  proc_,  srcproc_,  nprocs_)"
+.br
+.ti -1c
+.RI "#define \fBMnnxtroc\fP(np_,  n_,  i_,  inb_,  nb_,  proc_,  srcproc_,  nprocs_)"
+.br
+.ti -1c
+.RI "#define \fBMinfog2l\fP(i_,  j_,  desc_,  nr_,  nc_,  r_,  c_,  ii_,  jj_,  pr_,  pc_)"
+.br
+.ti -1c
+.RI "#define \fBMDescSet\fP(desc,  m,  n,  imb,  inb,  mb,  nb,  rsrc,  csrc,  ictxt,  lld)"
+.br
+.ti -1c
+.RI "#define \fBMDescCopy\fP(DescIn,  DescOut)"
+.br
+.ti -1c
+.RI "#define \fBMDescTrans\fP(DescIn,  DescOut)"
+.br
+.ti -1c
+.RI "#define \fBMIndxTrans\fP(I,  J,  i,  j)"
+.br
+.ti -1c
+.RI "#define \fBimmadd_\fP   IMMADD"
+.br
+.ti -1c
+.RI "#define \fBsmmadd_\fP   SMMADD"
+.br
+.ti -1c
+.RI "#define \fBdmmadd_\fP   DMMADD"
+.br
+.ti -1c
+.RI "#define \fBcmmadd_\fP   CMMADD"
+.br
+.ti -1c
+.RI "#define \fBzmmadd_\fP   ZMMADD"
+.br
+.ti -1c
+.RI "#define \fBimmtadd_\fP   IMMTADD"
+.br
+.ti -1c
+.RI "#define \fBsmmtadd_\fP   SMMTADD"
+.br
+.ti -1c
+.RI "#define \fBdmmtadd_\fP   DMMTADD"
+.br
+.ti -1c
+.RI "#define \fBcmmtadd_\fP   CMMTADD"
+.br
+.ti -1c
+.RI "#define \fBzmmtadd_\fP   ZMMTADD"
+.br
+.ti -1c
+.RI "#define \fBsmmcadd_\fP   SMMCADD"
+.br
+.ti -1c
+.RI "#define \fBdmmcadd_\fP   DMMCADD"
+.br
+.ti -1c
+.RI "#define \fBcmmcadd_\fP   CMMCADD"
+.br
+.ti -1c
+.RI "#define \fBzmmcadd_\fP   ZMMCADD"
+.br
+.ti -1c
+.RI "#define \fBsmmtcadd_\fP   SMMTCADD"
+.br
+.ti -1c
+.RI "#define \fBdmmtcadd_\fP   DMMTCADD"
+.br
+.ti -1c
+.RI "#define \fBcmmtcadd_\fP   CMMTCADD"
+.br
+.ti -1c
+.RI "#define \fBzmmtcadd_\fP   ZMMTCADD"
+.br
+.ti -1c
+.RI "#define \fBimmdda_\fP   IMMDDA"
+.br
+.ti -1c
+.RI "#define \fBsmmdda_\fP   SMMDDA"
+.br
+.ti -1c
+.RI "#define \fBdmmdda_\fP   DMMDDA"
+.br
+.ti -1c
+.RI "#define \fBcmmdda_\fP   CMMDDA"
+.br
+.ti -1c
+.RI "#define \fBzmmdda_\fP   ZMMDDA"
+.br
+.ti -1c
+.RI "#define \fBsmmddac_\fP   SMMDDAC"
+.br
+.ti -1c
+.RI "#define \fBdmmddac_\fP   DMMDDAC"
+.br
+.ti -1c
+.RI "#define \fBcmmddac_\fP   CMMDDAC"
+.br
+.ti -1c
+.RI "#define \fBzmmddac_\fP   ZMMDDAC"
+.br
+.ti -1c
+.RI "#define \fBimmddat_\fP   IMMDDAT"
+.br
+.ti -1c
+.RI "#define \fBsmmddat_\fP   SMMDDAT"
+.br
+.ti -1c
+.RI "#define \fBdmmddat_\fP   DMMDDAT"
+.br
+.ti -1c
+.RI "#define \fBcmmddat_\fP   CMMDDAT"
+.br
+.ti -1c
+.RI "#define \fBzmmddat_\fP   ZMMDDAT"
+.br
+.ti -1c
+.RI "#define \fBsmmddact_\fP   SMMDDACT"
+.br
+.ti -1c
+.RI "#define \fBdmmddact_\fP   DMMDDACT"
+.br
+.ti -1c
+.RI "#define \fBcmmddact_\fP   CMMDDACT"
+.br
+.ti -1c
+.RI "#define \fBzmmddact_\fP   ZMMDDACT"
+.br
+.ti -1c
+.RI "#define \fBsasqrtb_\fP   SASQRTB"
+.br
+.ti -1c
+.RI "#define \fBdasqrtb_\fP   DASQRTB"
+.br
+.ti -1c
+.RI "#define \fBsset_\fP   SSET"
+.br
+.ti -1c
+.RI "#define \fBdset_\fP   DSET"
+.br
+.ti -1c
+.RI "#define \fBcset_\fP   CSET"
+.br
+.ti -1c
+.RI "#define \fBzset_\fP   ZSET"
+.br
+.ti -1c
+.RI "#define \fBsvasum_\fP   SVASUM"
+.br
+.ti -1c
+.RI "#define \fBdvasum_\fP   DVASUM"
+.br
+.ti -1c
+.RI "#define \fBscvasum_\fP   SCVASUM"
+.br
+.ti -1c
+.RI "#define \fBdzvasum_\fP   DZVASUM"
+.br
+.ti -1c
+.RI "#define \fBsascal_\fP   SASCAL"
+.br
+.ti -1c
+.RI "#define \fBdascal_\fP   DASCAL"
+.br
+.ti -1c
+.RI "#define \fBscshft_\fP   SCSHFT"
+.br
+.ti -1c
+.RI "#define \fBdcshft_\fP   DCSHFT"
+.br
+.ti -1c
+.RI "#define \fBccshft_\fP   CCSHFT"
+.br
+.ti -1c
+.RI "#define \fBzcshft_\fP   ZCSHFT"
+.br
+.ti -1c
+.RI "#define \fBsrshft_\fP   SRSHFT"
+.br
+.ti -1c
+.RI "#define \fBdrshft_\fP   DRSHFT"
+.br
+.ti -1c
+.RI "#define \fBcrshft_\fP   CRSHFT"
+.br
+.ti -1c
+.RI "#define \fBzrshft_\fP   ZRSHFT"
+.br
+.ti -1c
+.RI "#define \fBsvvdot_\fP   SVVDOT"
+.br
+.ti -1c
+.RI "#define \fBdvvdot_\fP   DVVDOT"
+.br
+.ti -1c
+.RI "#define \fBcvvdotc_\fP   CVVDOTC"
+.br
+.ti -1c
+.RI "#define \fBcvvdotu_\fP   CVVDOTU"
+.br
+.ti -1c
+.RI "#define \fBzvvdotc_\fP   ZVVDOTC"
+.br
+.ti -1c
+.RI "#define \fBzvvdotu_\fP   ZVVDOTU"
+.br
+.ti -1c
+.RI "#define \fBstzpad_\fP   STZPAD"
+.br
+.ti -1c
+.RI "#define \fBdtzpad_\fP   DTZPAD"
+.br
+.ti -1c
+.RI "#define \fBctzpad_\fP   CTZPAD"
+.br
+.ti -1c
+.RI "#define \fBztzpad_\fP   ZTZPAD"
+.br
+.ti -1c
+.RI "#define \fBstzpadcpy_\fP   STZPADCPY"
+.br
+.ti -1c
+.RI "#define \fBdtzpadcpy_\fP   DTZPADCPY"
+.br
+.ti -1c
+.RI "#define \fBctzpadcpy_\fP   CTZPADCPY"
+.br
+.ti -1c
+.RI "#define \fBztzpadcpy_\fP   ZTZPADCPY"
+.br
+.ti -1c
+.RI "#define \fBstzscal_\fP   STZSCAL"
+.br
+.ti -1c
+.RI "#define \fBdtzscal_\fP   DTZSCAL"
+.br
+.ti -1c
+.RI "#define \fBctzscal_\fP   CTZSCAL"
+.br
+.ti -1c
+.RI "#define \fBztzscal_\fP   ZTZSCAL"
+.br
+.ti -1c
+.RI "#define \fBchescal_\fP   CHESCAL"
+.br
+.ti -1c
+.RI "#define \fBzhescal_\fP   ZHESCAL"
+.br
+.ti -1c
+.RI "#define \fBctzcnjg_\fP   CTZCNJG"
+.br
+.ti -1c
+.RI "#define \fBztzcnjg_\fP   ZTZCNJG"
+.br
+.ti -1c
+.RI "#define \fBsagemv_\fP   SAGEMV"
+.br
+.ti -1c
+.RI "#define \fBdagemv_\fP   DAGEMV"
+.br
+.ti -1c
+.RI "#define \fBcagemv_\fP   CAGEMV"
+.br
+.ti -1c
+.RI "#define \fBzagemv_\fP   ZAGEMV"
+.br
+.ti -1c
+.RI "#define \fBsasymv_\fP   SASYMV"
+.br
+.ti -1c
+.RI "#define \fBdasymv_\fP   DASYMV"
+.br
+.ti -1c
+.RI "#define \fBcasymv_\fP   CASYMV"
+.br
+.ti -1c
+.RI "#define \fBzasymv_\fP   ZASYMV"
+.br
+.ti -1c
+.RI "#define \fBcahemv_\fP   CAHEMV"
+.br
+.ti -1c
+.RI "#define \fBzahemv_\fP   ZAHEMV"
+.br
+.ti -1c
+.RI "#define \fBsatrmv_\fP   SATRMV"
+.br
+.ti -1c
+.RI "#define \fBdatrmv_\fP   DATRMV"
+.br
+.ti -1c
+.RI "#define \fBcatrmv_\fP   CATRMV"
+.br
+.ti -1c
+.RI "#define \fBzatrmv_\fP   ZATRMV"
+.br
+.ti -1c
+.RI "#define \fBcsymv_\fP   CSYMV"
+.br
+.ti -1c
+.RI "#define \fBzsymv_\fP   ZSYMV"
+.br
+.ti -1c
+.RI "#define \fBcsyr_\fP   CSYR"
+.br
+.ti -1c
+.RI "#define \fBzsyr_\fP   ZSYR"
+.br
+.ti -1c
+.RI "#define \fBcsyr2_\fP   CSYR2"
+.br
+.ti -1c
+.RI "#define \fBzsyr2_\fP   ZSYR2"
+.br
+.ti -1c
+.RI "#define \fBimmadd_\fP   \fBimmadd\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmadd_\fP   \fBsmmadd\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmadd_\fP   \fBdmmadd\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmadd_\fP   \fBcmmadd\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmadd_\fP   \fBzmmadd\fP"
+.br
+.ti -1c
+.RI "#define \fBimmtadd_\fP   \fBimmtadd\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmtadd_\fP   \fBsmmtadd\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmtadd_\fP   \fBdmmtadd\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmtadd_\fP   \fBcmmtadd\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmtadd_\fP   \fBzmmtadd\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmcadd_\fP   \fBsmmcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmcadd_\fP   \fBdmmcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmcadd_\fP   \fBcmmcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmcadd_\fP   \fBzmmcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmtcadd_\fP   \fBsmmtcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmtcadd_\fP   \fBdmmtcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmtcadd_\fP   \fBcmmtcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmtcadd_\fP   \fBzmmtcadd\fP"
+.br
+.ti -1c
+.RI "#define \fBimmdda_\fP   \fBimmdda\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmdda_\fP   \fBsmmdda\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmdda_\fP   \fBdmmdda\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmdda_\fP   \fBcmmdda\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmdda_\fP   \fBzmmdda\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmddac_\fP   \fBsmmddac\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmddac_\fP   \fBdmmddac\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmddac_\fP   \fBcmmddac\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmddac_\fP   \fBzmmddac\fP"
+.br
+.ti -1c
+.RI "#define \fBimmddat_\fP   \fBimmddat\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmddat_\fP   \fBsmmddat\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmddat_\fP   \fBdmmddat\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmddat_\fP   \fBcmmddat\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmddat_\fP   \fBzmmddat\fP"
+.br
+.ti -1c
+.RI "#define \fBsmmddact_\fP   \fBsmmddact\fP"
+.br
+.ti -1c
+.RI "#define \fBdmmddact_\fP   \fBdmmddact\fP"
+.br
+.ti -1c
+.RI "#define \fBcmmddact_\fP   \fBcmmddact\fP"
+.br
+.ti -1c
+.RI "#define \fBzmmddact_\fP   \fBzmmddact\fP"
+.br
+.ti -1c
+.RI "#define \fBsasqrtb_\fP   \fBsasqrtb\fP"
+.br
+.ti -1c
+.RI "#define \fBdasqrtb_\fP   \fBdasqrtb\fP"
+.br
+.ti -1c
+.RI "#define \fBsset_\fP   \fBsset\fP"
+.br
+.ti -1c
+.RI "#define \fBdset_\fP   \fBdset\fP"
+.br
+.ti -1c
+.RI "#define \fBcset_\fP   \fBcset\fP"
+.br
+.ti -1c
+.RI "#define \fBzset_\fP   \fBzset\fP"
+.br
+.ti -1c
+.RI "#define \fBsvasum_\fP   \fBsvasum\fP"
+.br
+.ti -1c
+.RI "#define \fBdvasum_\fP   \fBdvasum\fP"
+.br
+.ti -1c
+.RI "#define \fBscvasum_\fP   \fBscvasum\fP"
+.br
+.ti -1c
+.RI "#define \fBdzvasum_\fP   \fBdzvasum\fP"
+.br
+.ti -1c
+.RI "#define \fBsascal_\fP   \fBsascal\fP"
+.br
+.ti -1c
+.RI "#define \fBdascal_\fP   \fBdascal\fP"
+.br
+.ti -1c
+.RI "#define \fBscshft_\fP   \fBscshft\fP"
+.br
+.ti -1c
+.RI "#define \fBdcshft_\fP   \fBdcshft\fP"
+.br
+.ti -1c
+.RI "#define \fBccshft_\fP   \fBccshft\fP"
+.br
+.ti -1c
+.RI "#define \fBzcshft_\fP   \fBzcshft\fP"
+.br
+.ti -1c
+.RI "#define \fBsrshft_\fP   \fBsrshft\fP"
+.br
+.ti -1c
+.RI "#define \fBdrshft_\fP   \fBdrshft\fP"
+.br
+.ti -1c
+.RI "#define \fBcrshft_\fP   \fBcrshft\fP"
+.br
+.ti -1c
+.RI "#define \fBzrshft_\fP   \fBzrshft\fP"
+.br
+.ti -1c
+.RI "#define \fBsvvdot_\fP   \fBsvvdot\fP"
+.br
+.ti -1c
+.RI "#define \fBdvvdot_\fP   \fBdvvdot\fP"
+.br
+.ti -1c
+.RI "#define \fBcvvdotc_\fP   \fBcvvdotc\fP"
+.br
+.ti -1c
+.RI "#define \fBcvvdotu_\fP   \fBcvvdotu\fP"
+.br
+.ti -1c
+.RI "#define \fBzvvdotc_\fP   \fBzvvdotc\fP"
+.br
+.ti -1c
+.RI "#define \fBzvvdotu_\fP   \fBzvvdotu\fP"
+.br
+.ti -1c
+.RI "#define \fBstzpad_\fP   \fBstzpad\fP"
+.br
+.ti -1c
+.RI "#define \fBdtzpad_\fP   \fBdtzpad\fP"
+.br
+.ti -1c
+.RI "#define \fBctzpad_\fP   \fBctzpad\fP"
+.br
+.ti -1c
+.RI "#define \fBztzpad_\fP   \fBztzpad\fP"
+.br
+.ti -1c
+.RI "#define \fBstzpadcpy_\fP   \fBstzpadcpy\fP"
+.br
+.ti -1c
+.RI "#define \fBdtzpadcpy_\fP   \fBdtzpadcpy\fP"
+.br
+.ti -1c
+.RI "#define \fBctzpadcpy_\fP   \fBctzpadcpy\fP"
+.br
+.ti -1c
+.RI "#define \fBztzpadcpy_\fP   \fBztzpadcpy\fP"
+.br
+.ti -1c
+.RI "#define \fBstzscal_\fP   \fBstzscal\fP"
+.br
+.ti -1c
+.RI "#define \fBdtzscal_\fP   \fBdtzscal\fP"
+.br
+.ti -1c
+.RI "#define \fBctzscal_\fP   \fBctzscal\fP"
+.br
+.ti -1c
+.RI "#define \fBztzscal_\fP   \fBztzscal\fP"
+.br
+.ti -1c
+.RI "#define \fBchescal_\fP   \fBchescal\fP"
+.br
+.ti -1c
+.RI "#define \fBzhescal_\fP   \fBzhescal\fP"
+.br
+.ti -1c
+.RI "#define \fBctzcnjg_\fP   \fBctzcnjg\fP"
+.br
+.ti -1c
+.RI "#define \fBztzcnjg_\fP   \fBztzcnjg\fP"
+.br
+.ti -1c
+.RI "#define \fBsagemv_\fP   \fBsagemv\fP"
+.br
+.ti -1c
+.RI "#define \fBdagemv_\fP   \fBdagemv\fP"
+.br
+.ti -1c
+.RI "#define \fBcagemv_\fP   \fBcagemv\fP"
+.br
+.ti -1c
+.RI "#define \fBzagemv_\fP   \fBzagemv\fP"
+.br
+.ti -1c
+.RI "#define \fBsasymv_\fP   \fBsasymv\fP"
+.br
+.ti -1c
+.RI "#define \fBdasymv_\fP   \fBdasymv\fP"
+.br
+.ti -1c
+.RI "#define \fBcasymv_\fP   \fBcasymv\fP"
+.br
+.ti -1c
+.RI "#define \fBzasymv_\fP   \fBzasymv\fP"
+.br
+.ti -1c
+.RI "#define \fBcahemv_\fP   \fBcahemv\fP"
+.br
+.ti -1c
+.RI "#define \fBzahemv_\fP   \fBzahemv\fP"
+.br
+.ti -1c
+.RI "#define \fBsatrmv_\fP   \fBsatrmv\fP"
+.br
+.ti -1c
+.RI "#define \fBdatrmv_\fP   \fBdatrmv\fP"
+.br
+.ti -1c
+.RI "#define \fBcatrmv_\fP   \fBcatrmv\fP"
+.br
+.ti -1c
+.RI "#define \fBzatrmv_\fP   \fBzatrmv\fP"
+.br
+.ti -1c
+.RI "#define \fBcsymv_\fP   \fBcsymv\fP"
+.br
+.ti -1c
+.RI "#define \fBzsymv_\fP   \fBzsymv\fP"
+.br
+.ti -1c
+.RI "#define \fBcsyr_\fP   \fBcsyr\fP"
+.br
+.ti -1c
+.RI "#define \fBzsyr_\fP   \fBzsyr\fP"
+.br
+.ti -1c
+.RI "#define \fBcsyr2_\fP   \fBcsyr2\fP"
+.br
+.ti -1c
+.RI "#define \fBzsyr2_\fP   \fBzsyr2\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBimmadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBimmtadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmtadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmtadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmtadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmtadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmtcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmtcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmtcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmtcadd_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBimmdda_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmdda_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmdda_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmdda_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmdda_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmddac_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmddac_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmddac_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmddac_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBimmddat_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmddat_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmddat_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmddat_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmddat_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsmmddact_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdmmddact_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcmmddact_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzmmddact_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsasqrtb_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdasqrtb_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsset_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdset_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcset_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzset_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsvasum_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdvasum_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBscvasum_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdzvasum_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsascal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdascal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBscshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdcshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBccshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzcshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsrshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdrshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcrshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzrshft_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsvvdot_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdvvdot_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcvvdotc_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcvvdotu_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzvvdotc_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzvvdotu_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBstzpad_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdtzpad_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctzpad_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztzpad_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBstzpadcpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdtzpadcpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctzpadcpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztzpadcpy_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBstzscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdtzscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctzscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztzscal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBchescal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzhescal_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBctzcnjg_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBztzcnjg_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsagemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdagemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcagemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzagemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsasymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdasymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcasymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzasymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcahemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzahemv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBsatrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBdatrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcatrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzatrmv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcsymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzsymv_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcsyr_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzsyr_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBcsyr2_\fP ()"
+.br
+.ti -1c
+.RI "\fBF_VOID_FCT\fP \fBzsyr2_\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzsyr\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzher\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzsyr2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzher2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctztrmv\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzatrmv\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzsymv\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzhemv\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzasymv\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzahemv\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzsyrk\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzherk\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzsyr2k\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzher2k\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctztrmm\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzsymm\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Ctzhemm\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpswapNN\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpswapND\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpdot11\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpdotNN\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpdotND\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpaxpbyNN\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpaxpbyND\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpaxpbyDN\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpaxpby\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpsyr\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpsyr2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cptrm\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpsym\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpgeadd\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cptradd\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cptran\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cptrsv\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cptrsm\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpgemmAB\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpgemmAC\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpgemmBC\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpsymmAB\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpsymmBC\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpsyrkA\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CpsyrkAC\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpsyr2kA\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cpsyr2kAC\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CptrmmAB\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CptrmmB\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CptrsmAB\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CptrsmAB0\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CptrsmAB1\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CptrsmB\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cgcd\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Clcm\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cdescset\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cdescribe\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CargFtoC\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cfirstnb\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Clastnb\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cspan\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cainfog2l\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cinfog2l\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cg2lrem\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cindxg2p\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cnumroc\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cnpreroc\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_Cnnxtroc\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cconjg\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cwarn\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cabort\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cchkmat\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cchkvec\fP ()"
+.br
+.ti -1c
+.RI "char * \fBPB_Cmalloc\fP ()"
+.br
+.ti -1c
+.RI "char * \fBPB_Cgetbuf\fP ()"
+.br
+.ti -1c
+.RI "\fBPBTYP_T\fP * \fBPB_Citypeset\fP ()"
+.br
+.ti -1c
+.RI "\fBPBTYP_T\fP * \fBPB_Cstypeset\fP ()"
+.br
+.ti -1c
+.RI "\fBPBTYP_T\fP * \fBPB_Cdtypeset\fP ()"
+.br
+.ti -1c
+.RI "\fBPBTYP_T\fP * \fBPB_Cctypeset\fP ()"
+.br
+.ti -1c
+.RI "\fBPBTYP_T\fP * \fBPB_Cztypeset\fP ()"
+.br
+.ti -1c
+.RI "int \fBpilaenv_\fP ()"
+.br
+.ti -1c
+.RI "char * \fBPB_Ctop\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CVMinit\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_CVMnpq\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CVMcontig\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_CVMloc\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_CVMswp\fP ()"
+.br
+.ti -1c
+.RI "int \fBPB_CVMpack\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CVMupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cbinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cplaprnt\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cplaprn2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cprnt\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cplapad\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cplapd2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cplascal\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cplasca2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_Cplacnjg\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CInV\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CInV2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CInOutV\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CInOutV2\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_COutV\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CGatherV\fP ()"
+.br
+.ti -1c
+.RI "void \fBPB_CScatterV\fP ()"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ABS(a_)   ( ( (a_) <   0  ) ? \-(a_) : (a_) )"
+
+.PP
+Definition at line 75 of file PBtools\&.h\&.
+.SS "#define BIGNUM   10000"
+
+.PP
+Definition at line 69 of file PBtools\&.h\&.
+.SS "#define BLOCK_CYCLIC_2D   1"
+
+.PP
+Definition at line 20 of file PBtools\&.h\&.
+.SS "#define BLOCK_CYCLIC_2D_INB   2"
+
+.PP
+Definition at line 35 of file PBtools\&.h\&.
+.SS "#define cagemv_   CAGEMV"
+
+.PP
+Definition at line 851 of file PBtools\&.h\&.
+.SS "#define cagemv_   \fBcagemv\fP"
+
+.PP
+Definition at line 851 of file PBtools\&.h\&.
+.SS "#define cahemv_   CAHEMV"
+
+.PP
+Definition at line 858 of file PBtools\&.h\&.
+.SS "#define cahemv_   \fBcahemv\fP"
+
+.PP
+Definition at line 858 of file PBtools\&.h\&.
+.SS "#define casymv_   CASYMV"
+
+.PP
+Definition at line 856 of file PBtools\&.h\&.
+.SS "#define casymv_   \fBcasymv\fP"
+
+.PP
+Definition at line 856 of file PBtools\&.h\&.
+.SS "#define catrmv_   CATRMV"
+
+.PP
+Definition at line 863 of file PBtools\&.h\&.
+.SS "#define catrmv_   \fBcatrmv\fP"
+
+.PP
+Definition at line 863 of file PBtools\&.h\&.
+.SS "#define ccshft_   CCSHFT"
+
+.PP
+Definition at line 813 of file PBtools\&.h\&.
+.SS "#define ccshft_   \fBccshft\fP"
+
+.PP
+Definition at line 813 of file PBtools\&.h\&.
+.SS "#define CEIL(a, b)   ( ( (a)+(b)\-1 ) / (b) )"
+
+.PP
+Definition at line 80 of file PBtools\&.h\&.
+.SS "#define CGENERAL   'G'"
+
+.PP
+Definition at line 56 of file PBtools\&.h\&.
+.SS "#define CHERM   'H'"
+
+.PP
+Definition at line 58 of file PBtools\&.h\&.
+.SS "#define chescal_   CHESCAL"
+
+.PP
+Definition at line 843 of file PBtools\&.h\&.
+.SS "#define chescal_   \fBchescal\fP"
+
+.PP
+Definition at line 843 of file PBtools\&.h\&.
+.SS "#define cmmadd_   CMMADD"
+
+.PP
+Definition at line 754 of file PBtools\&.h\&.
+.SS "#define cmmadd_   \fBcmmadd\fP"
+
+.PP
+Definition at line 754 of file PBtools\&.h\&.
+.SS "#define cmmcadd_   CMMCADD"
+
+.PP
+Definition at line 765 of file PBtools\&.h\&.
+.SS "#define cmmcadd_   \fBcmmcadd\fP"
+
+.PP
+Definition at line 765 of file PBtools\&.h\&.
+.SS "#define cmmdda_   CMMDDA"
+
+.PP
+Definition at line 776 of file PBtools\&.h\&.
+.SS "#define cmmdda_   \fBcmmdda\fP"
+
+.PP
+Definition at line 776 of file PBtools\&.h\&.
+.SS "#define cmmddac_   CMMDDAC"
+
+.PP
+Definition at line 781 of file PBtools\&.h\&.
+.SS "#define cmmddac_   \fBcmmddac\fP"
+
+.PP
+Definition at line 781 of file PBtools\&.h\&.
+.SS "#define cmmddact_   CMMDDACT"
+
+.PP
+Definition at line 792 of file PBtools\&.h\&.
+.SS "#define cmmddact_   \fBcmmddact\fP"
+
+.PP
+Definition at line 792 of file PBtools\&.h\&.
+.SS "#define cmmddat_   CMMDDAT"
+
+.PP
+Definition at line 787 of file PBtools\&.h\&.
+.SS "#define cmmddat_   \fBcmmddat\fP"
+
+.PP
+Definition at line 787 of file PBtools\&.h\&.
+.SS "#define cmmtadd_   CMMTADD"
+
+.PP
+Definition at line 760 of file PBtools\&.h\&.
+.SS "#define cmmtadd_   \fBcmmtadd\fP"
+
+.PP
+Definition at line 760 of file PBtools\&.h\&.
+.SS "#define cmmtcadd_   CMMTCADD"
+
+.PP
+Definition at line 770 of file PBtools\&.h\&.
+.SS "#define cmmtcadd_   \fBcmmtcadd\fP"
+
+.PP
+Definition at line 770 of file PBtools\&.h\&.
+.SS "#define CPACKING   'P'"
+
+.PP
+Definition at line 50 of file PBtools\&.h\&.
+.SS "#define crshft_   CRSHFT"
+
+.PP
+Definition at line 818 of file PBtools\&.h\&.
+.SS "#define crshft_   \fBcrshft\fP"
+
+.PP
+Definition at line 818 of file PBtools\&.h\&.
+.SS "#define cset_   CSET"
+
+.PP
+Definition at line 800 of file PBtools\&.h\&.
+.SS "#define cset_   \fBcset\fP"
+
+.PP
+Definition at line 800 of file PBtools\&.h\&.
+.SS "#define CSRC1_   7         /* Starting Processor Column */"
+
+.PP
+Definition at line 29 of file PBtools\&.h\&.
+.SS "#define CSRC_   9           /* Starting Process Column */"
+
+.PP
+Definition at line 46 of file PBtools\&.h\&.
+.SS "#define csymv_   CSYMV"
+
+.PP
+Definition at line 866 of file PBtools\&.h\&.
+.SS "#define csymv_   \fBcsymv\fP"
+
+.PP
+Definition at line 866 of file PBtools\&.h\&.
+.SS "#define csyr2_   CSYR2"
+
+.PP
+Definition at line 872 of file PBtools\&.h\&.
+.SS "#define csyr2_   \fBcsyr2\fP"
+
+.PP
+Definition at line 872 of file PBtools\&.h\&.
+.SS "#define csyr_   CSYR"
+
+.PP
+Definition at line 869 of file PBtools\&.h\&.
+.SS "#define csyr_   \fBcsyr\fP"
+
+.PP
+Definition at line 869 of file PBtools\&.h\&.
+.SS "#define CTXT1_   1                     /* BLACS context */"
+
+.PP
+Definition at line 23 of file PBtools\&.h\&.
+.SS "#define CTXT_   1                     /* BLACS context */"
+
+.PP
+Definition at line 38 of file PBtools\&.h\&.
+.SS "#define ctzcnjg_   CTZCNJG"
+
+.PP
+Definition at line 846 of file PBtools\&.h\&.
+.SS "#define ctzcnjg_   \fBctzcnjg\fP"
+
+.PP
+Definition at line 846 of file PBtools\&.h\&.
+.SS "#define ctzpad_   CTZPAD"
+
+.PP
+Definition at line 830 of file PBtools\&.h\&.
+.SS "#define ctzpad_   \fBctzpad\fP"
+
+.PP
+Definition at line 830 of file PBtools\&.h\&.
+.SS "#define ctzpadcpy_   CTZPADCPY"
+
+.PP
+Definition at line 835 of file PBtools\&.h\&.
+.SS "#define ctzpadcpy_   \fBctzpadcpy\fP"
+
+.PP
+Definition at line 835 of file PBtools\&.h\&.
+.SS "#define ctzscal_   CTZSCAL"
+
+.PP
+Definition at line 840 of file PBtools\&.h\&.
+.SS "#define ctzscal_   \fBctzscal\fP"
+
+.PP
+Definition at line 840 of file PBtools\&.h\&.
+.SS "#define CUNPACKING   'U'"
+
+.PP
+Definition at line 51 of file PBtools\&.h\&.
+.SS "#define cvvdotc_   CVVDOTC"
+
+.PP
+Definition at line 823 of file PBtools\&.h\&.
+.SS "#define cvvdotc_   \fBcvvdotc\fP"
+
+.PP
+Definition at line 823 of file PBtools\&.h\&.
+.SS "#define cvvdotu_   CVVDOTU"
+
+.PP
+Definition at line 824 of file PBtools\&.h\&.
+.SS "#define cvvdotu_   \fBcvvdotu\fP"
+
+.PP
+Definition at line 824 of file PBtools\&.h\&.
+.SS "#define dagemv_   DAGEMV"
+
+.PP
+Definition at line 850 of file PBtools\&.h\&.
+.SS "#define dagemv_   \fBdagemv\fP"
+
+.PP
+Definition at line 850 of file PBtools\&.h\&.
+.SS "#define dascal_   DASCAL"
+
+.PP
+Definition at line 809 of file PBtools\&.h\&.
+.SS "#define dascal_   \fBdascal\fP"
+
+.PP
+Definition at line 809 of file PBtools\&.h\&.
+.SS "#define dasqrtb_   DASQRTB"
+
+.PP
+Definition at line 796 of file PBtools\&.h\&.
+.SS "#define dasqrtb_   \fBdasqrtb\fP"
+
+.PP
+Definition at line 796 of file PBtools\&.h\&.
+.SS "#define dasymv_   DASYMV"
+
+.PP
+Definition at line 855 of file PBtools\&.h\&.
+.SS "#define dasymv_   \fBdasymv\fP"
+
+.PP
+Definition at line 855 of file PBtools\&.h\&.
+.SS "#define datrmv_   DATRMV"
+
+.PP
+Definition at line 862 of file PBtools\&.h\&.
+.SS "#define datrmv_   \fBdatrmv\fP"
+
+.PP
+Definition at line 862 of file PBtools\&.h\&.
+.SS "#define dcshft_   DCSHFT"
+
+.PP
+Definition at line 812 of file PBtools\&.h\&.
+.SS "#define dcshft_   \fBdcshft\fP"
+
+.PP
+Definition at line 812 of file PBtools\&.h\&.
+.SS "#define DESCMULT   100"
+
+.PP
+Definition at line 68 of file PBtools\&.h\&.
+.SS "#define DLEN1_   9                 /* Descriptor Length */"
+
+.PP
+Definition at line 31 of file PBtools\&.h\&.
+.SS "#define DLEN_   11                /* Descriptor Length */"
+
+.PP
+Definition at line 48 of file PBtools\&.h\&.
+.SS "#define dmmadd_   DMMADD"
+
+.PP
+Definition at line 753 of file PBtools\&.h\&.
+.SS "#define dmmadd_   \fBdmmadd\fP"
+
+.PP
+Definition at line 753 of file PBtools\&.h\&.
+.SS "#define dmmcadd_   DMMCADD"
+
+.PP
+Definition at line 764 of file PBtools\&.h\&.
+.SS "#define dmmcadd_   \fBdmmcadd\fP"
+
+.PP
+Definition at line 764 of file PBtools\&.h\&.
+.SS "#define dmmdda_   DMMDDA"
+
+.PP
+Definition at line 775 of file PBtools\&.h\&.
+.SS "#define dmmdda_   \fBdmmdda\fP"
+
+.PP
+Definition at line 775 of file PBtools\&.h\&.
+.SS "#define dmmddac_   DMMDDAC"
+
+.PP
+Definition at line 780 of file PBtools\&.h\&.
+.SS "#define dmmddac_   \fBdmmddac\fP"
+
+.PP
+Definition at line 780 of file PBtools\&.h\&.
+.SS "#define dmmddact_   DMMDDACT"
+
+.PP
+Definition at line 791 of file PBtools\&.h\&.
+.SS "#define dmmddact_   \fBdmmddact\fP"
+
+.PP
+Definition at line 791 of file PBtools\&.h\&.
+.SS "#define dmmddat_   DMMDDAT"
+
+.PP
+Definition at line 786 of file PBtools\&.h\&.
+.SS "#define dmmddat_   \fBdmmddat\fP"
+
+.PP
+Definition at line 786 of file PBtools\&.h\&.
+.SS "#define dmmtadd_   DMMTADD"
+
+.PP
+Definition at line 759 of file PBtools\&.h\&.
+.SS "#define dmmtadd_   \fBdmmtadd\fP"
+
+.PP
+Definition at line 759 of file PBtools\&.h\&.
+.SS "#define dmmtcadd_   DMMTCADD"
+
+.PP
+Definition at line 769 of file PBtools\&.h\&.
+.SS "#define dmmtcadd_   \fBdmmtcadd\fP"
+
+.PP
+Definition at line 769 of file PBtools\&.h\&.
+.SS "#define DNROC(n_, nb_, p_)   ((double)(((((n_)+(nb_)\-1)/(nb_))+(p_)\-1)/(p_))*(double)((nb_)))"
+
+.PP
+Definition at line 111 of file PBtools\&.h\&.
+.SS "#define drshft_   DRSHFT"
+
+.PP
+Definition at line 817 of file PBtools\&.h\&.
+.SS "#define drshft_   \fBdrshft\fP"
+
+.PP
+Definition at line 817 of file PBtools\&.h\&.
+.SS "#define dset_   DSET"
+
+.PP
+Definition at line 799 of file PBtools\&.h\&.
+.SS "#define dset_   \fBdset\fP"
+
+.PP
+Definition at line 799 of file PBtools\&.h\&.
+.SS "#define DTYPE1_   0                   /* Descriptor Type */"
+
+.PP
+Definition at line 22 of file PBtools\&.h\&.
+.SS "#define DTYPE_   0                   /* Descriptor Type */"
+
+.PP
+Definition at line 37 of file PBtools\&.h\&.
+.SS "#define dtzpad_   DTZPAD"
+
+.PP
+Definition at line 829 of file PBtools\&.h\&.
+.SS "#define dtzpad_   \fBdtzpad\fP"
+
+.PP
+Definition at line 829 of file PBtools\&.h\&.
+.SS "#define dtzpadcpy_   DTZPADCPY"
+
+.PP
+Definition at line 834 of file PBtools\&.h\&.
+.SS "#define dtzpadcpy_   \fBdtzpadcpy\fP"
+
+.PP
+Definition at line 834 of file PBtools\&.h\&.
+.SS "#define dtzscal_   DTZSCAL"
+
+.PP
+Definition at line 839 of file PBtools\&.h\&.
+.SS "#define dtzscal_   \fBdtzscal\fP"
+
+.PP
+Definition at line 839 of file PBtools\&.h\&.
+.SS "#define dvasum_   DVASUM"
+
+.PP
+Definition at line 804 of file PBtools\&.h\&.
+.SS "#define dvasum_   \fBdvasum\fP"
+
+.PP
+Definition at line 804 of file PBtools\&.h\&.
+.SS "#define dvvdot_   DVVDOT"
+
+.PP
+Definition at line 822 of file PBtools\&.h\&.
+.SS "#define dvvdot_   \fBdvvdot\fP"
+
+.PP
+Definition at line 822 of file PBtools\&.h\&.
+.SS "#define dzvasum_   DZVASUM"
+
+.PP
+Definition at line 806 of file PBtools\&.h\&.
+.SS "#define dzvasum_   \fBdzvasum\fP"
+
+.PP
+Definition at line 806 of file PBtools\&.h\&.
+.SS "#define FLOOR(a, b)   (((a)>0) ? (((a)/(b))) : (\-(((\-(a))+(b)\-1)/(b))))"
+
+.PP
+Definition at line 79 of file PBtools\&.h\&.
+.SS "#define GENERAL   'G'"
+
+.PP
+Definition at line 60 of file PBtools\&.h\&.
+.SS "#define HERM   'H'"
+
+.PP
+Definition at line 62 of file PBtools\&.h\&.
+.SS "#define ICEIL(a, b)   (((a)>0) ? ((((a)+(b)\-1)/(b))) : (\-((\-(a))/(b))))"
+
+.PP
+Definition at line 81 of file PBtools\&.h\&.
+.SS "#define IMB_   4         /* Initial Row Blocking Size */"
+
+.PP
+Definition at line 41 of file PBtools\&.h\&.
+.SS "#define immadd_   IMMADD"
+
+.PP
+Definition at line 751 of file PBtools\&.h\&.
+.SS "#define immadd_   \fBimmadd\fP"
+
+.PP
+Definition at line 751 of file PBtools\&.h\&.
+.SS "#define immdda_   IMMDDA"
+
+.PP
+Definition at line 773 of file PBtools\&.h\&.
+.SS "#define immdda_   \fBimmdda\fP"
+
+.PP
+Definition at line 773 of file PBtools\&.h\&.
+.SS "#define immddat_   IMMDDAT"
+
+.PP
+Definition at line 784 of file PBtools\&.h\&.
+.SS "#define immddat_   \fBimmddat\fP"
+
+.PP
+Definition at line 784 of file PBtools\&.h\&.
+.SS "#define immtadd_   IMMTADD"
+
+.PP
+Definition at line 757 of file PBtools\&.h\&.
+.SS "#define immtadd_   \fBimmtadd\fP"
+
+.PP
+Definition at line 757 of file PBtools\&.h\&.
+.SS "#define INB_   5      /* Initial Column Blocking Size */"
+
+.PP
+Definition at line 42 of file PBtools\&.h\&.
+.SS "#define LLD1_   8           /* Local Leading Dimension */"
+
+.PP
+Definition at line 30 of file PBtools\&.h\&.
+.SS "#define LLD_   10          /* Local Leading Dimension */"
+
+.PP
+Definition at line 47 of file PBtools\&.h\&.
+.SS "#define M1_   2             /* Global Number of Rows */"
+
+.PP
+Definition at line 24 of file PBtools\&.h\&.
+.SS "#define M_   2             /* Global Number of Rows */"
+
+.PP
+Definition at line 39 of file PBtools\&.h\&.
+.SS "#define MAX(a_, b_)   ( ( (a_) > (b_) ) ?  (a_) : (b_) )"
+
+.PP
+Definition at line 77 of file PBtools\&.h\&.
+.SS "#define MB1_   4                 /* Row Blocking Size */"
+
+.PP
+Definition at line 26 of file PBtools\&.h\&.
+.SS "#define MB_   6                 /* Row Blocking Size */"
+
+.PP
+Definition at line 43 of file PBtools\&.h\&.
+.SS "#define MDescCopy(DescIn, DescOut)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+              (DescOut)[DTYPE_] = (DescIn)[DTYPE_];    \
+              (DescOut)[M_    ] = (DescIn)[M_    ];    \
+              (DescOut)[N_    ] = (DescIn)[N_    ];    \
+              (DescOut)[IMB_  ] = (DescIn)[IMB_  ];    \
+              (DescOut)[INB_  ] = (DescIn)[INB_  ];    \
+              (DescOut)[MB_   ] = (DescIn)[MB_   ];    \
+              (DescOut)[NB_   ] = (DescIn)[NB_   ];    \
+              (DescOut)[RSRC_ ] = (DescIn)[RSRC_ ];    \
+              (DescOut)[CSRC_ ] = (DescIn)[CSRC_ ];    \
+              (DescOut)[CTXT_ ] = (DescIn)[CTXT_ ];    \
+              (DescOut)[LLD_  ] = (DescIn)[LLD_  ];    \
+           }
+.fi
+.PP
+Definition at line 514 of file PBtools\&.h\&.
+.SS "#define MDescSet(desc, m, n, imb, inb, mb, nb, rsrc, csrc, ictxt, lld)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+              (desc)[DTYPE_] = BLOCK_CYCLIC_2D_INB; \
+              (desc)[CTXT_ ] = (ictxt); \
+              (desc)[M_    ] = (m);     \
+              (desc)[N_    ] = (n);     \
+              (desc)[IMB_  ] = (imb);   \
+              (desc)[INB_  ] = (inb);   \
+              (desc)[MB_   ] = (mb);    \
+              (desc)[NB_   ] = (nb);    \
+              (desc)[RSRC_ ] = (rsrc);  \
+              (desc)[CSRC_ ] = (csrc);  \
+              (desc)[LLD_  ] = (lld);   \
+           }
+.fi
+.PP
+Definition at line 499 of file PBtools\&.h\&.
+.SS "#define MDescTrans(DescIn, DescOut)"
+
+.PP
+Definition at line 529 of file PBtools\&.h\&.
+.SS "#define Mfirstnb(inbt_, n_, i_, inb_, nb_)"
+\fBValue:\fP
+.PP
+.nf
+inbt_ = (inb_) - (i_); \
+              if( inbt_ <= 0 ) \
+                 inbt_ = ( (-inbt_) / (nb_) + 1 ) * (nb_) + inbt_; \
+              inbt_ = MIN( inbt_, (n_) );
+.fi
+.PP
+Definition at line 139 of file PBtools\&.h\&.
+.SS "#define MIN(a_, b_)   ( ( (a_) < (b_) ) ?  (a_) : (b_) )"
+
+.PP
+Definition at line 76 of file PBtools\&.h\&.
+.SS "#define Mindxg2p(ig_, inb_, nb_, proc_, srcproc_, nprocs_)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+              if( ( (ig_) >= (inb_) ) && ( (srcproc_) >= 0 ) && \
+                  ( (nprocs_) > 1 ) ) \
+              { \
+                 proc_  = (srcproc_) + 1 + ( (ig_)-(inb_) ) / (nb_); \
+                 proc_ -= ( proc_ / (nprocs_) ) * (nprocs_); \
+              } \
+              else \
+              { \
+                 proc_ = (srcproc_); \
+              } \
+           }
+.fi
+.PP
+Definition at line 202 of file PBtools\&.h\&.
+.SS "#define Mindxl2g(ig_, il_, inb_, nb_, proc_, srcproc_, nprocs_)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+              if( ( (srcproc_) >= 0 ) && ( (nprocs_) > 1 ) ) \
+              { \
+                 if( (proc_) == (srcproc_) ) \
+                 { \
+                    if( (il_) < (inb_) ) ig_ = (il_); \
+                    else                 ig_ = (il_) + \
+                       (nb_)*((nprocs_)-1)*( ((il_)-(inb_)) / (nb_) + 1 ); \
+                 } \
+                 else if( (proc_) < (srcproc_) ) \
+                 { \
+                    ig_ = (il_) + (inb_) + \
+                          (nb_)*(  ((nprocs_)-1)*((il_)/(nb_)) + \
+                                   (proc_)-(srcproc_)-1+(nprocs_) ); \
+                 } \
+                 else \
+                 { \
+                    ig_ =  (il_) + (inb_) + \
+                           (nb_)*( ((nprocs_)-1)*((il_)/(nb_)) + \
+                           (proc_)-(srcproc_)-1 ); \
+                 } \
+              } \
+              else \
+              { \
+                 ig_ = (il_); \
+              } \
+           }
+.fi
+.PP
+Definition at line 170 of file PBtools\&.h\&.
+.SS "#define MIndxTrans(I, J, i, j)"
+\fBValue:\fP
+.PP
+.nf
+{ \
+              i = *I - 1; \
+              j = *J - 1; \
+           }
+.fi
+.PP
+Definition at line 575 of file PBtools\&.h\&.
+.SS "#define Minfog2l(i_, j_, desc_, nr_, nc_, r_, c_, ii_, jj_, pr_, pc_)"
+
+.PP
+Definition at line 428 of file PBtools\&.h\&.
+.SS "#define Mlastnb(inbt_, n_, i_, inb_, nb_)"
+\fBValue:\fP
+.PP
+.nf
+inbt_ = (i_) + (n_) - (inb_); \
+              if( inbt_ > 0 ) \
+              { \
+                 inbt_ = -( ( (nb_)+inbt_-1 )/(nb_)-1 )*(nb_) + inbt_; \
+                 inbt_ = MIN( inbt_, (n_) ); \
+              } \
+              else { inbt_ = (n_); };
+.fi
+.PP
+Definition at line 145 of file PBtools\&.h\&.
+.SS "#define Mlowcase(C)   (((C)>64 && (C)< 91) ? (C) | 32   : (C))"
+
+.PP
+Definition at line 84 of file PBtools\&.h\&.
+.SS "#define MModAdd(I1, I2, d)   ( ( (I1) + (I2) < (d) ) ? (I1) + (I2) : (I1) + (I2) \- (d) )"
+
+.PP
+Definition at line 97 of file PBtools\&.h\&.
+.SS "#define MModAdd1(I, d)   ( ((I) != (d)\-1) ? (I) + 1 : 0 )"
+
+.PP
+Definition at line 100 of file PBtools\&.h\&.
+.SS "#define MModDec(I, d)   if(\-\-(I) == \-1) (I) = (d)\-1"
+
+.PP
+Definition at line 93 of file PBtools\&.h\&.
+.SS "#define MModInc(I, d)   if(++(I) == (d)) (I) = 0"
+
+.PP
+Definition at line 91 of file PBtools\&.h\&.
+.SS "#define MModSub(I1, I2, d)   ( ( (I1) < (I2) ) ? (d) + (I1) \- (I2) : (I1) \- (I2) )"
+
+.PP
+Definition at line 102 of file PBtools\&.h\&.
+.SS "#define MModSub1(I, d)   ( ((I)!=0) ? (I)\-1 : (d)\-1 )"
+
+.PP
+Definition at line 105 of file PBtools\&.h\&.
+.SS "#define Mnnxtroc(np_, n_, i_, inb_, nb_, proc_, srcproc_, nprocs_)"
+
+.PP
+Definition at line 372 of file PBtools\&.h\&.
+.SS "#define Mnpreroc(np_, n_, i_, inb_, nb_, proc_, srcproc_, nprocs_)"
+
+.PP
+Definition at line 299 of file PBtools\&.h\&.
+.SS "#define Mnumroc(np_, n_, i_, inb_, nb_, proc_, srcproc_, nprocs_)"
+
+.PP
+Definition at line 222 of file PBtools\&.h\&.
+.SS "#define MPosMod(I, d)   ( (I) \- ((I)/(d))*(d) )"
+
+.PP
+Definition at line 95 of file PBtools\&.h\&.
+.SS "#define Mptr(a_, i_, j_, lda_, siz_)"
+\fBValue:\fP
+.PP
+.nf
+( (a_) + ( (long long) ( (long long)(i_)+ \
+              (long long)(j_)*(long long)(lda_))*(long long)(siz_) ) )
+.fi
+.PP
+Definition at line 132 of file PBtools\&.h\&.
+.SS "#define Mspan(n_, i_, inb_, nb_, srcproc_, nprocs_)"
+\fBValue:\fP
+.PP
+.nf
+( ( (srcproc_) >= 0 ) && ( ( (nprocs_) > 1 ) && \
+              ( ( (i_) < (inb_) ) ? \
+                ( (i_) + (n_) > (inb_) ) : \
+                ( (i_) + (n_) > (inb_) + \
+                  ( ( (i_) - (inb_) ) / (nb_) + 1 ) * (nb_) ) ) ) )
+.fi
+.PP
+Definition at line 160 of file PBtools\&.h\&.
+.SS "#define Mupcase(C)   (((C)>96 && (C)<123) ? (C) & 0xDF : (C))"
+
+.PP
+Definition at line 83 of file PBtools\&.h\&.
+.SS "#define N1_   3          /* Global Number of Columns */"
+
+.PP
+Definition at line 25 of file PBtools\&.h\&.
+.SS "#define N_   3          /* Global Number of Columns */"
+
+.PP
+Definition at line 40 of file PBtools\&.h\&.
+.SS "#define NB1_   5              /* Column Blocking Size */"
+
+.PP
+Definition at line 27 of file PBtools\&.h\&.
+.SS "#define NB_   7              /* Column Blocking Size */"
+
+.PP
+Definition at line 44 of file PBtools\&.h\&.
+.SS "#define ONE   1\&.0"
+
+.PP
+Definition at line 64 of file PBtools\&.h\&.
+.SS "#define PACKING   'P'"
+
+.PP
+Definition at line 53 of file PBtools\&.h\&.
+.SS "#define RSRC1_   6            /* Starting Processor Row */"
+
+.PP
+Definition at line 28 of file PBtools\&.h\&.
+.SS "#define RSRC_   8              /* Starting Process Row */"
+
+.PP
+Definition at line 45 of file PBtools\&.h\&.
+.SS "#define sagemv_   SAGEMV"
+
+.PP
+Definition at line 849 of file PBtools\&.h\&.
+.SS "#define sagemv_   \fBsagemv\fP"
+
+.PP
+Definition at line 849 of file PBtools\&.h\&.
+.SS "#define sascal_   SASCAL"
+
+.PP
+Definition at line 808 of file PBtools\&.h\&.
+.SS "#define sascal_   \fBsascal\fP"
+
+.PP
+Definition at line 808 of file PBtools\&.h\&.
+.SS "#define sasqrtb_   SASQRTB"
+
+.PP
+Definition at line 795 of file PBtools\&.h\&.
+.SS "#define sasqrtb_   \fBsasqrtb\fP"
+
+.PP
+Definition at line 795 of file PBtools\&.h\&.
+.SS "#define sasymv_   SASYMV"
+
+.PP
+Definition at line 854 of file PBtools\&.h\&.
+.SS "#define sasymv_   \fBsasymv\fP"
+
+.PP
+Definition at line 854 of file PBtools\&.h\&.
+.SS "#define satrmv_   SATRMV"
+
+.PP
+Definition at line 861 of file PBtools\&.h\&.
+.SS "#define satrmv_   \fBsatrmv\fP"
+
+.PP
+Definition at line 861 of file PBtools\&.h\&.
+.SS "#define scshft_   SCSHFT"
+
+.PP
+Definition at line 811 of file PBtools\&.h\&.
+.SS "#define scshft_   \fBscshft\fP"
+
+.PP
+Definition at line 811 of file PBtools\&.h\&.
+.SS "#define scvasum_   SCVASUM"
+
+.PP
+Definition at line 805 of file PBtools\&.h\&.
+.SS "#define scvasum_   \fBscvasum\fP"
+
+.PP
+Definition at line 805 of file PBtools\&.h\&.
+.SS "#define smmadd_   SMMADD"
+
+.PP
+Definition at line 752 of file PBtools\&.h\&.
+.SS "#define smmadd_   \fBsmmadd\fP"
+
+.PP
+Definition at line 752 of file PBtools\&.h\&.
+.SS "#define smmcadd_   SMMCADD"
+
+.PP
+Definition at line 763 of file PBtools\&.h\&.
+.SS "#define smmcadd_   \fBsmmcadd\fP"
+
+.PP
+Definition at line 763 of file PBtools\&.h\&.
+.SS "#define smmdda_   SMMDDA"
+
+.PP
+Definition at line 774 of file PBtools\&.h\&.
+.SS "#define smmdda_   \fBsmmdda\fP"
+
+.PP
+Definition at line 774 of file PBtools\&.h\&.
+.SS "#define smmddac_   SMMDDAC"
+
+.PP
+Definition at line 779 of file PBtools\&.h\&.
+.SS "#define smmddac_   \fBsmmddac\fP"
+
+.PP
+Definition at line 779 of file PBtools\&.h\&.
+.SS "#define smmddact_   SMMDDACT"
+
+.PP
+Definition at line 790 of file PBtools\&.h\&.
+.SS "#define smmddact_   \fBsmmddact\fP"
+
+.PP
+Definition at line 790 of file PBtools\&.h\&.
+.SS "#define smmddat_   SMMDDAT"
+
+.PP
+Definition at line 785 of file PBtools\&.h\&.
+.SS "#define smmddat_   \fBsmmddat\fP"
+
+.PP
+Definition at line 785 of file PBtools\&.h\&.
+.SS "#define smmtadd_   SMMTADD"
+
+.PP
+Definition at line 758 of file PBtools\&.h\&.
+.SS "#define smmtadd_   \fBsmmtadd\fP"
+
+.PP
+Definition at line 758 of file PBtools\&.h\&.
+.SS "#define smmtcadd_   SMMTCADD"
+
+.PP
+Definition at line 768 of file PBtools\&.h\&.
+.SS "#define smmtcadd_   \fBsmmtcadd\fP"
+
+.PP
+Definition at line 768 of file PBtools\&.h\&.
+.SS "#define srshft_   SRSHFT"
+
+.PP
+Definition at line 816 of file PBtools\&.h\&.
+.SS "#define srshft_   \fBsrshft\fP"
+
+.PP
+Definition at line 816 of file PBtools\&.h\&.
+.SS "#define sset_   SSET"
+
+.PP
+Definition at line 798 of file PBtools\&.h\&.
+.SS "#define sset_   \fBsset\fP"
+
+.PP
+Definition at line 798 of file PBtools\&.h\&.
+.SS "#define stzpad_   STZPAD"
+
+.PP
+Definition at line 828 of file PBtools\&.h\&.
+.SS "#define stzpad_   \fBstzpad\fP"
+
+.PP
+Definition at line 828 of file PBtools\&.h\&.
+.SS "#define stzpadcpy_   STZPADCPY"
+
+.PP
+Definition at line 833 of file PBtools\&.h\&.
+.SS "#define stzpadcpy_   \fBstzpadcpy\fP"
+
+.PP
+Definition at line 833 of file PBtools\&.h\&.
+.SS "#define stzscal_   STZSCAL"
+
+.PP
+Definition at line 838 of file PBtools\&.h\&.
+.SS "#define stzscal_   \fBstzscal\fP"
+
+.PP
+Definition at line 838 of file PBtools\&.h\&.
+.SS "#define svasum_   SVASUM"
+
+.PP
+Definition at line 803 of file PBtools\&.h\&.
+.SS "#define svasum_   \fBsvasum\fP"
+
+.PP
+Definition at line 803 of file PBtools\&.h\&.
+.SS "#define svvdot_   SVVDOT"
+
+.PP
+Definition at line 821 of file PBtools\&.h\&.
+.SS "#define svvdot_   \fBsvvdot\fP"
+
+.PP
+Definition at line 821 of file PBtools\&.h\&.
+.SS "#define SYMM   'S'"
+
+.PP
+Definition at line 61 of file PBtools\&.h\&.
+.SS "#define TWO   2\&.0"
+
+.PP
+Definition at line 65 of file PBtools\&.h\&.
+.SS "#define UNPACKING   'U'"
+
+.PP
+Definition at line 54 of file PBtools\&.h\&.
+.SS "#define zagemv_   ZAGEMV"
+
+.PP
+Definition at line 852 of file PBtools\&.h\&.
+.SS "#define zagemv_   \fBzagemv\fP"
+
+.PP
+Definition at line 852 of file PBtools\&.h\&.
+.SS "#define zahemv_   ZAHEMV"
+
+.PP
+Definition at line 859 of file PBtools\&.h\&.
+.SS "#define zahemv_   \fBzahemv\fP"
+
+.PP
+Definition at line 859 of file PBtools\&.h\&.
+.SS "#define zasymv_   ZASYMV"
+
+.PP
+Definition at line 857 of file PBtools\&.h\&.
+.SS "#define zasymv_   \fBzasymv\fP"
+
+.PP
+Definition at line 857 of file PBtools\&.h\&.
+.SS "#define zatrmv_   ZATRMV"
+
+.PP
+Definition at line 864 of file PBtools\&.h\&.
+.SS "#define zatrmv_   \fBzatrmv\fP"
+
+.PP
+Definition at line 864 of file PBtools\&.h\&.
+.SS "#define zcshft_   ZCSHFT"
+
+.PP
+Definition at line 814 of file PBtools\&.h\&.
+.SS "#define zcshft_   \fBzcshft\fP"
+
+.PP
+Definition at line 814 of file PBtools\&.h\&.
+.SS "#define ZERO   0\&.0"
+
+.PP
+Definition at line 66 of file PBtools\&.h\&.
+.SS "#define zhescal_   ZHESCAL"
+
+.PP
+Definition at line 844 of file PBtools\&.h\&.
+.SS "#define zhescal_   \fBzhescal\fP"
+
+.PP
+Definition at line 844 of file PBtools\&.h\&.
+.SS "#define zmmadd_   ZMMADD"
+
+.PP
+Definition at line 755 of file PBtools\&.h\&.
+.SS "#define zmmadd_   \fBzmmadd\fP"
+
+.PP
+Definition at line 755 of file PBtools\&.h\&.
+.SS "#define zmmcadd_   ZMMCADD"
+
+.PP
+Definition at line 766 of file PBtools\&.h\&.
+.SS "#define zmmcadd_   \fBzmmcadd\fP"
+
+.PP
+Definition at line 766 of file PBtools\&.h\&.
+.SS "#define zmmdda_   ZMMDDA"
+
+.PP
+Definition at line 777 of file PBtools\&.h\&.
+.SS "#define zmmdda_   \fBzmmdda\fP"
+
+.PP
+Definition at line 777 of file PBtools\&.h\&.
+.SS "#define zmmddac_   ZMMDDAC"
+
+.PP
+Definition at line 782 of file PBtools\&.h\&.
+.SS "#define zmmddac_   \fBzmmddac\fP"
+
+.PP
+Definition at line 782 of file PBtools\&.h\&.
+.SS "#define zmmddact_   ZMMDDACT"
+
+.PP
+Definition at line 793 of file PBtools\&.h\&.
+.SS "#define zmmddact_   \fBzmmddact\fP"
+
+.PP
+Definition at line 793 of file PBtools\&.h\&.
+.SS "#define zmmddat_   ZMMDDAT"
+
+.PP
+Definition at line 788 of file PBtools\&.h\&.
+.SS "#define zmmddat_   \fBzmmddat\fP"
+
+.PP
+Definition at line 788 of file PBtools\&.h\&.
+.SS "#define zmmtadd_   ZMMTADD"
+
+.PP
+Definition at line 761 of file PBtools\&.h\&.
+.SS "#define zmmtadd_   \fBzmmtadd\fP"
+
+.PP
+Definition at line 761 of file PBtools\&.h\&.
+.SS "#define zmmtcadd_   ZMMTCADD"
+
+.PP
+Definition at line 771 of file PBtools\&.h\&.
+.SS "#define zmmtcadd_   \fBzmmtcadd\fP"
+
+.PP
+Definition at line 771 of file PBtools\&.h\&.
+.SS "#define zrshft_   ZRSHFT"
+
+.PP
+Definition at line 819 of file PBtools\&.h\&.
+.SS "#define zrshft_   \fBzrshft\fP"
+
+.PP
+Definition at line 819 of file PBtools\&.h\&.
+.SS "#define zset_   ZSET"
+
+.PP
+Definition at line 801 of file PBtools\&.h\&.
+.SS "#define zset_   \fBzset\fP"
+
+.PP
+Definition at line 801 of file PBtools\&.h\&.
+.SS "#define zsymv_   ZSYMV"
+
+.PP
+Definition at line 867 of file PBtools\&.h\&.
+.SS "#define zsymv_   \fBzsymv\fP"
+
+.PP
+Definition at line 867 of file PBtools\&.h\&.
+.SS "#define zsyr2_   ZSYR2"
+
+.PP
+Definition at line 873 of file PBtools\&.h\&.
+.SS "#define zsyr2_   \fBzsyr2\fP"
+
+.PP
+Definition at line 873 of file PBtools\&.h\&.
+.SS "#define zsyr_   ZSYR"
+
+.PP
+Definition at line 870 of file PBtools\&.h\&.
+.SS "#define zsyr_   \fBzsyr\fP"
+
+.PP
+Definition at line 870 of file PBtools\&.h\&.
+.SS "#define ztzcnjg_   ZTZCNJG"
+
+.PP
+Definition at line 847 of file PBtools\&.h\&.
+.SS "#define ztzcnjg_   \fBztzcnjg\fP"
+
+.PP
+Definition at line 847 of file PBtools\&.h\&.
+.SS "#define ztzpad_   ZTZPAD"
+
+.PP
+Definition at line 831 of file PBtools\&.h\&.
+.SS "#define ztzpad_   \fBztzpad\fP"
+
+.PP
+Definition at line 831 of file PBtools\&.h\&.
+.SS "#define ztzpadcpy_   ZTZPADCPY"
+
+.PP
+Definition at line 836 of file PBtools\&.h\&.
+.SS "#define ztzpadcpy_   \fBztzpadcpy\fP"
+
+.PP
+Definition at line 836 of file PBtools\&.h\&.
+.SS "#define ztzscal_   ZTZSCAL"
+
+.PP
+Definition at line 841 of file PBtools\&.h\&.
+.SS "#define ztzscal_   \fBztzscal\fP"
+
+.PP
+Definition at line 841 of file PBtools\&.h\&.
+.SS "#define zvvdotc_   ZVVDOTC"
+
+.PP
+Definition at line 825 of file PBtools\&.h\&.
+.SS "#define zvvdotc_   \fBzvvdotc\fP"
+
+.PP
+Definition at line 825 of file PBtools\&.h\&.
+.SS "#define zvvdotu_   ZVVDOTU"
+
+.PP
+Definition at line 826 of file PBtools\&.h\&.
+.SS "#define zvvdotu_   \fBzvvdotu\fP"
+
+.PP
+Definition at line 826 of file PBtools\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBF_VOID_FCT\fP cagemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP cahemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP casymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP catrmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP ccshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP chescal_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmdda_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmddac_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmddact_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmddat_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmtadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP cmmtcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP crshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP cset_ ()"
+
+.SS "\fBF_VOID_FCT\fP csymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP csyr2_ ()"
+
+.SS "\fBF_VOID_FCT\fP csyr_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctzcnjg_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctzpad_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctzpadcpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP ctzscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP cvvdotc_ ()"
+
+.SS "\fBF_VOID_FCT\fP cvvdotu_ ()"
+
+.SS "\fBF_VOID_FCT\fP dagemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP dascal_ ()"
+
+.SS "\fBF_VOID_FCT\fP dasqrtb_ ()"
+
+.SS "\fBF_VOID_FCT\fP dasymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP datrmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP dcshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmdda_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmddac_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmddact_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmddat_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmtadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP dmmtcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP drshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP dset_ ()"
+
+.SS "\fBF_VOID_FCT\fP dtzpad_ ()"
+
+.SS "\fBF_VOID_FCT\fP dtzpadcpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP dtzscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP dvasum_ ()"
+
+.SS "\fBF_VOID_FCT\fP dvvdot_ ()"
+
+.SS "\fBF_VOID_FCT\fP dzvasum_ ()"
+
+.SS "\fBF_VOID_FCT\fP immadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP immdda_ ()"
+
+.SS "\fBF_VOID_FCT\fP immddat_ ()"
+
+.SS "\fBF_VOID_FCT\fP immtadd_ ()"
+
+.SS "void PB_Cabort ()"
+
+.SS "void PB_Cainfog2l ()"
+
+.SS "void PB_CargFtoC ()"
+
+.SS "void PB_Cbinfo ()"
+
+.SS "void PB_Cchkmat ()"
+
+.SS "void PB_Cchkvec ()"
+
+.SS "void PB_Cconjg ()"
+
+.SS "\fBPBTYP_T\fP* PB_Cctypeset ()"
+
+.PP
+Definition at line 19 of file PB_Cctypeset\&.c\&.
+.SS "void PB_Cdescribe ()"
+
+.SS "void PB_Cdescset ()"
+
+.SS "\fBPBTYP_T\fP* PB_Cdtypeset ()"
+
+.PP
+Definition at line 19 of file PB_Cdtypeset\&.c\&.
+.SS "int PB_Cfirstnb ()"
+
+.SS "int PB_Cg2lrem ()"
+
+.SS "void PB_CGatherV ()"
+
+.SS "int PB_Cgcd ()"
+
+.SS "char* PB_Cgetbuf ()"
+
+.SS "int PB_Cindxg2p ()"
+
+.SS "void PB_Cinfog2l ()"
+
+.SS "void PB_CInOutV ()"
+
+.SS "void PB_CInOutV2 ()"
+
+.SS "void PB_CInV ()"
+
+.SS "void PB_CInV2 ()"
+
+.SS "\fBPBTYP_T\fP* PB_Citypeset ()"
+
+.PP
+Definition at line 19 of file PB_Citypeset\&.c\&.
+.SS "int PB_Clastnb ()"
+
+.SS "int PB_Clcm ()"
+
+.SS "char* PB_Cmalloc ()"
+
+.SS "int PB_Cnnxtroc ()"
+
+.SS "int PB_Cnpreroc ()"
+
+.SS "int PB_Cnumroc ()"
+
+.SS "void PB_COutV ()"
+
+.SS "void PB_Cpaxpby ()"
+
+.SS "void PB_CpaxpbyDN ()"
+
+.SS "void PB_CpaxpbyND ()"
+
+.SS "void PB_CpaxpbyNN ()"
+
+.SS "void PB_Cpdot11 ()"
+
+.SS "void PB_CpdotND ()"
+
+.SS "void PB_CpdotNN ()"
+
+.SS "void PB_Cpgeadd ()"
+
+.SS "void PB_CpgemmAB ()"
+
+.SS "void PB_CpgemmAC ()"
+
+.SS "void PB_CpgemmBC ()"
+
+.SS "void PB_Cplacnjg ()"
+
+.SS "void PB_Cplapad ()"
+
+.SS "void PB_Cplapd2 ()"
+
+.SS "void PB_Cplaprn2 ()"
+
+.SS "void PB_Cplaprnt ()"
+
+.SS "void PB_Cplasca2 ()"
+
+.SS "void PB_Cplascal ()"
+
+.SS "void PB_Cprnt ()"
+
+.SS "void PB_CpswapND ()"
+
+.SS "void PB_CpswapNN ()"
+
+.SS "void PB_Cpsym ()"
+
+.SS "void PB_CpsymmAB ()"
+
+.SS "void PB_CpsymmBC ()"
+
+.SS "void PB_Cpsyr ()"
+
+.SS "void PB_Cpsyr2 ()"
+
+.SS "void PB_Cpsyr2kA ()"
+
+.SS "void PB_Cpsyr2kAC ()"
+
+.SS "void PB_CpsyrkA ()"
+
+.SS "void PB_CpsyrkAC ()"
+
+.SS "void PB_Cptradd ()"
+
+.SS "void PB_Cptran ()"
+
+.SS "void PB_Cptrm ()"
+
+.SS "void PB_CptrmmAB ()"
+
+.SS "void PB_CptrmmB ()"
+
+.SS "void PB_Cptrsm ()"
+
+.SS "void PB_CptrsmAB ()"
+
+.SS "void PB_CptrsmAB0 ()"
+
+.SS "void PB_CptrsmAB1 ()"
+
+.SS "void PB_CptrsmB ()"
+
+.SS "void PB_Cptrsv ()"
+
+.SS "void PB_CScatterV ()"
+
+.SS "int PB_Cspan ()"
+
+.SS "\fBPBTYP_T\fP* PB_Cstypeset ()"
+
+.PP
+Definition at line 19 of file PB_Cstypeset\&.c\&.
+.SS "char* PB_Ctop ()"
+
+.SS "void PB_Ctzahemv ()"
+
+.SS "void PB_Ctzasymv ()"
+
+.SS "void PB_Ctzatrmv ()"
+
+.SS "void PB_Ctzhemm ()"
+
+.SS "void PB_Ctzhemv ()"
+
+.SS "void PB_Ctzher ()"
+
+.SS "void PB_Ctzher2 ()"
+
+.SS "void PB_Ctzher2k ()"
+
+.SS "void PB_Ctzherk ()"
+
+.SS "void PB_Ctzsymm ()"
+
+.SS "void PB_Ctzsymv ()"
+
+.SS "void PB_Ctzsyr ()"
+
+.SS "void PB_Ctzsyr2 ()"
+
+.SS "void PB_Ctzsyr2k ()"
+
+.SS "void PB_Ctzsyrk ()"
+
+.SS "void PB_Ctztrmm ()"
+
+.SS "void PB_Ctztrmv ()"
+
+.SS "void PB_CVMcontig ()"
+
+.SS "void PB_CVMinit ()"
+
+.SS "int PB_CVMloc ()"
+
+.SS "int PB_CVMnpq ()"
+
+.SS "int PB_CVMpack ()"
+
+.SS "int PB_CVMswp ()"
+
+.SS "void PB_CVMupdate ()"
+
+.SS "void PB_Cwarn ()"
+
+.SS "\fBPBTYP_T\fP* PB_Cztypeset ()"
+
+.PP
+Definition at line 19 of file PB_Cztypeset\&.c\&.
+.SS "int pilaenv_ ()"
+
+.SS "\fBF_VOID_FCT\fP sagemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP sascal_ ()"
+
+.SS "\fBF_VOID_FCT\fP sasqrtb_ ()"
+
+.SS "\fBF_VOID_FCT\fP sasymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP satrmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP scshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP scvasum_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmdda_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmddac_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmddact_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmddat_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmtadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP smmtcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP srshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP sset_ ()"
+
+.SS "\fBF_VOID_FCT\fP stzpad_ ()"
+
+.SS "\fBF_VOID_FCT\fP stzpadcpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP stzscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP svasum_ ()"
+
+.SS "\fBF_VOID_FCT\fP svvdot_ ()"
+
+.SS "\fBF_VOID_FCT\fP zagemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zahemv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zasymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zatrmv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zcshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP zhescal_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmdda_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmddac_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmddact_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmddat_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmtadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP zmmtcadd_ ()"
+
+.SS "\fBF_VOID_FCT\fP zrshft_ ()"
+
+.SS "\fBF_VOID_FCT\fP zset_ ()"
+
+.SS "\fBF_VOID_FCT\fP zsymv_ ()"
+
+.SS "\fBF_VOID_FCT\fP zsyr2_ ()"
+
+.SS "\fBF_VOID_FCT\fP zsyr_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztzcnjg_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztzpad_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztzpadcpy_ ()"
+
+.SS "\fBF_VOID_FCT\fP ztzscal_ ()"
+
+.SS "\fBF_VOID_FCT\fP zvvdotc_ ()"
+
+.SS "\fBF_VOID_FCT\fP zvvdotu_ ()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

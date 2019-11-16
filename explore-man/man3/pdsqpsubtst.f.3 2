@@ -1,0 +1,22 @@
+.TH "TESTING/EIG/pdsqpsubtst.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/EIG/pdsqpsubtst.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpdsqpsubtst\fP (WKNOWN, JOBZ, UPLO, N, THRESH, ABSTOL, A, COPYA, Z, IA, JA, DESCA, WIN, WNEW, IPREPAD, IPOSTPAD, WORK, LWORK, LWORK1, RESULT, TSTNRM, QTQNRM, NOUT)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pdsqpsubtst (logical WKNOWN, character JOBZ, character UPLO, integer N, double precision THRESH, double precision ABSTOL, double precision, dimension( * ) A, double precision, dimension( * ) COPYA, double precision, dimension( * ) Z, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) WIN, double precision, dimension( * ) WNEW, integer IPREPAD, integer IPOSTPAD, double precision, dimension( * ) WORK, integer LWORK, integer LWORK1, integer RESULT, double precision TSTNRM, double precision QTQNRM, integer NOUT)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

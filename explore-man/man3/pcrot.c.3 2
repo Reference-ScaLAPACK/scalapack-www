@@ -1,0 +1,25 @@
+.TH "SRC/pcrot.c" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pcrot.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'pblas\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpcrot_\fP (int *n, X, int *ix, int *jx, desc_X, int *incx, Y, int *iy, int *jy, desc_Y, int *incy, float *c, \fBcomplex\fP *s)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void pcrot_ (int * n, X, int * ix, int * jx, desc_X, int         * incx, Y, int * iy, int * jy, desc_Y, int * incy, float       * c, \fBcomplex\fP     * s)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

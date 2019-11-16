@@ -1,0 +1,22 @@
+.TH "TESTING/LIN/pspbinfo.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/LIN/pspbinfo.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpspbinfo\fP (SUMMRY, NOUT, UPLO, NMAT, NVAL, LDNVAL, NBW, BWVAL, LDBWVAL, NNB, NBVAL, LDNBVAL, NNR, NRVAL, LDNRVAL, NNBR, NBRVAL, LDNBRVAL, NGRIDS, PVAL, LDPVAL, QVAL, LDQVAL, THRESH, WORK, IAM, NPROCS)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pspbinfo (character*(*) SUMMRY, integer NOUT, character UPLO, integer NMAT, integer, dimension( ldnval ) NVAL, integer LDNVAL, integer NBW, integer, dimension( ldbwval) BWVAL, integer LDBWVAL, integer NNB, integer, dimension( ldnbval ) NBVAL, integer LDNBVAL, integer NNR, integer, dimension( ldnrval ) NRVAL, integer LDNRVAL, integer NNBR, integer, dimension( ldnbrval ) NBRVAL, integer LDNBRVAL, integer NGRIDS, integer, dimension( ldpval ) PVAL, integer LDPVAL, integer, dimension(ldqval) QVAL, integer LDQVAL, real THRESH, integer, dimension( * ) WORK, integer IAM, integer NPROCS)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

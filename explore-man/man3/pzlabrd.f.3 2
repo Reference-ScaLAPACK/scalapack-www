@@ -1,0 +1,22 @@
+.TH "SRC/pzlabrd.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/pzlabrd.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzlabrd\fP (M, N, NB, A, IA, JA, DESCA, D, E, TAUQ, TAUP, X, IX, JX, DESCX, Y, IY, JY, DESCY, WORK)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzlabrd (integer M, integer N, integer NB, \fBcomplex\fP*16, dimension( * ) A, integer IA, integer JA, integer, dimension( * ) DESCA, double precision, dimension( * ) D, double precision, dimension( * ) E, \fBcomplex\fP*16, dimension( * ) TAUQ, \fBcomplex\fP*16, dimension( * ) TAUP, \fBcomplex\fP*16, dimension( * ) X, integer IX, integer JX, integer, dimension( * ) DESCX, \fBcomplex\fP*16, dimension( * ) Y, integer IY, integer JY, integer, dimension( * ) DESCY, \fBcomplex\fP*16, dimension( * ) WORK)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

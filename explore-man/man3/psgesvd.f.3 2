@@ -1,0 +1,22 @@
+.TH "SRC/psgesvd.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SRC/psgesvd.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpsgesvd\fP (JOBU, JOBVT, M, N, A, IA, JA, DESCA, S, U, IU, JU, DESCU, VT, IVT, JVT, DESCVT, WORK, LWORK, INFO)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine psgesvd (character JOBU, character JOBVT, integer M, integer N, real, dimension(*) A, integer IA, integer JA, integer, dimension(*) DESCA, real, dimension(*) S, real, dimension(*) U, integer IU, integer JU, integer, dimension(*) DESCU, real, dimension(*) VT, integer IVT, integer JVT, integer, dimension(*) DESCVT, real, dimension(*) WORK, integer LWORK, integer INFO)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.

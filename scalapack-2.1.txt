@@ -1,0 +1,91 @@
+ScaLAPACK 2.1
+===============
+
+Release date: Sat 11/16/19.
+
+This material is based upon work supported by the National Science Foundation
+and the Department of Energy under Grant No. NSF-OCI-1032861, NSF-CCF-00444486,
+NSF-CNS 0325873, NSF-EIA 0122599, NSF-ACI-0090127, DOE-DE-FC02-01ER25478,
+DOE-DE-FC02-06ER25768.
+
+ScaLAPACK is a software package provided by Univ. of Tennessee, Univ. of
+California, Berkeley, and Univ. of Colorado Denver.
+
+
+1. GitHub repository
+--------------------
+
+https://github.com/Reference-ScaLAPACK/scalapack
+
+
+2. Support and questions
+------------------------
+
+http://icl.cs.utk.edu/lapack-forum/
+
+
+3. ScaLAPACK 2.1: What's new
+------------------------------
+
+ScaLAPACK 2.1 contains:
+ 
+- *New robust ScaLAPACK routine for computing the QR factorization with column pivoting* by Zvonimir Bujanovic and Zlatko Drmac [link:http://www.netlib.org/lapack/lawnspdf/lawn296.pdf[Download Lawn 296]]
+
+ - MPI-3+ updates required by Open MPI 4
+
+ - Improve accuracy of Frobenius norm by making intermediate column sums
+ 
+ - miscellaneous minor bug fixes
+
+ - Improve cmake shared library support
+
+
+
+3. External Contributors
+------------------------
+
+- Zvonimir Bujanovic
+
+- Zlatko Drmac
+
+4. Thanks
+---------
+
+Thanks for bug-report/patches/suggestions to: 
+
+- Bjorn Adlerborn
+
+- Dmitry Baksheev (Intel)
+
+- Aurelien Bouteiller
+
+- Chris Bradley
+
+- Jed Brown
+
+- Eugene Chereshnev (Intel)
+
+- Mark Gates (University of Tennessee, USA)
+
+- Piotr Luszczek (University of Tennessee, USA)
+
+- Nick Papior
+
+- Jack Poulson
+
+- zerothi
+ 
+
+5. Developer list
+-----------------
+
+.Principal Investigators
+
+    * Jim Demmel (University of California,  Berkeley, USA)
+    * Jack Dongarra (University of Tennessee and ORNL, USA)
+    * Julien Langou (University of Colorado Denver, USA)
+
+.LAPACK developers involved in this release
+
+    * Julie Langou (University of Tennessee, USA)
+

@@ -1,0 +1,22 @@
+.TH "TESTING/LIN/pzbmatgen.f" 3 "Sat Nov 16 2019" "Version 2.1" "ScaLAPACK 2.1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TESTING/LIN/pzbmatgen.f
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "subroutine \fBpzbmatgen\fP (ICTXT, AFORM, AFORM2, BWL, BWU, N, MB, NB, A, LDA, IAROW, IACOL, ISEED, MYROW, MYCOL, NPROW, NPCOL)"
+.br
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "subroutine pzbmatgen (integer ICTXT, character*1 AFORM, character*1 AFORM2, integer BWL, integer BWU, integer N, integer MB, integer NB, \fBcomplex\fP*16, dimension( lda, * ) A, integer LDA, integer IAROW, integer IACOL, integer ISEED, integer MYROW, integer MYCOL, integer NPROW, integer NPCOL)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ScaLAPACK 2\&.1 from the source code\&.
