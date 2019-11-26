@@ -9,7 +9,7 @@ ScaLAPACK RELEASE NOTES
 
 *Release date:* Nov 16, 2019
 
-link:scalapack-2.1[*ScaLAPACK 2.1 Release Notes*]
+link:scalapack-2.1.0[*ScaLAPACK 2.1.0 Release Notes*]
 
 
 2. Latest ScaLAPACK Errata
@@ -85,7 +85,7 @@ link:../lapack/Errata/errata_scalapack.html[*ScaLAPACK Errata*]
  * Version 2.0.0:  November 11, 2011 (link:http://netlib.org/scalapack/scalapack-2.0.0.tgz[scalapack-2.0.0.tgz]) (link:http://netlib.org/scalapack/scalapack-2.0.0.html[release notes])
  * Version 2.0.1:  January 18, 2012 (link:http://netlib.org/scalapack/scalapack-2.0.1.tgz[scalapack-2.0.1.tgz]) (link:http://netlib.org/scalapack/scalapack-2.0.1.html[release notes])
  * Version 2.0.2:  May 1, 2012 (link:http://netlib.org/scalapack/scalapack-2.0.2.tgz[scalapack-2.0.2.tgz]) (link:http://netlib.org/scalapack/scalapack-2.0.2.html[release notes])
- * Version 2.1:  November 16, 2019 (link:https://github.com/Reference-ScaLAPACK/scalapack/archive/v2.1.tar.gz[scalapack-2.1.tar.gz]) (link:http://netlib.org/scalapack/scalapack-2.1.html[release notes])
+ * Version 2.1.0:  November 16, 2019 (link:https://github.com/Reference-ScaLAPACK/scalapack/archive/v2.1.tar.gz[scalapack-2.1.tar.gz]) (link:http://netlib.org/scalapack/scalapack-2.1.html[release notes])
 
 
 

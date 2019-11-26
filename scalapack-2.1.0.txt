@@ -1,4 +1,4 @@
-ScaLAPACK 2.1
+ScaLAPACK 2.1.0
 ===============
 
 Release date: Sat 11/16/19.
@@ -24,10 +24,10 @@ https://github.com/Reference-ScaLAPACK/scalapack
 http://icl.cs.utk.edu/lapack-forum/
 
 
-3. ScaLAPACK 2.1: What's new
+3. ScaLAPACK 2.1.0: What's new
 ------------------------------
 
-ScaLAPACK 2.1 contains:
+ScaLAPACK 2.1.0 contains:
  
 - *New robust ScaLAPACK routine for computing the QR factorization with column pivoting* by Zvonimir Bujanovic and Zlatko Drmac [link:http://www.netlib.org/lapack/lawnspdf/lawn296.pdf[Download Lawn 296]]
 
