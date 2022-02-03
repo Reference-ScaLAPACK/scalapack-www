@@ -1,0 +1,75 @@
+ScaLAPACK 2.2.0
+===============
+
+Release date: Wed 02/02/22.
+
+This material is based upon work supported by the National Science Foundation
+and the Department of Energy under Grant No. NSF-OCI-1032861, NSF-CCF-00444486,
+NSF-CNS 0325873, NSF-EIA 0122599, NSF-ACI-0090127, DOE-DE-FC02-01ER25478,
+DOE-DE-FC02-06ER25768.
+
+ScaLAPACK is a software package provided by Univ. of Tennessee, Univ. of
+California, Berkeley, and Univ. of Colorado Denver.
+
+
+1. GitHub repository
+--------------------
+
+https://github.com/Reference-ScaLAPACK/scalapack
+
+
+2. Support and questions
+------------------------
+
+http://icl.cs.utk.edu/lapack-forum/
+
+
+3. ScaLAPACK 2.2.0: Release Content
+-----------------------------------
+
+New features:
+
+- Allow compilation in ILP64 mode, link:https://github.com/Reference-ScaLAPACK/scalapack/pull/19[PR #19]
+
+Major bug fixes:
+
+ - Use pointer macro to prevent integer overflow, link:https://github.com/Reference-ScaLAPACK/scalapack/pull/16[PR #16]
+
+ - Fix argument mismatches for implicitly defined functions (for gcc-10+ compatibility), link:https://github.com/Reference-ScaLAPACK/scalapack/pull/26[PR #26]
+
+ - No memory leaks on blacs_exit, link:https://github.com/Reference-ScaLAPACK/scalapack/pull/37[PR #37]
+
+
+For details, see our link:https://github.com/Reference-ScaLAPACK/scalapack/milestone/1?closed=1[Github Repository]
+
+
+4. Thanks
+---------
+
+Thanks for bug-report/patches/suggestions to:
+
+ - link:https://github.com/e-kwsm[e-kwsm]
+ - link:https://github.com/ajaypanyala[Ajay Panyala]
+ - link:https://github.com/zerothi[Nick Papior]
+ - link:https://github.com/swappik[Anton Kudinov]
+ - link:https://github.com/derpda[derpda]
+ - link:https://github.com/dev-zero[Tiziano Müller]
+ - link:https://github.com/joseeroman[Jose E. Roman]
+ - link:https://github.com/DesWurstes[DesWurstes]
+ - link:https://github.com/albandil[Jakub Benda]
+ - Mark Gates (University of Tennessee, USA)
+ - Piotr Luszczek (University of Tennessee, USA)
+
+5. Developer list
+-----------------
+
+.Principal Investigators
+
+    * Jim Demmel (University of California,  Berkeley, USA)
+    * Jack Dongarra (University of Tennessee and ORNL, USA)
+    * Julien Langou (University of Colorado Denver, USA)
+
+.LAPACK developers involved in this release
+
+    * Weslley S. Pereira (University of Colorado Denver, USA)
+    * Julie Langou (University of Tennessee, USA)

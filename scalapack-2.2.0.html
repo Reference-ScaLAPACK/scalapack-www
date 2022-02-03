@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="generator" content="AsciiDoc 9.1.0" />
-<title>ScaLAPACK&#8201;&#8212;&#8201;Scalable Linear Algebra PACKage</title>
+<title>ScaLAPACK 2.2.0</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -734,7 +734,7 @@ asciidoc.install(2);
 </head>
 <body class="article">
 <div id="header">
-<h1>ScaLAPACK&#8201;&#8212;&#8201;Scalable Linear Algebra PACKage</h1>
+<h1>ScaLAPACK 2.2.0</h1>
 <div id="toc">
   <div id="toctitle">Menu</div>
   <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
@@ -743,515 +743,154 @@ asciidoc.install(2);
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph"><p>ScaLAPACK is a software package provided by Univ. of Tennessee; Univ. of California, Berkeley; Univ. of Colorado Denver; and NAG Ltd..</p></div>
+<div class="paragraph"><p>Release date: Wed 02/02/22.</p></div>
+<div class="paragraph"><p>This material is based upon work supported by the National Science Foundation
+and the Department of Energy under Grant No. NSF-OCI-1032861, NSF-CCF-00444486,
+NSF-CNS 0325873, NSF-EIA 0122599, NSF-ACI-0090127, DOE-DE-FC02-01ER25478,
+DOE-DE-FC02-06ER25768.</p></div>
+<div class="paragraph"><p>ScaLAPACK is a software package provided by Univ. of Tennessee, Univ. of
+California, Berkeley, and Univ. of Colorado Denver.</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_quick_links">Quick links</h2>
+<h2 id="_1_github_repository">1. GitHub repository</h2>
 <div class="sectionbody">
-<div class="ulist"><ul>
-<li>
-<p>
-latest release:           <a href="https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz">scalapack-2.2.0.tar.gz</a>
-</p>
-</li>
-<li>
-<p>
-GitHub repository:        <a href="https://github.com/Reference-ScaLAPACK/scalapack/">ScaLAPACK on Github</a>
-</p>
-</li>
-<li>
-<p>
-LAPACK Users' Forum:      <a href="http://icl.cs.utk.edu/lapack-forum">http://icl.cs.utk.edu/lapack-forum</a>
-</p>
-</li>
-<li>
-<p>
-Get the latests news:     <a href="mailto:scalapack-announce-subscribe@eecs.utk.edu">ScaLAPACK Announce Mailing List</a>
-</p>
-</li>
-</ul></div>
+<div class="paragraph"><p><a href="https://github.com/Reference-ScaLAPACK/scalapack">https://github.com/Reference-ScaLAPACK/scalapack</a></p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_presentation">Presentation</h2>
+<h2 id="_2_support_and_questions">2. Support and questions</h2>
 <div class="sectionbody">
-<div class="paragraph"><p><strong>ScaLAPACK</strong> is a library of high-performance linear algebra routines for parallel distributed memory machines.
-ScaLAPACK solves dense and banded linear systems, least squares problems, eigenvalue problems, and singular value problems.
-The key ideas incorporated into ScaLAPACK include the use of</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-a <strong>block cyclic data distribution</strong> for dense matrices and a block data distribution for banded matrices, parametrizable at runtime;
-</p>
-</li>
-<li>
-<p>
-<strong>block-partitioned algorithms</strong> to ensure high levels of data reuse;
-</p>
-</li>
-<li>
-<p>
-well-designed <strong>low-level modular components</strong> that simplify the task of parallelizing the high level routines by making their <strong>source code the same as in the sequential case</strong>.
-</p>
-</li>
-</ol></div>
-<div class="paragraph"><p>The goals of the ScaLAPACK project are the same than the one&#8217;s of LAPACK, namely:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-<strong>efficiency</strong> (to run as fast as possible),
-</p>
-</li>
-<li>
-<p>
-<strong>scalability</strong>  (as the problem size and number of processors grow),
-</p>
-</li>
-<li>
-<p>
-<strong>reliability</strong>  (including error bounds),
-</p>
-</li>
-<li>
-<p>
-<strong>portability</strong>  (across all important parallel machines),
-</p>
-</li>
-<li>
-<p>
-<strong>flexibility</strong> (so users can construct new routines from well-designed parts),
-</p>
-</li>
-<li>
-<p>
-and <strong>ease of use</strong> (by making the interface to LAPACK and ScaLAPACK look as similar as possible).
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>Many of these goals, particularly portability, are aided by developing and
-promoting standards , especially for low-level communication and computation
-routines. We have been successful in attaining these goals, limiting most
-machine dependencies to three standard libraries called the BLAS, or Basic
-Linear Algebra Subprograms, LAPACK and BLACS, or Basic Linear Algebra
-Communication Subprograms.  LAPACK will run on any machine where the BLAS are
-available, and ScaLAPACK will run on any machine where BLAS, LAPACK and the
-BLACS are available.</p></div>
-<div class="paragraph"><p>The library is currently written in Fortran (with the exception of a few
-symmetric eigenproblem auxiliary routines written in C).  The name ScaLAPACK is
-an acronym for Scalable Linear Algebra PACKage, or Scalable LAPACK.  The most
-recent version of ScaLAPACK is 2.2.0, released in February 2, 2022.</p></div>
+<div class="paragraph"><p><a href="http://icl.cs.utk.edu/lapack-forum/">http://icl.cs.utk.edu/lapack-forum/</a></p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_acknowledgments">Acknowledgments</h2>
+<h2 id="_3_scalapack_2_2_0_release_content">3. ScaLAPACK 2.2.0: Release Content</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Since 2010, this material is based upon work supported by the
-National Science Foundation under Grant No. NSF-OCI-1032861. Any opinions,
-findings and conclusions or recommendations expressed in this material are
-those of the author(s) and do not necessarily reflect the views of the National
-Science Foundation (NSF). Until 2006, this material was based upon work
-supported by the National Science Foundation under Grant No. ASC-9313958,
-NSF-0444486 and DOE Grant No. DE-FG03-94ER25219. Any opinions, findings and
-conclusions or recommendations expressed in this material are those of the
-author(s) and do not necessarily reflect the views of the National Science
-Foundation (NSF) or the Department of Energy (DOE).</p></div>
+<div class="paragraph"><p>New features:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Allow compilation in ILP64 mode, <a href="https://github.com/Reference-ScaLAPACK/scalapack/pull/19">PR #19</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Major bug fixes:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Use pointer macro to prevent integer overflow, <a href="https://github.com/Reference-ScaLAPACK/scalapack/pull/16">PR #16</a>
+</p>
+</li>
+<li>
+<p>
+Fix argument mismatches for implicitly defined functions (for gcc-10+ compatibility), <a href="https://github.com/Reference-ScaLAPACK/scalapack/pull/26">PR #26</a>
+</p>
+</li>
+<li>
+<p>
+No memory leaks on blacs_exit, <a href="https://github.com/Reference-ScaLAPACK/scalapack/pull/37">PR #37</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>For details, see our <a href="https://github.com/Reference-ScaLAPACK/scalapack/milestone/1?closed=1">Github Repository</a></p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_software">Software</h2>
+<h2 id="_4_thanks">4. Thanks</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_licensing">Licensing</h3>
-<div class="paragraph"><p>ScaLAPACK is a freely-available software package. It is available from netlib via
-anonymous ftp and the World Wide Web at <a href="http://www.netlib.org/scalapack">http://www.netlib.org/scalapack</a> . Thus, it
-can be included in commercial software packages (and has been). We only ask
-that proper credit be given to the authors.</p></div>
-<div class="paragraph"><p>The license used for the software is the modified BSD license, see:</p></div>
+<div class="paragraph"><p>Thanks for bug-report/patches/suggestions to:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<a href="LICENSE">LICENSE</a>
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>Like all software, it is copyrighted. It is not trademarked, but we do ask the
-following:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-If you modify the source for these routines we ask that you change the name of
-the routine and comment the changes made to the original.
+<a href="https://github.com/e-kwsm">e-kwsm</a>
 </p>
 </li>
 <li>
 <p>
-We will gladly answer any questions regarding the software. If a modification
-is done, however, it is the responsibility of the person who modified the
-routine to provide support.
-</p>
-</li>
-</ul></div>
-</div>
-<div class="sect2">
-<h3 id="_scalapack_version_2_2_0">ScaLAPACK, version 2.2.0</h3>
-<div class="ulist"><ul>
-<li>
-<p>
-Download: <a href="https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz">scalapack-2.2.0.tgz</a>
+<a href="https://github.com/ajaypanyala">Ajay Panyala</a>
 </p>
 </li>
 <li>
 <p>
-<a href="http://netlib.org/scalapack/scalapack-2.2.0.html">release notes for ScaLAPACK 2.2.0</a>
+<a href="https://github.com/zerothi">Nick Papior</a>
 </p>
 </li>
 <li>
 <p>
-Updated:  February 2, 2022
-</p>
-</li>
-</ul></div>
-</div>
-<div class="sect2">
-<h3 id="_scalapack_version_2_1_0">ScaLAPACK, version 2.1.0</h3>
-<div class="ulist"><ul>
-<li>
-<p>
-Download: <a href="http://www.netlib.org/scalapack/scalapack-2.1.0.tgz">scalapack-2.1.0.tgz</a>
+<a href="https://github.com/swappik">Anton Kudinov</a>
 </p>
 </li>
 <li>
 <p>
-<a href="http://netlib.org/scalapack/scalapack-2.1.0.html">release notes for ScaLAPACK 2.1.0</a>
+<a href="https://github.com/derpda">derpda</a>
 </p>
 </li>
 <li>
 <p>
-Updated:  November 16, 2019
-</p>
-</li>
-</ul></div>
-</div>
-<div class="sect2">
-<h3 id="_scalapack_version_2_0_2">ScaLAPACK, version 2.0.2</h3>
-<div class="ulist"><ul>
-<li>
-<p>
-Download: <a href="http://www.netlib.org/scalapack/scalapack-2.0.2.tgz">scalapack-2.0.2.tgz</a>
+<a href="https://github.com/dev-zero">Tiziano Müller</a>
 </p>
 </li>
 <li>
 <p>
-<a href="http://netlib.org/scalapack/scalapack-2.0.2.html">release notes for ScaLAPACK 2.0.2</a>
+<a href="https://github.com/joseeroman">Jose E. Roman</a>
 </p>
 </li>
 <li>
 <p>
-Updated:  May 1, 2012
-</p>
-</li>
-</ul></div>
-</div>
-<div class="sect2">
-<h3 id="_scalapack_version_2_0_1">ScaLAPACK, version 2.0.1</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="ulist"><ul>
-<li>
-<p>
-Download: <a href="http://www.netlib.org/scalapack/scalapack-2.0.1.tgz">scalapack-2.0.1.tgz</a>
+<a href="https://github.com/DesWurstes">DesWurstes</a>
 </p>
 </li>
 <li>
 <p>
-<a href="http://netlib.org/scalapack/scalapack-2.0.1.html">release notes for ScaLAPACK 2.0.1</a>
+<a href="https://github.com/albandil">Jakub Benda</a>
 </p>
 </li>
 <li>
 <p>
-Updated:  January 18, 2012
-</p>
-</li>
-</ul></div>
-</div></div>
-</div>
-<div class="sect2">
-<h3 id="_scalapack_version_2_0_0">ScaLAPACK, version 2.0.0</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="ulist"><ul>
-<li>
-<p>
-Download: <a href="http://www.netlib.org/scalapack/scalapack-2.0.0.tgz">scalapack-2.0.0.tgz</a>
+Mark Gates (University of Tennessee, USA)
 </p>
 </li>
 <li>
 <p>
-<a href="http://netlib.org/scalapack/scalapack-2.0.0.html">release notes for ScaLAPACK 2.0.0</a>
-</p>
-</li>
-<li>
-<p>
-Updated:  November 11, 2011
-</p>
-</li>
-</ul></div>
-</div></div>
-</div>
-<div class="sect2">
-<h3 id="_errata">Errata</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="ulist"><ul>
-<li>
-<p>
-<a href="http://www.netlib.org/lapack/Errata/errata_scalapack.html">ScaLAPACK Errata</a> (Current known bugs and their status)
-</p>
-</li>
-</ul></div>
-</div></div>
-</div>
-<div class="sect2">
-<h3 id="_scalapack_installer_for_linux">ScaLAPACK Installer [for Linux]</h3>
-<div class="paragraph"><p>Python based installer for ScaLAPACK.
-Download, configure, compile  and install all libraries needed for ScaLAPACK (Ref BLAS, LAPACK, BLACS and ScaLAPACK)</p></div>
-<div class="exampleblock">
-<div class="content">
-<div class="ulist"><ul>
-<li>
-<p>
-Download: <a href="http://www.netlib.org/scalapack/scalapack_installer.tgz">scalapack_installer.tgz</a>
-</p>
-</li>
-<li>
-<p>
-Version:  1.0.4
-</p>
-</li>
-<li>
-<p>
-Updated:  April 1, 2021
-</p>
-</li>
-<li>
-<p>
-Documentation: <a href="http://netlib.org/scalapack/scalapack_installer/README">README</a>
-</p>
-</li>
-</ul></div>
-</div></div>
-</div>
-<div class="sect2">
-<h3 id="_scalapack_for_windows">ScaLAPACK for Windows</h3>
-<div class="paragraph"><p>Please see: <a href="http://icl.cs.utk.edu/lapack-for-windows/scalapack">http://icl.cs.utk.edu/lapack-for-windows/scalapack</a></p></div>
-</div>
-<div class="sect2">
-<h3 id="_github">GitHub</h3>
-<div class="paragraph"><p>The ScaLAPACK Git repository is available to get the latest bug fixed or propose fixes (Pull requests)</p></div>
-<div class="listingblock">
-<div class="content">
-<pre><code>https://github.com/Reference-ScaLAPACK/scalapack/</code></pre>
-</div></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_support">Support</h2>
-<div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
-<div class="ulist"><ul>
-<li>
-<p>
-<a href="https://github.com/Reference-ScaLAPACK/scalapack/">ScaLAPACK on Github</a>: Browse the ScaLAPACK code and propose improvements
-</p>
-</li>
-<li>
-<p>
-<a href="http://icl.cs.utk.edu/lapack-forum">Browse the LAPACK/ScaLAPACK User Forum</a>
-</p>
-</li>
-<li>
-<p>
-<a href="mailto:scalapack@eecs.utk.edu">Contact the ScaLAPACK team</a><br />
-</p>
-</li>
-<li>
-<p>
-<a href="http://icl.cs.utk.edu/lapack-forum/archives/">Archives of ScaLAPACK mailing list</a>
-</p>
-</li>
-</ul></div>
-</div></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_contributors">Contributors</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>ScaLAPACK is a community-wide effort. ScaLAPACK relies on many contributors.</p></div>
-<div class="paragraph"><p>If you are wishing to contribute, please have a look at
-<a href="http://www.netlib.org/lapack-dev/lapack-coding/program-style.html">the
-LAPACK Program Style</a>. This document has been written to facilitate
-contributions to LAPACK/ScaLAPACK by documenting their design and implementation
-guidelines. You can submit code directly on github via Pull Requests <a href="https://github.com/Reference-ScaLAPACK/scalapack/">ScaLAPACK on Github</a></p></div>
-<div class="paragraph"><p>LAPACK/ScaLAPACK Project Software Grant and Corporate Contributor License Agreement (&#8220;Agreement&#8221;) <a href="http://www.netlib.org/lapack/lapack-corporate-contributor-agrement.doc">[Download</a>]</p></div>
-<div class="paragraph"><p>Contributions are always welcome and can be sent to the
-<a href="mailto:scalapack@eecs.utk.edu">ScaLAPACK team</a>.</p></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_documentation">Documentation</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_browse_scalapack_routines_with_on_line_documentation_browser">Browse ScaLAPACK routines with on-line documentation browser</h3>
-<div class="paragraph"><p><a href="http://www.netlib.org/scalapack/explore-html">Explore ScaLAPACK code</a>
-Here you will be able to browse through the many ScaLAPACK functions.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_release_notes">Release Notes</h3>
-<div class="paragraph"><p>The ScaLAPACK Release Notes
-contain the history of the modifications made to the ScaLAPACK library between
-each new version.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_improvements">Improvements</h3>
-<div class="paragraph"><p>ScaLAPACK is a currently active project, we are striving to bring new improvements
-and new algorithms on a regular basis.</p></div>
-<div class="paragraph"><p>Please contribute to our <a href="http://www.netlib.org/lapack/WishList/">wishlist</a>
-if you feel some functionality or algorithms are missing by emailing the
-<a href="mailto:scalapack@eecs.utk.edu">ScaLAPACK team</a>.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_faq">FAQ</h3>
-<div class="paragraph"><p>Consult ScaLAPACK <a href="http://www.netlib.org/scalapack/faq.html">Frequently Asked Questions</a>.</p></div>
-<div class="paragraph"><p>Please contribute to our FAQ if you feel some questions are missing by emailing the <a href="mailto:scalapack@icl.utk.edu">ScaLAPACK team</a>.</p></div>
-<div class="paragraph"><p>The <a href="http://icl.cs.utk.edu/lapack-forum">LAPACK Users' Forum</a> is also a good source to find answers.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_users_guide">Users' Guide</h3>
-<div class="paragraph"><p><a href="http://netlib.org/scalapack/slug/index.html">HTML version of the ScaLAPACK Users' Guide</a></p></div>
-</div>
-<div class="sect2">
-<h3 id="_lawns_lapack_scalapack_working_notes">LAWNS: LAPACK/ScaLAPACK Working Notes</h3>
-<div class="paragraph"><p><a href="http://www.netlib.org/lapack/lawns/index.html">LAWNS</a></p></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_release_history">Release History</h2>
-<div class="sectionbody">
-<div class="ulist"><ul>
-<li>
-<p>
-Version 1.0  : February 28, 1995
-</p>
-</li>
-<li>
-<p>
-Version 1.1  :  March 20, 1995
-</p>
-</li>
-<li>
-<p>
-Version 1.2  :  May 10, 1996
-</p>
-</li>
-<li>
-<p>
-Version 1.3  :  June 5, 1996
-</p>
-</li>
-<li>
-<p>
-Version 1.4  :  November 17, 1996
-</p>
-</li>
-<li>
-<p>
-Version 1.5  :  May 1, 1997
-</p>
-</li>
-<li>
-<p>
-Version 1.6  :  November 15, 1997
-</p>
-</li>
-<li>
-<p>
-Version 1.7  :  August 31, 2001
-</p>
-</li>
-<li>
-<p>
-Version 1.8.0:  April 5, 2007 (<a href="http://netlib.org/scalapack/scalapack-1.8.0.tgz">scalapack-1.8.0.tgz</a>) (<a href="http://netlib.org/scalapack/scalapack-1.8.0.changes">release notes</a>)
-</p>
-</li>
-<li>
-<p>
-Version 2.0.0:  November 11, 2011 (<a href="http://netlib.org/scalapack/scalapack-2.0.0.tgz">scalapack-2.0.0.tgz</a>) (<a href="http://netlib.org/scalapack/scalapack-2.0.0.html">release notes</a>)
-</p>
-</li>
-<li>
-<p>
-Version 2.0.1:  January 18, 2012 (<a href="http://netlib.org/scalapack/scalapack-2.0.1.tgz">scalapack-2.0.1.tgz</a>) (<a href="http://netlib.org/scalapack/scalapack-2.0.1.html">release notes</a>)
-</p>
-</li>
-<li>
-<p>
-Version 2.0.2:  May 1, 2012 (<a href="http://netlib.org/scalapack/scalapack-2.0.2.tgz">scalapack-2.0.2.tgz</a>) (<a href="http://netlib.org/scalapack/scalapack-2.0.2.html">release notes</a>)
-</p>
-</li>
-<li>
-<p>
-Version 2.1.0:  November 16, 2019 (<a href="https://github.com/Reference-ScaLAPACK/scalapack/archive/v2.1.0.tar.gz">scalapack-2.1.0.tar.gz</a>) (<a href="http://netlib.org/scalapack/scalapack-2.1.0.html">release notes</a>)
-</p>
-</li>
-<li>
-<p>
-Version 2.2.0:  February 2, 2022 (<a href="https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz">scalapack-2.2.0.tar.gz</a>) (<a href="http://netlib.org/scalapack/scalapack-2.2.0.html">release notes</a>)
+Piotr Luszczek (University of Tennessee, USA)
 </p>
 </li>
 </ul></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_related_projects">Related Projects</h2>
+<h2 id="_5_developer_list">5. Developer list</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_lapack">LAPACK</h3>
-<div class="paragraph"><p><a href="http://www.netlib.org/lapack">LAPACK website</a></p></div>
-</div>
-<div class="sect2">
-<h3 id="_plasma">PLASMA</h3>
-<div class="paragraph"><p>The Parallel Linear Algebra for Scalable Multi-core Architectures (PLASMA)
-project aims to address the critical and highly disruptive situation that is
-facing the Linear Algebra and High Performance Computing community due to the
-introduction of multi-core architectures.</p></div>
-<div class="paragraph"><p>PLASMA&#8217;s ultimate goal is to create software frameworks that enable programmers
-to simplify the process of developing applications that can achieve both high
-performance and portability across a range of new architectures.</p></div>
-<div class="paragraph"><p>The development of programming models that enforce asynchronous, out of order
-scheduling of operations is the concept used as the basis for the definition of
-a scalable yet highly efficient software framework for Computational Linear
-Algebra applications.</p></div>
-<div class="paragraph"><p><a href="http://icl.cs.utk.edu/plasma/">PLASMA website</a></p></div>
-</div>
-<div class="sect2">
-<h3 id="_magma">MAGMA</h3>
-<div class="paragraph"><p>The MAGMA (Matrix Algebra on GPU and Multicore Architectures) project aims to
-develop a dense linear algebra library similar to LAPACK but for
-heterogeneous/hybrid architectures, starting with current &#8220;Multicore+GPU&#8221;
-systems.</p></div>
-<div class="paragraph"><p>The MAGMA research is based on the idea that, to address the complex challenges
-of the emerging hybrid environments, optimal software solutions will themselves
-have to hybridize, combining the strengths of different algorithms within a
-single framework. Building on this idea, we aim to design linear algebra
-algorithms and frameworks for hybrid manycore and GPUs systems that can enable
-applications to fully exploit the power that each of the hybrid components
-offers.</p></div>
-<div class="paragraph"><p><a href="http://icl.cs.utk.edu/magma/">MAGMA website</a></p></div>
-</div>
+<div class="ulist"><div class="title">Principal Investigators</div><ul>
+<li>
+<p>
+Jim Demmel (University of California,  Berkeley, USA)
+</p>
+</li>
+<li>
+<p>
+Jack Dongarra (University of Tennessee and ORNL, USA)
+</p>
+</li>
+<li>
+<p>
+Julien Langou (University of Colorado Denver, USA)
+</p>
+</li>
+</ul></div>
+<div class="ulist"><div class="title">LAPACK developers involved in this release</div><ul>
+<li>
+<p>
+Weslley S. Pereira (University of Colorado Denver, USA)
+</p>
+</li>
+<li>
+<p>
+Julie Langou (University of Tennessee, USA)
+</p>
+</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -1259,7 +898,7 @@ offers.</p></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2022-02-02 17:58:15 PST
+ 2022-02-02 18:01:56 PST
 </div>
 </div>
 </body>

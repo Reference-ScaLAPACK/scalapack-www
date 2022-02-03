@@ -3,14 +3,13 @@ ScaLAPACK -- Scalable Linear Algebra PACKage
 
 // :Author:    Julie_Langou
 // :Email:     <julie@cs.utk.edu>
-// :Date:      2019/11/16
+// :Date:      2022/02/02
 
 ScaLAPACK is a software package provided by Univ. of Tennessee; Univ. of California, Berkeley; Univ. of Colorado Denver; and NAG Ltd..
 
 == Quick links
 
-
-- latest release:           link:https://github.com/Reference-ScaLAPACK/scalapack/archive/v2.1.0.tar.gz[scalapack-2.1.0.tar.gz]
+- latest release:           link:https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz[scalapack-2.2.0.tar.gz]
 - GitHub repository:        https://github.com/Reference-ScaLAPACK/scalapack/[ScaLAPACK on Github]
 - LAPACK Users' Forum:      http://icl.cs.utk.edu/lapack-forum
 - Get the latests news:     mailto:scalapack-announce-subscribe@eecs.utk.edu[ScaLAPACK Announce Mailing List]
@@ -46,7 +45,7 @@ BLACS are available.
 The library is currently written in Fortran (with the exception of a few
 symmetric eigenproblem auxiliary routines written in C).  The name ScaLAPACK is
 an acronym for Scalable Linear Algebra PACKage, or Scalable LAPACK.  The most
-recent version of ScaLAPACK is 2.1.0.0, released in November 16, 2019.
+recent version of ScaLAPACK is 2.2.0, released in February 2, 2022.
 
 == Acknowledgments
 
@@ -83,6 +82,12 @@ the routine and comment the changes made to the original.
 - We will gladly answer any questions regarding the software. If a modification
 is done, however, it is the responsibility of the person who modified the
 routine to provide support.
+
+=== ScaLAPACK, version 2.2.0
+
+ - Download: https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz[scalapack-2.2.0.tgz]
+ - link:http://netlib.org/scalapack/scalapack-2.2.0.html[release notes for ScaLAPACK 2.2.0]
+ - Updated:  February 2, 2022
 
 === ScaLAPACK, version 2.1.0
 
@@ -217,6 +222,7 @@ link:http://www.netlib.org/lapack/lawns/index.html[LAWNS]
  * Version 2.0.1:  January 18, 2012 (link:http://netlib.org/scalapack/scalapack-2.0.1.tgz[scalapack-2.0.1.tgz]) (link:http://netlib.org/scalapack/scalapack-2.0.1.html[release notes])
  * Version 2.0.2:  May 1, 2012 (link:http://netlib.org/scalapack/scalapack-2.0.2.tgz[scalapack-2.0.2.tgz]) (link:http://netlib.org/scalapack/scalapack-2.0.2.html[release notes])
  * Version 2.1.0:  November 16, 2019 (link:https://github.com/Reference-ScaLAPACK/scalapack/archive/v2.1.0.tar.gz[scalapack-2.1.0.tar.gz]) (link:http://netlib.org/scalapack/scalapack-2.1.0.html[release notes])
+ * Version 2.2.0:  February 2, 2022 (link:https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz[scalapack-2.2.0.tar.gz]) (link:http://netlib.org/scalapack/scalapack-2.2.0.html[release notes])
 
 == Related Projects
 
